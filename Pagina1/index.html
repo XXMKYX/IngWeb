@@ -122,8 +122,8 @@
                                 <label for="rcorreo">No</label>
                                 <input type="radio" name="contacto" value="rcorreo" id="rcorreo">
                             </div> 
-                            <label for="anios">¿En que años?:</label>
-                            <input type="text" id="anios" placeholder="Años" required>
+                            <label for="anios">¿En que año?</label>
+                            <input type="number" id="anios" placeholder="Año" required>
                     
                             <label for="xpD">Motivo por el cual desea ingresar al Posgrado y a que línea de investigación desea integrarse:</label>
                             <textarea id="xpD"></textarea required>
@@ -133,14 +133,14 @@
 
                     <fieldset>
                         <legend>ANEXO</legend>
-                        <label for="fecha">FECHA:</label>
-                        <input type="text" id="fecha" placeholder="Fecha" required>
+                        <label for="fecha">Fecha:</label>
+                        <input type="date" id="fecha" required>
                         
                         <label for="foto">Anexar Fotografia:</label>
-                        <input type="text" id="foto" placeholder="foto" required>
+                        <input type="file" name="archivosubido" id="foto" required>
         
                         <label for="ine">Anexar identificacion oficial:</label>
-                        <input type="text" id="ine" placeholder="ine" required>
+                        <input type="file" name="archivosubido" id="ine" required>
         
                     </fieldset>
 
