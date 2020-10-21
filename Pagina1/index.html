@@ -12,141 +12,144 @@
 
 <body>
     <header class="site-header inicio">
-        <div class="contenedor contenido-header">
+        <div class="contenedor">
             <div class="barra">
                 <a href="/">
-                    <img src="img/IPN.png" alt="Logotio de Bienes Raices">
+                    <p class="no-margin fw-600">IPN</span>
+                    </p>
                 </a>
-
-                <div class="mobile-menu">
-                    <a href="#navegacion">
-                        <img src="img/barras.svg" alt="Icono menu">
-                    </a>
-                </div>
-
-                <nav id="navegacion" class="navegacion">
-                    <a href="#">Nosotros</a>
-                    <a href="#">Anuncios</a>
-                    <a href="#">Blog</a>
-                    <a href="#">Contacto</a>
-                </nav>
-
+                <a href="/">
+                    <p class="no-margin fw-600">CICATA</span>
+                    </p>
+                </a>
             </div>
-            <!-- Contenedor -->
 
-            <h1>CENTRO DE INVESTIGACIÓN EN CIENCIA APLICADA Y TECNOLOGÍA AVANZADA 
-                UNIDAD LEGARIA 
+            <div class="texto-header">
+                <!-- Contenedor -->
+                <h1 class="fw-600 centrar-texto">Solicitud de Admisión al Departamento del Posgrado de Física Educativa
                 </h1>
-        </div>
+                <p>Proceso de Ingreso al Semestre A-2021</p>
+            </div>
     </header>
 
 
 
-    <section class="contenedor seccion contenido-centrado">
+    <main class="contenedor seccion">
 
-
-        <h2 class="fw-300 centrar-texto">DEPARTAMENTO DEL POSGRADO DE FÍSICA EDUCATIVA
-            SOLICITUD DE ADMISIÓN AL  PROCESO DE INGRESO AL SEMESTRE  A-2021
+        <div class="header-contacto centrar-texto">
+            <h2 class="no-margin">
+                Contacto
             </h2>
+            <h4 class="no-margin">Centro de Investigación en Ciencia Aplicada y Teconología Avanzada</h4>
+            <h4 class="no-margin">Unidad Legaria</h4>
+        </div>
+        <div class="grid centrar-columnas">
 
-        <form class="contacto" action="">
 
-            <fieldset>
-                <legend>DATOS PERSONALES</legend>
+            <div class="columnas-12">
+                <img src="img/ipnycigata.jpg" alt="img contacto">
+            </div>
 
-                <label for="nombre">NOMBRE:</label>
-                <input type="text" id="nombre" placeholder="Tu nombre" required>
-
-                <label for="fecha">FECHA DE NACIMIENTO:</label>
-                <input type="text" id="fecha" placeholder="Fecha" required>
-
-                <label for="lugar">LUGAR DE NACIMIENTO:</label>
-                <input type="text" id="lugar" placeholder="Lugar" required>
-
-                <label for="domicilio">DOMICILIO ACTUAL:</label>
-                <input type="text" id="domicilio" placeholder="Tu domicilio" required>
-
-                <label for="telefono">NUMERO DE CELULAR:</label>
-                <input type="tel" id="telefono" placeholder="Tu numero" required>
-
-                <label for="nacionalidad">NACIONALIDAD:</label>
-                <input type="text" id="nacionalidad" placeholder="Tu nacionalidad" required>
-
-                <label for="civil">ESTADO CIVIL:</label>
-                <input type="text" id="civil" placeholder="Tu estado civil" required>
-
-                <label for="curp">CURP:</label>
-                <input type="text" id="curp" placeholder="Tu curp" required>
-
-                <label for="email">E-mail:</label>
-                <input type="email" id="email" placeholder="Tu correo electrónico" required>
-
-                <label for="skype">CUENTA SKYPE:</label>
-                <input type="text" id="skype" placeholder="Tu Skype" required>
-
-                    
-                </fieldset>
-
-                
-                <fieldset>
-
-                        <legend>INFORMACION GENERAL</legend>
-                    
-                        <label for="Institucion">Institución donde ha realizado sus estudios profesionales:</label>
-                        <input type="text" id="Institucion" placeholder="Tu Institucion" required>
-        
-                        <p>¿Estas titulado?</p>
-        
-                        <div class="forma-contacto">
-                            <label for="rtelefono">Si</label>
-                            <input type="radio" name="contacto" value="rtelefono"  id="rtelefono">
-                            <label for="rcorreo">No</label>
-                            <input type="radio" name="contacto" value="rcorreo" id="rcorreo">
-                        </div> 
-    
-                        <label for="pinstitucion">País la institución:</label>
-                        <input type="text" id="pinstitucion" placeholder="Pais" required>
-                  
-                        <label for="xpP">Experiancia Profecional:</label>
-                        <textarea id="xpP"></textarea required>
-                        
-                        <label for="xpD">Experiancia Docente:</label>
-                        <textarea id="xpD"></textarea required>
-                        
-                        <p>¿Has asistido a los cursos propedéuticos de este Departamento anteriormente?</p>
-        
-                        <div class="forma-contacto">
-                            <label for="rtelefono">Si</label>
-                            <input type="radio" name="contacto" value="rtelefono"  id="rtelefono">
-                            <label for="rcorreo">No</label>
-                            <input type="radio" name="contacto" value="rcorreo" id="rcorreo">
-                        </div> 
-                        <label for="anios">¿En que años?:</label>
-                        <input type="text" id="anios" placeholder="Años" required>
-                  
-                        <label for="xpD">Motivo por el cual desea ingresar al Posgrado y a que línea de investigación desea integrarse:</label>
-                        <textarea id="xpD"></textarea required>
-                        
-    
-                </fieldset>
+            <form class="contacto columnas-10 " action="">
 
                 <fieldset>
-                    <legend>ANEXO</legend>
-                    <label for="fecha">FECHA:</label>
+                    <legend>DATOS PERSONALES</legend>
+
+                    <label for="nombre">NOMBRE:</label>
+                    <input type="text" id="nombre" placeholder="Tu nombre" required>
+
+                    <label for="fecha">FECHA DE NACIMIENTO:</label>
                     <input type="text" id="fecha" placeholder="Fecha" required>
-                    
-                    <label for="foto">Anexar Fotografia:</label>
-                    <input type="text" id="foto" placeholder="foto" required>
-    
-                    <label for="ine">Anexar identificacion oficial:</label>
-                    <input type="text" id="ine" placeholder="ine" required>
-    
+
+                    <label for="lugar">LUGAR DE NACIMIENTO:</label>
+                    <input type="text" id="lugar" placeholder="Lugar" required>
+
+                    <label for="domicilio">DOMICILIO ACTUAL:</label>
+                    <input type="text" id="domicilio" placeholder="Tu domicilio" required>
+
+                    <label for="telefono">NUMERO DE CELULAR:</label>
+                    <input type="tel" id="telefono" placeholder="Tu numero" required>
+
+                    <label for="nacionalidad">NACIONALIDAD:</label>
+                    <input type="text" id="nacionalidad" placeholder="Tu nacionalidad" required>
+
+                    <label for="civil">ESTADO CIVIL:</label>
+                    <input type="text" id="civil" placeholder="Tu estado civil" required>
+
+                    <label for="curp">CURP:</label>
+                    <input type="text" id="curp" placeholder="Tu curp" required>
+
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" placeholder="Tu correo electrónico" required>
+
+                    <label for="skype">CUENTA SKYPE:</label>
+                    <input type="text" id="skype" placeholder="Tu Skype" required>
+
+
                 </fieldset>
 
-                <input type="submit" value="Enviar" class="boton boton-verde">
-    
-            </form> 
-        </section>    
+
+                <fieldset>
+
+                    <legend>INFORMACION GENERAL</legend>
+
+                    <label for="Institucion">Institución donde ha realizado sus estudios profesionales:</label>
+                    <input type="text" id="Institucion" placeholder="Tu Institucion" required>
+
+                    <p>¿Estas titulado?</p>
+
+                    <div class="forma-contacto">
+                        <label for="rtelefono">Si</label>
+                        <input type="radio" name="contacto" value="rtelefono" id="rtelefono">
+                        <label for="rcorreo">No</label>
+                        <input type="radio" name="contacto" value="rcorreo" id="rcorreo">
+                    </div>
+
+                    <label for="pinstitucion">País la institución:</label>
+                    <input type="text" id="pinstitucion" placeholder="Pais" required>
+
+                    <label for="xpP">Experiancia Profecional:</label>
+                    <textarea id="xpP"></textarea required>
+                            
+                            <label for="xpD">Experiancia Docente:</label>
+                            <textarea id="xpD"></textarea required>
+                            
+                            <p>¿Has asistido a los cursos propedéuticos de este Departamento anteriormente?</p>
+            
+                            <div class="forma-contacto">
+                                <label for="rtelefono">Si</label>
+                                <input type="radio" name="contacto" value="rtelefono"  id="rtelefono">
+                                <label for="rcorreo">No</label>
+                                <input type="radio" name="contacto" value="rcorreo" id="rcorreo">
+                            </div> 
+                            <label for="anios">¿En que años?:</label>
+                            <input type="text" id="anios" placeholder="Años" required>
+                    
+                            <label for="xpD">Motivo por el cual desea ingresar al Posgrado y a que línea de investigación desea integrarse:</label>
+                            <textarea id="xpD"></textarea required>
+                            
+        
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>ANEXO</legend>
+                        <label for="fecha">FECHA:</label>
+                        <input type="text" id="fecha" placeholder="Fecha" required>
+                        
+                        <label for="foto">Anexar Fotografia:</label>
+                        <input type="text" id="foto" placeholder="foto" required>
+        
+                        <label for="ine">Anexar identificacion oficial:</label>
+                        <input type="text" id="ine" placeholder="ine" required>
+        
+                    </fieldset>
+
+                    <input type="submit" value="Enviar" class="boton boton-verde">
+        
+                </form> 
+        </div>
+        
+    </main>    
 </body>
 
 </html>
