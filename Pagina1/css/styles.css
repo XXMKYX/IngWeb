@@ -74,6 +74,25 @@ h4 {
 }
 
 
+/* Separar en dos columnas con grid*/
+
+.grid-dos-columnas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 2rem;
+}
+
+
+/* Alinear al centro a lo alto*/
+
+.alinear-centro {
+    max-width: 30rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
 /* Grid - Para asignar longitud de contenido */
 
 @media (min-width: 768px) {
@@ -334,15 +353,8 @@ textarea {
     height: 20rem;
 }
 
-.forma-contacto {
-    max-width: 30rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.forma-tiempo {
+.domicilio-calle-num {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 4fr repeat(2, 1fr);
     grid-column-gap: 2rem;
 }

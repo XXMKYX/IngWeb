@@ -55,29 +55,35 @@
                 <fieldset>
                     <legend>DATOS PERSONALES</legend>
 
-                    <label for="nombre">NOMBRE:</label>
-                    <input type="text" id="nombre" placeholder="Tu nombre" required>
+                    <label for="nombre">NOMBRE(S)</label>
+                    <input type="text" id="nombre" placeholder="Nombre(s)" required>
+                    <div class="grid-dos-columnas">
+                        <label for="apaterno">Apellido Paterno</label>
+                        <label for="amaterno">Apellido Materno</label>
 
-                    <label for="fecha">FECHA DE NACIMIENTO:</label>
-                    <input type="text" id="fecha" placeholder="Fecha" required>
+                        <input type="text" id="apaterno" placeholder="Apellido Paterno" required>
+                        <input type="text" id="amaterno" placeholder="Apellido Materno" required>
 
-                    <label for="lugar">LUGAR DE NACIMIENTO:</label>
-                    <input type="text" id="lugar" placeholder="Lugar" required>
+                        <label for="fecha">FECHA DE NACIMIENTO</label>
+                        <label for="lugar">LUGAR DE NACIMIENTO</label>
+                        <input type="date" id="fecha" placeholder="Fecha" required>
+                        <input type="text" id="lugar" placeholder="Lugar" required>
 
-                    <label for="domicilio">DOMICILIO ACTUAL:</label>
-                    <input type="text" id="domicilio" placeholder="Tu domicilio" required>
+                        <label for="nacionalidad">NACIONALIDAD</label>
+                        <label for="civil">ESTADO CIVIL</label>
+                        <input type="text" id="nacionalidad" placeholder="Nacionalidad" required>
+                        <input type="text" id="civil" placeholder="Estado Civil" required>
 
+                        <label for="curp">CURP:</label>
+                        <label for="dependencias">DEPENDENCIAS</label>
+                        <input type="text" id="curp" placeholder="CURP" required>
+                        <input type="number" id="dependencias" placeholder="No. de dependencias" required>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>DATOS DE CONTACTO</legend>
                     <label for="telefono">NUMERO DE CELULAR:</label>
                     <input type="tel" id="telefono" placeholder="Tu numero" required>
-
-                    <label for="nacionalidad">NACIONALIDAD:</label>
-                    <input type="text" id="nacionalidad" placeholder="Tu nacionalidad" required>
-
-                    <label for="civil">ESTADO CIVIL:</label>
-                    <input type="text" id="civil" placeholder="Tu estado civil" required>
-
-                    <label for="curp">CURP:</label>
-                    <input type="text" id="curp" placeholder="Tu curp" required>
 
                     <label for="email">E-mail:</label>
                     <input type="email" id="email" placeholder="Tu correo electrónico" required>
@@ -85,30 +91,53 @@
                     <label for="skype">CUENTA SKYPE:</label>
                     <input type="text" id="skype" placeholder="Tu Skype" required>
 
-
                 </fieldset>
-
-
                 <fieldset>
+                    <legend>DOMICILIO</legend>
+                    <div class="domicilio-calle-num">
+                        <!--<label for="Calle">Calle</label>-->
+                        <input type="text" id="Calle" placeholder="Calle" required>
+                        <!--<label for="NoExt">No. Ext</label>-->
+                        <input type="text" id="NoExt" placeholder="No exterior" required>
+                        <!--<label for="NoInt">No. Int</label>-->
+                        <input type="text" id="NoInt" placeholder="No interior">
+                    </div>
+                    <div class="grid-dos-columnas">
+                        <!--<label for="Colonia">Colonia</label>-->
+                        <input type="text" id="Colonia" placeholder="Colonia" required>
+                        <!--<label for="Ciudad">Ciudad</label>-->
+                        <input type="text" id="Ciudad" placeholder="Ciudad" required>
+                        <!--<label for="Estado">Estado</label>-->
+                        <input type="text" id="Estado" placeholder="Estado" required>
+                        <!--<label for="CP">CP</label>-->
+                        <input type="text" id="CP" placeholder="CP" required>
 
-                    <legend>INFORMACION GENERAL</legend>
-
-                    <label for="Institucion">Institución donde ha realizado sus estudios profesionales:</label>
-                    <input type="text" id="Institucion" placeholder="Tu Institucion" required>
-
-                    <p>¿Estas titulado?</p>
-
-                    <div class="forma-contacto">
-                        <label for="rtelefono">Si</label>
-                        <input type="radio" name="contacto" value="rtelefono" id="rtelefono">
-                        <label for="rcorreo">No</label>
-                        <input type="radio" name="contacto" value="rcorreo" id="rcorreo">
                     </div>
 
-                    <label for="pinstitucion">País la institución:</label>
-                    <input type="text" id="pinstitucion" placeholder="Pais" required>
 
-                    <label for="xpP">Experiancia Profecional:</label>
+
+                </fieldset>
+                <fieldset>
+
+                    <legend>INFORMACIÓN GENERAL</legend>
+                    <div class="grid-dos-columnas">
+                        <label for="Institucion">Institución de tus estudios profesionales</label>
+                        <label for="pinstitucion">País la institución</label>
+                        <input type="text" id="Institucion" placeholder="Tu Institucion" required>
+                        <input type="text" id="pinstitucion" placeholder="Pais" required>
+                    </div>
+
+                    <label for="Institucion">¿Estás titulado?</label>
+
+                    <div class="alinear-centro">
+                        <label for="rtelefono">Sí</label>
+                        <input type="radio" name="titulado" value="rsi" id="rsi">
+                        <label for="rcorreo">No</label>
+                        <input type="radio" name="titulado" value="rno" id="rno">
+                    </div>
+
+
+                    <label for="xpP">Experiencia Profesional:</label>
                     <textarea id="xpP"></textarea required>
                             
                             <label for="xpD">Experiancia Docente:</label>
@@ -116,7 +145,7 @@
                             
                             <p>¿Has asistido a los cursos propedéuticos de este Departamento anteriormente?</p>
             
-                            <div class="forma-contacto">
+                            <div class="alinear-centro">
                                 <label for="rtelefono">Si</label>
                                 <input type="radio" name="contacto" value="rtelefono"  id="rtelefono">
                                 <label for="rcorreo">No</label>
