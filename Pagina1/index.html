@@ -84,15 +84,17 @@
                 </fieldset>
                 <fieldset>
                     <legend>DATOS DE CONTACTO</legend>
-                    <label for="telefono">NUMERO DE CELULAR:</label>
-                    <input type="tel" id="telefono" placeholder="Tu numero" required>
+                    <div class="grid-dos-columnas">
+                        <label for="telefono">TELÉFONO CELULAR</label>
+                        <label for="email">E-mail</label>
+                        <input type="tel" id="telefono" placeholder="Número" required>
+                        <input type="email" id="email" placeholder="Tu correo electrónico" required>
 
-                    <label for="email">E-mail:</label>
-                    <input type="email" id="email" placeholder="Tu correo electrónico" required>
-
-                    <label for="skype">CUENTA SKYPE:</label>
-                    <input type="text" id="skype" placeholder="Tu Skype" required>
-
+                        <label for="skype">CUENTA SKYPE</label>
+                        <label for="fb">Cuenta de FB (Link)</label>
+                        <input type="text" id="skype" placeholder="Skype (opcional)">
+                        <input type="text" id="fb" placeholder="Link a tu Facebook (opcional)">
+                    </div>
                 </fieldset>
                 <fieldset>
                     <legend>DOMICILIO</legend>
@@ -121,21 +123,21 @@
                 </fieldset>
                 <fieldset>
 
-                    <legend>INFORMACIÓN GENERAL</legend>
+                    <legend>DATOS ACADÉMICOS</legend>
                     <div class="grid-dos-columnas">
                         <label for="Institucion">Institución de tus estudios profesionales</label>
                         <label for="pinstitucion">País la institución</label>
-                        <input type="text" id="Institucion" placeholder="Tu Institucion" required>
-                        <input type="text" id="pinstitucion" placeholder="Pais" required>
+                        <input type="text" id="Institucion" placeholder="Institución" required>
+                        <input type="text" id="pinstitucion" placeholder="País" required>
                     </div>
 
                     <label for="Institucion">¿Estás titulado?</label>
 
                     <div class="alinear-centro">
-                        <label for="rtelefono">Sí</label>
-                        <input type="radio" name="titulado" value="rsi" id="rsi">
-                        <label for="rcorreo">No</label>
-                        <input type="radio" name="titulado" value="rno" id="rno">
+                        <label for="rsititulado">Sí</label>
+                        <input type="radio" name="titulado" value="rsi" id="rsititulado">
+                        <label for="rnotitulado">No</label>
+                        <input type="radio" name="titulado" value="rno" id="rnotitulado">
                     </div>
 
 
@@ -145,18 +147,18 @@
                             <label for="xpD">Experiencia Docente:</label>
                             <textarea id="xpD"></textarea required>
                             
-                            <p>¿Has asistido a los cursos propedéuticos de este Departamento anteriormente?</p>
+                            <label>¿Has asistido a los cursos propedéuticos de este Departamento anteriormente?</label>
             
                             <div class="alinear-centro">
-                                <label for="rtelefono">Si</label>
-                                <input type="radio" name="contacto" value="rtelefono"  id="rtelefono">
-                                <label for="rcorreo">No</label>
-                                <input type="radio" name="contacto" value="rcorreo" id="rcorreo">
+                                <label for="rsiprop">Si</label>
+                                <input type="radio" name="propedeutico" value="rsi"  id="rsiprop">
+                                <label for="rnoprop">No</label>
+                                <input type="radio" name="propedeutico" value="rno" id="rnoprop">
                             </div> 
-                            <label for="anios">¿En que año?</label>
-                            <input type="number" id="anios" placeholder="Año" required>
+                            <label for="aniosprop">¿En qué año(s)?</label>
+                            <input type="number" id="aniosprop" placeholder="Año(s) Propedeuticos" required>
                     
-                            <label for="xpD">Motivo por el cual desea ingresar al Posgrado y a que línea de investigación desea integrarse:</label>
+                            <label for="xpD">Motivo por el cuál desea ingresar al Posgrado y a qué línea de investigación desea integrarse</label>
                             <textarea id="xpD"></textarea required>
                             
         
@@ -164,14 +166,16 @@
 
                     <fieldset>
                         <legend>ANEXO</legend>
-                        <label for="fecha">Fecha:</label>
+                        <label for="fecha">Fecha</label>
                         <input type="date" id="fecha" required>
                         
-                        <label for="foto">Anexar Fotografia:</label>
-                        <input type="file" name="archivosubido" id="foto" required>
-        
-                        <label for="ine">Anexar identificacion oficial:</label>
-                        <input type="file" name="archivosubido" id="ine" required>
+                        <div class="grid-dos-columnas">
+                            <label for="foto">Anexar Fotografía</label>
+                            <label for="ine">Anexar identificación oficial</label>
+                            <input type="file" name="archivosubido" id="foto" required>                                
+                            <input type="file" name="archivosubido" id="ine" required>
+                        </div>
+                        
         
                     </fieldset>
 
