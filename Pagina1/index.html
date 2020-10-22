@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/styles.css">
+    <script src="../js/funciones.js"></script>
 </head>
 
 <body>
@@ -76,8 +77,9 @@
 
                         <label for="curp">CURP:</label>
                         <label for="dependencias">DEPENDENCIAS</label>
-                        <input type="text" id="curp" placeholder="CURP" required>
+                        <input type="text" id="curp" oninput="validarInput(this)" placeholder="CURP" required>
                         <input type="number" id="dependencias" placeholder="No. de dependencias" required>
+                        <pre id="resultado"></pre>
                     </div>
                 </fieldset>
                 <fieldset>
