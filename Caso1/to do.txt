@@ -1,0 +1,9 @@
+Agregar terminal a VS: Integrated terminal
+
+Iniciar proyecto de Node: npm init -y
+>package.json : Archivo de descripcion del proyect
+
+Instalar framework Express: npm i express 
+>Modulos Node 
+>package-lock.json : Registro de modulos 
+
