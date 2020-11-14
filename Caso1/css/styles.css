@@ -166,11 +166,12 @@ h4 {
 }
 
 .site-header.inicio {
-    background-image: url(../img/cicata.jpg);
+    background-image: url(../img/ipnycigata.jpg);
     background-position: center center;
     background-size: cover;
     height: 60rem;
     min-height: 30rem;
+    -webkit-filter: brightness(.7);
 }
 
 .contenido-header {
@@ -294,7 +295,7 @@ h4 {
 /* Contacto */
 
 .contacto {
-    background-color: white;
+    background-color: rgba(128, 36, 52, 1);
     padding: 5rem;
 }
 
@@ -325,13 +326,14 @@ h4 {
 
 legend {
     font-size: 2rem;
-    color: #4f4f4f;
+    color: white;
 }
 
 label {
     display: block;
     font-weight: 700;
     text-transform: uppercase;
+    color: white;
 }
 
 input:not([type="submit"]),

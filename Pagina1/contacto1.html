@@ -46,51 +46,13 @@
         </div>
         <div class="grid centrar-columnas">
 
+
+            <div class="columnas-12">
+                <img src="img/ipnycigata.jpg" alt="img contacto">
+            </div>
+
             <form class="contacto columnas-10 " action="">
 
-                <fieldset>
-                    <legend>DATOS PERSONALES</legend>
-
-                    <label for="nombre">NOMBRE(S)</label>
-                    <input type="text" id="nombre" placeholder="Nombre(s)" required>
-                    <div class="grid-dos-columnas">
-                        <label for="apaterno">Apellido Paterno</label>
-                        <label for="amaterno">Apellido Materno</label>
-
-                        <input type="text" id="apaterno" placeholder="Apellido Paterno" required>
-                        <input type="text" id="amaterno" placeholder="Apellido Materno" required>
-
-                        <label for="fecha">FECHA DE NACIMIENTO</label>
-                        <label for="lugar">LUGAR DE NACIMIENTO</label>
-                        <input type="date" id="fecha" placeholder="Fecha" required>
-                        <input type="text" id="lugar" placeholder="Lugar" required>
-
-                        <label for="nacionalidad">NACIONALIDAD</label>
-                        <label for="civil">ESTADO CIVIL</label>
-                        <input type="text" id="nacionalidad" placeholder="Nacionalidad" required>
-                        <input type="text" id="civil" placeholder="Estado Civil" required>
-
-                        <label for="curp">CURP:</label>
-                        <label for="dependencias">DEPENDENCIAS</label>
-                        <input type="text" id="curp" oninput="validarInput(this)" placeholder="CURP" required>
-                        <input type="number" id="dependencias" placeholder="No. de dependencias" required>
-                        <pre id="resultado"></pre>
-                    </div>
-                </fieldset>
-                <fieldset>
-                    <legend>DATOS DE CONTACTO</legend>
-                    <div class="grid-dos-columnas">
-                        <label for="telefono">TELÉFONO CELULAR</label>
-                        <label for="email">E-mail</label>
-                        <input type="tel" id="telefono" placeholder="Número" required>
-                        <input type="email" id="email" placeholder="Tu correo electrónico" required>
-
-                        <label for="skype">CUENTA SKYPE</label>
-                        <label for="fb">Cuenta de FB (Link)</label>
-                        <input type="text" id="skype" placeholder="Skype (opcional)">
-                        <input type="text" id="fb" placeholder="Link a tu Facebook (opcional)">
-                    </div>
-                </fieldset>
                 <fieldset>
                     <legend>DOMICILIO</legend>
                     <div class="domicilio-calle-num">
@@ -154,28 +116,25 @@
                             <input type="number" id="aniosprop" placeholder="Año(s) Propedeuticos" required>
                     
                             <label for="xpD">Motivo por el cuál desea ingresar al Posgrado y a qué línea de investigación desea integrarse</label>
-                            <textarea id="xpD"></textarea required>
-                            
+                            <textarea id="xpD"></textarea required>                            
         
                     </fieldset>
-
+                    
                     <fieldset>
                         <legend>ANEXO</legend>
                         <label for="fecha">Fecha</label>
                         <input type="date" id="fecha" required>
-                        
+    
                         <div class="grid-dos-columnas">
                             <label for="foto">Anexar Fotografía</label>
                             <label for="ine">Anexar identificación oficial</label>
-                            <input type="file" name="archivosubido" id="foto" required>                                
+                            <input type="file" name="archivosubido" id="foto" required>
                             <input type="file" name="archivosubido" id="ine" required>
                         </div>
-                        
-        
+    
+    
                     </fieldset>
-
                     <input type="submit" value="Enviar" class="boton boton-verde">
-        
                 </form> 
         </div>
         
