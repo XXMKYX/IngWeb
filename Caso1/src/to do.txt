@@ -6,4 +6,3 @@ Iniciar proyecto de Node: npm init -y
 Instalar framework Express: npm i express 
 >Modulos Node 
 >package-lock.json : Registro de modulos 
-
