@@ -1,4 +1,5 @@
 Agregar terminal a VS: Integrated terminal
+(Abrir con F1)
 
 Iniciar proyecto de Node: npm init -y
 >package.json : Archivo de descripcion del proyect
