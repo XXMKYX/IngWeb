@@ -34,5 +34,5 @@ function validarInput(input) {
     } else {
         resultado.classList.remove("ok");
     }
-    resultado.innerText = "CURP: " + curp + " - Formato: " + valido;
+    resultado.innerText = "CURP, Formato: " + valido;
 }

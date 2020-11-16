@@ -310,6 +310,9 @@ h4 {
     }
 }
 
+.forma{
+    margin: 2rem 0;
+}
 .forma h3{
     color: white;
     font-size: 1.8rem;
@@ -388,5 +391,6 @@ textarea {
 
 .inputFileLabel:hover {
     cursor: pointer;
-    background-color: steelblue;
+    background-color: rgb(99, 0, 21);
+    color: white;
 }

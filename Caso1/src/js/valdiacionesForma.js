@@ -21,3 +21,7 @@ function cambiarForma(input) {
         forma2.style.display = "none";
     }
 }
+
+function validateForm(input){
+    
+}
