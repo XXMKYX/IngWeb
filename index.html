@@ -54,27 +54,27 @@
                 <fieldset>
                     <legend>DATOS PERSONALES</legend>
 
-                    <label for="nombre">NOMBRE(S)</label>
+                    <label for="nombre">NOMBRE(S)*</label>
                     <input type="text" id="nombre" placeholder="Nombre(s)">
                     <div class="grid-dos-columnas">
-                        <label for="apaterno">Apellido Paterno</label>
-                        <label for="amaterno">Apellido Materno</label>
+                        <label for="apaterno">Apellido Paterno*</label>
+                        <label for="amaterno">Apellido Materno*</label>
 
                         <input type="text" id="apaterno" placeholder="Apellido Paterno">
                         <input type="text" id="amaterno" placeholder="Apellido Materno">
 
-                        <label for="fecha">FECHA DE NACIMIENTO</label>
-                        <label for="lugar">LUGAR DE NACIMIENTO</label>
+                        <label for="fecha">FECHA DE NACIMIENTO*</label>
+                        <label for="lugar">LUGAR DE NACIMIENTO*</label>
                         <input type="date" id="fecha" placeholder="Fecha">
                         <input type="text" id="lugar" placeholder="Lugar">
 
-                        <label for="nacionalidad">NACIONALIDAD</label>
-                        <label for="civil">ESTADO CIVIL</label>
+                        <label for="nacionalidad">NACIONALIDAD*</label>
+                        <label for="civil">ESTADO CIVIL*</label>
                         <input type="text" id="nacionalidad" placeholder="Nacionalidad">
                         <input type="text" id="civil" placeholder="Estado Civil">
 
-                        <label for="curp">CURP:</label>
-                        <label for="dependencias">DEPENDENCIAS</label>
+                        <label for="curp">CURP*</label>
+                        <label for="dependencias">DEPENDENCIAS*</label>
                         <input type="text" id="curp" oninput="validarInput(this)" placeholder="CURP">
                         <input type="number" id="dependencias" placeholder="No. de dependencias" min="0">
                         <pre id="resultado" style="color: white;"></pre>
@@ -83,8 +83,8 @@
                 <fieldset>
                     <legend>DATOS DE CONTACTO</legend>
                     <div class="grid-dos-columnas">
-                        <label for="telefono">TELÉFONO CELULAR</label>
-                        <label for="email">E-mail</label>
+                        <label for="telefono">TELÉFONO CELULAR*</label>
+                        <label for="email">E-mail*</label>
                         <input type="tel" id="telefono" placeholder="Número">
                         <input type="email" id="email" placeholder="Tu correo electrónico" >
 
@@ -98,25 +98,28 @@
                     <legend>DOMICILIO</legend>
                     <div class="domicilio-calle-num">
                         <!--<label for="Calle">Calle</label>-->
-                        <input type="text" id="Calle" placeholder="Calle">
+                        <input type="text" id="Calle" placeholder="Calle*">
                         <!--<label for="NoExt">No. Ext</label>-->
-                        <input type="text" id="NoExt" placeholder="No exterior">
+                        <input type="text" id="NoExt" placeholder="No exterior*">
                         <!--<label for="NoInt">No. Int</label>-->
                         <input type="text" id="NoInt" placeholder="No interior">
                     </div>
                     <div class="grid-dos-columnas">
                         <!--<label for="Colonia">Colonia</label>-->
-                        <input type="text" id="Colonia" placeholder="Colonia">
+                        <input type="text" id="Colonia" placeholder="Colonia*">
                         <!--<label for="Ciudad">Ciudad</label>-->
-                        <input type="text" id="Ciudad" placeholder="Ciudad">
+                        <input type="text" id="Ciudad" placeholder="Ciudad*">
                         <!--<label for="Estado">Estado</label>-->
-                        <input type="text" id="Estado" placeholder="Estado">
+                        <input type="text" id="Estado" placeholder="Estado*">
                         <!--<label for="CP">CP</label>-->
-                        <input type="text" id="CP" placeholder="CP">
+                        <input type="text" id="CP" placeholder="CP*">
 
                     </div>
-                </fieldset>                
-                    <input type="submit" value="Enviar" class="boton boton-verde">        
+                </fieldset>
+                    <div class="grid-dos-columnas">
+                        <input type="button" value="Guardar" class="boton boton-amarillo"> 
+                        <input type="button" value="Siguiente" class="boton boton-verde">    
+                    </div>
             </form> 
         </div>
         <div class="tipo-forma contenedor">
