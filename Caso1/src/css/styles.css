@@ -171,7 +171,6 @@ h4 {
     background-size: cover;
     height: 60rem;
     min-height: 30rem;
-    -webkit-filter: brightness(.7);
 }
 
 .contenido-header {
@@ -294,6 +293,12 @@ h4 {
 
 /* Contacto */
 
+.tipo-forma{
+    max-width: 20rem;
+    padding: 1rem;
+    text-align-last:center; 
+}
+
 .contacto {
     background-color: rgba(128, 36, 52, 1);
     padding: 5rem;
@@ -301,11 +306,17 @@ h4 {
 
 @media (min-width: 768px) {
     .contacto {
-        margin-top: -10rem;
+        margin-top: 1rem;
     }
 }
 
-
+.forma h3{
+    color: white;
+    font-size: 1.8rem;
+    text-align: center;
+    margin-top: -4rem;
+    margin-bottom: 0;
+}
 /* Header del contacto */
 
 .header-contacto {
@@ -365,4 +376,17 @@ textarea {
     display: grid;
     grid-template-columns: 4fr repeat(2, 1fr);
     grid-column-gap: 2rem;
+}
+
+.inputFileLabel{
+    border-style: solid;
+    border-width: .1rem;
+    text-align: center;
+    border-color: white;
+    transition: ease-in-out 1s ;
+}
+
+.inputFileLabel:hover {
+    cursor: pointer;
+    background-color: steelblue;
 }
