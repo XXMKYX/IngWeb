@@ -1,14 +1,17 @@
 const {Router}=require('express');
 const router = Router();
-//const fs = require('fs');//Modulo de lectura .json
+const fs = require('fs');//Modulo de lectura .json
 
 //const json_preg = fs.readFileSync('src/preg.json','utf-8')//Lee el JSON
 
 //const preg = JSON.parse(json_preg)//Inicializando .JSON pasando a JSON
+
 /* Guardando datos en Array .JS*/
 const preg = []; //Arreglo para guardar datos
-//const preregistro = fs.readFileSync('src/preregistro', 'utf-8');
+
+//const preregistro = fs.readFileSync('src/preregistro.json', 'utf-8');
 //let preg = JSON.parse(preregistro); 
+
 
 /* Ruta inicial */
 router.get('/', (req, res) => {
@@ -64,8 +67,9 @@ router.post('/personal_data',(req,res)=>{
   preg.push(newpreg);
   
   // agregando al archivo
-  //const json_preg = JSON.stringify(preg) //Convierte la lista a string
-  //fs.writeFileSync('src/preg.json', json_preg, 'utf-8') //Guarda string en formato utf-8
+  const json_preg = JSON.stringify(preg) //Convierte la lista a string
+  fs.writeFileSync('src/preg.json', json_preg, 'utf-8') //Guarda string en formato utf-8
+
   res.send('Datos obtenidos');
 })
   module.exports = router;
