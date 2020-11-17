@@ -7,3 +7,10 @@ Iniciar proyecto de Node: npm init -y
 Instalar framework Express: npm i express 
 >Modulos Node 
 >package-lock.json : Registro de modulos 
+
+Instalar motor de plantillas EJS: npm i ejs
+
+Funciones de Ejecucion antes de llegar a la ruta: npm i morgan
+
+Visualizar mejor JSON: Format Document
+(Abrir con F1) 
