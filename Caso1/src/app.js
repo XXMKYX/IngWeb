@@ -11,7 +11,7 @@ app.set('view engine', 'ejs'); //Motor de plantillas <%EJS%>
 
 // Middlewares
 app.use(logger('dev')); //Funciones de Ejecucion antes de llegar a la ruta
-app.use(express.urlencoded({extended: false})); //Interpreta daros a  JSON 
+app.use(express.urlencoded({extended: false})); //Interpreta datos a  JSON 
 
 // Routes
 app.use(require('./routes/index'));

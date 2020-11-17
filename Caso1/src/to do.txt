@@ -1,5 +1,5 @@
 Agregar terminal a VS: Integrated terminal
-(Abrir con F1)
+(Abrir con F1)(Ctrl + shift + ñ)
 
 Iniciar proyecto de Node: npm init -y
 >package.json : Archivo de descripcion del proyect
@@ -11,6 +11,8 @@ Instalar framework Express: npm i express
 Instalar motor de plantillas EJS: npm i ejs
 
 Funciones de Ejecucion antes de llegar a la ruta: npm i morgan
+
+Iniciar servidor npm: node src/index.js
 
 Visualizar mejor JSON: Format Document
 (Abrir con F1) 

@@ -33,7 +33,7 @@ router.post('/personal_data',(req,res)=>{
   const { nombre, apaterno, amaterno, fecha, lugar, nacionalidad, civil, curp, dependencias, telefono, email, skype, fb, Calle, NoExt, NoInt, Colonia, Ciudad, Estado, CP} = req.body;
 /* Validacion */
   if (!nombre || !apaterno || !amaterno || !fecha|| !lugar|| !nacionalidad ||!civil ||!curp ||!dependencias ||!telefono ||!email ||!skype ||!fb ||!Calle ||!NoExt ||!NoInt ||!Colonia ||!Ciudad ||!Estado ||!CP) {
-    res.status(400).send("Tienes que llenar todos los datos, retrasado");
+    res.status(400).send("Tienes que llenar todos los datos");
     return;
   }
 
