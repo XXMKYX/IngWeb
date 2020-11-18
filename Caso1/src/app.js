@@ -8,7 +8,9 @@ const app = express();//Ejecutar framework
 app.set('port', process.env.PORT || 5000); //Configuracion del puerto
 app.set('views', path.resolve(__dirname, 'views')); //Concatenando las views
 app.set('view engine', 'ejs'); //Motor de plantillas <%EJS%>
-
+//Lectura de CSS IMG
+app.use("/css",express.static(__dirname + "/css"));
+app.use("/img",express.static(__dirname + "/img"));
 // Middlewares
 app.use(logger('dev')); //Funciones de Ejecucion antes de llegar a la ruta
 app.use(express.urlencoded({extended: false})); //Interpreta datos a  JSON 
