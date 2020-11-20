@@ -10,6 +10,7 @@ app.set('views', path.resolve(__dirname, 'views')); //Concatenando las views
 app.set('view engine', 'ejs'); //Motor de plantillas <%EJS%>
 //Lectura de CSS IMG
 app.use("/css",express.static(__dirname + "/css"));
+app.use("/js",express.static(__dirname + "/js"));
 app.use("/img",express.static(__dirname + "/img"));
 // Middlewares
 app.use(logger('dev')); //Funciones de Ejecucion antes de llegar a la ruta
