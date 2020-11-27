@@ -13,29 +13,10 @@
 
     <main class="contenedor seccion"> 
                 <!-- MENU -->
-   
+                <%- include('elements/menu') %>  
         <!-- FORMULARIO PERSONAL -->
         <div class="grid centrar-columnas forma">
-        <%- include('elements/personal') %>  
-        </div>
-        <%- include('elements/save') %>  
-        <!-- FORMULARIO MAESTRIA -->
-            <div class="grid centrar-columnas forma">
-                <%- include('elements/maestria') %>
-            </div>
-        <!-- FORMULARIO DOCTORADO -->   
-            <div class="grid centrar-columnas forma">
-                <%- include('elements/doctorado') %>            
-            </div> 
-        </div>
-
-        <!-- Recupera info del Array -->
-        <% preg.forEach(function(preg){ %>
-            <div class="datos">
-                <p><%= preg.nombre %></p>
-                <p><%= preg.curp %></p>
-            </div>
-        <% }) %>
+        
 
     </main>    
 </body>
