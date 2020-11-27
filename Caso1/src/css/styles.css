@@ -169,7 +169,7 @@ h4 {
     background-image: url(../img/ipnycigata.jpg);
     background-position: center center;
     background-size: cover;
-    height: 60rem;
+    height: 40rem;
     min-height: 30rem;
 }
 
@@ -220,7 +220,7 @@ h4 {
 /* Texto en el header*/
 
 .texto-header {
-    padding: 11rem 0;
+    padding: 0rem 0;
     color: white;
     text-align: center;
     margin-top: 2rem;

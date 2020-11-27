@@ -1,14 +1,22 @@
 <form class="contacto columnas-10 " action="../src/js/valdiacionesForma.js" onsubmit="validateForm(2)" id="formaD" style="display: none;">
     <fieldset>
-        <legend>DATOS ACADÉMICOS de DOCTORADO</legend>
+        <legend>Informacion General </legend>
         <div class="grid-dos-columnas">
             <label for="InstitucionM">Institución de tus estudios profesionales</label>
-            <label for="pinstitucionM">País la institución</label>
-            <input type="text" id="InstitucionM" placeholder="Institución">
+            <label for="pinstitucionM">País de la institución</label>
+            <input type="text" id="InstitucionM" placeholder="Institución de Licenciatura">
+            <input type="text" id="pinstitucionM" placeholder="País">
+        </div>
+      
+        
+        <div class="grid-dos-columnas">
+            <label for="InstitucionM">Institución de tus estudios de posgrado</label>
+            <label for="pinstitucionM">País de la institución</label>
+            <input type="text" id="InstitucionM" placeholder="Institución de maestria">
             <input type="text" id="pinstitucionM" placeholder="País">
         </div>
 
-        <label for="Institucion">¿Estás titulado?</label>
+        <label for="Institucion">¿Estás titulado de tu ultimo grado de estudios?</label>
 
         <div class="alinear-centro">
             <label for="rsitituladoM">Sí</label>
@@ -48,7 +56,7 @@
         
         <div class="grid-dos-columnas">
             <label for="foto" class="inputFileLabel">Click para anexar Fotografía (PDF)</label>
-            <label for="ine" class="inputFileLabel">Click para anexar identificación oficial (PDF)</label>
+            <label for="ine" class="inputFileLabel">Click para anexar muestra escrita de investigacion (PDF)</label>
             <input type="file" style="display: none;" name="archivosubido" id="foto" accept="application/pdf">                                
             <input type="file" style="display: none;" name="archivosubido" id="ine" accept="application/pdf">
         </div>
