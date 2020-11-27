@@ -129,7 +129,7 @@ h4 {
     font-weight: 700;
     text-decoration: none;
     font-size: 1.8rem;
-    padding: 1rem 3rem;
+    /*padding: 1rem 3rem;*/
     margin-top: 3rem;
     display: inline-block;
     text-align: center;
@@ -327,8 +327,8 @@ h4 {
     padding: 6px 12px;
     border: 1px solid #ccc;
     border-top: none;
+    background-color: rgba(128, 36, 52, 1);
   }
-  
 /* Contacto */
 
 .tipo-forma{
@@ -338,7 +338,7 @@ h4 {
 }
 
 .contacto {
-    background-color: rgba(128, 36, 52, 1);
+    background-color: white;
     padding: 5rem;
 }
 
@@ -378,14 +378,14 @@ h4 {
 
 legend {
     font-size: 2rem;
-    color: white;
+    color: black;
 }
 
 label {
     display: block;
     font-weight: 700;
     text-transform: uppercase;
-    color: white;
+    color: black;
 }
 
 input:not([type="submit"]),
@@ -423,7 +423,7 @@ textarea {
     border-style: solid;
     border-width: .1rem;
     text-align: center;
-    border-color: white;
+    border-color: black;
     transition: ease-in-out 1s ;
 }
 
