@@ -2,139 +2,18 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solicitud CICATA</title>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
-    <!--
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <script src="js/funciones.js"></script>
-    <script src="js/valdiacionesForma.js"></script>-->
-    <script src="../js/valdiacionesForma.js"></script>
-    <link rel="stylesheet" href="../css/normalize.css">
-    <link rel='stylesheet' href='../css/styles.css' />  
+    <%- include('elements/header') %>
 </head>
 
 <body>
-    <header class="site-header inicio">
-        <div class="contenedor">
-            <div class="barra">
-                <a href="/">
-                    <p class="no-margin fw-600">IPN</span>
-                    </p>
-                </a>
-                <a href="/">
-                    <p class="no-margin fw-600">CICATA</span>
-                    </p>
-                </a>
-            </div>
 
-            <div class="texto-header">
-                <!-- Contenedor -->
-                <h1 class="fw-600 centrar-texto">Solicitud de Admisión al Departamento del Posgrado de Física Educativa
-                </h1>
-                <p>Proceso de Ingreso al Semestre A-2021</p>
-            </div>
+    <header class="site-header inicio">
+        <%- include('elements/banner') %>
     </header>
 
-    
+    <main class="contenedor seccion"> 
 
-    <main class="contenedor seccion">
-
-        <div class="header-contacto centrar-texto">
-            <h2 class="no-margin">
-                Contacto
-            </h2>
-            <h4 class="no-margin">Centro de Investigación en Ciencia Aplicada y Teconología Avanzada</h4>
-            <h4 class="no-margin">Unidad Legaria</h4>
-        </div>
-
-        
-
-        <div class="grid centrar-columnas forma">
-
-            <form method="POST" class="contacto columnas-10 " action="/personal_data" onsubmit="validateForm(1)" id="formaP">
-                <fieldset>
-                    <legend>DATOS PERSONALES</legend>
-
-                    <label for="nombre">NOMBRE(S)*</label>
-                    <!--<input type="text" id="nombre" placeholder="Nombre(s)">-->
-                    <input name="nombre" type="text" class="form-control" placeholder="Nombre(s)" autofocus required>
-                    <div class="grid-dos-columnas">
-                        <label for="apaterno">Apellido Paterno*</label>
-                        <label for="amaterno">Apellido Materno*</label>
-
-                        <input type="text" name="apaterno" placeholder="Apellido Paterno">
-                        <input type="text" name="amaterno" placeholder="Apellido Materno">
-
-                        <label for="fecha">FECHA DE NACIMIENTO*</label>
-                        <label for="lugar">LUGAR DE NACIMIENTO*</label>
-                        <input type="date" name="fecha" placeholder="Fecha">
-                        <input type="text" name="lugar" placeholder="Lugar">
-
-                        <label for="nacionalidad">NACIONALIDAD*</label>
-                        <label for="civil">ESTADO CIVIL*</label>
-                        <input type="text" name="nacionalidad" placeholder="Nacionalidad">
-                        <input type="text" name="civil" placeholder="Estado Civil">
-
-                        <label for="curp">CURP*</label>
-                        <label for="dependencias">DEPENDENCIAS*</label>
-                        <input type="text" name="curp" oninput="validarInput(this)" placeholder="CURP">
-                        <input type="number" name="dependencias" placeholder="No. de dependencias" min="0">
-                        <pre name="resultado" style="color: white;"></pre>
-                    </div>
-                </fieldset>
-                <fieldset>
-                    <legend>DATOS DE CONTACTO</legend>
-                    <div class="grid-dos-columnas">
-                        <label for="telefono">TELÉFONO CELULAR*</label>
-                        <label for="email">E-mail*</label>
-                        <input type="tel" name="telefono" placeholder="Número">
-                        <input type="email" name="email" placeholder="Tu correo electrónico" >
-
-                        <label for="skype">CUENTA SKYPE</label>
-                        <label for="fb">Cuenta de FB (Link)</label>
-                        <input type="text" name="skype" placeholder="Skype (opcional)">
-                        <input type="text" name="fb" placeholder="Link a tu Facebook (opcional)">
-                    </div>
-                </fieldset>
-                <fieldset>
-                    <legend>DOMICILIO</legend>
-                    <div class="domicilio-calle-num">
-                        <!--<label for="Calle">Calle</label>-->
-                        <input type="text" name="Calle" placeholder="Calle*">
-                        <!--<label for="NoExt">No. Ext</label>-->
-                        <input type="text" name="NoExt" placeholder="No exterior*">
-                        <!--<label for="NoInt">No. Int</label>-->
-                        <input type="text" name="NoInt" placeholder="No interior">
-                    </div>
-                    <div class="grid-dos-columnas">
-                        <!--<label for="Colonia">Colonia</label>-->
-                        <input type="text" name="Colonia" placeholder="Colonia*">
-                        <!--<label for="Ciudad">Ciudad</label>-->
-                        <input type="text" name="Ciudad" placeholder="Ciudad*">
-                        <!--<label for="Estado">Estado</label>-->
-                        <input type="text" name="Estado" placeholder="Estado*">
-                        <!--<label for="CP">CP</label>-->
-                        <input type="text" name="CP" placeholder="CP*">
-
-                    </div>
-                </fieldset>
-                    <div class="grid-dos-columnas">
-                        <input type="button" value="Guardar" class="boton boton-amarillo"> 
-                        <input type="button" value="Siguiente" class="boton boton-verde">    
-                    </div>
-            </form> 
-        </div>
-        <!-- Recupera info del Array -->
-        <% preg.forEach(function(preg){ %>
-            <div class="datos">
-                <p><%= preg.nombre %></p>
-                <p><%= preg.curp %></p>
-            </div>
-        <% }) %>
-
+        <!-- MENU -->
         <div class="tipo-forma contenedor">
             <label for="tipoForma"></label>
             <select id="tipoForma" onchange="cambiarForma(this)">
@@ -143,126 +22,29 @@
             <option value="2">Doctorado</option>
             </select>
         </div>
+        <!-- FORMULARIO PERSONAL -->
+        <div class="grid centrar-columnas forma">
+        <%- include('elements/personal') %>  
+        </div>
+        <%- include('elements/save') %>  
+        <!-- FORMULARIO MAESTRIA -->
             <div class="grid centrar-columnas forma">
-
-                <form class="contacto columnas-10 " action="../src/js/valdiacionesForma.js" onsubmit="validateForm(1)" id="formaM" style="display: none;">
-                    <fieldset>
-                        <legend>DATOS ACADÉMICOS de MAESTRÍA</legend>
-                        <div class="grid-dos-columnas">
-                            <label for="InstitucionM">Institución de tus estudios profesionales</label>
-                            <label for="pinstitucionM">País la institución</label>
-                            <input type="text" id="InstitucionM" placeholder="Institución">
-                            <input type="text" id="pinstitucionM" placeholder="País">
-                        </div>
-
-                        <label for="Institucion">¿Estás titulado?</label>
-
-                        <div class="alinear-centro">
-                            <label for="rsitituladoM">Sí</label>
-                            <input type="radio" name="titulado" value="rsi" id="rsitituladoM">
-                            <label for="rnotituladoM">No</label>
-                            <input type="radio" name="titulado" value="rno" id="rnotituladoM">
-                        </div>
-
-
-                        <label for="xpPM">Experiencia Profesional:</label>
-                        <textarea id="xpPM"></textarea required>
-                            
-                        <label for="xpDM">Experiencia Docente:</label>
-                        <textarea id="xpDM"></textarea required>
-                        
-                        <label>¿Has asistido a los cursos propedéuticos de este Departamento anteriormente?</label>
-        
-                        <div class="alinear-centro">
-                            <label for="rsipropM">Si</label>
-                            <input type="radio" name="propedeutico" value="rsi"  id="rsipropM">
-                            <label for="rnopropM">No</label>
-                            <input type="radio" name="propedeutico" value="rno" id="rnopropM">
-                        </div> 
-                        <label for="aniospropM">¿En qué año(s)?</label>
-                        <input type="number" id="aniospropM" placeholder="Año(s) Propedeuticos">
-                
-                        <label for="motivoM">Motivo por el cuál desea ingresar al Posgrado y a qué línea de investigación desea integrarse</label>
-                        <textarea id="motivoM"></textarea>
-                            
-        
-                    </fieldset>
-
-                    <fieldset>
-                        <legend>ANEXO</legend>
-                        <label for="fechaAplicacionM">Fecha</label>
-                        <input type="date" id="fechaAplicacionaM">
-                        
-                        <div class="grid-dos-columnas">
-                            <label for="foto" class="inputFileLabel">Click para anexar Fotografía (PDF)</label>
-                            <label for="ine" class="inputFileLabel">Click para anexar identificación oficial (PDF)</label>
-                            <input type="file" style="display: none;" name="archivosubido" id="foto" accept="application/pdf">                                
-                            <input type="file" style="display: none;" name="archivosubido" id="ine" accept="application/pdf">
-                        </div>
-                    </fieldset>
-                </form>
+                <%- include('elements/maestria') %>
             </div>
-            
+        <!-- FORMULARIO DOCTORADO -->   
             <div class="grid centrar-columnas forma">
-
-                <form class="contacto columnas-10 " action="../src/js/valdiacionesForma.js" onsubmit="validateForm(2)" id="formaD" style="display: none;">
-                    <fieldset>
-                        <legend>DATOS ACADÉMICOS de DOCTORADO</legend>
-                        <div class="grid-dos-columnas">
-                            <label for="InstitucionM">Institución de tus estudios profesionales</label>
-                            <label for="pinstitucionM">País la institución</label>
-                            <input type="text" id="InstitucionM" placeholder="Institución">
-                            <input type="text" id="pinstitucionM" placeholder="País">
-                        </div>
-
-                        <label for="Institucion">¿Estás titulado?</label>
-
-                        <div class="alinear-centro">
-                            <label for="rsitituladoM">Sí</label>
-                            <input type="radio" name="titulado" value="rsi" id="rsitituladoM">
-                            <label for="rnotituladoM">No</label>
-                            <input type="radio" name="titulado" value="rno" id="rnotituladoM">
-                        </div>
-
-
-                        <label for="xpPM">Experiencia Profesional:</label>
-                        <textarea id="xpPM"></textarea required>
-                            
-                        <label for="xpDM">Experiencia Docente:</label>
-                        <textarea id="xpDM"></textarea required>
-                        
-                        <label>¿Has asistido a los cursos propedéuticos de este Departamento anteriormente?</label>
-        
-                        <div class="alinear-centro">
-                            <label for="rsipropM">Si</label>
-                            <input type="radio" name="propedeutico" value="rsi"  id="rsipropM">
-                            <label for="rnopropM">No</label>
-                            <input type="radio" name="propedeutico" value="rno" id="rnopropM">
-                        </div> 
-                        <label for="aniospropM">¿En qué año(s)?</label>
-                        <input type="number" id="aniospropM" placeholder="Año(s) Propedeuticos">
-                
-                        <label for="motivoM">Motivo por el cuál desea ingresar al Posgrado y a qué línea de investigación desea integrarse</label>
-                        <textarea id="motivoM"></textarea>
-                            
-        
-                    </fieldset>
-
-                    <fieldset>
-                        <legend>ANEXO</legend>
-                        <label for="fechaAplicacionM">Fecha</label>
-                        <input type="date" id="fechaAplicacionaM">
-                        
-                        <div class="grid-dos-columnas">
-                            <label for="foto" class="inputFileLabel">Click para anexar Fotografía (PDF)</label>
-                            <label for="ine" class="inputFileLabel">Click para anexar identificación oficial (PDF)</label>
-                            <input type="file" style="display: none;" name="archivosubido" id="foto" accept="application/pdf">                                
-                            <input type="file" style="display: none;" name="archivosubido" id="ine" accept="application/pdf">
-                        </div>
-                    </fieldset>
-                </form>
+                <%- include('elements/doctorado') %>            
             </div> 
         </div>
+
+        <!-- Recupera info del Array -->
+        <% preg.forEach(function(preg){ %>
+            <div class="datos">
+                <p><%= preg.nombre %></p>
+                <p><%= preg.curp %></p>
+            </div>
+        <% }) %>
+
     </main>    
 </body>
 

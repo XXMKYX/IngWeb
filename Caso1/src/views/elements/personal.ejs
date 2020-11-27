@@ -1,0 +1,68 @@
+<form method="POST" class="contacto columnas-10 " action="/personal_data" onsubmit="validateForm(1)" id="formaP">
+    <fieldset>
+        <legend>DATOS PERSONALES</legend>
+
+        <label for="nombre">NOMBRE(S)*</label>
+        <!--<input type="text" id="nombre" placeholder="Nombre(s)">-->
+        <input name="nombre" type="text" class="form-control" placeholder="Nombre(s)" autofocus required>
+        <div class="grid-dos-columnas">
+            <label for="apaterno">Apellido Paterno*</label>
+            <label for="amaterno">Apellido Materno*</label>
+
+            <input type="text" name="apaterno" placeholder="Apellido Paterno">
+            <input type="text" name="amaterno" placeholder="Apellido Materno">
+
+            <label for="fecha">FECHA DE NACIMIENTO*</label>
+            <label for="lugar">LUGAR DE NACIMIENTO*</label>
+            <input type="date" name="fecha" placeholder="Fecha">
+            <input type="text" name="lugar" placeholder="Lugar">
+
+            <label for="nacionalidad">NACIONALIDAD*</label>
+            <label for="civil">ESTADO CIVIL*</label>
+            <input type="text" name="nacionalidad" placeholder="Nacionalidad">
+            <input type="text" name="civil" placeholder="Estado Civil">
+
+            <label for="curp">CURP*</label>
+            <label for="dependencias">DEPENDENCIAS*</label>
+            <input type="text" name="curp" oninput="validarInput(this)" placeholder="CURP">
+            <input type="number" name="dependencias" placeholder="No. de dependencias" min="0">
+            <pre name="resultado" style="color: white;"></pre>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>DATOS DE CONTACTO</legend>
+        <div class="grid-dos-columnas">
+            <label for="telefono">TELÉFONO CELULAR*</label>
+            <label for="email">E-mail*</label>
+            <input type="tel" name="telefono" placeholder="Número">
+            <input type="email" name="email" placeholder="Tu correo electrónico" >
+
+            <label for="skype">CUENTA SKYPE</label>
+            <label for="fb">Cuenta de FB (Link)</label>
+            <input type="text" name="skype" placeholder="Skype (opcional)">
+            <input type="text" name="fb" placeholder="Link a tu Facebook (opcional)">
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>DOMICILIO</legend>
+        <div class="domicilio-calle-num">
+            <!--<label for="Calle">Calle</label>-->
+            <input type="text" name="Calle" placeholder="Calle*">
+            <!--<label for="NoExt">No. Ext</label>-->
+            <input type="text" name="NoExt" placeholder="No exterior*">
+            <!--<label for="NoInt">No. Int</label>-->
+            <input type="text" name="NoInt" placeholder="No interior">
+        </div>
+        <div class="grid-dos-columnas">
+            <!--<label for="Colonia">Colonia</label>-->
+            <input type="text" name="Colonia" placeholder="Colonia*">
+            <!--<label for="Ciudad">Ciudad</label>-->
+            <input type="text" name="Ciudad" placeholder="Ciudad*">
+            <!--<label for="Estado">Estado</label>-->
+            <input type="text" name="Estado" placeholder="Estado*">
+            <!--<label for="CP">CP</label>-->
+            <input type="text" name="CP" placeholder="CP*">
+
+        </div>
+    </fieldset>
+</form> 
