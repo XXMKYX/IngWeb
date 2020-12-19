@@ -4,17 +4,17 @@
         <div class="grid-dos-columnas">
             <label for="InstitucionM">Institución de tus estudios profesionales</label>
             <label for="pinstitucionM">País la institución</label>
-            <input type="text" id="InstitucionM" placeholder="Institución">
-            <input type="text" id="pinstitucionM" placeholder="País">
+            <input type="text" id="InstitucionM" placeholder="Institución" required>
+            <input type="text" id="pinstitucionM" placeholder="País" required>
         </div>
 
         <label for="Institucion">¿Estás titulado?</label>
 
         <div class="alinear-centro">
             <label for="rsitituladoM">Sí</label>
-            <input type="radio" name="titulado" value="rsi" id="rsitituladoM">
+            <input type="radio" name="titulado" value="rsi" id="rsitituladoM" required>
             <label for="rnotituladoM">No</label>
-            <input type="radio" name="titulado" value="rno" id="rnotituladoM">
+            <input type="radio" name="titulado" value="rno" id="rnotituladoM" required>
         </div>
 
 
@@ -28,9 +28,9 @@
 
         <div class="alinear-centro">
             <label for="rsipropM">Si</label>
-            <input type="radio" name="propedeutico" value="rsi"  id="rsipropM">
+            <input type="radio" name="propedeutico" value="rsi"  id="rsipropM" required>
             <label for="rnopropM">No</label>
-            <input type="radio" name="propedeutico" value="rno" id="rnopropM">
+            <input type="radio" name="propedeutico" value="rno" id="rnopropM" required>
         </div> 
         <label for="aniospropM">¿En qué año(s)?</label>
         <input type="number" id="aniospropM" placeholder="Año(s) Propedeuticos">
@@ -43,14 +43,16 @@
 
     <fieldset>
         <legend>ANEXO</legend>
+        <!--
         <label for="fechaAplicacionM">Fecha</label>
         <input type="date" id="fechaAplicacionaM">
+        -->
         
         <div class="grid-dos-columnas">
             <label for="foto" class="inputFileLabel">Click para anexar Fotografía (PDF)</label>
             <label for="ine" class="inputFileLabel">Click para anexar identificación oficial (PDF)</label>
-            <input type="file" style="display: none;" name="archivosubido" id="foto" accept="application/pdf">                                
-            <input type="file" style="display: none;" name="archivosubido" id="ine" accept="application/pdf">
+            <input type="file" style="display: none;" name="archivosubido" id="foto" accept="application/pdf" required>                                
+            <input type="file" style="display: none;" name="archivosubido" id="ine" accept="application/pdf" required>
         </div>
     </fieldset>
 
