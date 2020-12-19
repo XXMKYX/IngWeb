@@ -8,7 +8,7 @@ const fs = require('fs');//Modulo de lectura .json
 
 /* Guardando datos en Array .JS*/
 const preg = []; //Arreglo para guardar datos
-
+const master = [];
 //const preregistro = fs.readFileSync('src/preregistro.json', 'utf-8');
 //let preg = JSON.parse(preregistro); 
 
@@ -72,4 +72,43 @@ router.post('/personal_data',(req,res)=>{
 
   res.send('Datos obtenidos');
 })
+
+// MAESTRIA
+
+//render formulario
+router.get('/master_data',(req,res)=>{
+  res.render('master_data');
+})
+//Obtiene datos formulario
+router.post('/master_data',(req,res)=>{
+  console.log(req.body);
+
+const { InstitucionM, pinstitucionM, titulado, xpPM, xpDM, propedeutico, aniospropM, motivoM, archivosubido} = req.body;
+/* Validacion */
+  if (!InstitucionM  ||!pinstitucionM  ||!titulado  ||!xpPM ||!xpDM ||!propedeutico ||!aniospropM ||!motivoM ||!archivosubido) {
+    res.status(400).send("Tienes que llenar todos los datos");
+    return;
+  }
+
+  let newmaster = {
+    InstitucionM,
+    pinstitucionM,
+    titulado,
+    xpPM,
+    xpDM,
+    propedeutico,
+    aniospropM,
+    motivoM,
+    archivosubido
+  };
+  // agregando al array
+  master.push(newmaster);
+  
+  // agregando al archivo
+  const json_master = JSON.stringify(master) //Convierte la lista a string
+  fs.writeFileSync('src/master.json', json_master, 'utf-8') //Guarda string en formato utf-8
+
+  res.send('Datos obtenidos');
+})
+
   module.exports = router;

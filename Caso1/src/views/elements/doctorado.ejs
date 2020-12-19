@@ -1,47 +1,47 @@
-<form class="contacto columnas-10 " action="../src/js/valdiacionesForma.js" onsubmit="validateForm(2)" id="formaD" style="display: none;">
+<form method="POST"  class="contacto columnas-10 " action="../doc_data" onsubmit="validateForm(2)" id="formaD" style="display: none;">
     <fieldset>
         <legend>Informacion General </legend>
         <div class="grid-dos-columnas">
             <label for="InstitucionD">Institución de tus estudios profesionales</label>
             <label for="pinstitucionD">País de la institución</label>
-            <input type="text" id="InstitucionD" placeholder="Institución de Licenciatura" required>
-            <input type="text" id="pinstitucionD" placeholder="País">
+            <input type="text" name="InstitucionD" placeholder="Institución de Licenciatura" required>
+            <input type="text" name="pinstitucionD" placeholder="País">
         </div>
       
         
         <div class="grid-dos-columnas">
             <label for="InstitucionD">Institución de tus estudios de posgrado</label>
             <label for="pinstitucionD">País de la institución</label>
-            <input type="text" id="InstitucionD" placeholder="Institución de maestria" required>
-            <input type="text" id="pinstitucionD" placeholder="País" required> 
+            <input type="text" name="InstitucionD" placeholder="Institución de maestria" required>
+            <input type="text" name="pinstitucionD" placeholder="País" required> 
         </div>
 
         <label for="Institucion">¿Estás titulado de tu ultimo grado de estudios?</label>
 
         <div class="alinear-centro">
             <label for="rsitituladoD">Sí</label>
-            <input type="radio" name="titulado" value="rsi" id="rsitituladoD" required>
+            <input type="radio" name="titulado" value="si" id="rsitituladoD" required>
             <label for="rnotituladoD">No</label>
-            <input type="radio" name="titulado" value="rno" id="rnotituladoD" required>
+            <input type="radio" name="titulado" value="no" id="rnotituladoD" required>
         </div>
 
 
         <label for="xpPM">Experiencia Profesional:</label>
-        <textarea id="xpPM"></textarea required>
+        <textarea name="xpPM"></textarea required>
             
         <label for="xpDM">Experiencia Docente:</label>
-        <textarea id="xpDM"></textarea required>
+        <textarea name="xpDM"></textarea required>
         
         <label>¿Has asistido a los cursos propedéuticos de este Departamento anteriormente?</label>
 
         <div class="alinear-centro">
             <label for="rsipropD">Si</label>
-            <input type="radio" name="propedeutico" value="rsi"  id="rsipropD" required>
+            <input type="radio" name="propedeutico" value="si"  id="rsipropD" required>
             <label for="rnopropD">No</label>
-            <input type="radio" name="propedeutico" value="rno" id="rnopropD" required>
+            <input type="radio" name="propedeutico" value="no" id="rnopropD" required>
         </div> 
         <label for="aniospropD">¿En qué año(s)?</label>
-        <input type="number" id="aniospropD" placeholder="Año(s) Propedeuticos" required>
+        <input type="number" name="aniospropD" placeholder="Año(s) Propedeuticos" required>
 
         <label for="motivoD">Motivo por el cuál desea ingresar al Posgrado y a qué línea de investigación desea integrarse</label>
         <textarea id="motivoD"></textarea required>
@@ -52,7 +52,7 @@
     <fieldset>
         <legend>ANEXO</legend>
         <label for="fechaAplicacionM">Fecha</label>
-        <input type="date" id="fechaAplicacionaM">
+        <input type="date" name="fechaAplicacionaM">
         
         <div class="grid-dos-columnas">
             <label for="foto" class="inputFileLabel">Click para anexar Fotografía (PDF)</label>
