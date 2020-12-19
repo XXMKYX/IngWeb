@@ -1,1 +1,24 @@
-[{"InstitucionM":"IPN","pinstitucionM":"Mexico","titulado":"si","xpPM":"si","xpDM":"si","propedeutico":"si","aniospropM":"4","motivoM":"si","archivosubido":["ElizondoHerrera_MiguelAngel_Tarea_TD.pdf","PRACTICA_I.pdf"]}]
+[
+    {
+        "nombre": "Miguel Angel",
+        "apaterno": "Elizondo",
+        "amaterno": "Herrera",
+        "fecha": "1999-05-29",
+        "lugar": "Izcalli",
+        "nacionalidad": "Mexicano",
+        "civil": "Solito",
+        "curp": "EIHM990529HMCLRG04",
+        "dependencias": "1",
+        "telefono": "5548249100",
+        "email": "mikael.angelo.txt@gmail.com",
+        "skype": "Miky",
+        "fb": "https://www.facebook.com/Miky.MiguelAngelEH/",
+        "Calle": "convento",
+        "NoExt": "3",
+        "NoInt": "11",
+        "Colonia": "El trebol",
+        "Ciudad": "Tepotzotlan",
+        "Estado": "Mexico",
+        "CP": "54614"
+    }
+]

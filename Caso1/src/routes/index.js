@@ -9,6 +9,7 @@ const fs = require('fs');//Modulo de lectura .json
 /* Guardando datos en Array .JS*/
 const preg = []; //Arreglo para guardar datos
 const master = [];
+const doc = [];
 //const preregistro = fs.readFileSync('src/preregistro.json', 'utf-8');
 //let preg = JSON.parse(preregistro); 
 
@@ -107,6 +108,47 @@ const { InstitucionM, pinstitucionM, titulado, xpPM, xpDM, propedeutico, aniospr
   // agregando al archivo
   const json_master = JSON.stringify(master) //Convierte la lista a string
   fs.writeFileSync('src/master.json', json_master, 'utf-8') //Guarda string en formato utf-8
+
+  res.send('Datos obtenidos');
+})
+
+// DOCTORADO
+
+//render formulario
+router.get('/doc_data',(req,res)=>{
+  res.render('doc_data');
+})
+//Obtiene datos formulario
+router.post('/doc_data',(req,res)=>{
+  console.log(req.body);
+
+  const { InstitucionD, pinstitucionD, InstitucionD2, pinstitucionD2, titulado, xpPM, xpDM, propedeutico, aniospropD, motivoD, fechaAplicacionaM, archivosubido} = req.body;
+  /* Validacion */
+    if (!InstitucionD  ||!pinstitucionD  ||!InstitucionD2  ||!pinstitucionD2 ||!titulado ||!xpPM ||!xpDM ||!propedeutico ||!aniospropD ||!motivoD ||!fechaAplicacionaM ||!archivosubido) {
+      res.status(400).send("Tienes que llenar todos los datos");
+      return;
+    }
+  
+    let newdoc = {
+      InstitucionD,
+      pinstitucionD,
+      InstitucionD2,
+      pinstitucionD2,
+      titulado,
+      xpPM,
+      xpDM,
+      propedeutico,
+      aniospropD,
+      motivoD,
+      fechaAplicacionaM,
+      archivosubido
+    };
+  // agregando al array
+  doc.push(newdoc);
+  
+  // agregando al archivo
+  const json_doc = JSON.stringify(doc) //Convierte la lista a string
+  fs.writeFileSync('src/doc.json', json_doc, 'utf-8') //Guarda string en formato utf-8
 
   res.send('Datos obtenidos');
 })

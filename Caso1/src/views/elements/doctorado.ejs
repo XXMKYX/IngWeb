@@ -1,4 +1,4 @@
-<form method="POST"  class="contacto columnas-10 " action="../doc_data" onsubmit="validateForm(2)" id="formaD" style="display: none;">
+<form method="POST"  class="contacto columnas-10 " action="/doc_data" onsubmit="validateForm(2)" id="formaD" style="display: none;">
     <fieldset>
         <legend>Informacion General </legend>
         <div class="grid-dos-columnas">
@@ -51,14 +51,15 @@
 
     <fieldset>
         <legend>ANEXO</legend>
+        <!--
         <label for="fechaAplicacionM">Fecha</label>
-        <input type="date" name="fechaAplicacionaM">
-        
+        <input type="date" id="fechaAplicacionaM">
+        -->
         <div class="grid-dos-columnas">
             <label for="foto" class="inputFileLabel">Click para anexar Fotografía (PDF)</label>
             <label for="ine" class="inputFileLabel">Click para anexar muestra escrita de investigacion (PDF)</label>
-            <input type="file" style="display: none;" name="archivosubido" id="foto" accept="application/pdf">                                
-            <input type="file" style="display: none;" name="archivosubido" id="ine" accept="application/pdf">
+            <input type="file" style="display: none;" name="archivosubido" id="foto" accept="application/pdf" required>                                
+            <input type="file" style="display: none;" name="archivosubido" id="ine" accept="application/pdf" required>
         </div>
     </fieldset>
 
