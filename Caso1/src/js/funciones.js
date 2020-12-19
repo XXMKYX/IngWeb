@@ -24,15 +24,15 @@ function curpValida(curp) {
 
 //Validacion Final
 function validarInput(input) {
+    
     var curp = input.value.toUpperCase(),
-        resultado = document.getElementById("resultado"),
+        resultado = document.getElementById("resultado");
         valido = "No válido";
-
     if (curpValida(curp)) {
         valido = "Válido";
-        resultado.classList.add("ok");
+        //resultado.classList.add("ok");
     } else {
-        resultado.classList.remove("ok");
+        //resultado.classList.remove("ok");
     }
     resultado.innerText = "CURP, Formato: " + valido;
 }
