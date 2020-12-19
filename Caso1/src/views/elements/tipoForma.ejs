@@ -1,17 +1,18 @@
-<form method="POST" class="contacto columnas-10" id="formaT" style="display: inline;">
+
     <div class="alinear-centro">
         <!-- <label for="tipoForma"></label> -->
-       <input type="radio" name="academicoradio" value="1" onchange="cambiarForma(this)">Maestría</option>
-       <input type="radio" name="academicoradio"value="2" onchange="cambiarForma(this)">Doctorado</option>
+        <label for="tipoFormaM">Maestria</label>                        
+        <input type="radio" id="tipoFormaM" name="tipoFormaradio" value="1" onclick="cambiarForma(1)"></option>
+        <label for="tipoFormaD">Doctorado</label>
+        <input type="radio" id="tipoFormaD" name="tipoFormaradio" value="2" onclick="cambiarForma(2)"></option>
     </div>   
-</form>
 
-
-<!-- FORMULARIO MAESTRIA -->
-<div class="grid centrar-columnas forma">
-    <%- include('maestria') %>
-</div>
-<!-- FORMULARIO DOCTORADO -->   
-<div class="grid centrar-columnas forma">
-    <%- include('doctorado') %>       
-</div> 
+    <!-- FORMULARIO MAESTRIA -->
+    <div class="grid centrar-columnas forma">
+        <%- include('maestria') %>
+    </div>
+    <!-- FORMULARIO DOCTORADO -->   
+    <div class="grid centrar-columnas forma">
+        doctorado
+        <%- include('doctorado') %>       
+    </div> 

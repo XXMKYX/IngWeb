@@ -1,0 +1,108 @@
+<div class="grid centrar-columnas forma"></div>
+
+            
+            <div class="alinear-centro">
+                <!-- <label for="tipoForma"></label> -->
+                <label for="tipoFormaM">Maestria</label>                        
+            <input type="radio" id="tipoFormaM" name="academicoradio" onclick value="1"></option>
+            <label for="tipoFormaD">No</label>
+            <input type="radio" id="tipoFormaD" name="academicoradio"value="2"></option>
+            </div>   
+        
+    
+    
+        <!-- FORMULARIO MAESTRIA -->
+        <div class="grid centrar-columnas forma">
+            <%- include('maestria') %>
+        </div>
+        <!-- FORMULARIO DOCTORADO -->   
+        <div class="grid centrar-columnas forma">
+            <%- include('doctorado') %>       
+        </div> 
+    </div>
+
+
+
+<form method="POST" class="contacto columnas-10 " action="../master_data" onsubmit="validateForm(1)" id="formaM" style="display: block;">
+    <fieldset>
+        <legend>DATOS ACADÉMICOS de MAESTRÍA</legend>
+        <div class="grid-dos-columnas">
+            <label for="InstitucionM">Institución de tus estudios profesionales</label>
+            <label for="pinstitucionM">País la institución</label>
+            <input type="text" name="InstitucionM" placeholder="Institución" required>
+            <input type="text" name="pinstitucionM" placeholder="País" required>
+        </div>
+
+        <label for="Institucion">¿Estás titulado?</label>
+
+        <div class="alinear-centro">
+            <label for="rsitituladoM">Sí</label>
+            <input type="radio" name="titulado" value="si" id="rsitituladoM" required>
+            <label for="rnotituladoM">No</label>
+            <input type="radio" name="titulado" value="no" id="rnotituladoM" required>
+        </div>
+
+
+        <label for="xpPM">Experiencia Profesional:</label>
+        <textarea name="xpPM"></textarea required>
+            
+        <label for="xpDM">Experiencia Docente:</label>
+        <textarea name="xpDM"></textarea required>
+        
+        <label>¿Has asistido a los cursos propedéuticos de este Departamento anteriormente?</label>
+
+        <div class="alinear-centro">
+            <label for="rsipropM">Si</label>
+            <input type="radio" name="propedeutico" value="si"  id="rsipropM" required>
+            <label for="rnopropM">No</label>
+            <input type="radio" name="propedeutico" value="no" id="rnopropM" required>
+        </div> 
+        <label for="aniospropM">¿En qué año(s)?</label>
+        <input type="number" name="aniospropM" placeholder="Año(s) Propedeuticos">
+
+        <label for="motivoM">Motivo por el cuál desea ingresar al Posgrado y a qué línea de investigación desea integrarse</label>
+        <textarea name="motivoM"></textarea>
+            
+
+    </fieldset>
+
+    <fieldset>
+        <legend>ANEXO</legend>
+        <!--
+        <label for="fechaAplicacionM">Fecha</label>
+        <input type="date" id="fechaAplicacionaM">
+        -->
+        
+        <div class="grid-dos-columnas">
+            <label for="foto" class="inputFileLabel">Click para anexar Fotografía (PDF)</label>
+            <label for="ine" class="inputFileLabel">Click para anexar identificación oficial (PDF)</label>
+            <input type="file" style="display: none;" name="archivosubido" id="foto" accept="application/pdf" required>                                
+            <input type="file" style="display: none;" name="archivosubido" id="ine" accept="application/pdf" required>
+        </div>
+    </fieldset>
+
+    <div class="grid-dos-columnas">
+        <input type="submit" value="Guardar" class="boton boton-amarillo">
+        <input type="submit" value="Finalizar" class="boton boton-verde"> 
+    </div>
+    
+</form>
+
+
+<div class="grid-dos-columnas"  id="formaMaestria" style="display: none;">
+            <label for="Institucion">¿Estás titulado?</label>
+            <label for="Institucion">¿En qué carrera?</label>
+            <div class="alinear-centro" >
+                
+                <label for="rsitituladoM">Sí</label>
+                <input type="radio" name="titulado" value="si" id="rsitituladoM" required>
+                <label for="rnotituladoM">No</label>
+                <input type="radio" name="titulado" value="no" id="rnotituladoM" required>
+            </div>
+
+            
+            
+            <div class="alinear-centro">                
+                <input type="text" name="carrera" placeholder="Carrera" required>
+            </div>
+        </div>
