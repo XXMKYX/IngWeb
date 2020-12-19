@@ -329,12 +329,14 @@ h4 {
     border-top: none;
     background-color: rgba(128, 36, 52, 1);
   }
+
 /* Contacto */
 
 .tipo-forma{
-    max-width: 20rem;
-    padding: 1rem;
-    text-align-last:center; 
+
+    padding: 2rem;
+    text-align: center; 
+    color: white;
 }
 
 .contacto {

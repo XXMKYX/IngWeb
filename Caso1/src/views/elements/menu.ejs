@@ -1,34 +1,25 @@
 <!-- Tab links -->
 <div class="tab">
-    <button class="tablinks" onclick="changeTab(event, 'tabDatosPersonales')">Datos Personales</button>
-    <button class="tablinks" onclick="changeTab(event, 'tabDatosAcademicos')">Datos Académicos</button>
+    <button class="tablinks2" onclick="changeTab2(event, 'tabDatosPersonales')">Datos Personales</button>
+    <button class="tablinks2" onclick="changeTab2(event, 'tabDatosAcademicos')">Datos Académicos</button>
   </div>
   
-  <!-- Tab content -->
-  <div id="tabDatosPersonales" class="tabcontent">
-     <!-- FORMULARIO PERSONAL -->
-     <div class="grid centrar-columnas forma">
-        <%- include('personal') %> 
-    </div>   
-  </div>
-  
-  <div id="tabDatosAcademicos" class="tabcontent">
-       <!-- MENU -->
-       <div class="tipo-forma contenedor">
-        <label for="tipoForma"></label>
-        <select id="tipoForma" onchange="cambiarForma(this)">
-        <option value="0">Seleccione forma</option>
-        <option value="1">Maestría</option>
-        <option value="2">Doctorado</option>
-        </select>
-    </div>
 
-    <!-- FORMULARIO MAESTRIA -->
+<!-- Tab content -->
+<div id="tabDatosPersonales" class="tabcontent2">
+    <!-- FORMULARIO PERSONAL -->
     <div class="grid centrar-columnas forma">
-        <%- include('maestria') %>
-    <!-- FORMULARIO DOCTORADO -->   
-        <div class="grid centrar-columnas forma">
-            <%- include('doctorado') %>       
-        </div> 
-    </div>
+       <%- include('personal') %> 
+   </div>   
 </div>
+ 
+ <div id="tabDatosAcademicos" class="tabcontent2">
+    <div class="grid centrar-columnas forma">
+        <%- include('tipoForma') %> 
+    </div>   
+   <!-- MENU -->
+  
+</div>
+
+
+
