@@ -1,4 +1,4 @@
-function changeTab(evt, cityName) {
+function changeTab(evt, Tabame) {
 // Declare all variables
 var i, tabcontent, tablinks;
 
@@ -15,14 +15,18 @@ for (i = 0; i < tablinks.length; i++) {
 }
 
 // Show the current tab, and add an "active" class to the button that opened the tab
-document.getElementById(cityName).style.display = "block";
+document.getElementById(Tabame).style.display = "block";
 evt.currentTarget.className += " active";
 }
 
-function changeTab2(evt, cityName) {
+function changeTab2(evt, Tabame) {
     // Declare all variables
     var i, tabcontent, tablinks;
     
+    if(Tabame == 'tabDatosAcademicos'){
+        var forma3 = document.getElementById("formaM");
+        forma3.style.display = "block";
+    }
     // Get all elements with class="tabcontent" and hide them
     tabcontent = document.getElementsByClassName("tabcontent2");
     for (i = 0; i < tabcontent.length; i++) {
@@ -36,9 +40,18 @@ function changeTab2(evt, cityName) {
     }
     
     // Show the current tab, and add an "active" class to the button that opened the tab
-    document.getElementById(cityName).style.display = "block";
+    document.getElementById(Tabame).style.display = "block";
     evt.currentTarget.className += " active";
     }
+
+
+    
+var radios = document.forms["formaT"].elements["tipoFormaradio"];
+    for(var i = 0, max = radios.length; i < max; i++) {
+    radios[i].onclick = function() {
+        alert(this.value);
+    }
+}
 
   
 function cambiarForma(input) {

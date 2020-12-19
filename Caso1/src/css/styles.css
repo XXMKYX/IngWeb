@@ -82,6 +82,12 @@ h4 {
     grid-column-gap: 2rem;
 }
 
+.grid-cuatro-columnas {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 2rem;
+}
+
 
 /* Alinear al centro a lo alto*/
 
@@ -344,12 +350,22 @@ h4 {
     padding: 5rem;
 }
 
+.contacto2 {
+    background-color: white;
+    padding: 3rem;
+}
+
 @media (min-width: 768px) {
     .contacto {
         margin-top: 1rem;
     }
 }
 
+input[type="radio"] {
+    margin-top: -1px;
+    vertical-align: middle;
+  }
+  
 .forma{
     margin: 2rem 0;
 }
@@ -433,4 +449,45 @@ textarea {
     cursor: pointer;
     background-color: rgb(99, 0, 21);
     color: white;
+}
+
+/* Vista global de solicitudes */
+.listaSolicitudes {
+    display: inline-block;
+    color: white;
+    padding: .5rem 1 rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.listaSolicitudes{
+    list-style: none;
+    margin-top: 40px;
+    padding: 0;
+    text-align: center;
+}
+.listaSolicitudes p{
+    font-size: 1.4rem;
+    line-height: 1rem;
+    color: wheat;
+}
+
+.listaSolicitudes span{
+    font-weight: bold;
+    color: white;
+}
+.listaSolicitudes li{
+    text-decoration: none;
+}
+
+input[type="button"]{
+    padding: 1rem;
+}
+
+@media (min-width: 768px) {
+    .listaSolicitudes {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 2rem;        
+    }
 }
