@@ -1,8 +1,19 @@
 var handler = function(input) {
-    
-        alert(input.value);
-    
-
+    var formaMaestria = document.getElementById('formaMaestria');
+    var formaDoctorado = document.getElementById('formaDoctorado');
+    var valor = input.value;
+    //1 si es Maestría, 2 si es Doctorado
+    if(valor == 1){
+        formaMaestria.style.display = "block";
+        formaDoctorado.style.display = "none";
+    }else if(valor == 2){
+        formaMaestria.style.display = "none";
+        formaDoctorado.style.display = "block";
+    }
+    else{
+        formaMaestria.style.display = "none";
+        formaDoctorado.style.display = "none";
+    }
 };
 
 function changeTab(evt, Tabame) {
@@ -29,10 +40,13 @@ evt.currentTarget.className += " active";
 function changeTab2(evt, Tabame) {
     // Declare all variables
     var i, tabcontent, tablinks;
-    
+    var forma3 = document.getElementById("formaM");
     if(Tabame == 'tabDatosAcademicos'){
-        var forma3 = document.getElementById("formaM");
+        
         forma3.style.display = "block";
+    }
+    else{
+        forma3.style.display = "none";
     }
     // Get all elements with class="tabcontent" and hide them
     tabcontent = document.getElementsByClassName("tabcontent2");
