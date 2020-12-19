@@ -87,3 +87,22 @@
     </div>
     
 </form>
+
+
+<div class="grid-dos-columnas"  id="formaMaestria" style="display: none;">
+            <label for="Institucion">¿Estás titulado?</label>
+            <label for="Institucion">¿En qué carrera?</label>
+            <div class="alinear-centro" >
+                
+                <label for="rsitituladoM">Sí</label>
+                <input type="radio" name="titulado" value="si" id="rsitituladoM" required>
+                <label for="rnotituladoM">No</label>
+                <input type="radio" name="titulado" value="no" id="rnotituladoM" required>
+            </div>
+
+            
+            
+            <div class="alinear-centro">                
+                <input type="text" name="carrera" placeholder="Carrera" required>
+            </div>
+        </div>
