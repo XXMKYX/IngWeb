@@ -1,18 +1,26 @@
 var handler = function(input) {
     var formaMaestria = document.getElementById('formaMaestria');
     var formaDoctorado = document.getElementById('formaDoctorado');
+    var archivosMaestria = document.getElementById('archivosMaestria');
+    var archivosDoctorado = document.getElementById('archivosDoctorado');
     var valor = input.value;
     //1 si es Maestría, 2 si es Doctorado
     if(valor == 1){
         formaMaestria.style.display = "block";
+        archivosMaestria.style.display = "block";
         formaDoctorado.style.display = "none";
+        archivosDoctorado.style.display = "none";
     }else if(valor == 2){
         formaMaestria.style.display = "none";
-        formaDoctorado.style.display = "block";
+        archivosMaestria.style.display = "none";
+        formaDoctorado.style.display = "block";        
+        archivosDoctorado.style.display = "grid";
     }
     else{
         formaMaestria.style.display = "none";
+        archivosMaestria.style.display = "none";
         formaDoctorado.style.display = "none";
+        archivosDoctorado.style.display = "none";
     }
 };
 

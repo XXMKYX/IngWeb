@@ -15,25 +15,23 @@
             <label for="rTipoFormaM">Maestría</label>
             <input type="radio" name="tipoForma" id="rTipoFormaM" onclick="handler(this)" value="1">
             <label for="rTipoFormaD">Doctorado</label>
-            <input type="radio" name="tipoForma" id="rTipoFormaD" value="2">
+            <input type="radio" name="tipoForma" id="rTipoFormaD" onclick="handler(this)" value="2">
         </div> 
 
-        <div class="grid-dos-columnas"  id="formaMaestria" style="display: none;"></div>
-            
-           
-                <div class="alinear-centro">
-                <label for="Institucion">¿Estás titulado?</label>
-                <label for="rsitituladoM">Sí</label>
-                <input type="radio" name="titulado" value="si" id="rsitituladoM" required>
+        <div class=""  id="formaMaestria" style="display: none;">
+            <label for="titulacionMaestria">¿Estás titulado?</label>
+            <div class="alinear-centro"  id="titulacionMaestria">
+                
+                <label for="rsitituladoM">Sí</label>                
+                <input type="radio" name="titulado" value="si" id="rsitituladoM" required>                
                 <label for="rnotituladoM">No</label>
-                <label for="Institucion">¿En qué carrera?</label>
                 <input type="radio" name="titulado" value="no" id="rnotituladoM" required>
             </div>
-            
-            <div class="alinear-centro">
-                
+
+            <div class="grid-dos-columnas">
+                <label for="Institucion">¿En qué carrera?</label>
                 <input type="text" name="carrera" placeholder="Carrera" required>
-            </div>
+            </div>                            
         </div>
 
         <div class="" id="formaDoctorado" style="display: none;">
