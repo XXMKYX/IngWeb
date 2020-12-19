@@ -1,3 +1,4 @@
+
 <form method="POST" class="contacto columnas-10 "  onclick="handler(this)" action="../master_data" onsubmit="validateForm(1)" id="formaM" style="display: none;">
     <fieldset>
         <legend>DATOS ACADÉMICOS</legend>
@@ -8,15 +9,16 @@
             <input type="text" name="pinstitucionM" placeholder="País" required>
         </div>
 
+               
         <label for="tipoFormaradio">¿Quieres aplicar para maestría o doctorado?</label>
         <div class="alinear-centro" id="tipoFormaradio">
             
             <label for="rTipoFormaM">Maestría</label>
-            <input type="radio" name="tipoForma"id="rTipoFormaM"  value="1" >
+            <input type="radio" name="tipoForma" id="rTipoFormaM" onclick="handler(this)" value="1">
             <label for="rTipoFormaD">Doctorado</label>
-            <input type="radio" name="tipoForma" id="rTipoFormaD"  value="2">
-        </div>        
-        
+            <input type="radio" name="tipoForma" id="rTipoFormaD" value="2">
+        </div> 
+
         <div class="grid-dos-columnas"  id="formaMaestria" style="display: none;">
             <label for="Institucion">¿Estás titulado?</label>
             <label for="Institucion">¿En qué carrera?</label>

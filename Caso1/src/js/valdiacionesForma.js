@@ -1,8 +1,7 @@
 var handler = function(input) {
-    if(document.getElementByID('rTipoFormaM').checked)
-    {
-        alert(input.className);
-    }
+    
+        alert(input.value);
+    
 
 };
 
