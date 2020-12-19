@@ -11,14 +11,29 @@
         <%- include('elements/banner') %>
     </header>
 
-    <main class="contenedor seccion"> 
-                <!-- MENU -->
-                <%- include('elements/menu-global') %>  
-        <!-- FORMULARIO PERSONAL -->
-        <div class="grid centrar-columnas forma">
-        
+    <main class="contenedor seccion">
+        <!-- MENU -->
+        <%- include('elements/menu-global') %>
+            <!-- FORMULARIO PERSONAL -->
+            <div class="grid centrar-columnas forma">
 
-    </main>    
+
+    </main>
 </body>
+
+<footer>
+    <p>HUEBOS</p>
+    <% preg.forEach(function(pre){ %>
+        <div class="datos">
+            <p>x2</p>
+            <p>
+                <%= pre.nombre %>
+            </p>
+            <p>
+                <%= pre.curp %>
+            </p>
+        </div>
+        <% }) %>
+</footer>
 
 </html>
