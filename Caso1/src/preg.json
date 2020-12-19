@@ -1,1 +1,24 @@
-[{"nombre":"Miguel Angel","apaterno":"Elizondo","amaterno":"Herrera","fecha":"2020-11-05","lugar":"Tepotzotlan","nacionalidad":"asdf","civil":"México","curp":"EIHM990529HMCLRG04","dependencias":"5","telefono":"+525548249100","email":"mikael.angelo.txt@gmail.com","skype":"asdf","fb":"facebook/ElMiki.com","Calle":"Convento","NoExt":"11","NoInt":"6","Colonia":"El Trebol","Ciudad":"asf","Estado":"México","CP":"54614"}]
+[
+    {
+        "nombre": "Miguel Angel",
+        "apaterno": "Herrera",
+        "amaterno": "Herrera",
+        "fecha": "2020-12-15",
+        "lugar": "Tepotzotlan",
+        "nacionalidad": "solito",
+        "civil": "México",
+        "curp": "EIHM990529HMCLRG04",
+        "dependencias": "4",
+        "telefono": "+525548249100",
+        "email": "mikael.angelo.txt@gmail.com",
+        "skype": "El Miki",
+        "fb": "asdf",
+        "Calle": "Convento",
+        "NoExt": "5",
+        "NoInt": "6",
+        "Colonia": "El Trebol",
+        "Ciudad": "asf",
+        "Estado": "México",
+        "CP": "54614"
+    }
+]
