@@ -4,7 +4,7 @@ const fs = require('fs');//Modulo de lectura .json
 
 const json_preg = fs.readFileSync('src/preg.json','utf-8')//Lee el JSON
 
-//const preg = JSON.parse(json_preg)//Inicializando .JSON pasando a JSON
+const preg = JSON.parse(json_preg)//Inicializando .JSON pasando a JSON
 
 //const json_master = fs.readFileSync('src/master.json','utf-8')//Lee el JSON
 
@@ -15,7 +15,7 @@ const json_preg = fs.readFileSync('src/preg.json','utf-8')//Lee el JSON
 //const doc = JSON.parse(json_doc)//Inicializando .JSON pasando a JSON
 
 /* Guardando datos en Array .JS*/
-const preg = []; //Arreglo para guardar datos
+//const preg = []; //Arreglo para guardar datos
 //const master = [];
 //const doc = [];
 //const preregistro = fs.readFileSync('src/preregistro.json', 'utf-8');
