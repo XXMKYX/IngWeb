@@ -90,9 +90,9 @@ router.get('/master_data',(req,res)=>{
 router.post('/master_data',(req,res)=>{
   console.log(req.body);
 
-const { InstitucionM, pinstitucionM, titulado, xpPM, xpDM, propedeutico, aniospropM, motivoM, archivosubido} = req.body;
+const { Institucion, pinstitucion, tituladoMaestria,carreraM, xpP, xpD, propedeutico, aniosprop, motivo,archivosubido1M} = req.body;
 /* Validacion */
-  if (!InstitucionM  ||!pinstitucionM  ||!titulado  ||!xpPM ||!xpDM ||!propedeutico ||!aniospropM ||!motivoM ||!archivosubido) {
+  if (!Institucion  ||!pinstitucion  ||!tituladoMaestria  ||!carreraM ||!xpP ||!xpD ||!propedeutico ||!aniosprop ||!motivo||!archivosubido1M) {
     res.status(400).send("Tienes que llenar todos los datos");
     return;
   }
@@ -128,9 +128,9 @@ router.get('/doc_data',(req,res)=>{
 router.post('/doc_data',(req,res)=>{
   console.log(req.body);
 
-  const { InstitucionD, pinstitucionD, InstitucionD2, pinstitucionD2, titulado, xpPM, xpDM, propedeutico, aniospropD, motivoD, fechaAplicacionaM, archivosubido} = req.body;
+  const { Institucion, pinstitucion, InstitucionD, pinstitucionD,InstitucionPosgradoD,pInstitucionPosgradoD, tituladoDoctorado, xpP, xpD, propedeutico, aniosprop, motivo, archivosubido1D, archivosubido2D} = req.body;
   /* Validacion */
-    if (!InstitucionD  ||!pinstitucionD  ||!InstitucionD2  ||!pinstitucionD2 ||!titulado ||!xpPM ||!xpDM ||!propedeutico ||!aniospropD ||!motivoD ||!fechaAplicacionaM ||!archivosubido) {
+    if (!Institucion  ||!pinstitucion  ||!InstitucionD  ||!pinstitucionD ||!InstitucionPosgradoD ||!pInstitucionPosgradoD ||!tituladoDoctorado ||!xpP ||!xpD ||!propedeutico ||!aniosprop ||!motivo||!archivosubido1D ||!archivosubido2D) {
       res.status(400).send("Tienes que llenar todos los datos");
       return;
     }
