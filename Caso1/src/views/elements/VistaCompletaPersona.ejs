@@ -1,0 +1,73 @@
+
+    <fieldset>
+        <legend>DATOS PERSONALES</legend>
+        <% preg.forEach(function(pre){ %>
+        <label for="nombre">NOMBRE(S)*</label>
+        <!--<input type="text" id="nombre" placeholder="Nombre(s)">-->
+        <p><%= pre.nombre %></p>
+        
+        <div class="grid-dos-columnas">
+            <label for="apaterno">Apellido Paterno*</label>
+            <label for="amaterno">Apellido Materno*</label>
+
+            <p><%= pre.apaterno %></p>
+            <p><%= pre.amaterno %></p>
+
+            <label for="fecha">FECHA DE NACIMIENTO*</label>
+            <label for="lugar">LUGAR DE NACIMIENTO*</label>
+            <p><%= pre.fecha %></p>
+            <p><%= pre.lugar %></p>
+
+            <label for="nacionalidad">NACIONALIDAD*</label>
+            <label for="civil">ESTADO CIVIL*</label>
+            <input type="text" name="nacionalidad" placeholder="Nacionalidad" required>
+            <input type="text" name="civil" placeholder="Estado Civil" required>
+
+            <label for="curp">CURP*</label>
+            <label for="dependencias">DEPENDENCIAS*</label>
+            <input type="text" name="curp" oninput="validarInput(this)" placeholder="CURP" required>
+            <input type="number" name="dependencias" placeholder="No. de dependencias" min="0" required>
+            <pre id="resultado" style="color: black;"></pre>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>DATOS DE CONTACTO</legend>
+        <div class="grid-dos-columnas">
+            <label for="telefono">TELÉFONO CELULAR*</label>
+            <label for="email">E-mail*</label>
+            <input type="tel" name="telefono" placeholder="Número" required>
+            <input type="email" name="email" placeholder="Tu correo electrónico" required>
+
+            <label for="skype">CUENTA SKYPE</label>
+            <label for="fb">Cuenta de FB (Link)</label>
+            <input type="text" name="skype" placeholder="Skype (opcional)" required>
+            <input type="text" name="fb" placeholder="Link a tu Facebook (opcional)" required>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>DOMICILIO</legend>
+        <div class="domicilio-calle-num">
+            <!--<label for="Calle">Calle</label>-->
+            <input type="text" name="Calle" placeholder="Calle*" required>
+            <!--<label for="NoExt">No. Ext</label>-->
+            <input type="text" name="NoExt" placeholder="No exterior*" required>
+            <!--<label for="NoInt">No. Int</label>-->
+            <input type="text" name="NoInt" placeholder="No interior" required>
+        </div>
+        <div class="grid-dos-columnas">
+            <!--<label for="Colonia">Colonia</label>-->
+            <input type="text" name="Colonia" placeholder="Colonia*" required>
+            <!--<label for="Ciudad">Ciudad</label>-->
+            <input type="text" name="Ciudad" placeholder="Ciudad*" required>
+            <!--<label for="Estado">Estado</label>-->
+            <input type="text" name="Estado" placeholder="Estado*" required>
+            <!--<label for="CP">CP</label>-->
+            <input type="text" name="CP" placeholder="CP*" required>
+
+        </div>
+        <% }) %>
+    </fieldset>
+    <div class="grid-dos-columnas">
+        <input type="submit" value="Guardar" class="boton boton-amarillo">
+    </div>    
+    <legend>*datos obligatorios</legend>

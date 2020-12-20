@@ -2,21 +2,31 @@ const {Router}=require('express');
 const router = Router();
 const fs = require('fs');//Modulo de lectura .json
 
-const json_preg = fs.readFileSync('src/preg.json','utf-8')//Lee el JSON
 
+//EN CASO DE ERROR. COMENTAR
+const json_preg = fs.readFileSync('src/preg.json','utf-8')//Lee el JSON
+//EN CASO DE ERROR. COMENTAR
 const preg = JSON.parse(json_preg)//Inicializando .JSON pasando a JSON
 
+//MASTER
 //const json_master = fs.readFileSync('src/master.json','utf-8')//Lee el JSON
 
 //const master = JSON.parse(json_master)//Inicializando .JSON pasando a JSON
 
+
+//DOCTORADO
 //const json_doc = fs.readFileSync('src/doc.json','utf-8')//Lee el JSON
 
 //const doc = JSON.parse(json_doc)//Inicializando .JSON pasando a JSON
 
 /* Guardando datos en Array .JS*/
+
+
+//EN CASO DE ERROR. DESCOMENTAR
 //const preg = []; //Arreglo para guardar datos
-//const master = [];
+
+
+const master = [];
 //const doc = [];
 //const preregistro = fs.readFileSync('src/preregistro.json', 'utf-8');
 
