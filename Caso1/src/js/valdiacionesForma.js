@@ -3,6 +3,7 @@ var handler = function(input) {
     var formaDoctorado = document.getElementById('formaDoctorado');
     var archivosMaestria = document.getElementById('archivosMaestria');
     var archivosDoctorado = document.getElementById('archivosDoctorado');
+    var Forma = document.getElementById('formaM');
     var valor = input.value;
     //1 si es Maestría, 2 si es Doctorado
     if(valor == 1){
@@ -10,17 +11,21 @@ var handler = function(input) {
         archivosMaestria.style.display = "block";
         formaDoctorado.style.display = "none";
         archivosDoctorado.style.display = "none";
+        Forma.action = "../master_data";
+        alert('Se cambió el tipo de formulario');
     }else if(valor == 2){
         formaMaestria.style.display = "none";
         archivosMaestria.style.display = "none";
         formaDoctorado.style.display = "block";        
         archivosDoctorado.style.display = "grid";
+        Forma.action = "../doc_data";
     }
     else{
         formaMaestria.style.display = "none";
         archivosMaestria.style.display = "none";
         formaDoctorado.style.display = "none";
         archivosDoctorado.style.display = "none";
+        Forma.action = "../nothing_data";
     }
 };
 
