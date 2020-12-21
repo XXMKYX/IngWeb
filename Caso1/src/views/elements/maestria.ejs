@@ -2,30 +2,19 @@
     <fieldset>
         <legend>DATOS ACADÉMICOS</legend>
         <div class="grid-dos-columnas">
-            <label for="Institucion">Institución de tus estudios profesionales</label>
-            <label for="pinstitucion">País la institución</label>
-            <input type="text" name="Institucion" placeholder="Institución" required>
-            <input type="text" name="pinstitucion" placeholder="País" required>
+            <label for="InstitucionM">Institución de tus estudios profesionales</label>
+            <label for="pinstitucionM">País la institución</label>
+            <input type="text" name="InstitucionM" placeholder="Institución" required>
+            <input type="text" name="pinstitucionM" placeholder="País" required>
         </div>
-
-               
-        <label for="tipoFormaradio">¿Quieres aplicar para maestría o doctorado?</label>
-        <div class="alinear-centro" id="tipoFormaradio">
-            
-            <label for="rTipoFormaM">Maestría</label>
-            <input type="radio" name="tipoForma" id="rTipoFormaM" onclick="handler(this)" value="1">
-            <label for="rTipoFormaD">Doctorado</label>
-            <input type="radio" name="tipoForma" id="rTipoFormaD" onclick="handler(this)" value="2">
-        </div> 
-
-        <div class=""  id="formaMaestria" style="display: none;">
-            <label for="titulacionMaestria">¿Estás titulado?</label>
+        <div class=""  id="formaMaestria1">
+            <label for="titulacionMaestriaM">¿Estás titulado?</label>
             <div class="alinear-centro"  id="titulacionMaestria">
                 
                 <label for="rsitituladoM">Sí</label>                
-                <input type="radio" name="tituladoMaestria" value="si" id="rsitituladoM" required>                
+                <input type="radio" name="tituladoMaestriaM" value="si" id="rsitituladoM" required>                
                 <label for="rnotituladoM">No</label>
-                <input type="radio" name="tituladoMaestria" value="no" id="rnotituladoM" required>
+                <input type="radio" name="tituladoMaestriaM" value="no" id="rnotituladoM" required>
             </div>
 
             <div class="grid-dos-columnas">
@@ -34,52 +23,28 @@
             </div>                            
         </div>
 
-        <div class="" id="formaDoctorado" style="display: none;">
-            <div class="grid-dos-columnas">
-                <label for="InstitucionD">Institución de tus estudios de la maestria</label>
-                <label for="pinstitucionD">País de la institución</label>
-                <input type="text" name="InstitucionD" placeholder="Institución de maestría" required>
-                <input type="text" name="pinstitucionD" placeholder="País">
-            </div>
         
-            
-            <div class="grid-dos-columnas">
-                <label for="InstitucionPosgradoD">Institución de tus estudios de posgrado</label>
-                <label for="pInstitucionPosgradoD">País de la institución</label>
-                <input type="text" name="InstitucionPosgradoD" placeholder="Institución de posgrado" required>
-                <input type="text" name="pInstitucionPosgradoD" placeholder="País" required> 
-            </div>
-
-            <label for="tituladoDoctorado">¿Estás titulado de tu ultimo grado de estudios?</label>
-
-            <div class="alinear-centro">
-                <label for="rsitituladoD">Sí</label>
-                <input type="radio" name="tituladoDoctorado" value="si" id="rsitituladoD" required>
-                <label for="rnotituladoD">No</label>
-                <input type="radio" name="tituladoDoctorado" value="no" id="rnotituladoD" required>
-            </div>
-        </div>
         
 
-        <label for="xpP">Experiencia Profesional:</label>
-        <textarea name="xpP"></textarea required>
+        <label for="xpPM">Experiencia Profesional:</label>
+        <textarea name="xpPM"></textarea required>
             
-        <label for="xpD">Experiencia Docente:</label>
-        <textarea name="xpD"></textarea required>
+        <label for="xpDM">Experiencia Docente:</label>
+        <textarea name="xpDM"></textarea required>
         
         <label>¿Has asistido a los cursos propedéuticos de este Departamento?</label>
 
         <div class="alinear-centro">
             <label for="rsiprop">Si</label>
-            <input type="radio" name="propedeutico" value="si"  id="rsiprop" required>
+            <input type="radio" name="propedeuticoM" value="si"  id="rsiprop" required>
             <label for="rnoprop">No</label>
-            <input type="radio" name="propedeutico" value="no" id="rnoprop" required>
+            <input type="radio" name="propedeuticoM" value="no" id="rnoprop" required>
         </div> 
-        <label for="aniosprop">¿En qué año(s)?</label>
-        <input type="text" name="aniosprop" placeholder="Año(s) Propedeuticos">
+        <label for="aniospropM">¿En qué año(s)?</label>
+        <input type="text" name="aniospropM" placeholder="Año(s) Propedeuticos">
 
-        <label for="motivo">Motivo por el cuál desea ingresar al Posgrado y a qué línea de investigación desea integrarse</label>
-        <textarea name="motivo"></textarea>
+        <label for="motivoM">Motivo por el cuál desea ingresar al Posgrado y a qué línea de investigación desea integrarse</label>
+        <textarea name="motivoM"></textarea>
             
 
     </fieldset>
@@ -91,15 +56,9 @@
         <input type="date" id="fechaAplicacionaM">
         -->
         
-        <div class="grid-dos-columnas" id="archivosMaestria" style="display: none;">
+        <div class="grid-dos-columnas" id="archivosMaestria">
             <label for="archivosubido1M" class="inputFileLabel">Click para anexar CV con Fotografía (PDF)</label>
             <input type="file" style="display: none;" name="archivosubido1M" id="archivosubido1M" accept="application/pdf" required>                                    
-        </div>
-        <div class="grid-dos-columnas" id="archivosDoctorado" style="display: none;">
-            <label for="archivosubido1D" class="inputFileLabel">Click para anexar CV con Fotografía (PDF)</label>
-            <label for="archivosubido2D" class="inputFileLabel">Muestra escrita de trabajo de investigación previo (capítulo de tesis, artículo de investigación, ponencia en extenso de congreso, etc.). (PDF)</label>
-            <input type="file" style="display: none;" name="archivosubido1D" id="archivosubido1D" accept="application/pdf" required>                                
-            <input type="file" style="display: none;" name="archivosubido2D" id="archivosubido2D" accept="application/pdf" required>
         </div>
     </fieldset>
 

@@ -7,25 +7,24 @@ var handler = function(input) {
     var valor = input.value;
     //1 si es Maestría, 2 si es Doctorado
     if(valor == 1){
-        formaMaestria.style.display = "block";
-        archivosMaestria.style.display = "block";
+        formaMaestria.style.display = "block";        
+        //archivosMaestria.style.display = "block";
         formaDoctorado.style.display = "none";
-        archivosDoctorado.style.display = "none";
-        Forma.action = "../master_data";
-        alert('Se cambió el tipo de formulario');
+        //archivosDoctorado.style.display = "none";
+        //Forma.action = "../master_data";
     }else if(valor == 2){
         formaMaestria.style.display = "none";
-        archivosMaestria.style.display = "none";
+        //archivosMaestria.style.display = "none";
         formaDoctorado.style.display = "block";        
         archivosDoctorado.style.display = "grid";
-        Forma.action = "../doc_data";
+        //Forma.action = "../doc_data";
     }
     else{
-        formaMaestria.style.display = "none";
-        archivosMaestria.style.display = "none";
-        formaDoctorado.style.display = "none";
-        archivosDoctorado.style.display = "none";
-        Forma.action = "../nothing_data";
+        //formaMaestria.style.display = "none";
+        //archivosMaestria.style.display = "none";
+        //formaDoctorado.style.display = "none";
+        //archivosDoctorado.style.display = "none";
+        //Forma.action = "../nothing_data";
     }
 };
 
@@ -39,6 +38,11 @@ for (i = 0; i < tabcontent.length; i++) {
     tabcontent[i].style.display = "none";
 }
 
+if(Tabame == 'tabVerMiSolicitud'){
+
+    var prevmisolicitud = document.getElementById('prev-mi-solicitud');
+    prevmisolicitud.style.display = "block";
+}
 // Get all elements with class="tablinks" and remove the class "active"
 tablinks = document.getElementsByClassName("tablinks");
 for (i = 0; i < tablinks.length; i++) {
@@ -61,6 +65,7 @@ function changeTab2(evt, Tabame) {
     else{
         forma3.style.display = "none";
     }
+    
     // Get all elements with class="tabcontent" and hide them
     tabcontent = document.getElementsByClassName("tabcontent2");
     for (i = 0; i < tabcontent.length; i++) {
@@ -86,4 +91,40 @@ function agregrarCampos(input) {
 
 function validateForm(input){
     
+}
+
+function visualizar(input){
+    var misolicitud = document.getElementById('vista-mi-solicitud');
+    var prevmisolicitud = document.getElementById('prev-mi-solicitud');
+    if(input.value == 'Visualizar'){
+        misolicitud.style.display = "block";
+        prevmisolicitud.style.display = "none";
+    }
+    else{
+        misolicitud.style.display = "none";
+        prevmisolicitud.style.display = "block";
+    }
+        /*
+    //1 si es Maestría, 2 si es Doctorado
+    if(valor == 1){
+        formaMaestria.style.display = "block";        
+        //archivosMaestria.style.display = "block";
+        formaDoctorado.style.display = "none";
+        //archivosDoctorado.style.display = "none";
+        //Forma.action = "../master_data";
+    }else if(valor == 2){
+        formaMaestria.style.display = "none";
+        //archivosMaestria.style.display = "none";
+        formaDoctorado.style.display = "block";        
+        archivosDoctorado.style.display = "grid";
+        //Forma.action = "../doc_data";
+    }
+    else{
+        //formaMaestria.style.display = "none";
+        //archivosMaestria.style.display = "none";
+        //formaDoctorado.style.display = "none";
+        //archivosDoctorado.style.display = "none";
+        //Forma.action = "../nothing_data";
+    }
+    */
 }

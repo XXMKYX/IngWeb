@@ -9,7 +9,7 @@ const json_preg = fs.readFileSync('src/preg.json','utf-8')//Lee el JSON
 const preg = JSON.parse(json_preg)//Inicializando .JSON pasando a JSON
 
 //MASTER
-//const json_master = fs.readFileSync('src/master.json','utf-8')//Lee el JSON
+const json_master = fs.readFileSync('src/master.json','utf-8')//Lee el JSON
 
 //const master = JSON.parse(json_master)//Inicializando .JSON pasando a JSON
 
@@ -26,7 +26,7 @@ const preg = JSON.parse(json_preg)//Inicializando .JSON pasando a JSON
 //const preg = []; //Arreglo para guardar datos
 
 
-const master = [];
+//const master = [];
 //const doc = [];
 //const preregistro = fs.readFileSync('src/preregistro.json', 'utf-8');
 
@@ -53,7 +53,7 @@ router.post('/personal_data',(req,res)=>{
   const { nombre, apaterno, amaterno, fecha, lugar, nacionalidad, civil, curp, dependencias, telefono, email, skype, fb, Calle, NoExt, NoInt, Colonia, Ciudad, Estado, CP} = req.body;
 /* Validacion */
   if (!nombre || !apaterno || !amaterno || !fecha|| !lugar|| !nacionalidad ||!civil ||!curp ||!dependencias ||!telefono ||!email ||!skype ||!fb ||!Calle ||!NoExt ||!NoInt ||!Colonia ||!Ciudad ||!Estado ||!CP) {
-    res.status(400).send("Tienes que llenar todos los datos");
+    res.status(400).send("Tienes que llenar todos los datos - Personal");
     return;
   }
 
@@ -100,23 +100,23 @@ router.get('/master_data',(req,res)=>{
 router.post('/master_data',(req,res)=>{
   console.log(req.body);
 
-const { Institucion, pinstitucion, tituladoMaestria,carreraM, xpP, xpD, propedeutico, aniosprop, motivo,archivosubido1M} = req.body;
+const { InstitucionM, pinstitucionM, tituladoMaestriaM,carreraM, xpPM, xpDM, propedeuticoM, aniospropM, motivoM,archivosubido1M} = req.body;
 /* Validacion */
-  if (!Institucion  ||!pinstitucion  ||!tituladoMaestria  ||!carreraM ||!xpP ||!xpD ||!propedeutico ||!aniosprop ||!motivo||!archivosubido1M) {
-    res.status(400).send("Tienes que llenar todos los datos");
+  if (!InstitucionM  ||!pinstitucionM  ||!tituladoMaestriaM  ||!carreraM ||!xpPM ||!xpDM ||!propedeuticoM ||!aniospropM ||!motivoM||!archivosubido1M) {
+    res.status(400).send("Tienes que llenar todos los datos - Maestría ");
     return;
   }
 
   let newmaster = {
-    Institucion,
-    pinstitucion,
-    tituladoMaestria,
+    InstitucionM,
+    pinstitucionM,
+    tituladoMaestriaM,
     carreraM,
-    xpP,
-    xpD,
-    propedeutico,
-    aniosprop,
-    motivo,
+    xpPM,
+    xpDM,
+    propedeuticoM,
+    aniospropM,
+    motivoM,
     archivosubido1M
   };
   // agregando al array
@@ -139,26 +139,24 @@ router.get('/doc_data',(req,res)=>{
 router.post('/doc_data',(req,res)=>{
   console.log(req.body);
 
-  const { Institucion, pinstitucion, InstitucionD, pinstitucionD,InstitucionPosgradoD,pInstitucionPosgradoD, tituladoDoctorado, xpP, xpD, propedeutico, aniosprop, motivo, archivosubido1D, archivosubido2D} = req.body;
-  /* Validacion */
-    if (!Institucion  ||!pinstitucion  ||!InstitucionD  ||!pinstitucionD ||!InstitucionPosgradoD ||!pInstitucionPosgradoD ||!tituladoDoctorado ||!xpP ||!xpD ||!propedeutico ||!aniosprop ||!motivo||!archivosubido1D ||!archivosubido2D) {
-      res.status(400).send("Tienes que llenar todos los datos");
+  const { InstitucionD, pinstitucionD,InstitucionPosgradoD,pInstitucionPosgradoD, tituladoDoctoradoD, xpPD, xpDD, propedeuticoD, aniospropD, motivoD, archivosubido1D, archivosubido2D} = req.body;
+   /*Validacion*/
+    if (!InstitucionD  ||!pinstitucionD  ||!InstitucionPosgradoD ||!pInstitucionPosgradoD ||!tituladoDoctoradoD ||!xpPD ||!xpDD ||!propedeuticoD ||!aniospropD ||!motivoD||!archivosubido1D ||!archivosubido2D) {
+      //res.status(400).send("Tienes que llenar todos los datos - Doctorado");
       return;
     }
   
     let newdoc = {
-      Institucion,
-      pinstitucion,
       InstitucionD,
       pinstitucionD,
       InstitucionPosgradoD,
       pInstitucionPosgradoD,
-      tituladoDoctorado,
-      xpP,
-      xpD,
-      propedeutico,
-      aniosprop,
-      motivo,
+      tituladoDoctoradoD,
+      xpPD,
+      xpDD,
+      propedeuticoD,
+      aniospropD,
+      motivoD,
       archivosubido1D,
       archivosubido2D
     };
