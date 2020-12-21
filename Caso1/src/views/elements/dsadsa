@@ -106,3 +106,13 @@
                 <input type="text" name="carrera" placeholder="Carrera" required>
             </div>
         </div>
+
+
+        <label for="tipoFormaradio">¿Quieres aplicar para maestría o doctorado?</label>
+        <div class="alinear-centro" id="tipoFormaradio" style="display: none;">
+            
+            <label for="rTipoFormaM">Maestría</label>
+            <input type="radio" name="tipoForma" id="rTipoFormaM" onclick="handler(this)" value="1">
+            <label for="rTipoFormaD">Doctorado</label>
+            <input type="radio" name="tipoForma" id="rTipoFormaD" onclick="handler(this)" value="2">
+        </div> 

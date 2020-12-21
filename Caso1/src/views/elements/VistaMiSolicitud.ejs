@@ -1,7 +1,7 @@
-<div class="VistaMiSolicitud contenedor">
+<div class="VistaMiSolicitud contenedor" id="prev-mi-solicitud">
 
     <% preg.forEach(function(pre){ %>
-    <div class="MiSolicitud">
+    <div class="MiSolicitud" id="vista/">
         <ul class="ListaMiSolicitud">
             <li class="entrada-solicitud">
                 <span>Tipo de Solicitud</span>
@@ -16,13 +16,18 @@
                 <p name="estadoSolicitud"> Pendiente</p>
             </li> 
             <li class="entrada-solicitud">
-                <input type="button" value="Visualizar" class="boton boton-verde">   
+                <input type="button" value="Visualizar" onclick = "(visualizar(this))" class="boton boton-verde">   
             </li>
                    
         </ul>        
         
     </div>
-    <% }) %>
-
+    <% }) %> 
     
+</div>
+<div class="div-mi-solicitud" id="vista-mi-solicitud" style="display: none;">
+    <%- include('VistaCompletaPersona') %> 
+</div>
+<div class="div-mi-solicitud" id="vista-mi-solicitud" style="display: none;">
+    <%- include('VistaCompletaMaestria') %> 
 </div>
