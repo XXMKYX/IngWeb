@@ -1,4 +1,4 @@
-
+<div class="vista-mi-solicitud">
     <fieldset>
         <legend>DATOS PERSONALES</legend>
         <% preg.forEach(function(pre){ %>
@@ -45,23 +45,23 @@
     </fieldset>
     <fieldset>
         <legend>DOMICILIO</legend>
-        <div class="domicilio-calle-num">
+        <div class="domicilio-calle-num-vista">
             <!--<label for="Calle">Calle</label>-->
-            <p><%= pre.Calle %></p>
+            <p><span>Calle:</span> <%= pre.Calle %></p>
             <!--<label for="NoExt">No. Ext</label>-->
-            <p><%= pre.NoExt %></p>
+            <p><span>No. Ext.:</span><%= pre.NoExt %></p>
             <!--<label for="NoInt">No. Int</label>-->
-            <p><%= pre.NoInt %></p>
+            <p><span>No. Int.:</span><%= pre.NoInt %></p>
         </div>
         <div class="grid-dos-columnas">
             <!--<label for="Colonia">Colonia</label>-->
-            <p><%= pre.Colonia %></p>
+            <p><span>Col. </span><%= pre.Colonia %></p>
             <!--<label for="Ciudad">Ciudad</label>-->
-            <p><%= pre.Ciudad %></p>
+            <p><span>Ciudad. </span><%= pre.Ciudad %></p>
             <!--<label for="Estado">Estado</label>-->
-            <p><%= pre.Estado %></p>
+            <p><span>Estado. </span> <%= pre.Estado %></p>
             <!--<label for="CP">CP</label>-->
-            <p><%= pre.CP %></p>
+            <p><span>CP </span><%= pre.CP %></p>
 
         </div>
         <% }) %>
@@ -69,3 +69,4 @@
     <div class="grid-dos-columnas">
         <input type="submit" value="Guardar" class="boton boton-amarillo">
     </div>    
+</div>

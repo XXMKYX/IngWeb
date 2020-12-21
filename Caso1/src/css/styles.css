@@ -530,3 +530,10 @@ input[type="button"]{
         column-gap: 2rem;        
     }
 }
+
+
+.domicilio-calle-num-vista {
+    display: grid;
+    grid-template-columns: 2fr repeat(2, 1fr);
+    grid-column-gap: 2rem;
+}
