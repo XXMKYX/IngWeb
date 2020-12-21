@@ -1,0 +1,57 @@
+<fieldset>
+    <legend>DATOS ACADÉMICOS</legend>
+    <% doc.forEach(function(pre){ %>
+    <div class="grid-dos-columnas">
+        <label for="Institucion">Institución de tus estudios profesionales</label>
+        <label for="pinstitucion">País la institución</label>
+        <p><%= pre.Institucion %></p>
+        <p><%= pre.pinstitucion %></p>
+    </div>     
+
+    <div class="" id="formaDoctorado" style="display: none;">
+        <div class="grid-dos-columnas">
+            <label for="InstitucionD">Institución de tus estudios de la maestria</label>
+            <label for="pinstitucionD">País de la institución</label>
+            <p><%= pre.InstitucionD %></p>
+            <p><%= pre.pinstitucionD %></p>
+        </div>
+    
+        
+        <div class="grid-dos-columnas">
+            <label for="InstitucionPosgradoD">Institución de tus estudios de posgrado</label>
+            <label for="pInstitucionPosgradoD">País de la institución</label>
+            <p><%= pre.InstitucionPosgradoD %></p>
+            <p><%= pre.pInstitucionPosgradoD %></p>
+        </div>
+
+        <label for="tituladoDoctorado">¿Estás titulado de tu ultimo grado de estudios?</label>
+        <p><%= pre.tituladoDoctorado %></p>        
+    </div>
+    
+    
+
+    <label for="xpP">Experiencia Profesional:</label>
+    <p><%= pre.xpP %></p>
+        
+    <label for="xpD">Experiencia Docente:</label>
+    <p><%= pre.xpD %></p>
+    
+    <label>¿Has asistido a los cursos propedéuticos de este Departamento?</label>
+    <p><%= pre.propedeutico %></p>
+    <label for="aniosprop">¿En qué año(s)?</label>
+    <p><%= pre.aniosprop %></p>
+
+    <label for="motivo">Motivo por el cuál desea ingresar al Posgrado y a qué línea de investigación desea integrarse</label>
+    <p><%= pre.motivo%></p>
+        
+
+</fieldset>
+
+<fieldset>
+    <legend>ANEXO</legend>       
+    <div class="grid-dos-columnas" id="archivosMaestria" style="display: none;">
+        <p><%= pre.archivosubido1D %></p>
+        <p><%= pre.archivosubido2D %></p>
+    </div>
+    <% }) %>
+</fieldset>
