@@ -1,30 +1,24 @@
 var handler = function(input) {
-    var formaMaestria = document.getElementById('formaMaestria');
-    var formaDoctorado = document.getElementById('formaDoctorado');
-    var archivosMaestria = document.getElementById('archivosMaestria');
-    var archivosDoctorado = document.getElementById('archivosDoctorado');
-    var Forma = document.getElementById('formaM');
+    var vformaMaestria = document.getElementById('formaMaestria');
+    var vformaDoctorado = document.getElementById('formaDoctorado');
+   // var archivosMaestria = document.getElementById('archivosMaestria');
+    //var archivosDoctorado = document.getElementById('archivosDoctorado');
+    //var Forma = document.getElementById('formaM');
     var valor = input.value;
+    
     //1 si es Maestría, 2 si es Doctorado
     if(valor == 1){
-        formaMaestria.style.display = "block";        
+        vformaMaestria.style.display = "block";        
         //archivosMaestria.style.display = "block";
-        formaDoctorado.style.display = "none";
+        vformaDoctorado.style.display = "none";
         //archivosDoctorado.style.display = "none";
         //Forma.action = "../master_data";
     }else if(valor == 2){
-        formaMaestria.style.display = "none";
+        vformaMaestria.style.display = "none";
         //archivosMaestria.style.display = "none";
-        formaDoctorado.style.display = "block";        
-        archivosDoctorado.style.display = "grid";
+        vformaDoctorado.style.display = "block";        
+        //archivosDoctorado.style.display = "grid";
         //Forma.action = "../doc_data";
-    }
-    else{
-        //formaMaestria.style.display = "none";
-        //archivosMaestria.style.display = "none";
-        //formaDoctorado.style.display = "none";
-        //archivosDoctorado.style.display = "none";
-        //Forma.action = "../nothing_data";
     }
 };
 
@@ -57,13 +51,13 @@ evt.currentTarget.className += " active";
 function changeTab2(evt, Tabame) {
     // Declare all variables
     var i, tabcontent, tablinks;
-    var forma3 = document.getElementById("formaM");
+    //var forma3 = document.getElementById("formaM");
     if(Tabame == 'tabDatosAcademicos'){
         
-        forma3.style.display = "block";
+      //  forma3.style.display = "block";
     }
     else{
-        forma3.style.display = "none";
+        //forma3.style.display = "none";
     }
     
     // Get all elements with class="tabcontent" and hide them
@@ -89,10 +83,6 @@ function agregrarCampos(input) {
     alert(value);
 }
 
-function validateForm(input){
-    
-}
-
 function visualizar(input){
     var misolicitud = document.getElementById('vista-mi-solicitud');
     var prevmisolicitud = document.getElementById('prev-mi-solicitud');
@@ -104,27 +94,85 @@ function visualizar(input){
         misolicitud.style.display = "none";
         prevmisolicitud.style.display = "block";
     }
-        /*
-    //1 si es Maestría, 2 si es Doctorado
-    if(valor == 1){
-        formaMaestria.style.display = "block";        
-        //archivosMaestria.style.display = "block";
-        formaDoctorado.style.display = "none";
-        //archivosDoctorado.style.display = "none";
-        //Forma.action = "../master_data";
-    }else if(valor == 2){
-        formaMaestria.style.display = "none";
-        //archivosMaestria.style.display = "none";
-        formaDoctorado.style.display = "block";        
-        archivosDoctorado.style.display = "grid";
-        //Forma.action = "../doc_data";
-    }
-    else{
-        //formaMaestria.style.display = "none";
-        //archivosMaestria.style.display = "none";
-        //formaDoctorado.style.display = "none";
-        //archivosDoctorado.style.display = "none";
-        //Forma.action = "../nothing_data";
-    }
-    */
+}
+
+function validarFormaMaestria(input)
+{
+    const fi = document.getElementById('archivosubido1M'); 
+    // Check if any file is selected. 
+    if (fi.files.length > 0) 
+    { 
+        for (const i = 0; i <= fi.files.length - 1; i++) 
+        { 
+  
+             const fsize = fi.files.item(i).size; 
+             const file = Math.round((fsize / 1024)); 
+             // The size of the file. 
+             if (file >= 1024) { 
+                alert("Archivo muy grande"); 
+            }
+            else{
+                document.getElementById("formaM").submit();
+            }
+                /*
+                else if (file < 2048) { 
+                                    alert( 
+                                      "File too small, please select a file greater than 2mb"); 
+                                } else { 
+                                    document.getElementById('size').innerHTML = '<b>'
+                                    + file + '</b> KB'; 
+                                } 
+                */
+        }
+    } 
+}
+
+function validarFormaDoctorado(input)
+{
+    const fi = document.getElementById('archivosubido1D'); 
+    const f2 = document.getElementById('archivosubido2D'); 
+    // Check if any file is selected. 
+    if (fi.files.length > 0) 
+    { 
+        for (const i = 0; i <= fi.files.length - 1; i++) 
+        { 
+  
+             const fsize = fi.files.item(i).size; 
+             const file = Math.round((fsize / 1024)); 
+             // The size of the file. 
+             if (file >= 1024) { 
+                alert("Archivo de CV muy grande"); 
+            }
+            else{
+                if (f2.files.length > 0) 
+                { 
+                    for (const i = 0; i <= f2.files.length - 1; i++) 
+                    { 
+              
+                         const fsize2 = f2.files.item(i).size; 
+                         const file2 = Math.round((fsize2 / 1024)); 
+                         // The size of the file. 
+                         if (file2 >= 1024) { 
+                            alert("Archivo de muestra muy grande"); 
+                        }
+                        else{
+                            document.getElementById("formaD").submit();
+                        }
+                            
+                    }
+                } 
+            }
+                /*
+                else if (file < 2048) { 
+                                    alert( 
+                                      "File too small, please select a file greater than 2mb"); 
+                                } else { 
+                                    document.getElementById('size').innerHTML = '<b>'
+                                    + file + '</b> KB'; 
+                                } 
+                */
+        }
+    }
+
+    
 }

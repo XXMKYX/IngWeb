@@ -1,10 +1,10 @@
-<form method="POST" class="contacto columnas-10" action="/master_data" onsubmit="validateForm(1)" id="formaM" style="display: none;">
+<form method="POST" class="contacto columnas-10" action="/master_data" onsubmit="validateForm(1)" id="formaM">
     <fieldset>
         <legend>DATOS ACADÉMICOS</legend>
         <div class="grid-dos-columnas">
             <label for="InstitucionM">Institución de tus estudios profesionales</label>
             <label for="pinstitucionM">País la institución</label>
-            <input type="text" name="InstitucionM" placeholder="Institución" required>
+            <input type="text" name="InstitucionM"  id="InstitucionM" placeholder="Institución" required>
             <input type="text" name="pinstitucionM" placeholder="País" required>
         </div>
         <div class=""  id="formaMaestria1">
@@ -63,8 +63,7 @@
     </fieldset>
 
     <div class="grid-dos-columnas">
-        <input type="submit" value="Guardar" class="boton boton-amarillo">
-        <input type="submit" value="Finalizar" class="boton boton-verde"> 
+        <input type="button" value="Guardar"  onclick="validarFormaMaestria()" class="boton boton-amarillo">
     </div>
     
 </form>
