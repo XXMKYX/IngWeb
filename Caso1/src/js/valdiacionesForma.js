@@ -113,6 +113,7 @@ function validarFormaMaestria(input)
             }
             else{
                 document.getElementById("formaM").submit();
+                alert("Datos guardados con exito!");
             }
                 /*
                 else if (file < 2048) { 
@@ -134,7 +135,7 @@ function validarFormaDoctorado(input)
     // Check if any file is selected. 
     if (fi.files.length > 0) 
     { 
-        for (const i = 0; i <= fi.files.length - 1; i++) 
+        for (var i = 0; i <= fi.files.length - 1; i++) 
         { 
   
              const fsize = fi.files.item(i).size; 
@@ -146,10 +147,10 @@ function validarFormaDoctorado(input)
             else{
                 if (f2.files.length > 0) 
                 { 
-                    for (const i = 0; i <= f2.files.length - 1; i++) 
+                    for (var j = 0; j <= f2.files.length - 1; j++) 
                     { 
               
-                         const fsize2 = f2.files.item(i).size; 
+                         const fsize2 = f2.files.item(j).size; 
                          const file2 = Math.round((fsize2 / 1024)); 
                          // The size of the file. 
                          if (file2 >= 1024) { 
@@ -161,6 +162,7 @@ function validarFormaDoctorado(input)
                             
                     }
                 } 
+            alert("Datos guardados con exito!");
             }
                 /*
                 else if (file < 2048) { 

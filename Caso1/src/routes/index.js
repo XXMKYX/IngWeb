@@ -24,7 +24,7 @@ const master = JSON.parse(json_master)//Inicializando .JSON pasando a JSON
 //EN CASO DE ERROR. DESCOMENTAR
 //const preg = []; //Arreglo para guardar datos
 
-
+//const master = [];
 const doc = [];
 //const preregistro = fs.readFileSync('src/preregistro.json', 'utf-8');
 
@@ -85,7 +85,7 @@ router.post('/personal_data',(req,res)=>{
   const json_preg = JSON.stringify(preg) //Convierte la lista a string
   fs.writeFileSync('src/preg.json', json_preg, 'utf-8') //Guarda string en formato utf-8
 
-  res.send('Datos obtenidos');
+  //res.send('Datos obtenidos');
 })
 
 // MAESTRIA
@@ -124,8 +124,11 @@ const { InstitucionM, pinstitucionM, tituladoMaestriaM,carreraM, xpPM, xpDM, pro
   const json_master = JSON.stringify(master) //Convierte la lista a string
   fs.writeFileSync('src/master.json', json_master, 'utf-8') //Guarda string en formato utf-8
 
-  res.send('Datos obtenidos');
+  //res.send('Datos obtenidos');
+
 })
+
+
 
 // DOCTORADO
 
@@ -165,7 +168,7 @@ router.post('/doc_data',(req,res)=>{
   const json_doc = JSON.stringify(doc) //Convierte la lista a string
   fs.writeFileSync('src/doc.json', json_doc, 'utf-8') //Guarda string en formato utf-8
 
-  res.send('Datos obtenidos');
+  //res.send('Datos obtenidos');
 })
 
   module.exports = router;
