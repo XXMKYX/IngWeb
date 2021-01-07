@@ -85,7 +85,7 @@ router.post('/personal_data',(req,res)=>{
   const json_preg = JSON.stringify(preg) //Convierte la lista a string
   fs.writeFileSync('src/preg.json', json_preg, 'utf-8') //Guarda string en formato utf-8
 
-  //res.send('Datos obtenidos');
+  res.send('Datos obtenidos');
 })
 
 // MAESTRIA
