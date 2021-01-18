@@ -4,28 +4,28 @@
 
         <label for="nombre">NOMBRE(S)*</label>
         <!--<input type="text" id="nombre" placeholder="Nombre(s)">-->
-        <input name="nombre" id="InputNombre" type="text" class="form-control" placeholder="Nombre(s)" autofocus required>
+        <input name="nombre" id="InputNombre" type="text" class="form-control" placeholder="Nombre(s)*" autofocus required>
         <div class="grid-dos-columnas">
             <label for="InputAMaterno">Apellido Paterno*</label>
             <label for="InputAPaterno">Apellido Materno*</label>
 
-            <input type="text" id="InputAMaterno" name="apaterno" placeholder="Apellido Paterno" required>
-            <input type="text" id="InputAPaterno" name="amaterno" placeholder="Apellido Materno" required>
+            <input type="text" id="InputAMaterno" name="apaterno" placeholder="Apellido Paterno*" required>
+            <input type="text" id="InputAPaterno" name="amaterno" placeholder="Apellido Materno*" required>
 
             <label for="InputFechaNacimiento">FECHA DE NACIMIENTO*</label>
             <label for="InputLugarDeNacimiento">LUGAR DE NACIMIENTO*</label> 
-            <input type="date" id="InputFechaNacimiento" name="fecha" placeholder="Fecha" required>
-            <input type="text" id="InputLugarDeNacimiento" name="lugar" placeholder="Lugar" required>
+            <input type="date" id="InputFechaNacimiento" name="fecha" placeholder="Fecha*" required>
+            <input type="text" id="InputLugarDeNacimiento" name="lugar" placeholder="Lugar*" required>
 
             <label for="InputNacionalidad">NACIONALIDAD*</label>
             <label for="InputEstadoCivil">ESTADO CIVIL*</label>
-            <input type="text" id="InputNacionalidad" name="nacionalidad" placeholder="Nacionalidad" required>
-            <input type="text" id="InputEstadoCivil" name="civil" placeholder="Estado Civil" required>
+            <input type="text" id="InputNacionalidad" name="nacionalidad" placeholder="Nacionalidad*" required>
+            <input type="text" id="InputEstadoCivil" name="civil" placeholder="Estado Civil*" required>
 
             <label for="InputCURP">CURP*</label>
             <label for="InputDependencias">DEPENDENCIAS*</label>
-            <input type="text" id="InputCURP" name="curp" oninput="validarInput(this)" placeholder="CURP" required>
-            <input type="number" id="InputDependencias" name="dependencias" placeholder="No. de dependencias" min="0" required>
+            <input type="text" id="InputCURP" name="curp" oninput="validarInput(this)" placeholder="CURP*" required>
+            <input type="number" id="InputDependencias" name="dependencias" placeholder="No. de dependencias*" min="0" required>
             <pre id="resultado" style="color: black;"></pre>
         </div>
     </fieldset>
@@ -34,13 +34,13 @@
         <div class="grid-dos-columnas">
             <label for="InputTelefono">TELÉFONO CELULAR*</label>
             <label for="InputCorreo">E-mail*</label>
-            <input type="tel" id="InputTelefono" name="telefono" placeholder="Número" required>
-            <input type="email" id="InputCorreo" name="email" placeholder="Tu correo electrónico" required>
+            <input type="tel" id="InputTelefono" name="telefono" placeholder="Número*" required>
+            <input type="email" id="InputCorreo" name="email" placeholder="Tu correo electrónico*" required>
 
             <label for="InputSkype">CUENTA SKYPE</label>
             <label for="InputFB">Cuenta de FB (Link)</label>
-            <input type="text" id="InputSkype" name="skype" placeholder="Skype (opcional)" required>
-            <input type="text" id="InputFB" name="fb" placeholder="Link a tu Facebook (opcional)" required>
+            <input type="text" id="InputSkype" name="skype" placeholder="Skype*" required>
+            <input type="text" id="InputFB" name="fb" placeholder="Link a tu Facebook*" required>
         </div>
     </fieldset>
     <fieldset>
@@ -49,9 +49,9 @@
             <!--<label for="Calle">Calle</label>-->
             <input type="text" id="InputCalle" name="Calle" placeholder="Calle*" required>
             <!--<label for="NoExt">No. Ext</label>-->
-            <input type="text" id="InputNoExt" name="NoExt" placeholder="No exterior*" required>
+            <input type="text" id="InputNoExt" name="NoExt" placeholder="NoExt*" required>
             <!--<label for="NoInt">No. Int</label>-->
-            <input type="text" id="InputNoInt" name="NoInt" placeholder="No interior" required>
+            <input type="text" id="InputNoInt" name="NoInt" placeholder="NoInt" required>
         </div>
         <div class="grid-dos-columnas">
             <!--<label for="Colonia">Colonia</label>-->
