@@ -1,17 +1,16 @@
 const {Router}=require('express');
 const router = Router();
 const fs = require('fs');//Modulo de lectura .json
-
-
+const glob = require('glob');
 //EN CASO DE ERROR. COMENTAR
-const json_preg = fs.readFileSync('src/preg.json','utf-8')//Lee el JSON
+//const json_preg = fs.readFileSync('src/preg.json','utf-8')//Lee el JSON
 //EN CASO DE ERROR. COMENTAR
-const preg = JSON.parse(json_preg)//Inicializando .JSON pasando a JSON
+//const preg = JSON.parse(json_preg)//Inicializando .JSON pasando a JSON
 
 //MASTER
-const json_master = fs.readFileSync('src/master.json','utf-8')//Lee el JSON
+//const json_master = fs.readFileSync('src/master.json','utf-8')//Lee el JSON
 
-const master = JSON.parse(json_master)//Inicializando .JSON pasando a JSON
+//const master = JSON.parse(json_master)//Inicializando .JSON pasando a JSON
 
 //DOCTORADO
 //const json_doc = fs.readFileSync('src/doc.json','utf-8')//Lee el JSON
@@ -20,13 +19,47 @@ const master = JSON.parse(json_master)//Inicializando .JSON pasando a JSON
 
 /* Guardando datos en Array .JS*/
 
-
 //EN CASO DE ERROR. DESCOMENTAR
-//const preg = []; //Arreglo para guardar datos
-
-//const master = [];
+const preg = []; //Arreglo para guardar datos
+const master = [];
 const doc = [];
-//const preregistro = fs.readFileSync('src/preregistro.json', 'utf-8');
+
+glob("src/master/*.json",function(err,files){
+  if(err) {
+    console.log("No encuentro la carpeta", err);
+  }
+  files.forEach(function(file) {
+    fs.readFile(file, 'utf-8', function (err, data) { //lee cada json
+      if(err) {
+        console.log("No se puede leer", err);
+      }
+      var obj = JSON.parse(data);
+      master.push(obj);
+    });
+  });
+});
+
+glob("src/doc/*.json",function(err,files){
+  if(err) {
+    console.log("cannot read the folder, something goes wrong with glob", err);
+  }
+  files.forEach(function(file) {
+    fs.readFile(file, 'utf-8', function (err, data) { // Read each file
+      if(err) {
+        console.log("cannot read the file, something goes wrong with the file", err);
+      }
+      var obj = JSON.parse(data);
+      doc.push(obj);
+    });
+  });
+});
+
+
+router.get('/', (req, res) => {
+  res.render('index', {preg,master,doc});
+});
+
+
 
 /* Ruta inicial */
 router.get('/', (req, res) => {
@@ -90,9 +123,21 @@ router.post('/personal_data',(req,res)=>{
 
 // MAESTRIA
 
+/* Ruta inicial */
+router.get('/', (req, res) => {
+  res.render('index.ejs',{
+    master //Pasa la lista de valores 
+  });
+});
+
+//Obtiene datos
+router.post('/index',(req,res)=>{
+  console.log(req.body);
+  res.send('Index obtenido');
+})
 //render formulario
 router.get('/master_data',(req,res)=>{
-  res.render('master_data');
+  res.render('master_data',{master});
 })
 //Obtiene datos formulario
 router.post('/master_data',(req,res)=>{
@@ -131,10 +176,21 @@ const { InstitucionM, pinstitucionM, tituladoMaestriaM,carreraM, xpPM, xpDM, pro
 
 
 // DOCTORADO
+/* Ruta inicial */
+router.get('/', (req, res) => {
+  res.render('index.ejs',{
+    doc //Pasa la lista de valores 
+  });
+});
 
+//Obtiene datos
+router.post('/index',(req,res)=>{
+  console.log(req.body);
+  res.send('Index obtenido');
+})
 //render formulario
 router.get('/doc_data',(req,res)=>{
-  res.render('doc_data');
+  res.render('doc_data',{doc});
 })
 //Obtiene datos formulario
 router.post('/doc_data',(req,res)=>{

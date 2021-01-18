@@ -1,1 +1,14 @@
-[{"InstitucionM":"IPN","pinstitucionM":"México","tituladoMaestriaM":"si","carreraM":"Telematica","xpPM":"asd","xpDM":"asdss","propedeuticoM":"no","aniospropM":"7","motivoM":"qwe","archivosubido1M":"3cda6e86_f447_4226_ac85_a90472a88ae8.pdf"},{"InstitucionM":"IPN","pinstitucionM":"México","tituladoMaestriaM":"no","carreraM":"Telematica","xpPM":"sdfg","xpDM":"sdf","propedeuticoM":"si","aniospropM":"1","motivoM":"d","archivosubido1M":"3cda6e86_f447_4226_ac85_a90472a88ae8.pdf"}]
+[
+    {
+        "InstitucionM": "IPN",
+        "pinstitucionM": "Mexico",
+        "tituladoMaestriaM": "si",
+        "carreraM": "Telematica",
+        "xpPM": "Niguna",
+        "xpDM": "Menos",
+        "propedeuticoM": "si",
+        "aniospropM": "1",
+        "motivoM": "El dinero",
+        "archivosubido1M": "casos a desarrollar.pdf"
+    }
+]
