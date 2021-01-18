@@ -124,6 +124,22 @@ function visualizarD(input){
 
 function validarFormaMaestria(input)
 {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
     const fi = document.getElementById('archivosubido1M'); 
     // Check if any file is selected. 
     if (fi.files.length > 0) 
