@@ -125,41 +125,107 @@ function visualizarD(input){
 function validarFormaMaestria(input)
 {
 
+    /* Inputs de información personal */
+    var InputInstitucionM = document.getElementById("InputInstitucionM");
+    var pInputinstitucionM = document.getElementById("pInputInstitucionM");
+    var InputrsitituladoM = document.getElementById("InputrsitituladoM");
+    var InputnrotituladoM = document.getElementById("InputnrotituladoM");
+    var InputcarreraM = document.getElementById("InputcarreraM");
+    var InputxpPM = document.getElementById("InputxpPM");
+    var InputxpDM = document.getElementById("InputxpDM");
+    var InputrsipropM = document.getElementById("InputrsipropM");
+    var InputrnopropM = document.getElementById("InputrnopropM");
+    var InputaniospropM = document.getElementById("InputaniospropM");
+    var InputmotivoM = document.getElementById("InputmotivoM");
+    var Inputarchivosubido1M = document.getElementById("Inputarchivosubido1M");
+    let siTitulado=0;
+    let siProp=0;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-    const fi = document.getElementById('archivosubido1M'); 
-    // Check if any file is selected. 
-    if (fi.files.length > 0) 
-    { 
-        for (let i = 0; i <= fi.files.length - 1; i++) 
-        { 
-  
-             const fsize = fi.files.item(i).size; 
-             const file = Math.round((fsize / 1024)); 
-             // The size of the file. 
-             if (file >= 1024) { 
-                alert("Archivo muy grande"); 
-            }
-            else{
-                document.getElementById("formaM").submit();
-                alert("Datos guardados con exito!");
+    if(InputInstitucionM.value == '' || pInputInstitucionM.value == ''  || InputcarreraM.value == ''|| 
+        InputxpPM.value == '' || InputxpDM.value == '' || 
+        InputaniospropM.value == '' || InputmotivoM.value == ''|| 
+        Inputarchivosubido1M.value == '' ) //Si el input no es válido
+    {
+        alert("Favor de llenar todos los campos obligatorios");
+    }
+    else
+    {   
+        
+        //Si una de las dos está checked, sale true, el ! hace que pase a la siguiente validación
+        if(!InputrsitituladoM.checked ) 
+        {
+            if(!InputnrotituladoM.checked ) 
+            {
+                siTitulado =1;//alert("Favor de indicar si estás titualdo");
+                
             }
-        }
-    } 
+            
+        }
+        if(siTitulado==1)
+        {
+            alert("Favor de indicar si estás Titulado"); 
+        }
+            
+        else
+        {
+            
+        //Si una de las dos está checked, sale true, el ! hace que pase a la siguiente validación
+            if(!InputrsipropM.checked ) 
+            {
+                if(!InputrnopropM.checked ) 
+                {
+                    siProp =1;//alert("Favor de indicar si estás titualdo");
+                    
+                }
+                
+            }
+            if(siProp==1)
+            {
+                alert("Favor de indicar si ya hiciste Propedéutico.");   
+            }
+            else
+            {
+                if(InputInstitucionM.value.length >= 100 || pInputInstitucionM.value.length >= 100 
+                    ||InputcarreraM.value.length >= 100 ||InputxpPM.value.length >= 500 ||
+                    InputxpDM.value.length >= 500 ||InputaniospropM.value.length >= 100 ||
+                    InputmotivoM.value.length >= 500  ) //Si el input es muy largo
+                {
+                    alert("Los campos no puede tener más de 100 caracteres");
+                }
+                else
+                {                   
+                    
+                    const fi = Inputarchivosubido1M; 
+                    // Check if any file is selected. 
+                    if (fi.files.length > 0) 
+                    { 
+                        for (let i = 0; i <= fi.files.length - 1; i++) 
+                        {                   
+                             const fsize = fi.files.item(i).size; 
+                             const file = Math.round((fsize / 1024)); 
+                             // The size of the file. 
+                             if (file >= 1024)
+                            { 
+                                alert("Archivo muy grande"); 
+                             }
+                            else
+                            {                                
+                                //document.getElementById("formaM").submit();
+                                alert("Datos guardados con exito!");
+                            }
+                        }
+                        
+                    }
+                    
+                }
+            }
+        }   
+     
+    }
 }
+
+   
+       
 
 function validarFormaDoctorado(input)
 {
@@ -171,32 +237,36 @@ function validarFormaDoctorado(input)
         for (var i = 0; i <= fi.files.length - 1; i++) 
         { 
   
-             const fsize = fi.files.item(i).size; 
-             const file = Math.round((fsize / 1024)); 
-             // The size of the file. 
-             if (file >= 1024) { 
+            const fsize = fi.files.item(i).size; 
+            const file = Math.round((fsize / 1024)); 
+            // The size of the file. 
+            if (file >= 1024)
+            { 
                 alert("Archivo de CV muy grande"); 
             }
-            else{
+            else
+            {
                 if (f2.files.length > 0) 
                 { 
                     for (var j = 0; j <= f2.files.length - 1; j++) 
                     { 
               
-                         const fsize2 = f2.files.item(j).size; 
-                         const file2 = Math.round((fsize2 / 1024)); 
-                         // The size of the file. 
-                         if (file2 >= 1024) { 
+                        const fsize2 = f2.files.item(j).size; 
+                        const file2 = Math.round((fsize2 / 1024)); 
+                        // The size of the file. 
+                        if (file2 >= 1024)
+                        { 
                             alert("Archivo de muestra muy grande"); 
                         }
-                        else{
+                        else
+                        {
                             document.getElementById("formaD").submit();
                         }
                             
                     }
                 } 
-            alert("Datos guardados con exito!");
-            }
+                //alert("Datos guardados con exito!");
+            } 
                 /*
                 else if (file < 2048) { 
                                     alert( 
@@ -207,8 +277,18 @@ function validarFormaDoctorado(input)
                                 } 
                 */
         }
-    }
-
-    
+    }    
 }
+
+
+
+        
+           
+
+
+
+
+
+
+
 
