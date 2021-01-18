@@ -229,12 +229,12 @@ h4 {
     padding: 11rem 0;
     color: white;
     text-align: center;
-    margin-top: 2rem;
+    margin-top: 4rem;
 }
 
 @media (min-width: 768px) {
     .texto-header {
-        margin-top: 18rem;
+        margin-top: 25rem;
     }
 }
 

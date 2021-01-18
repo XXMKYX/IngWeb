@@ -96,6 +96,19 @@ function visualizar(input){
     }
 }
 
+function visualizarM(input){
+    var misolicitud = document.getElementById('prev-solicitud-maestria');
+    var prevmisolicitud = document.getElementById('prev-mi-solicitud');
+    if(input.value == 'Visualizar'){
+        misolicitud.style.display = "block";
+        prevmisolicitud.style.display = "none";
+    }
+    else{
+        misolicitud.style.display = "none";
+        prevmisolicitud.style.display = "block";
+    }
+}
+
 function validarFormaMaestria(input)
 {
     const fi = document.getElementById('archivosubido1M'); 
@@ -182,7 +195,65 @@ function validarFormaDoctorado(input)
 
 function validarFormaPersonal(input)
 {
-    
+    /* Inputs de información personal */
+    var InputAMaterno = Document.getElementById("InputNombre");
+    var InputAMaterno = Document.getElementById("InputAMaterno");
+    var InputAPaterno = Document.getElementById("InputAPaterno");
+    var InputFechaNacimiento = Document.getElementById("InputFechaNacimiento");
+    var InputLugarDeNacimiento = Document.getElementById("InputLugarDeNacimiento");
+    var InputNacionalidad = Document.getElementById("InputNacionalidad");
+    var InputEstadoCivil = Document.getElementById("InputEstadoCivil");
+    var InputCURP = Document.getElementById("InputCURP");
+    var InputDependencias = Document.getElementById("InputDependencias");
+
+    /* Inputs de información de contacto */
+    var InputTelefono = Document.getElementById("InputTelefono");
+    var InputCorreo = Document.getElementById("InputCorreo");
+    var InputSkype = Document.getElementById("InputSkype");
+    var InputFB = Document.getElementById("InputFB");
+
+    /* Inputs de información de dirección */
+    var InputCalle = Document.getElementById("InputCalle");
+    var InputNoExt = Document.getElementById("InputNoExt");
+    var InputNoInt = Document.getElementById("InputNoInt");
+    var InputColonia = Document.getElementById("InputColonia");
+    var InputCiudad = Document.getElementById("InputCiudad");
+    var InputEstado = Document.getElementById("InputEstado");
+    var InputEstado = Document.getElementById("InputCP");
+    //alert("Datos guardados con exito!");
+
+    /*
+        else{
+        
+        }
+
+        {
+        
+        }
+    */
+
+    if(!InputNombre || !InputAMaterno || !InputAPaterno || !InputFechaNacimiento || !InputLugarDeNacimiento
+        || !InputNacionalidad || !InputEstadoCivil || !InputCURP || !InputDependencias
+        || !InputTelefono || !InputCorreo || !InputSkype || !InputFB || !InputCalle || !InputNoExt
+        || !InputColonia || !InputCiudad || !InputEstado || !InputCP) //Si el input no es válido
+    {
+        alert("Favor de llenar todos los campos obligatorios");
+    }
+    else{
+        if(InputNombre.length >= 100 || InputAMaterno.length >= 100 || InputAPaterno.length >= 100 ||
+            InputFechaNacimiento.length >= 100 || InputLugarDeNacimiento.length >= 100 || InputNacionalidad.length >= 100 ||
+            InputEstadoCivil.length >= 100 || InputCURP.length >= 100 || InputDependencias.length >= 100 ||
+            InputTelefono.length >= 100 || InputCorreo.length >= 100 || InputSkype.length >= 100 ||
+            InputFB.length >= 100 || InputCalle.length >= 100 || InputNoExt.length >= 100 ||
+            InputNoInt.length >= 100 || InputColonia.length >= 100 || InputCiudad.length >= 100 ||
+            InputEstado.length >= 100 || InputCP.length >= 100) //Si el input es muy largo
+        {
+            alert("Los campos no puede tener más de 100 caracteres");
+        }
+        else{
             alert("Datos guardados con exito!");
-    
+
+        }
+    }
+        
 }
