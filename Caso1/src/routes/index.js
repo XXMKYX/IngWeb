@@ -3,14 +3,14 @@ const router = Router();
 const fs = require('fs');//Modulo de lectura .json
 const glob = require('glob');
 //EN CASO DE ERROR. COMENTAR
-//const json_preg = fs.readFileSync('src/preg.json','utf-8')//Lee el JSON
+const json_preg = fs.readFileSync('src/preg.json','utf-8')//Lee el JSON
 //EN CASO DE ERROR. COMENTAR
-//const preg = JSON.parse(json_preg)//Inicializando .JSON pasando a JSON
+const preg = JSON.parse(json_preg)//Inicializando .JSON pasando a JSON
 
 //MASTER
-//const json_master = fs.readFileSync('src/master.json','utf-8')//Lee el JSON
+const json_master = fs.readFileSync('src/master.json','utf-8')//Lee el JSON
 
-//const master = JSON.parse(json_master)//Inicializando .JSON pasando a JSON
+const master = JSON.parse(json_master)//Inicializando .JSON pasando a JSON
 
 //DOCTORADO
 //const json_doc = fs.readFileSync('src/doc.json','utf-8')//Lee el JSON
@@ -20,8 +20,8 @@ const glob = require('glob');
 /* Guardando datos en Array .JS*/
 
 //EN CASO DE ERROR. DESCOMENTAR
-const preg = []; //Arreglo para guardar datos
-const master = [];
+//const preg = []; //Arreglo para guardar datos
+//const master = [];
 const doc = [];
 
 glob("src/master/*.json",function(err,files){
