@@ -15,6 +15,7 @@
     <div class="MiSolicitud" id="vista/">
         <ul class="ListaMiSolicitud">
             <li class="entrada-solicitud">
+                <span>Datos Maestria</span> 
             </li>
             <li class="entrada-solicitud">
                 <span>Nombre</span> 
@@ -33,9 +34,40 @@
         
     </div>
     <% }) %> 
-    
-    
 </div>
+
 <div class="div-mi-solicitud" id="vista-mi-solicitud-coordinador-maestria" style="display: none;">
     <%- include('VistaCompletaMaestria') %>  
+</div>
+
+
+<div class="VistaMiSolicitud contenedor" id="prev-solicitud-coordinador-doctorado">
+
+    <% doc.forEach(function(pre){ %>
+    <div class="MiSolicitud" id="vista/">
+        <ul class="ListaMiSolicitud">
+            <li class="entrada-solicitud">
+                <span>Datos Doctorado</span> 
+            </li>
+            <li class="entrada-solicitud">
+                <span>Nombre</span> 
+                <p name="emailVista"> <%= pre.InstitucionD %></p>
+            </li>
+            <li class="entrada-solicitud">
+                <span>Estado de la solicitud</span>
+                <p name="estadoSolicitud"> Pendiente</p>
+            </li> 
+            <li class="entrada-solicitud">
+                <input type="button" value="Visualizar" onclick = "(visualizarD(this))" class="boton boton-verde">   
+            </li>
+            
+                   
+        </ul>        
+        
+    </div>
+    <% }) %> 
+</div>
+
+<div class="div-mi-solicitud" id="vista-mi-solicitud-coordinador-doctorado" style="display: none;">
+    <%- include('VistaCompletaDoctorado') %>  
 </div>
