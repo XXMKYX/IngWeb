@@ -41,7 +41,7 @@ function validarInput(input) {
 function validarFormaPersonal(input)
 {
     /* Inputs de información personal */
-    var InputAMaterno = document.getElementById("InputNombre");
+    var InputNombre = document.getElementById("InputNombre");
     var InputAMaterno = document.getElementById("InputAMaterno");
     var InputAPaterno = document.getElementById("InputAPaterno");
     var InputFechaNacimiento = document.getElementById("InputFechaNacimiento");
@@ -88,13 +88,13 @@ function validarFormaPersonal(input)
             alert("Favor de llenar todos los campos obligatorios");
         }
         else{
-            if(InputNombre.length >= 100 || InputAMaterno.length >= 100 || InputAPaterno.length >= 100 ||
-                InputFechaNacimiento.length >= 100 || InputLugarDeNacimiento.length >= 100 || InputNacionalidad.length >= 100 ||
-                InputEstadoCivil.length >= 100 || InputCURP.length >= 100 || InputDependencias.length >= 100 ||
-                InputTelefono.length >= 100 || InputCorreo.length >= 100 || InputSkype.length >= 100 ||
-                InputFB.length >= 100 || InputCalle.length >= 100 || InputNoExt.length >= 100 ||
-                InputNoInt.length >= 100 || InputColonia.length >= 100 || InputCiudad.length >= 100 ||
-                InputEstado.length >= 100 || InputCP.length >= 100) //Si el input es muy largo
+            if(InputNombre.value.length >= 100 || InputAMaterno.value.length >= 100 || InputAPaterno.value.length >= 100 ||
+                InputFechaNacimiento.value.length >= 100 || InputLugarDeNacimiento.value.length >= 100 || InputNacionalidad.value.length >= 100 ||
+                InputEstadoCivil.value.length >= 100 || InputCURP.value.length >= 100 || InputDependencias.value.length >= 100 ||
+                InputTelefono.value.length >= 100 || InputCorreo.value.length >= 100 || InputSkype.value.length >= 100 ||
+                InputFB.value.length >= 100 || InputCalle.value.length >= 100 || InputNoExt.value.length >= 100 ||
+                InputNoInt.value.length >= 100 || InputColonia.value.length >= 100 || InputCiudad.value.length >= 100 ||
+                InputEstado.value.length >= 100 || InputCP.value.length >= 100) //Si el input es muy largo
             {
                 alert("Los campos no puede tener más de 100 caracteres");
             }
