@@ -13,16 +13,16 @@ const json_master = fs.readFileSync('src/master.json','utf-8')//Lee el JSON
 const master = JSON.parse(json_master)//Inicializando .JSON pasando a JSON
 
 //DOCTORADO
-//const json_doc = fs.readFileSync('src/doc.json','utf-8')//Lee el JSON
+const json_doc = fs.readFileSync('src/doc.json','utf-8')//Lee el JSON
 
-//const doc = JSON.parse(json_doc)//Inicializando .JSON pasando a JSON
+const doc = JSON.parse(json_doc)//Inicializando .JSON pasando a JSON
 
 /* Guardando datos en Array .JS*/
 
 //EN CASO DE ERROR. DESCOMENTAR
 //const preg = []; //Arreglo para guardar datos
 //const master = [];
-const doc = [];
+//const doc = [];
 
 glob("src/master/*.json",function(err,files){
   if(err) {
