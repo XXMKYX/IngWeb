@@ -1,4 +1,4 @@
-<div class="vista-mi-solicitud" id="prev-solicitud-maestria">
+<div class="vista-mi-solicitud">
 <fieldset>
     <legend>DATOS ACADÉMICOS</legend>
     <% master.forEach(function(pre){ %>
@@ -42,4 +42,7 @@
     <p><%= pre.archivosubido1M %></p>
     <% }) %>
 </fieldset>
+<div class="grid-dos-columnas">
+    <input type="button" value="Regresar" onclick="visualizarM(this)"  class="boton boton-amarillo">
+</div>  
 </div>

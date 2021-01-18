@@ -97,8 +97,8 @@ function visualizar(input){
 }
 
 function visualizarM(input){
-    var misolicitud = document.getElementById('prev-solicitud-maestria');
-    var prevmisolicitud = document.getElementById('prev-mi-solicitud');
+    var misolicitud = document.getElementById('vista-mi-solicitud-coordinador-maestria');
+    var prevmisolicitud = document.getElementById('prev-solicitud-coordinador-maestria');
     if(input.value == 'Visualizar'){
         misolicitud.style.display = "block";
         prevmisolicitud.style.display = "none";

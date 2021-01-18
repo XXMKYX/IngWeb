@@ -9,7 +9,7 @@
 </div>
 
 
-<div class="VistaMiSolicitud contenedor" id="prev-mi-solicitud">
+<div class="VistaMiSolicitud contenedor" id="prev-solicitud-coordinador-maestria">
 
     <% master.forEach(function(pre){ %>
     <div class="MiSolicitud" id="vista/">
@@ -25,7 +25,7 @@
                 <p name="estadoSolicitud"> Pendiente</p>
             </li> 
             <li class="entrada-solicitud">
-                <input type="button" value="Visualizar" onclick = "(visualizar(this))" class="boton boton-verde">   
+                <input type="button" value="Visualizar" onclick = "(visualizarM(this))" class="boton boton-verde">   
             </li>
             
                    
@@ -36,6 +36,6 @@
     
     
 </div>
-<div class="div-mi-solicitud" id="vista-mi-solicitud" style="display: none;">
+<div class="div-mi-solicitud" id="vista-mi-solicitud-coordinador-maestria" style="display: none;">
     <%- include('VistaCompletaMaestria') %>  
 </div>
