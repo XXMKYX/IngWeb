@@ -48,7 +48,7 @@ function validarInputD(input) {
     } else {
         //resultado.classList.remove("ok");
     }
-    resultado.innerText = "CURP, Formato: " + valido;
+    resultado.value = "CURP, Formato: " + valido;
 }
 
 function validarFormaPersonal(input)
