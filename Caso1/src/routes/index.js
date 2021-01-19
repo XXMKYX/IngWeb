@@ -220,7 +220,7 @@ const { nombreD, apaternoD, amaternoD, fechaD, lugarD, nacionalidadD, civilD, cu
   //const json_master = JSON.stringify(master) //Convierte la lista a string
   //fs.writeFileSync('src/master.json', json_master, 'utf-8') //Guarda string en formato utf-8
   const json_datos = JSON.stringify(newmaster);
-  fs.writeFile('src/views/Maestria/'+carreraM+'.json', json_datos, 'utf-8',function (err) {
+  fs.writeFile('src/views/Maestria/'+curpD+'.json', json_datos, 'utf-8',function (err) {
     if (err) throw err;
     console.log('Registro guardado en archivo');
   });
