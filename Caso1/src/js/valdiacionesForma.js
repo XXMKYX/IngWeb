@@ -204,7 +204,6 @@ function validarFormaMaestria(input)
     /* Se valida completamente */
     if(input.value == 'Enviar')
     {
-        alert("enviar");
         if(InputNombre.value == '' || InputAMaterno.value == '' || InputAPaterno.value == '' || 
         InputFechaNacimiento.value == ''|| InputLugarDeNacimiento.value == ''
         || InputNacionalidad.value == '' || InputEstadoCivil.value == '' || InputCURP.value == '' || 
@@ -328,9 +327,7 @@ function validarFormaMaestria(input)
     
 
     }
-    else{
-        
-        alert(res.value);
+    else{    
         if(InputCURP.value == "" || res.value == "CURP, Formato: No válido"){
             alert("Para guardar, favor de colocar un CURP válido");
         }
