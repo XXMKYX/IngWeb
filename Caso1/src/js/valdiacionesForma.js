@@ -356,7 +356,7 @@ function validarFormaDoctorado(input)
             alert("Para guardar, favor de colocar un CURP válido");
         }
         else{
-            document.getElementById("formaP").submit();
+            document.getElementById("formaM").submit();
             alert("Datos guardados con exito!");
         }
     }
