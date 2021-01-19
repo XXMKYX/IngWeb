@@ -307,6 +307,9 @@ h4 {
   }
   
   /* Style the buttons that are used to open the tab content */
+  .tab a{
+      text-decoration: none;
+  }
   .tab button {
     background-color: inherit;
     float: left;
@@ -536,4 +539,30 @@ input[type="button"]{
     display: grid;
     grid-template-columns: 2fr repeat(2, 1fr);
     grid-column-gap: 2rem;
+}
+
+.nav-tabs {
+    border-bottom: 1px solid #dee2e6;
+}
+.nav {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+.nav-tabs {
+    border-bottom: 1px solid #dee2e6;
+}
+.nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
 }

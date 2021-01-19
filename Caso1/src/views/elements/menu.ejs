@@ -1,19 +1,23 @@
-<!-- Tab links -->
+
+ 
+
+
+<!-- 
+
+
 <div class="tab" style="display: inline-block;">
     <button class="tablinks2" onclick="changeTab2(event, 'tabDatosPersonales')">Datos Personales</button>
     <button class="tablinks2" onclick="changeTab2(event, 'tabDatosAcademicos')">Datos Académicos</button>
 </div>
   
 
-<!-- Tab content -->
-<div id="tabDatosPersonales" class="tabcontent2">
-    <!-- FORMULARIO PERSONAL -->
+<div id="tabDatosPersonales" class="tabcontent2" style="display: none;">
     <div class="grid centrar-columnas forma">
-       <%- include('personal') %> 
+       FORMULARIO PERSONAL <%- include('personal') %> 
    </div>   
 </div>
  
- <div id="tabDatosAcademicos" class="tabcontent2" style="display: none;">
+<div id="tabDatosAcademicos" class="tabcontent2" style="display: block;">
     <div class="grid centrar-columnas forma">
         <%- include('tipoForma') %> 
     </div>
@@ -21,3 +25,5 @@
 </div>
 
 
+
+-->

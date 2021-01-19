@@ -1,68 +1,19 @@
 <form method="POST" class="contacto columnas-10 " action="/doc_data" onsubmit="validateForm(1)" id="formaD">
-    <fieldset>
-        <legend>Informacion General </legend>
-        <div class="" id="formaDoctorado1">
-            <div class="grid-dos-columnas">
-                <label for="InstitucionD">Institución de tus estudios de la maestria</label>
-                <label for="pinstitucionD">País de la institución</label>
-                <input type="text" name="InstitucionD" placeholder="Institución de maestría" required>
-                <input type="text" name="pinstitucionD" placeholder="País">
-            </div>
-        
-            
-            <div class="grid-dos-columnas">
-                <label for="InstitucionPosgradoD">Institución de tus estudios de posgrado</label>
-                <label for="pInstitucionPosgradoD">País de la institución</label>
-                <input type="text" name="InstitucionPosgradoD" placeholder="Institución de posgrado" required>
-                <input type="text" name="pInstitucionPosgradoD" placeholder="País" required> 
-            </div>
-
-            <label for="tituladoDoctorado">¿Estás titulado de tu ultimo grado de estudios?</label>
-
-            <div class="alinear-centro">
-                <label for="rsitituladoD">Sí</label>
-                <input type="radio" name="tituladoDoctoradoD" value="si" id="rsitituladoD" required>
-                <label for="rnotituladoD">No</label>
-                <input type="radio" name="tituladoDoctoradoD" value="no" id="rnotituladoD" required>
-            </div>
+    <nav>
+        <div class="nav nav-tabs tab" id="nav-tab" role="tablist">
+        <button value="3" onclick="HideTab(this)"><a class="nav-item nav-link active" id="nav-datos-tab" data-toggle="tab" href="#nav-datos" role="tab" aria-controls="nav-datosD" aria-selected="true">Datos Generales</a></button>
+        <button  value="4" onclick="HideTab(this)"><a class="nav-item nav-link" id="nav-informacion-tab" data-toggle="tab" href="#nav-informacion" role="tab" aria-controls="nav-informacionD" aria-selected="false">Datos Académicos</a></button>
         </div>
+      </nav>
 
-        <label for="xpPD">Experiencia Profesional:</label>
-        <textarea name="xpPD"></textarea required>
-            
-        <label for="xpDD">Experiencia Docente:</label>
-        <textarea name="xpDD"></textarea required>
-        
-        <label>¿Has asistido a los cursos propedéuticos de este Departamento anteriormente?</label>
-
-        <div class="alinear-centro">
-            <label for="rsipropD">Si</label>
-            <input type="radio" name="propedeuticoD" value="si"  id="rsipropD" required>
-            <label for="rnopropD">No</label>
-            <input type="radio" name="propedeuticoD" value="no" id="rnopropD" required>
-        </div> 
-        <label for="aniospropD">¿En qué año(s)?</label>
-        <input type="number" name="aniospropD" placeholder="Año(s) Propedeuticos" required>
-
-        <label for="motivoD">Motivo por el cuál desea ingresar al Posgrado y a qué línea de investigación desea integrarse</label>
-        <textarea id="motivoD"></textarea required>
-            
-
-    </fieldset>
-
-    <fieldset>
-        <legend>ANEXO</legend>
-        <!--
-        <label for="fechaAplicacionM">Fecha</label>
-        <input type="date" id="fechaAplicacionaM">
-        -->
-        <div class="grid-dos-columnas" id="archivosDoctorado">
-            <label for="archivosubido1D" class="inputFileLabel">Click para anexar CV con Fotografía (PDF)</label>
-            <label for="archivosubido2D" class="inputFileLabel">Muestra escrita de trabajo de investigación previo (capítulo de tesis, artículo de investigación, ponencia en extenso de congreso, etc.). (PDF)</label>
-            <input type="file" style="display: none;"  name="archivosubido1D" id="archivosubido1D" accept="application/pdf" required>                                
-            <input type="file" style="display: none;"  name="archivosubido2D" id="archivosubido2D" accept="application/pdf" required>
+    <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active tabcontent2" id="nav-datosD" role="tabpanel" aria-labelledby="nav-datos-tab">
+            <%- include ('personalD') %>
         </div>
-    </fieldset>
+        <div class="tab-pane fade tabcontent2" id="nav-informacionD" role="tabpanel" aria-labelledby="nav-informacion-tab" style="display: none;">
+            <%- include ('academicoD')%>
+        </div>
+    </div>  
 
     <div class="grid-dos-columnas">
         <input type="button" value="Guardar" onclick="validarFormaDoctorado()"  class="boton boton-amarillo">    

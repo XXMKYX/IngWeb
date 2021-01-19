@@ -1,69 +1,23 @@
-<form method="POST" class="contacto columnas-10" action="/master_data" onsubmit="validateForm(1)" id="formaM">
-    <fieldset>
-        <legend>DATOS ACADÉMICOS</legend>
-        <div class="grid-dos-columnas">
-            <label for="InputInstitucionM">Institución de tus estudios profesionales</label>
-            <label for="pInputinstitucionM">País la institución</label>
-            <input type="text" name="InstitucionM"  id="InputInstitucionM" placeholder="Institución" required>
-            <input type="text" name="pinstitucionM" id="pInputInstitucionM" placeholder="País" required>
+<form method="POST" class="contacto columnas-10 " action="/personal_data" onsubmit="validateForm(1)" id="formaP">
+
+    <nav>
+        <div class="nav nav-tabs tab" id="nav-tab" role="tablist">
+        <button value="1" onclick="HideTab(this)"><a class="nav-item nav-link active" id="nav-datos-tab" data-toggle="tab" href="#nav-datos" role="tab" aria-controls="nav-datos" aria-selected="true">Datos Generales</a></button>
+        <button  value="2" onclick="HideTab(this)"><a class="nav-item nav-link" id="nav-informacion-tab" data-toggle="tab" href="#nav-informacion" role="tab" aria-controls="nav-informacion" aria-selected="false">Datos Académicos</a></button>
         </div>
-        <div class=""  id="formaMaestria1">
-            <label for="InputtitulacionM">¿Estás titulado?</label>
-            <div class="alinear-centro"  >
-                
-                <label for="InputrsitituladoM">Sí</label>                
-                <input type="radio" name="tituladoMaestriaM" value="si" id="InputrsitituladoM" required>                
-                <label for="InputnrotituladoM">No</label>
-                <input type="radio" name="tituladoMaestriaM" value="no" id="InputnrotituladoM" required>
-            </div>
+      </nav>
 
-            <div class="grid-dos-columnas">
-                <label for="InputcarreraM">¿En qué carrera?</label>
-                <input type="text" name="carreraM" id="InputcarreraM"  placeholder="Carrera" required>
-            </div>                            
+    <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active tabcontent2" id="nav-datos" role="tabpanel" aria-labelledby="nav-datos-tab">
+            <%- include ('personalM') %>
         </div>
-
-        
-        
-
-        <label for="InputxpPM">Experiencia Profesional:</label>
-        <textarea name="xpPM" id="InputxpPM" ></textarea required>
-            
-        <label for="InputxpDM">Experiencia Docente:</label>
-        <textarea name="xpDM" id="InputxpDM"></textarea required>
-        
-        <label>¿Has asistido a los cursos propedéuticos de este Departamento?</label>
-
-        <div class="alinear-centro">
-            <label for="InputrsipropM">Si</label>
-            <input type="radio" name="propedeuticoM" value="si"  id="InputrsipropM" required>
-            <label for="InputrnopropM">No</label>
-            <input type="radio" name="propedeuticoM" value="no" id="InputrnopropM" required>
-        </div> 
-        <label for="InputaniospropM">¿En qué año(s)?</label>
-        <input type="text" name="aniospropM" id="InputaniospropM" placeholder="Año(s) Propedeuticos">
-
-        <label for="InputmotivoM">Motivo por el cuál desea ingresar al Posgrado y a qué línea de investigación desea integrarse</label>
-        <textarea name="motivoM" id=InputmotivoM></textarea>
-            
-
-    </fieldset>
-
-    <fieldset>
-        <legend>ANEXO</legend>
-        <!--
-        <label for="fechaAplicacionM">Fecha</label>
-        <input type="date" id="fechaAplicacionaM">
-        -->
-        
-        <div class="grid-dos-columnas" id="archivosMaestria">
-            <label for="Inputarchivosubido1M" class="inputFileLabel">Click para anexar CV con Fotografía (PDF)</label>
-            <input type="file" style="display: none;" name="archivosubido1M" id="Inputarchivosubido1M" accept="application/pdf" required>                                    
+        <div class="tab-pane fade tabcontent2" id="nav-informacion" role="tabpanel" aria-labelledby="nav-informacion-tab" style="display: none;">
+            <%- include ('academicoM')%>
         </div>
-    </fieldset>
-
+    </div>        
     <div class="grid-dos-columnas">
         <input type="button" value="Guardar"  onclick="validarFormaMaestria()" class="boton boton-amarillo">
-    </div>
-    
-</form>
+    </div>   
+    <legend>*datos obligatorios</legend>
+</form> 
+
