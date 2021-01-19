@@ -23,7 +23,7 @@ function curpValida(curp) {
 }
 
 //Validacion Final
-function validarInput(input) {
+function validarInputM(input) {
     
     var curp = input.value.toUpperCase(),
         resultado = document.getElementById("resultado");
@@ -34,9 +34,22 @@ function validarInput(input) {
     } else {
         //resultado.classList.remove("ok");
     }
-    resultado.innerText = "CURP, Formato: " + valido;
+    resultadoM.innerText = "CURP, Formato: " + valido;
 }
 
+function validarInputD(input) {
+    
+    var curp = input.value.toUpperCase(),
+        resultado = document.getElementById("resultado");
+        valido = "No válido";
+    if (curpValida(curp)) {
+        valido = "Válido";
+        //resultado.classList.add("ok");
+    } else {
+        //resultado.classList.remove("ok");
+    }
+    resultadoD.innerText = "CURP, Formato: " + valido;
+}
 
 function validarFormaPersonal(input)
 {

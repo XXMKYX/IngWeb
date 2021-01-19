@@ -1,9 +1,9 @@
 <fieldset>
     <legend>DATOS PERSONALES</legend>
 
-    <label for="nombre">NOMBRE(S)*</label>
+    <label for="nombreM">NOMBRE(S)*</label>
     <!--<input type="text" id="nombre" placeholder="Nombre(s)">-->
-    <input name="nombreM" id="InputNombre" type="text" class="form-control" placeholder="Nombre(s)*" autofocus required>
+    <input name="nombreM" id="InputNombreM" type="text" class="form-control" placeholder="Nombre(s)*" autofocus required>
     <div class="grid-dos-columnas">
         <label for="InputAMaternoM">Apellido Paterno*</label>
         <label for="InputAPaternoM">Apellido Materno*</label>
@@ -23,7 +23,7 @@
 
         <label for="InputCURPM">CURP*</label>
         <label for="InputDependenciasM">DEPENDENCIAS*</label>
-        <input type="text" id="InputCURPM" name="curpM" oninput="validarInput(this)" placeholder="CURP*" required>
+        <input type="text" id="InputCURPM" name="curpM" oninput="validarInputM(this)" placeholder="CURP*" required>
         <input type="number" id="InputDependenciasM" name="dependenciasM" placeholder="No. de dependencias*" min="0" required>
         <pre id="resultadoM" style="color: black;"></pre>
     </div>
