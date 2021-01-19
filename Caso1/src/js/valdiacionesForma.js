@@ -330,6 +330,7 @@ function validarFormaMaestria(input)
     }
     else{
         
+        alert(res.value);
         if(InputCURP.value == "" || res.value == "CURP, Formato: No válido"){
             alert("Para guardar, favor de colocar un CURP válido");
         }
