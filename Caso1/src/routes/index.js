@@ -3,28 +3,43 @@ const router = Router();
 const fs = require('fs');//Modulo de lectura .json
 const glob = require('glob');
 //EN CASO DE ERROR. COMENTAR
-const json_preg = fs.readFileSync('src/preg.json','utf-8')//Lee el JSON
+//const json_preg = fs.readFileSync('src/preg.json','utf-8')//Lee el JSON
 //EN CASO DE ERROR. COMENTAR
-const preg = JSON.parse(json_preg)//Inicializando .JSON pasando a JSON
+//const preg = JSON.parse(json_preg)//Inicializando .JSON pasando a JSON
 
 //MASTER
-const json_master = fs.readFileSync('src/master.json','utf-8')//Lee el JSON
+//const json_master = fs.readFileSync('src/master.json','utf-8')//Lee el JSON
 
-const master = JSON.parse(json_master)//Inicializando .JSON pasando a JSON
+//const master = JSON.parse(json_master)//Inicializando .JSON pasando a JSON
 
 //DOCTORADO
-const json_doc = fs.readFileSync('src/doc.json','utf-8')//Lee el JSON
+//const json_doc = fs.readFileSync('src/doc.json','utf-8')//Lee el JSON
 
-const doc = JSON.parse(json_doc)//Inicializando .JSON pasando a JSON
+//const doc = JSON.parse(json_doc)//Inicializando .JSON pasando a JSON
 
 /* Guardando datos en Array .JS*/
 
 //EN CASO DE ERROR. DESCOMENTAR
-//const preg = []; //Arreglo para guardar datos
-//const master = [];
-//const doc = [];
+var preg = []; //Arreglo para guardar datos
+var master = [];
+var doc = [];
 
-glob("src/master/*.json",function(err,files){
+glob("src/views/Personal/*.json",function(err,files){
+  if(err) {
+    console.log("No encuentro la carpeta", err);
+  }
+  files.forEach(function(file) {
+    fs.readFile(file, 'utf-8', function (err, data) { //lee cada json
+      if(err) {
+        console.log("No se puede leer", err);
+      }
+      var obj = JSON.parse(data);
+      preg.push(obj);
+    });
+  });
+});
+
+glob("src/views/Maestria/*.json",function(err,files){
   if(err) {
     console.log("No encuentro la carpeta", err);
   }
@@ -39,7 +54,7 @@ glob("src/master/*.json",function(err,files){
   });
 });
 
-glob("src/doc/*.json",function(err,files){
+glob("src/views/Doctorado/*.json",function(err,files){
   if(err) {
     console.log("cannot read the folder, something goes wrong with glob", err);
   }
@@ -112,12 +127,16 @@ router.post('/personal_data',(req,res)=>{
   };
 
   // agregando al array
-  preg.push(newpreg);
+  //preg.push(newpreg);
   
   // agregando al archivo
-  const json_preg = JSON.stringify(preg) //Convierte la lista a string
-  fs.writeFileSync('src/preg.json', json_preg, 'utf-8') //Guarda string en formato utf-8
-
+  //const json_preg = JSON.stringify(preg) //Convierte la lista a string
+  //fs.writeFileSync('src/preg.json', json_preg, 'utf-8') //Guarda string en formato utf-8
+  const json_datos = JSON.stringify(newpreg);
+  fs.writeFile('src/views/Personal/'+curp+'.json', json_datos, 'utf-8',function (err) {
+    if (err) throw err;
+    console.log('Registro guardado en archivo');
+  });
   //res.send('Datos obtenidos');
 })
 
@@ -166,9 +185,14 @@ const { InstitucionM, pinstitucionM, tituladoMaestriaM,carreraM, xpPM, xpDM, pro
   master.push(newmaster);
   
   // agregando al archivo
-  const json_master = JSON.stringify(master) //Convierte la lista a string
-  fs.writeFileSync('src/master.json', json_master, 'utf-8') //Guarda string en formato utf-8
-
+  //const json_master = JSON.stringify(master) //Convierte la lista a string
+  //fs.writeFileSync('src/master.json', json_master, 'utf-8') //Guarda string en formato utf-8
+  const json_datos = JSON.stringify(newmaster);
+  fs.writeFile('src/views/Maestria/'+carreraM+'.json', json_datos, 'utf-8',function (err) {
+    if (err) throw err;
+    console.log('Registro guardado en archivo');
+  });
+  //res.s
   //res.send('Datos obtenidos');
 
 })
@@ -221,9 +245,14 @@ router.post('/doc_data',(req,res)=>{
   doc.push(newdoc);
   
   // agregando al archivo
-  const json_doc = JSON.stringify(doc) //Convierte la lista a string
-  fs.writeFileSync('src/doc.json', json_doc, 'utf-8') //Guarda string en formato utf-8
-
+  //const json_doc = JSON.stringify(doc) //Convierte la lista a string
+  //fs.writeFileSync('src/doc.json', json_doc, 'utf-8') //Guarda string en formato utf-8
+  const json_datos = JSON.stringify(newdoc);
+  fs.writeFile('src/views/Doctorado/'+InstitucionD+'.json', json_datos, 'utf-8',function (err) {
+    if (err) throw err;
+    console.log('Registro guardado en archivo');
+  });
+  //res.s
   //res.send('Datos obtenidos');
 })
 
