@@ -44,6 +44,24 @@ InputaniospropM
 InputmotivoM
 Inputarchivosubido1M
 
+%--------------------------------------%
+
+/* Valores IDs de forma Doctorado  */
+
+InputInstitucionD
+InputpinstitucionD
+InputInstitucionPosgradoD
+InputpInstitucionPosgradoD
+InputrsitituladoD
+InputrnotituladoD
+InputxpPD
+InputxpDD
+InputrsipropD
+InputrnopropD
+InputaniospropD
+InputmotivoD
+Inputarchivosubido1D
+Inputarchivosubido2D
 
 
 
