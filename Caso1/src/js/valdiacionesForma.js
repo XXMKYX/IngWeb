@@ -198,6 +198,9 @@ function validarFormaMaestria(input)
     let siTitulado=0;
     let siProp=0;
 
+    /* Validación CURP */
+    var res = document.getElementById("resultadoM");
+
     /* Se valida completamente */
     if(input.value == 'Enviar')
     {
@@ -325,8 +328,15 @@ function validarFormaMaestria(input)
 
     }
     else{
-        document.getElementById("formaP").submit();
-        alert("Datos guardados con exito!");
+        
+        if(InputCURP.value == "" || res.value == "CURP, Formato: No válido"){
+            alert("Para gaurdar, favor de colocar un CURP válido");
+        }
+        else{
+            document.getElementById("formaP").submit();
+            alert("Datos guardados con exito!");
+        }
+
     }
     
     
