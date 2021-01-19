@@ -96,34 +96,34 @@ router.get('/personal_data',(req,res)=>{
 router.post('/personal_data',(req,res)=>{
   console.log(req.body);
   
-  const { nombre, apaterno, amaterno, fecha, lugar, nacionalidad, civil, curp, dependencias, telefono, email, skype, fb, Calle, NoExt, NoInt, Colonia, Ciudad, Estado, CP} = req.body;
+  const { nombreM, apaternoM, amaternoM, fechaM, lugarM, nacionalidadM, civilM, curpM, dependenciasM, telefonoM, emailM, skypeM, fbM, CalleM, NoExtM, NoIntM, ColoniaM, CiudadM, EstadoM, CPM} = req.body;
 /* Validacion */
-  if (!nombre || !apaterno || !amaterno || !fecha|| !lugar|| !nacionalidad ||!civil ||!curp ||!dependencias ||!telefono ||!email ||!skype ||!fb ||!Calle ||!NoExt ||!NoInt ||!Colonia ||!Ciudad ||!Estado ||!CP) {
-    res.status(400).send("Tienes que llenar todos los datos - Personal");
-    return;
-  }
+  //if (!nombre || !apaterno || !amaterno || !fecha|| !lugar|| !nacionalidad ||!civil ||!curp ||!dependencias ||!telefono ||!email ||!skype ||!fb ||!Calle ||!NoExt ||!NoInt ||!Colonia ||!Ciudad ||!Estado ||!CP) {
+  //  res.status(400).send("Tienes que llenar todos los datos - Personal");
+  //  return;
+  // }
 
-  let newpreg = {
-    nombre,
-    apaterno,
-    amaterno,
-    fecha,
-    lugar,
-    nacionalidad,
-    civil,
-    curp,
-    dependencias,
-    telefono,
-    email,
-    skype,
-    fb,
-    Calle,
-    NoExt,
-    NoInt,
-    Colonia,
-    Ciudad,
-    Estado,
-    CP
+  let newpregM = {
+    nombreM,
+    apaternoM,
+    amaternoM,
+    fechaM,
+    lugarM,
+    nacionalidadM,
+    civilM,
+    curpM,
+    dependenciasM,
+    telefonoM,
+    emailM,
+    skypeM,
+    fbM,
+    CalleM,
+    NoExtM,
+    NoIntM,
+    ColoniaM,
+    CiudadM,
+    EstadoM,
+    CPM
   };
 
   // agregando al array
