@@ -1,30 +1,30 @@
 
 %--------------------------------------%
 
-/* Valores IDs de forma personal */
+/* Valores IDs de forma personal en maestría */
 
-InputNombre
-InputAMaterno
-InputAPaterno
-InputFechaNacimiento
-InputLugarDeNacimiento
-InputNacionalidad
-InputEstadoCivil
-InputCURP
-InputDependencias
+InputNombreM
+InputAMaternoM
+InputAPaternoM
+InputFechaNacimientoM
+InputLugarDeNacimientoM
+InputNacionalidadM
+InputEstadoCivilM
+InputCURPM
+InputDependenciasM
 
-InputTelefono
-InputCorreo
-InputSkype
-InputFB
+InputTelefonoM
+InputCorreoM
+InputSkypeM
+InputFBM
 
-InputCalle
-InputNoExt
-InputNoInt
-InputColonia
-InputCiudad
-InputEstado
-InputCP
+InputCalleM
+InputNoExtM
+InputNoIntM
+InputColoniaM
+InputCiudadM
+InputEstadoM
+InputCPM
 
 %--------------------------------------%
 
@@ -59,7 +59,28 @@ Inputarchivosubido1M
 
 /* Valores IDs de forma Doctorado */
 
+InputNombreD
+InputAMaternoD
+InputAPaternoD
+InputFechaNacimientoD
+InputLugarDeNacimientoD
+InputNacionalidadD
+InputEstadoCivilD
+InputCURPD
+InputDependenciasD
 
+InputTelefonoD
+InputCorreoD
+InputSkypeD
+InputFBD
+
+InputCalleD
+InputNoExtD
+InputNoIntD
+InputColoniaD
+InputCiudadD
+InputEstadoD
+InputCPD
 
 
 

@@ -41,30 +41,30 @@ function validarInput(input) {
 function validarFormaPersonal(input)
 {
     /* Inputs de información personal */
-    var InputNombre = document.getElementById("InputNombre");
-    var InputAMaterno = document.getElementById("InputAMaterno");
-    var InputAPaterno = document.getElementById("InputAPaterno");
-    var InputFechaNacimiento = document.getElementById("InputFechaNacimiento");
-    var InputLugarDeNacimiento = document.getElementById("InputLugarDeNacimiento");
-    var InputNacionalidad = document.getElementById("InputNacionalidad");
-    var InputEstadoCivil = document.getElementById("InputEstadoCivil");
-    var InputCURP = document.getElementById("InputCURP");
-    var InputDependencias = document.getElementById("InputDependencias");
+    var InputNombre = document.getElementById("InputNombreM");
+    var InputAMaterno = document.getElementById("InputAMaternoM");
+    var InputAPaterno = document.getElementById("InputAPaternM");
+    var InputFechaNacimiento = document.getElementById("InputFechaNacimientoM");
+    var InputLugarDeNacimiento = document.getElementById("InputLugarDeNacimientoM");
+    var InputNacionalidad = document.getElementById("InputNacionalidadM");
+    var InputEstadoCivil = document.getElementById("InputEstadoCivilM");
+    var InputCURP = document.getElementById("InputCURPM");
+    var InputDependencias = document.getElementById("InputDependenciasM");
 
     /* Inputs de información de contacto */
-    var InputTelefono = document.getElementById("InputTelefono");
-    var InputCorreo = document.getElementById("InputCorreo");
-    var InputSkype = document.getElementById("InputSkype");
-    var InputFB = document.getElementById("InputFB");
+    var InputTelefono = document.getElementById("InputTelefonoM");
+    var InputCorreo = document.getElementById("InputCorreoM");
+    var InputSkype = document.getElementById("InputSkypeM");
+    var InputFB = document.getElementById("InputFBM");
 
     /* Inputs de información de dirección */
-    var InputCalle = document.getElementById("InputCalle");
-    var InputNoExt = document.getElementById("InputNoExt");
-    var InputNoInt = document.getElementById("InputNoInt");
-    var InputColonia = document.getElementById("InputColonia");
-    var InputCiudad = document.getElementById("InputCiudad");
-    var InputEstado = document.getElementById("InputEstado");
-    var InputEstado = document.getElementById("InputCP");
+    var InputCalle = document.getElementById("InputCalleM");
+    var InputNoExt = document.getElementById("InputNoExtM");
+    var InputNoInt = document.getElementById("InputNoIntM");
+    var InputColonia = document.getElementById("InputColoniaM");
+    var InputCiudad = document.getElementById("InputCiudadM");
+    var InputEstado = document.getElementById("InputEstadoM");
+    var InputEstado = document.getElementById("InputCPM");
     //alert("Datos guardados con exito!");
 
     /*
