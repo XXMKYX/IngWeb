@@ -348,6 +348,22 @@ function validarFormaMaestria(input)
 
 function validarFormaDoctorado(input)
 {
+    var res = document.getElementById("resultadoD");
+    var InputCURP = document.getElementById("InputCURPD");
+
+    if(input.value == "Guardar"){
+        if(InputCURP.value == "" || res.value == "CURP, Formato: No válido"){
+            alert("Para guardar, favor de colocar un CURP válido");
+        }
+        else{
+            document.getElementById("formaP").submit();
+            alert("Datos guardados con exito!");
+        }
+    }
+    else{
+        /* Aquí van las validaciones completas */
+    }
+    /*
     const fi = document.getElementById('archivosubido1D'); 
     const f2 = document.getElementById('archivosubido2D'); 
 
@@ -394,9 +410,11 @@ function validarFormaDoctorado(input)
                                     document.getElementById('size').innerHTML = '<b>'
                                     + file + '</b> KB'; 
                                 } 
-                */
+                
         }
-    }    
+    
+    }
+*/   
 }
 
 
