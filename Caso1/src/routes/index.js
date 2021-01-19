@@ -103,7 +103,7 @@ router.post('/personal_data',(req,res)=>{
   //  return;
   // }
 
-  let newpregM = {
+  let newpreg = {
     nombreM,
     apaternoM,
     amaternoM,
@@ -133,7 +133,7 @@ router.post('/personal_data',(req,res)=>{
   //const json_preg = JSON.stringify(preg) //Convierte la lista a string
   //fs.writeFileSync('src/preg.json', json_preg, 'utf-8') //Guarda string en formato utf-8
   const json_datos = JSON.stringify(newpreg);
-  fs.writeFile('src/views/Personal/'+curp+'.json', json_datos, 'utf-8',function (err) {
+  fs.writeFile('src/views/Personal/'+curpM+'.json', json_datos, 'utf-8',function (err) {
     if (err) throw err;
     console.log('Registro guardado en archivo');
   });
