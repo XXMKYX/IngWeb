@@ -309,7 +309,7 @@ function validarFormaMaestria(input)
                                              }
                                             else
                                             {                                
-                                                //document.getElementById("formaM").submit();
+                                                document.getElementById("formaMaster").submit();
                                                 alert("Datos guardados con exito!");
                                             }
                                         }
@@ -333,7 +333,7 @@ function validarFormaMaestria(input)
             alert("Para guardar, favor de colocar un CURP válido");
         }
         else{
-            document.getElementById("formaP").submit();
+            document.getElementById("formaMaster").submit();
             alert("Datos guardados con exito!");
         }
 
@@ -529,7 +529,7 @@ function validarFormaDoctorado(input)
                                              }
                                             else
                                             {                                
-                                                document.getElementById("formaM").submit();
+                                                document.getElementById("formaDoc").submit();
                                                 alert("Datos guardados con exito!");
                                             }
                                         }
@@ -553,7 +553,7 @@ function validarFormaDoctorado(input)
             alert("Para guardar, favor de colocar un CURP válido");
         }
         else{
-            document.getElementById("formaP").submit();
+            document.getElementById("formaDoc").submit();
             alert("Datos guardados con exito!");
         }
 
