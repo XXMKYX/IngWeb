@@ -2,6 +2,7 @@ const {Router}=require('express');
 const router = Router();
 const fs = require('fs');//Modulo de lectura .json
 const glob = require('glob');
+let multer  = require('multer');
 
 var maestria = []; //Arreglo para guardar datos
 var doctorado = [];
@@ -76,8 +77,21 @@ router.get('/personal_data',(req,res)=>{
   res.render('personal_data');
 })
 //Obtiene datos formulario
-router.post('/personal_data',(req,res)=>{
-  console.log(req.body);
+
+
+router.post('/personal_data', multer({
+  storage: multer.diskStorage({
+    destination:(req,file,cb) => {
+      cb(null,'src/views/Master/PDF/')
+    },
+    filename: (req,file,cb) => {
+      cb(null, req.body.curpM+".pdf")
+    }
+  })
+}).single('archivosubido1M') ,(req, res) => {
+
+//router.post('/personal_data',(req,res)=>{
+//  console.log(req.body);
   
   const { nombreM, apaternoM, amaternoM, fechaM, lugarM, nacionalidadM, civilM, curpM, dependenciasM, telefonoM, emailM, skypeM, fbM, CalleM, NoExtM, NoIntM, ColoniaM, CiudadM, EstadoM, CPM, InstitucionM, pinstitucionM, tituladoMaestriaM,carreraM, xpPM, xpDM, propedeuticoM, aniospropM, motivoM,archivosubido1M} = req.body;
 /* Validacion */
@@ -131,7 +145,7 @@ router.post('/personal_data',(req,res)=>{
     console.log('Registro guardado en archivo');
   });
   //res.send('Datos obtenidos');
-})
+});
 
 
 
