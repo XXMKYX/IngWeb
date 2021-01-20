@@ -1,14 +1,16 @@
 <fieldset>
     <legend>DATOS PERSONALES</legend>
-    <div class="form-group col-md-2">
-        <label for="dateD">Fecha de la solicitud:</label>
-        <label  class="form-control" name="dateD" disabled>
-            <script>
-                var f = new Date();
-                document.write(f.getDate() + "/" + (f.getMonth() +1) + "/" + f.getFullYear());
-                </script>
-        </label>
-        </div>
+    <div class="form-group col-md-2">        
+        <input type="text" id="dateD" name="dateD" style="display: none;">
+
+        <script>
+            var f = new Date();
+            var inputDate = document.getElementById("dateD");
+            inputDate.value = (f.getDate() + "/" + (f.getMonth() +1) + "/" + f.getFullYear());
+        </script>        
+        
+    </div>
+
     <label for="nombreD">NOMBRE(S)*</label>
     <!--<input type="text" id="nombre" placeholder="Nombre(s)">-->
     <input name="nombreD" id="InputNombreD" type="text" class="form-control" placeholder="Nombre(s)*" autofocus required>

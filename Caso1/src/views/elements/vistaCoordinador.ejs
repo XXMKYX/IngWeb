@@ -7,7 +7,7 @@
             <th scope="col">CURP</th>
             <th scope="col">Nombre</th>
             <th scope="col">Tipo</th>
-            <!--<th scope="col">Estado de Validacion</th> -->
+            <th scope="col">Estado de Validacion</th>
             <th scope="col">Validar</th>
           </tr>
         </thead>
@@ -21,22 +21,24 @@
                 <%cont++;%>
                 <td><%= alumno.curpM %></td>
                 <td><%= alumno.nombreM %></td>
-                <td>Maestría</td>
+                <td><%= alumno.tipoM %></td>
+                <td><%= alumno.validacionM %></td>
                 <!-- Ejemplo de contenido<td><%= alumno.Validacion %></td> -->
                 <td><a href="/ValidarM/<%=alumno.CURP%>" class="btn btn-success btn-block">
                   Validar
                 </a></td>
               </tr>
               <%})%>
-                <% doc.forEach(function(alumno) { %>
+                <% doctorado.forEach(function(alumno) { %>
                 <tr>
                     <!-- Ejemplo de contenido -->
                     <th scope="row"><%= cont%></th>
                     <%cont++;%>
-                    <td><%= alumno.CURPD %></td>
+                    <td><%= alumno.curpD %></td>
                     <td><%= alumno.nombreD %></td>
-                    <td>Doctorado</td>
-                    <td><%= alumno.ValidacionD %></td>
+                    <td><%= alumno.tipoD %></td>
+                    <td><%= alumno.validacionD %></td>
+                    <!--<td><%= alumno.ValidacionD %></td>-->
                     <td><a href="/ValidarD/<%=alumno.CURPD %>" class="btn btn-success btn-block">
                       Validar
                     </a></td>
