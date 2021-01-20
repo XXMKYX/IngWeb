@@ -84,16 +84,17 @@ router.post('/personal_data', multer({
       cb(null,'src/views/Master/PDF/')
     },
     filename: (req,file,cb) => {
-      cb(null, req.body.curpM+".pdf")
+      cb(null, req.body.curpM+"_CV.pdf")
     }
   })
 }).single('archivosubido1M') ,(req, res) => {
 
-  const {nombreM, apaternoM, amaternoM, fechaM, lugarM, nacionalidadM, civilM, curpM, dependenciasM, telefonoM, emailM, skypeM, fbM, CalleM, NoExtM, NoIntM, ColoniaM, CiudadM, EstadoM, CPM, InstitucionM, pinstitucionM, tituladoMaestriaM,carreraM, xpPM, xpDM, propedeuticoM, aniospropM, motivoM,archivosubido1M} = req.body;
+  const {tipoM,validacionM, dateM,nombreM, apaternoM, amaternoM, fechaM, lugarM, nacionalidadM, civilM, curpM, dependenciasM, telefonoM, emailM, skypeM, fbM, CalleM, NoExtM, NoIntM, ColoniaM, CiudadM, EstadoM, CPM, InstitucionM, pinstitucionM, tituladoMaestriaM,carreraM, xpPM, xpDM, propedeuticoM, aniospropM, motivoM,archivosubido1M} = req.body;
 
   let newpreg = {
     tipoM: "Maestria",
     validacionM: "Pendiente",
+    dateM,
     nombreM,
     apaternoM,
     amaternoM,
@@ -157,11 +158,12 @@ router.get('/master_data',(req,res)=>{
 router.post('/master_data',(req,res)=>{
   console.log(req.body);
 
-const { nombreD, apaternoD, amaternoD, fechaD, lugarD, nacionalidadD, civilD, curpD, dependenciasD, telefonoD, emailD, skypeD, fbD, CalleD, NoExtD, NoIntD, ColoniaD, CiudadD, EstadoD, CPD,InstitucionD, pinstitucionD,InstitucionPosgradoD,pInstitucionPosgradoD, tituladoDoctoradoD, xpPD, xpDD, propedeuticoD, aniospropD, motivoD, archivosubido1D, archivosubido2D} = req.body;
+const { dateD, nombreD, apaternoD, amaternoD, fechaD, lugarD, nacionalidadD, civilD, curpD, dependenciasD, telefonoD, emailD, skypeD, fbD, CalleD, NoExtD, NoIntD, ColoniaD, CiudadD, EstadoD, CPD,InstitucionD, pinstitucionD,InstitucionPosgradoD,pInstitucionPosgradoD, tituladoDoctoradoD, xpPD, xpDD, propedeuticoD, aniospropD, motivoD, archivosubido1D, archivosubido2D} = req.body;
 
   let newmaster = {
     tipoM : "Doctorado",
     validacionD: "Pendiente",
+    dateD,
     nombreD,
     apaternoD,
     amaternoD,

@@ -1,6 +1,17 @@
 <fieldset>
     <legend>DATOS PERSONALES</legend>
 
+    <div class="form-group col-md-2">        
+        <input type="text" id="dateM" name="dateM" style="display: none;">
+
+        <script>
+            var f = new Date();
+            var inputDate = document.getElementById("dateM");
+            inputDate.value = (f.getDate() + "/" + (f.getMonth() +1) + "/" + f.getFullYear());
+        </script>        
+        
+    </div>
+
     <label for="nombreM">NOMBRE(S)*</label>
     <!--<input type="text" id="nombre" placeholder="Nombre(s)">-->
     <input name="nombreM" id="InputNombreM" type="text" class="form-control" placeholder="Nombre(s)*" autofocus required>
