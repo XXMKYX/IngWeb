@@ -131,8 +131,9 @@ router.post('/personal_data', multer({
   const json_datos = JSON.stringify(newpreg);
   fs.writeFile('src/views/Master/'+curpM+'.json', json_datos, 'utf-8',function (err) {
     if (err) throw err;
-    console.log('Registro guardado en archivo');
+    console.log('Registro de maestría guardado en archivo');
   });
+  res.redirect('/');
   //res.send('Datos obtenidos');
 });
 
@@ -202,8 +203,9 @@ const { dateD, nombreD, apaternoD, amaternoD, fechaD, lugarD, nacionalidadD, civ
   const json_datos = JSON.stringify(newmaster);
   fs.writeFile('src/views/Doctor/'+curpD+'.json', json_datos, 'utf-8',function (err) {
     if (err) throw err;
-    console.log('Registro guardado en archivo');
+    console.log('Registro de doctorado guardado en archivo');
   });
+  res.redirect('/');
 })
 
 

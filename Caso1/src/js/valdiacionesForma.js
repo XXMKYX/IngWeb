@@ -182,7 +182,7 @@ function validarFormaMaestria(input)
     var InputEstado = document.getElementById("InputEstadoM");
     var InputCP = document.getElementById("InputCPM");
     
-    /* Inputs de información personal */
+    /* Inputs de información académica */
     var InputInstitucionM = document.getElementById("InputInstitucionM");
     var pInputinstitucionM = document.getElementById("pInputInstitucionM");
     var InputrsitituladoM = document.getElementById("InputrsitituladoM");
@@ -233,17 +233,16 @@ function validarFormaMaestria(input)
                 var diff_ms = Date.now() - dob.getTime();
                 var age_dt = new Date(diff_ms); 
                 let edad = Math.abs(age_dt.getUTCFullYear() - 1970);
+
                 if(edad < 18){
                     alert("El aspirante debe ser mayor de edad");
                 }
                 else{
 
-                    //Se hace submit de forma
-                    //document.getElementById("formaP").submit();
                     if(InputInstitucionM.value == '' || pInputinstitucionM.value == ''  || InputcarreraM.value == ''|| 
                         InputxpPM.value == '' || InputxpDM.value == '' || 
                         InputaniospropM.value == '' || InputmotivoM.value == ''|| 
-                        Inputarchivosubido1M.value == '' ) //Si el input no es válido
+                        Inputarchivosubido1M.value == '') //Si el input no es válido
                     {
                         alert("Favor de llenar todos los campos obligatorios");
                     }
@@ -251,7 +250,7 @@ function validarFormaMaestria(input)
                     {   
                         
                         //Si una de las dos está checked, sale true, el ! hace que pase a la siguiente validación
-                        if(!InputrsitituladoM.checked ) 
+                        if(!InputrsitituladoM.checked) 
                         {
                             if(!InputnrotituladoM.checked ) 
                             {
@@ -259,16 +258,15 @@ function validarFormaMaestria(input)
                                 
                             }
                             
-                        }
+                        } 
+
                         if(siTitulado==1)
                         {
                             alert("Favor de indicar si estás Titulado"); 
                         }
-                            
                         else
                         {
-                            
-                        //Si una de las dos está checked, sale true, el ! hace que pase a la siguiente validación
+                            //Si una de las dos está checked, sale true, el ! hace que pase a la siguiente validación
                             if(!InputrsipropM.checked ) 
                             {
                                 if(!InputrnopropM.checked ) 
@@ -284,49 +282,38 @@ function validarFormaMaestria(input)
                             }
                             else
                             {
-                                if(InputInstitucionM.value.length >= 100 || pInputInstitucionM.value.length >= 100 
-                                    ||InputcarreraM.value.length >= 100 ||InputxpPM.value.length >= 500 ||
-                                    InputxpDM.value.length >= 500 ||InputaniospropM.value.length >= 100 ||
-                                    InputmotivoM.value.length >= 500  ) //Si el input es muy largo
-                                {
-                                    alert("Los campos no puede tener más de 100 caracteres");
-                                }
-                                else
-                                {                   
-                                    
-                                    const fi = Inputarchivosubido1M; 
-                                    // Check if any file is selected. 
-                                    if (fi.files.length > 0) 
-                                    { 
-                                        for (let i = 0; i <= fi.files.length - 1; i++) 
-                                        {                   
-                                             const fsize = fi.files.item(i).size; 
-                                             const file = Math.round((fsize / 1024)); 
-                                             // The size of the file. 
-                                             if (file >= 1024)
-                                            { 
-                                                alert("Archivo muy grande"); 
-                                             }
-                                            else
-                                            {                                
-                                                document.getElementById("formaMaster").submit();
-                                                alert("Datos guardados con exito!");
-                                            }
+                                const fi = Inputarchivosubido1M; 
+                                // Check if any file is selected. 
+                                if (fi.files.length > 0) 
+                                { 
+                                    for (let i = 0; i <= fi.files.length - 1; i++) 
+                                    {                   
+                                         const fsize = fi.files.item(i).size; 
+                                         const file = Math.round((fsize / 1024)); 
+                                         // The size of the file. 
+                                         if (file >= 1024)
+                                        { 
+                                            alert("Archivo muy grande, debe ser menor a 1mb"); 
+                                         }
+                                        else
+                                        {                                
+                                            document.getElementById("formaMaster").submit();
+                                            alert("Datos guardados con exito!");
                                         }
-                                        
-                                    }
+                                    }
                                     
+                                }
+                                else{
+                                    alert("Adjunta tu(s) archivo(s)");
                                 }
+                                    
+                                
                             }
-                        }   
-                    
+                        }                                                                                                                   
                     }
                 }
             }
         }
-
-    
-
     }
     else{    
         if(InputCURP.value == "" || res.value == "CURP, Formato: No válido"){
@@ -400,7 +387,7 @@ function validarFormaDoctorado(input)
         InputFechaNacimientoD.value == ''|| InputLugarDeNacimientoD.value == ''
         || InputNacionalidadD.value == '' || InputEstadoCivilD.value == '' || InputCURPD.value == '' || 
         InputDependenciasD.value == '' || InputTelefonoD.value == '' || InputCorreoD.value == '' || 
-        InputSkypeD.value == '' || InputFBD.value == '' || InputCalleD.value == '' || InputNoExtD.value == ''||InputNoIntD.value==''
+        InputSkypeD.value == '' || InputFBD.value == '' || InputCalleD.value == '' || InputNoExtD.value == ''
         || InputColoniaD.value == '' || InputCiudadD.value == '' || InputEstadoD.value == '' || InputCPD.value == '') //Si el input no es válido
         {
             alert("Favor de llenar todos los campos obligatorios");
@@ -475,13 +462,7 @@ function validarFormaDoctorado(input)
                                 alert("Favor de indicar si ya hiciste Propedéutico.");   
                             }
                             else
-                            {
-                                (InputInstitucionD.value == '' || InputpinstitucionD.value == ''|| InputInstitucionPosgradoD.value == ''
-                    || InputpInstitucionPosgradoD.value == ''  ||  
-                        InputxpPD.value == '' || InputxpDD.value == '' || 
-                        InputaniospropD.value == '' || InputmotivoD.value == ''|| 
-                        Inputarchivosubido1D.value == ''|| Inputarchivosubido2D.value == '' ) 
-
+                            {                            
                                 if(InputInstitucionD.value.length >= 100 || InputpinstitucionD.value.length >= 100 
                                     ||InputInstitucionPosgradoD.value.length >= 100 ||InputpInstitucionPosgradoD.value.length >= 100 
                                     ||InputxpPD.value.length >= 500 || InputxpDD.value.length >= 500 ||
@@ -508,33 +489,31 @@ function validarFormaDoctorado(input)
                                              }
                                             else
                                             {                                
-                                                //document.getElementById("formaM").submit();
-                                                alert("Datos guardados con exito!");
+                                                const fi2 = Inputarchivosubido2D; 
+                                                // Check if any file is selected. 
+                                                if (fi.files.length > 0) 
+                                                { 
+                                                    for (let i = 0; i <= fi.files.length - 1; i++) 
+                                                    {                   
+                                                         const fsize = fi.files.item(i).size; 
+                                                         const file = Math.round((fsize / 1024)); 
+                                                         // The size of the file. 
+                                                         if (file >= 1024)
+                                                        { 
+                                                            alert("Archivo muy grande"); 
+                                                         }
+                                                        else
+                                                        {                                
+                                                            document.getElementById("formaDoc").submit();
+                                                            alert("Datos guardados con exito!");
+                                                        }
+                                                    }
+                                                    
+                                                }
                                             }
                                         }
                                         
-                                    }
-                            const fi2 = Inputarchivosubido2D; 
-                                    // Check if any file is selected. 
-                                    if (fi.files.length > 0) 
-                                    { 
-                                        for (let i = 0; i <= fi.files.length - 1; i++) 
-                                        {                   
-                                             const fsize = fi.files.item(i).size; 
-                                             const file = Math.round((fsize / 1024)); 
-                                             // The size of the file. 
-                                             if (file >= 1024)
-                                            { 
-                                                alert("Archivo muy grande"); 
-                                             }
-                                            else
-                                            {                                
-                                                document.getElementById("formaDoc").submit();
-                                                alert("Datos guardados con exito!");
-                                            }
-                                        }
-                                        
-                                    }
+                                    }                                    
                                     
                                 }
                             }
