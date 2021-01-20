@@ -1,5 +1,6 @@
 <div class="VistaMiSolicitud contenedor" id="prev-mi-solicitud">
 
+    <%if (maestria.length > 0) {%>
     <% maestria.forEach(function(pre){ %>
     <div class="MiSolicitud" id="vista/">
         <ul class="ListaMiSolicitud">
@@ -21,10 +22,15 @@
         </ul>        
         
     </div>
-    <% }) %> 
-    
+    <% }) %>
+
+    <%} else {%>
+        <div class="card card-body text-center">
+            <p>No se encontraron registros. <a href="/new-entry">Debes registrarte primero</a></p>
+          </div>
+          <%}%>   
     
 </div>
 <div class="div-mi-solicitud" id="vista-mi-solicitud" style="display: none;">
-    <%- include('VistaCompletaPersona') %>  
+    <%- include('maestria') %>  
 </div>
