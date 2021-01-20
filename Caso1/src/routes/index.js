@@ -136,9 +136,7 @@ router.post('/personal_data', multer({
   //res.send('Datos obtenidos');
 });
 
-// MAESTRIA
-
-/* Ruta inicial */
+//* Ruta inicial */
 router.get('/', (req, res) => {
   res.render('index.ejs',{
     doctorado //Pasa la lista de valores 
@@ -152,11 +150,21 @@ router.post('/index',(req,res)=>{
 })
 //render formulario
 router.get('/master_data',(req,res)=>{
-  res.render('master_data',{doctorado});
+res.render('master_data');
 })
 //Obtiene datos formulario
-router.post('/master_data',(req,res)=>{
-  console.log(req.body);
+
+
+router.post('/master_data', multer({
+storage: multer.diskStorage({
+  destination:(req,file,cb) => {
+    cb(null,'src/views/Doctor/PDF/')
+  },
+  filename: (req,file,cb) => {
+    cb(null, req.body.curpD+".pdf")
+  }
+})
+}).single('archivosubido1D') ,(req, res) => {
 
 const { dateD, nombreD, apaternoD, amaternoD, fechaD, lugarD, nacionalidadD, civilD, curpD, dependenciasD, telefonoD, emailD, skypeD, fbD, CalleD, NoExtD, NoIntD, ColoniaD, CiudadD, EstadoD, CPD,InstitucionD, pinstitucionD,InstitucionPosgradoD,pInstitucionPosgradoD, tituladoDoctoradoD, xpPD, xpDD, propedeuticoD, aniospropD, motivoD, archivosubido1D, archivosubido2D} = req.body;
 
