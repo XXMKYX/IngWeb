@@ -169,7 +169,7 @@ storage: multer.diskStorage({
 const { dateD, nombreD, apaternoD, amaternoD, fechaD, lugarD, nacionalidadD, civilD, curpD, dependenciasD, telefonoD, emailD, skypeD, fbD, CalleD, NoExtD, NoIntD, ColoniaD, CiudadD, EstadoD, CPD,InstitucionD, pinstitucionD,InstitucionPosgradoD,pInstitucionPosgradoD, tituladoDoctoradoD, xpPD, xpDD, propedeuticoD, aniospropD, motivoD, archivosubido1D, archivosubido2D} = req.body;
 
   let newmaster = {
-    tipoM : "Doctorado",
+    tipoD : "Doctorado",
     validacionD: "Pendiente",
     dateD,
     nombreD,
