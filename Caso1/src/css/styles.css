@@ -566,3 +566,40 @@ input[type="button"]{
     margin-bottom: 0;
     list-style: none;
 }
+
+.table{
+    text-align: center;
+}
+
+.table caption{
+    text-transform: uppercase;
+    text-decoration: solid;
+    color: white;
+}
+
+.table th{
+    text-decoration: solid;
+    color: wheat;
+}
+
+.table td{
+    text-decoration: solid;
+    color: white;
+}
+
+.table th, td {
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.table a{
+    text-decoration: none;    
+    color: aliceblue;
+}
+
+.table tbody:hover {
+    background-color: indianred ;
+}
+
+.table tbody:hover a{
+    color: lightblue;
+}
