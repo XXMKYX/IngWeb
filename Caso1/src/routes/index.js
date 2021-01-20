@@ -59,7 +59,6 @@ router.get('/', (req, res) => {
 });
 
 
-
 /* Ruta inicial */
 router.get('/', (req, res) => {
     res.render('index.ejs',{
@@ -90,17 +89,11 @@ router.post('/personal_data', multer({
   })
 }).single('archivosubido1M') ,(req, res) => {
 
-//router.post('/personal_data',(req,res)=>{
-//  console.log(req.body);
-  
-  const { nombreM, apaternoM, amaternoM, fechaM, lugarM, nacionalidadM, civilM, curpM, dependenciasM, telefonoM, emailM, skypeM, fbM, CalleM, NoExtM, NoIntM, ColoniaM, CiudadM, EstadoM, CPM, InstitucionM, pinstitucionM, tituladoMaestriaM,carreraM, xpPM, xpDM, propedeuticoM, aniospropM, motivoM,archivosubido1M} = req.body;
-/* Validacion */
-  //if (!nombre || !apaterno || !amaterno || !fecha|| !lugar|| !nacionalidad ||!civil ||!curp ||!dependencias ||!telefono ||!email ||!skype ||!fb ||!Calle ||!NoExt ||!NoInt ||!Colonia ||!Ciudad ||!Estado ||!CP) {
-  //  res.status(400).send("Tienes que llenar todos los datos - Personal");
-  //  return;
-  // }
+  const {nombreM, apaternoM, amaternoM, fechaM, lugarM, nacionalidadM, civilM, curpM, dependenciasM, telefonoM, emailM, skypeM, fbM, CalleM, NoExtM, NoIntM, ColoniaM, CiudadM, EstadoM, CPM, InstitucionM, pinstitucionM, tituladoMaestriaM,carreraM, xpPM, xpDM, propedeuticoM, aniospropM, motivoM,archivosubido1M} = req.body;
 
   let newpreg = {
+    tipoM: "Maestria",
+    validacionM: "Pendiente",
     nombreM,
     apaternoM,
     amaternoM,
@@ -130,15 +123,10 @@ router.post('/personal_data', multer({
     propedeuticoM,
     aniospropM,
     motivoM,
-    archivosubido1M
+    archivosubido1M,
+    comentarioM: "Sin comentarios"
   };
 
-  // agregando al array
-  //preg.push(newpreg);
-  
-  // agregando al archivo
-  //const json_preg = JSON.stringify(preg) //Convierte la lista a string
-  //fs.writeFileSync('src/preg.json', json_preg, 'utf-8') //Guarda string en formato utf-8
   const json_datos = JSON.stringify(newpreg);
   fs.writeFile('src/views/Master/'+curpM+'.json', json_datos, 'utf-8',function (err) {
     if (err) throw err;
@@ -146,8 +134,6 @@ router.post('/personal_data', multer({
   });
   //res.send('Datos obtenidos');
 });
-
-
 
 // MAESTRIA
 
@@ -172,13 +158,10 @@ router.post('/master_data',(req,res)=>{
   console.log(req.body);
 
 const { nombreD, apaternoD, amaternoD, fechaD, lugarD, nacionalidadD, civilD, curpD, dependenciasD, telefonoD, emailD, skypeD, fbD, CalleD, NoExtD, NoIntD, ColoniaD, CiudadD, EstadoD, CPD,InstitucionD, pinstitucionD,InstitucionPosgradoD,pInstitucionPosgradoD, tituladoDoctoradoD, xpPD, xpDD, propedeuticoD, aniospropD, motivoD, archivosubido1D, archivosubido2D} = req.body;
-/* Validacion */
-  //if (!InstitucionM  ||!pinstitucionM  ||!tituladoMaestriaM  ||!carreraM ||!xpPM ||!xpDM ||!propedeuticoM ||!aniospropM ||!motivoM||!archivosubido1M) {
-   // res.status(400).send("Tienes que llenar todos los datos - Maestría ");
-   // return;
- // }
 
   let newmaster = {
+    tipoM : "Doctorado",
+    validacionD: "Pendiente",
     nombreD,
     apaternoD,
     amaternoD,
@@ -210,28 +193,23 @@ const { nombreD, apaternoD, amaternoD, fechaD, lugarD, nacionalidadD, civilD, cu
     aniospropD,
     motivoD,
     archivosubido1D,
-    archivosubido2D
+    archivosubido2D,
+    comentarioD: "Sin comentarios"
   };
-  // agregando al array
-  //master.push(newmaster);
-  
-  // agregando al archivo
-  //const json_master = JSON.stringify(master) //Convierte la lista a string
-  //fs.writeFileSync('src/master.json', json_master, 'utf-8') //Guarda string en formato utf-8
+
   const json_datos = JSON.stringify(newmaster);
   fs.writeFile('src/views/Doctor/'+curpD+'.json', json_datos, 'utf-8',function (err) {
     if (err) throw err;
     console.log('Registro guardado en archivo');
   });
-  //res.s
-  //res.send('Datos obtenidos');
-
 })
 
 
 
-// DOCTORADO
-/* Ruta inicial */
+
+/* E S T O    N O    S I R V E*/
+
+
 router.get('/', (req, res) => {
   res.render('index.ejs',{
     doc //Pasa la lista de valores 
