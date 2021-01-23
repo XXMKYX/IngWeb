@@ -1,0 +1,50 @@
+<fieldset>
+    <legend>Informacion General </legend>
+    <div class="" id="formaDoctorado1">
+        <div class="grid-dos-columnas">
+            <label for="InputInstitucionD">Institución de tus estudios de la maestria</label>
+            <label for="InputpinstitucionD">País de la institución</label>
+            <input type="text"  placeholder="Institución de maestría" disabled value="<%=JsonBusquedaD.InstitucionD%>">
+            <input type="text"  placeholder="País" disabled value="<%=JsonBusquedaD.pinstitucionD%>">
+        </div>
+    
+        
+        <div class="grid-dos-columnas">
+            <label for="InputInstitucionPosgradoD">Institución de tus estudios de posgrado</label>
+            <label for="InputpInstitucionPosgradoD">País de la institución</label>
+            <input type="text"  placeholder="Institución de posgrado" disabled value="<%=JsonBusquedaD.InstitucionPosgradoD%>">
+            <input type="text"  placeholder="País" disabled value="<%=JsonBusquedaD.pInstitucionPosgradoD%>">
+
+            <label for="tituladoDoctorado">¿Estás titulado de tu ultimo grado de estudios?</label>
+            
+            <input type="text" placeholder="SI/NO" disabled value="<%=JsonBusquedaD.tituladoDoctoradoD%>">
+           
+        </div>
+
+       
+    </div>
+
+    <label for="InputxpPD">Experiencia Profesional:</label>
+    <textarea disabled><%=JsonBusquedaD.xpPD%></textarea >
+        
+    <label for="InputxpDD">Experiencia Docente:</label>
+    <textarea disabled><%=JsonBusquedaD.xpDD%> </textarea >
+    
+    <label>¿Has asistido a los cursos propedéuticos de este Departamento anteriormente?</label>
+
+         <div class="alinear-centro">
+            <label for="InputrsipropD"></label>
+            <input type="text" placeholder="Cursos" disabled value="<%=JsonBusquedaD.propedeuticoD%>" > 
+
+
+
+         </div> 
+    <label for="InputaniospropD">¿En qué año(s)?</label>
+    <input type="text" placeholder="Año(s) Propedeuticos" disabled value="<%=JsonBusquedaD.aniospropD%>" >>
+
+    <label for="InputmotivoD">Motivo por el cuál desea ingresar al Posgrado y a qué línea de investigación desea integrarse</label>
+    <textarea disabled><%=JsonBusquedaD.motivoD%></textarea disabled>
+        
+
+</fieldset>
+
