@@ -54,6 +54,39 @@ var HideTab = function(input) {
 };
 
 
+var HideTabMiSolicitud = function(input) {
+    var MaestriaDatosPM = document.getElementById('navdatosmisolicitudpm');
+    var MaestriaDatosAM = document.getElementById('navdatosmisolicitudam');
+
+    var DoctoradoDatosPD = document.getElementById('nav-datosD');
+    var DoctoradoDatosAD = document.getElementById('nav-informacionD');
+   // var archivosMaestria = document.getElementById('archivosMaestria');
+    //var archivosDoctorado = document.getElementById('archivosDoctorado');
+    //var Forma = document.getElementById('formaM');
+    var valor = input.value;
+    
+    //1 si es Maestría, 2 si es Doctorado
+    if(valor == 1){
+        MaestriaDatosPM.style.display = "block";        
+        MaestriaDatosAM.style.display = "none";
+    }else if(valor == 2){
+        MaestriaDatosPM.style.display = "none";
+        MaestriaDatosAM.style.display = "block";        
+    }
+    else{
+        if(valor == 3){
+            DoctoradoDatosPD.style.display = "block";        
+            DoctoradoDatosAD.style.display = "none";
+        }
+        else if(valor == 4){
+            DoctoradoDatosPD.style.display = "none";
+            DoctoradoDatosAD.style.display = "block";        
+        }
+    }
+};
+
+
+
 function changeTab(evt, Tabame) {
 // Declare all variables
 var i, tabcontent, tablinks;

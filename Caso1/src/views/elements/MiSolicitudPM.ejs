@@ -7,28 +7,28 @@
 
     <label for="nombreM">NOMBRE(S)*</label>
     <!--<input type="text" id="nombre" placeholder="Nombre(s)">-->
-    <input type="text" class="form-control" placeholder="Nombre(s)*" autofocus disabled value="<%=JsBus.nombreM%>">
+    <input type="text" class="form-control" placeholder="Nombre(s)*" autofocus disabled value="<%=JsonBusqueda.nombreM%>">
     <div class="grid-dos-columnas">
         <label for="InputAMaternoM">Apellido Paterno*</label>
         <label for="InputAPaternoM">Apellido Materno*</label>
 
-        <input type="text" placeholder="Apellido Paterno*" disabled value="<%=JsBus.apaternoM%>">
-        <input type="text" placeholder="Apellido Materno*" disabled value="<%=JsBus.apaternoM%>">
+        <input type="text" placeholder="Apellido Paterno*" disabled value="<%=JsonBusqueda.apaternoM%>">
+        <input type="text" placeholder="Apellido Materno*" disabled value="<%=JsonBusqueda.apaternoM%>">
 
         <label for="InputFechaNacimientoM">FECHA DE NACIMIENTO*</label>
         <label for="InputLugarDeNacimientoM">LUGAR DE NACIMIENTO*</label> 
-        <input type="date" placeholder="Fecha*" disabled value="<%=JsBus.fechaM%>">
-        <input type="text" placeholder="Lugar*" disabled value="<%=JsBus.lugarM%>">
+        <input type="date" placeholder="Fecha*" disabled value="<%=JsonBusqueda.fechaM%>">
+        <input type="text" placeholder="Lugar*" disabled value="<%=JsonBusqueda.lugarM%>">
 
         <label for="InputNacionalidadM">NACIONALIDAD*</label>
         <label for="InputEstadoCivilM">ESTADO CIVIL*</label>
-        <input type="text" placeholder="Nacionalidad*" disabled value="<%=JsBus.nacionalidadM%>">
-        <input type="text" placeholder="Estado Civil*" disabled value="<%=JsBus.civilM%>">
+        <input type="text" placeholder="Nacionalidad*" disabled value="<%=JsonBusqueda.nacionalidadM%>">
+        <input type="text" placeholder="Estado Civil*" disabled value="<%=JsonBusqueda.civilM%>">
 
         <label for="InputCURPM">CURP*</label>
         <label for="InputDependenciasM">DEPENDENCIAS*</label>
-        <input type="text" oninput="validarInputM(this)" placeholder="CURP*" disabled value="<%=JsBus.curpM%>" >
-        <input type="number" placeholder="No. de dependencias*" min="0" disabled value="<%=JsBus.dependenciasM%>">
+        <input type="text" oninput="validarInputM(this)" placeholder="CURP*" disabled value="<%=JsonBusqueda.curpM%>" >
+        <input type="number" placeholder="No. de dependencias*" min="0" disabled value="<%=JsonBusqueda.dependenciasM%>">
     </div>
 </fieldset>
 <fieldset>
@@ -36,34 +36,34 @@
     <div class="grid-dos-columnas">
         <label for="InputTelefonoM">TELÉFONO CELULAR*</label>
         <label for="InputCorreoM">E-mail*</label>
-        <input type="tel" placeholder="Número*" disabled value="<%=JsBus.telefonoM%>">
-        <input type="email" placeholder="Tu correo electrónico*" disabled value="<%=JsBus.emailM%>">
+        <input type="tel" placeholder="Número*" disabled value="<%=JsonBusqueda.telefonoM%>">
+        <input type="email" placeholder="Tu correo electrónico*" disabled value="<%=JsonBusqueda.emailM%>">
 
         <label for="InputSkypeM">CUENTA SKYPE</label>
         <label for="InputFBM">Cuenta de FB (Link)</label>
-        <input type="text" placeholder="Skype*" disabled value="<%=JsBus.skypeM%>">
-        <input type="text" placeholder="Link a tu Facebook*" disabled value="<%=JsBus.fbM%>">
+        <input type="text" placeholder="Skype*" disabled value="<%=JsonBusqueda.skypeM%>">
+        <input type="text" placeholder="Link a tu Facebook*" disabled value="<%=JsonBusqueda.fbM%>">
     </div>
 </fieldset>
 <fieldset>
     <legend>DOMICILIO</legend>
     <div class="domicilio-calle-num">
         <!--<label for="Calle">Calle</label>-->
-        <input type="text" placeholder="Calle*" disabled value="<%=JsBus.CalleM%>">
+        <input type="text" placeholder="Calle*" disabled value="<%=JsonBusqueda.CalleM%>">
         <!--<label for="NoExt">No. Ext</label>-->
-        <input type="text" placeholder="NoExt*" disabled value="<%=JsBus.NoExtM%>">
+        <input type="text" placeholder="NoExt*" disabled value="<%=JsonBusqueda.NoExtM%>">
         <!--<label for="NoInt">No. Int</label>-->
-        <input type="text" placeholder="NoInt" disabled value="<%=JsBus.NoIntM%>">
+        <input type="text" placeholder="NoInt" disabled value="<%=JsonBusqueda.NoIntM%>">
     </div>
     <div class="grid-dos-columnas">
         <!--<label for="Colonia">Colonia</label>-->
-        <input type="text" placeholder="Colonia*" disabled value="<%=JsBus.ColoniaM%>">
+        <input type="text" placeholder="Colonia*" disabled value="<%=JsonBusqueda.ColoniaM%>">
         <!--<label for="Ciudad">Ciudad</label>-->
-        <input type="text" placeholder="Ciudad*" disabled value="<%=JsBus.CiudadM%>">
+        <input type="text" placeholder="Ciudad*" disabled value="<%=JsonBusqueda.CiudadM%>">
         <!--<label for="Estado">Estado</label>-->
-        <input type="text" placeholder="Estado*" disabled value="<%=JsBus.EstadoM%>">
+        <input type="text" placeholder="Estado*" disabled value="<%=JsonBusqueda.EstadoM%>">
         <!--<label for="CP">CP</label>-->
-        <input type="text" placeholder="CP*" disabled value="<%=JsBus.CPM%>">
+        <input type="text" placeholder="CP*" disabled value="<%=JsonBusqueda.CPM%>">
 
     </div>
 </fieldset>   

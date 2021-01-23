@@ -1,14 +1,10 @@
-<form method="POST" class="columnas-10 " action="/Busqueda" id="Busqueda" enctype="multipart/form-data">
-    <div class="VistaMiSolicitud contenedor" id="prev-mi-solicitud"></div>
 
-        <div class=" VistaMiSolicitud div-prev-solicitud-curp">
-            <p>Escribe tu CURP e indica forma</p>
-            <input type="text" id="prevmisolicitudinputcurp" name="CURP" placeholder="Ej. MDHS996637...">
-            <div class="grid-dos-columnas">
-                <input type="submit" name="verSolicitud" value="BuscarM" onclick="TestButton(this)" class="boton boton-amarillo">
-                <input type="button" name="verSolicitud" value="BuscarD" class="boton boton-verde" >
-            </div>
-            
-        </div>
-    </div>
-</form>
+
+<form method="POST" action="/Busqueda" class="needs-validation" id="prev-mi-solicitud" style="display:block;" novalidate>
+    <div class="form-group col-md-3 contenedor columnas-10">
+      <label for="busqueda">Si tiene una solicitud sin terminar, inserte su CURP:</label>
+      <input type="text" style="text-transform: uppercase;" class="form-control" name="CURP" placeholder="ej. MAHJ280603MSPRRV09" pattern="^[A-Z][A,E,I,O,U,X][A-Z]{2}[0-9]{2}[0-1][0-9][0-3][0-9][M,H][A-Z]{2}[B-Z]{3}[0-9,A-Z][0-9]$"required>
+      <button name="buscar" type="submit" id="buscar" value="BuscarM" class="boton boton-amarillo">Buscar Maestria</button>
+      <button name="buscar" type="submit" id="buscar" value="BuscarD" class="boton boton-verde">Buscar Doctorado</button>
+      </div>
+  </form>

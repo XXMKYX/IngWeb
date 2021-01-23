@@ -3,41 +3,41 @@
     <div class="grid-dos-columnas">
         <label for="InputInstitucionM">Institución de tus estudios profesionales</label>
         <label for="pInputinstitucionM">País la institución</label>
-        <input type="text" placeholder="Institución" disabled value="<%=JsBus.InstitucionM%>">
-        <input type="text" placeholder="País" disabled value="<%=JsBus.pinstitucionM%>">
+        <input type="text" placeholder="Institución" disabled value="<%=JsonBusqueda.InstitucionM%>">
+        <input type="text" placeholder="País" disabled value="<%=JsonBusqueda.pinstitucionM%>">
     </div>
     <div class=""  id="formaMaestria1">
         <label for="InputtitulacionM">¿Estás titulado?</label>
         <div class="alinear-centro"  >            
-            <input type="text" placeholder="Titulado" disabled value="<%=JsBus.tituladoMaestriaM%>">            
+            <input type="text" placeholder="Titulado" disabled value="<%=JsonBusqueda.tituladoMaestriaM%>">            
         </div>
 
         <div class="grid-dos-columnas">
             <label for="InputcarreraM">¿En qué carrera?</label>
-            <input type="text" placeholder="Carrera" disabled value="<%=JsBus.carreraM%>">
+            <input type="text" placeholder="Carrera" disabled value="<%=JsonBusqueda.carreraM%>">
         </div>                            
     </div>
 
     <label for="InputxpPM">Experiencia Profesional:</label>
-    <textarea value="<%=JsBus.xpPM%>" disabled></textarea  >
+    <textarea disabled><%=JsonBusqueda.xpPM%></textarea  >
         
     <label for="InputxpDM">Experiencia Docente:</label>
-    <textarea value="<%=JsBus.xpDM%>" disabled></textarea >
+    <textarea disabled><%=JsonBusqueda.xpDM%> </textarea >
     
     <label>¿Has asistido a los cursos propedéuticos de este Departamento?</label>
 
     <div class="alinear-centro">
-        <label for="InputrsipropM">Si</label>
-        <input type="text" placeholder="Cursos" disabled value="<%=JsBus.propedeuticoM%>" > 
+        <label for="InputrsipropM"></label>
+        <input type="text" placeholder="Cursos" disabled value="<%=JsonBusqueda.propedeuticoM%>" > 
     </div> 
     <label for="InputaniospropM">¿En qué año(s)?</label>
-    <input type="text" placeholder="Año(s) Propedeuticos" disabled value="<%=JsBus.aniospropM%>" >
+    <input type="text" placeholder="Año(s) Propedeuticos" disabled value="<%=JsonBusqueda.aniospropM%>" >
 
     <label for="InputmotivoM">Motivo por el cuál desea ingresar al Posgrado y a qué línea de investigación desea integrarse</label>
-    <textarea value="<%=JsBus.motivoM%>" disabled></textarea>
+    <textarea disabled><%=JsonBusqueda.motivoM%></textarea>
         
     <label for="ComentarioM">Motivo por el cuál desea ingresar al Posgrado y a qué línea de investigación desea integrarse</label>
-    <textarea value="<%=JsBus.comentarioM%>"></textarea>
+    <textarea disabled><%=JsonBusqueda.comentarioM%></textarea>
 
 </fieldset>
 

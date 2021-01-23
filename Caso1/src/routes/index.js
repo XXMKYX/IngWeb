@@ -76,8 +76,8 @@ router.get('/personal_data',(req,res)=>{
   res.render('personal_data');
 })
 
-router.get('/Busqueda', (req, res) => {
-  res.render('Busqueda');
+router.get('/MiSolicitudM', (req, res) => {
+  res.render('../views/elements/MiSolicitudM');
 });
 
 router.get('/BusquedaD', (req, res) => {
@@ -299,29 +299,23 @@ router.post('/doc_data',(req,res)=>{
   //res.send('Datos obtenidos');
 })
 
-
 router.post('/Busqueda', (req, res) => 
 {   
     
-  const {CURP,verSolicitud} = req.body;  
+  const {CURP,buscar} = req.body;  
+  console.log(req.body);
 
-  console.log("Verificando búsqueda para "+CURP+" "+verSolicitud);     
-  if(verSolicitud=="BuscarM"){     
+  if(buscar=="BuscarM"){     
         
-    parcialM = fs.readFileSync('src/views/Maestria/'+CURP+'.json', 'utf8')
-    console.log(parcialM);     
-    JsBus=JSON.parse(parcialM);     
-    console.log(JsBus);     
-    console.log("Hay Maestro");     
-    res.redirect('/Busqueda');  
+    BusquedaJS = fs.readFileSync('src/views/Master/'+CURP+'.json', 'utf8')
+    console.log(BusquedaJS);     
+    JsonBusqueda=JSON.parse(BusquedaJS);      
+    res.redirect('/MiSolicitudM');  
 
-  }else if(verSolicitud=="BuscarD")
+  }else if(buscar=="BuscarD")
   {     
-    parcialD = fs.readFileSync('src/views/Doctorado/'+CURP+'.json', 'utf8')     
-    JsBusD=JSON.parse(parciald);     
-    console.log(JsBusD);     
-    console.log(parcialD);     
-    console.log("Hay Doctor");     
+    BusquedaJSD = fs.readFileSync('src/views/Doctorado/'+CURP+'.json', 'utf8')     
+    JsonBusquedaD=JSON.parse(BusquedaJSD);        
     res.redirect('/BusquedaD');  
 
   } 
