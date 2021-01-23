@@ -1,0 +1,66 @@
+<fieldset>
+    <legend>DATOS PERSONALES</legend>
+   
+    <label for="nombreD">NOMBRE(S)*</label>
+    <!--<input type="text" id="nombre" placeholder="Nombre(s)">-->
+    <input type="text" class="form-control" placeholder="Nombre(s)*" autofocus disable value="<%=JsonBusquedaD.nombreD%>">
+    <div class="grid-dos-columnas">
+        <label for="InputAMaternoD">Apellido Paterno*</label>
+        <label for="InputAPaternoD">Apellido Materno*</label>
+
+        <input type="text"  placeholder="Apellido Paterno*" disable value="<%=JsonBusquedaD.apaternoD%>">
+        <input type="text"  placeholder="Apellido Materno*" disable value="<%=JsonBusquedaD.amaternoD%>">
+
+        <label for="InputFechaNacimientoD">FECHA DE NACIMIENTO*</label>
+        <label for="InputLugarDeNacimientoD">LUGAR DE NACIMIENTO*</label> 
+        <input type="date"  placeholder="Fecha*" disable value="<%=JsonBusquedaD.fechaD%>">
+        <input type="text"  placeholder="Lugar*" disable value="<%=JsonBusquedaD.lugarD%>">
+
+        <label for="InputNacionalidadD">NACIONALIDAD*</label>
+        <label for="InputEstadoCivilD">ESTADO CIVIL*</label>
+        <input type="text"  placeholder="Nacionalidad*" disable value="<%=JsonBusquedaD.nacionalidadD%>">
+        <input type="text"  placeholder="Estado Civil*" disable value="<%=JsonBusquedaD.civilD%>">
+
+        <label for="InputCURPD">CURP*</label>
+        <label for="InputDependenciasD">DEPENDENCIAS*</label>
+        <input type="text"  oninput="validarInputD(this)" placeholder="CURP*" disable value="<%=JsonBusquedaD.curpD%>">
+        <input type="number"  placeholder="No. de dependencias*" min="0" disable value="<%=JsonBusquedaD.dependenciasD%>">
+        
+    </div>
+</fieldset>
+<fieldset>
+    <legend>DATOS DE CONTACTO</legend>
+    <div class="grid-dos-columnas">
+        <label for="InputTelefonoD">TELÉFONO CELULAR*</label>
+        <label for="InputCorreoD">E-mail*</label>
+        <input type="tel"  placeholder="Número*" disable value="<%=JsonBusquedaD.telefonoD%>">
+        <input type="email" placeholder="Tu correo electrónico*" disable value="<%=JsonBusquedaD.emailD%>">
+
+        <label for="InputSkypeD">CUENTA SKYPE</label>
+        <label for="InputFBD">Cuenta de FB (Link)</label>
+        <input type="text" placeholder="Skype*" disable value="<%=JsonBusquedaD.skypeD%>">
+        <input type="text"  placeholder="Link a tu Facebook*" disable value="<%=JsonBusquedaD.fbD%>">
+    </div>
+</fieldset>
+<fieldset>
+    <legend>DOMICILIO</legend>
+    <div class="domicilio-calle-num">
+        <!--<label for="Calle">Calle</label>-->
+        <input type="text"  placeholder="Calle*" disable value="<%=JsonBusquedaD.CalleD%>">
+        <!--<label for="NoExt">No. Ext</label>-->
+        <input type="text"  placeholder="NoExt*" disable value="<%=JsonBusquedaD.NoExtD%>">
+        <!--<label for="NoInt">No. Int</label>-->
+        <input type="text"  placeholder="NoInt" disable value="<%=JsonBusquedaD.NoIntD%>">
+    </div>
+    <div class="grid-dos-columnas">
+        <!--<label for="Colonia">Colonia</label>-->
+        <input type="text"  placeholder="Colonia*" disable value="<%=JsonBusquedaD.ColoniaD%>">
+        <!--<label for="Ciudad">Ciudad</label>-->
+        <input type="text"  placeholder="Ciudad*" disable value="<%=JsonBusquedaD.CiudadD%>">
+        <!--<label for="Estado">Estado</label>-->
+        <input type="text"  placeholder="Estado*" disable value="<%=JsonBusquedaD.EstadoD%>">
+        <!--<label for="CP">CP</label>-->
+        <input type="text"  placeholder="CP*" disable value="<%=JsonBusquedaD.CPD%>">
+
+    </div>
+</fieldset>   

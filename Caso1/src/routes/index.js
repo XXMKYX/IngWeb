@@ -38,7 +38,7 @@ glob("src/views/Doctor/*.json",function(err,files){
   });
 });
 
-glob("src/views/Doctorado/*.json",function(err,files){
+glob("src/views/Doctor/*.json",function(err,files){
   if(err) {
     console.log("cannot read the folder, something goes wrong with glob", err);
   }
@@ -314,7 +314,7 @@ router.post('/Busqueda', (req, res) =>
 
   }else if(buscar=="BuscarD")
   {     
-    BusquedaJSD = fs.readFileSync('src/views/Doctorado/'+CURP+'.json', 'utf8')     
+    BusquedaJSD = fs.readFileSync('src/views/Doctor/'+CURP+'.json', 'utf8')     
     JsonBusquedaD=JSON.parse(BusquedaJSD);        
     res.redirect('/BusquedaD');  
 
