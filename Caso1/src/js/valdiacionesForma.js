@@ -811,51 +811,51 @@ function validarFormaDoctorado(input)
 function validarNewFormaDoctorado(input)
 {
 
-    var InputNombreD = document.getElementById("InputNombreD");
-    var InputAMaternoD = document.getElementById("InputAMaternoD");
-    var InputAPaternoD = document.getElementById("InputAPaternoD");
-    var InputFechaNacimientoD = document.getElementById("InputFechaNacimientoD");
-    var InputLugarDeNacimientoD = document.getElementById("InputLugarDeNacimientoD");
-    var InputNacionalidadD = document.getElementById("InputNacionalidadD");
-    var InputEstadoCivilD = document.getElementById("InputEstadoCivilD");
-    var InputCURPD = document.getElementById("InputCURPD");
-    var InputDependenciasD = document.getElementById("InputDependenciasD");
+    var InputNombreD = document.getElementById("newInputNombreD");
+    var InputAMaternoD = document.getElementById("newInputAMaternoD");
+    var InputAPaternoD = document.getElementById("newInputAPaternoD");
+    var InputFechaNacimientoD = document.getElementById("newInputFechaNacimientoD");
+    var InputLugarDeNacimientoD = document.getElementById("newInputLugarDeNacimientoD");
+    var InputNacionalidadD = document.getElementById("newInputNacionalidadD");
+    var InputEstadoCivilD = document.getElementById("newInputEstadoCivilD");
+    var InputCURPD = document.getElementById("newInputCURPD");
+    var InputDependenciasD = document.getElementById("newInputDependenciasD");
 
     /* Inputs de información de contacto */
-    var InputTelefonoD = document.getElementById("InputTelefonoD");
-    var InputCorreoD = document.getElementById("InputCorreoD");
-    var InputSkypeD = document.getElementById("InputSkypeD");
-    var InputFBD = document.getElementById("InputFBD");
+    var InputTelefonoD = document.getElementById("newInputTelefonoD");
+    var InputCorreoD = document.getElementById("newInputCorreoD");
+    var InputSkypeD = document.getElementById("newInputSkypeD");
+    var InputFBD = document.getElementById("newInputFBD");
 
     /* Inputs de información de dirección */
-    var InputCalleD = document.getElementById("InputCalleD");
-    var InputNoExtD = document.getElementById("InputNoExtD");
-    var InputNoIntD = document.getElementById("InputNoIntD");
-    var InputColoniaD = document.getElementById("InputColoniaD");
-    var InputCiudadD = document.getElementById("InputCiudadD");
-    var InputEstadoD = document.getElementById("InputEstadoD");
-    var InputCPD = document.getElementById("InputCPD");
+    var InputCalleD = document.getElementById("newInputCalleD");
+    var InputNoExtD = document.getElementById("newInputNoExtD");
+    var InputNoIntD = document.getElementById("newInputNoIntD");
+    var InputColoniaD = document.getElementById("newInputColoniaD");
+    var InputCiudadD = document.getElementById("newInputCiudadD");
+    var InputEstadoD = document.getElementById("newInputEstadoD");
+    var InputCPD = document.getElementById("newInputCPD");
     
     /* Inputs de información personal */
-    var InputInstitucionD = document.getElementById("InputInstitucionD");
-    var InputpinstitucionD = document.getElementById("InputpinstitucionD");
-    var InputInstitucionPosgradoD = document.getElementById("InputInstitucionPosgradoD");
-    var InputpInstitucionPosgradoD = document.getElementById("InputpInstitucionPosgradoD");
-    var InputrsitituladoD = document.getElementById("InputrsitituladoD");
-    var InputrnotituladoD = document.getElementById("InputrnotituladoD");
-    var InputxpPD = document.getElementById("InputxpPD");
-    var InputxpDD = document.getElementById("InputxpDD");
-    var InputrsipropD = document.getElementById("InputrsipropD");
-    var InputrnopropD = document.getElementById("InputrnopropD");
-    var InputaniospropD = document.getElementById("InputaniospropD");
-    var InputmotivoD = document.getElementById("InputmotivoD");
-    var Inputarchivosubido1D = document.getElementById("Inputarchivosubido1D");
-    var Inputarchivosubido2D = document.getElementById("Inputarchivosubido2D");
+    var InputInstitucionD = document.getElementById("newInputInstitucionD");
+    var InputpinstitucionD = document.getElementById("newInputpinstitucionD");
+    var InputInstitucionPosgradoD = document.getElementById("newInputInstitucionPosgradoD");
+    var InputpInstitucionPosgradoD = document.getElementById("newInputpInstitucionPosgradoD");
+    var InputrsitituladoD = document.getElementById("newInputrsitituladoD");
+    var InputrnotituladoD = document.getElementById("newInputrnotituladoD");
+    var InputxpPD = document.getElementById("newInputxpPD");
+    var InputxpDD = document.getElementById("newInputxpDD");
+    var InputrsipropD = document.getElementById("newInputrsipropD");
+    var InputrnopropD = document.getElementById("newInputrnopropD");
+    var InputaniospropD = document.getElementById("newInputaniospropD");
+    var InputmotivoD = document.getElementById("newInputmotivoD");
+    var Inputarchivosubido1D = document.getElementById("newInputarchivosubido1D");
+    var Inputarchivosubido2D = document.getElementById("newInputarchivosubido2D");
     let siTituladoD=0;
     let siPropD=0;
 
     /* Validación CURP */
-    var res = document.getElementById("resultadoD");
+    var res = document.getElementById("newresultadoD");
 
     /* Se valida completamente */
     if(input.value == 'Enviar')
