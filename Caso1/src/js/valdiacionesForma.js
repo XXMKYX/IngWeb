@@ -84,7 +84,50 @@ var HideTabMiSolicitud = function(input) {
     }
 };
 
+function HideTabTipoForma(input){
+    valor = input.value;
+    var MaestriaDatosPM = document.getElementById('IDFormaCURP');
+    var MaestriaDatosAM = document.getElementById('IDTipoFormulario'); 
+    var formaM = document.getElementById('formaMaestria');
 
+    var LlenarFormaPM = document.getElementById('navLlenarFormaPersonalM');
+    var LlenarFormaAM = document.getElementById('navLlenarFormaAcademicoM'); 
+
+    var LlenarFormaPD = document.getElementById('navLlenarFormaPersonalD');
+    var LlenarFormaAD = document.getElementById('navLlenarFormaAcademicoD'); 
+
+    if(valor == 1){
+        MaestriaDatosPM.style.display = "block";        
+        MaestriaDatosAM.style.display = "none";
+        formaM.style.display = "none";
+    }else if(valor == 2){
+        MaestriaDatosPM.style.display = "none";
+        MaestriaDatosAM.style.display = "block";  
+        formaM.style.display = "block";
+    }
+    //Solicitudes de ocultar por parte de la forma de llenar maestría
+    else if(valor == 3){
+        LlenarFormaPM.style.display = "block";        
+        LlenarFormaAM.style.display = "none";
+        formaM.style.display = "none";
+    }
+    else if(valor == 4){
+        LlenarFormaAM.style.display = "block";        
+        LlenarFormaPM.style.display = "none";
+        formaM.style.display = "none";
+    }
+    else if(valor == 5){
+        LlenarFormaPD.style.display = "block";        
+        LlenarFormaAD.style.display = "none";
+        formaM.style.display = "none";
+    }
+    else if(valor == 6){
+        LlenarFormaAD.style.display = "block";        
+        LlenarFormaPD.style.display = "none";
+        formaM.style.display = "none";
+    }
+
+}
 
 function changeTab(evt, Tabame) {
 // Declare all variables

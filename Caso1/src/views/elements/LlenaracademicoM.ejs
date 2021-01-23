@@ -1,0 +1,62 @@
+<fieldset>
+    <legend>DATOS ACADÉMICOS</legend>
+    <div class="grid-dos-columnas">
+        <label for="InputInstitucionM">Institución de tus estudios profesionales</label>
+        <label for="pInputinstitucionM">País la institución</label>
+        <input type="text" name="InstitucionM"  id="InputInstitucionM" placeholder="Institución" required value="<%=JsonLLenarFormaM.InstitucionM%>">
+        <input type="text" name="pinstitucionM" id="pInputInstitucionM" placeholder="País" required value="<%=JsonLLenarFormaM.pinstitucionM%>">
+    </div>
+    <div class=""  id="formaMaestria1">
+        <label for="InputtitulacionM">¿Estás titulado?</label>
+        <div class="alinear-centro"  >
+            
+            <label for="InputrsitituladoM">Sí</label>                
+            <input type="radio" name="tituladoMaestriaM" value="si" id="InputrsitituladoM" required>                
+            <label for="InputnrotituladoM">No</label>
+            <input type="radio" name="tituladoMaestriaM" value="no" id="InputnrotituladoM" required>
+        </div>
+
+        <div class="grid-dos-columnas">
+            <label for="InputcarreraM">¿En qué carrera?</label>
+            <input type="text" name="carreraM" id="InputcarreraM"  placeholder="Carrera" required value="<%=JsonLLenarFormaM.carreraM%>">
+        </div>                            
+    </div>
+
+    
+    
+
+    <label for="InputxpPM">Experiencia Profesional:</label>
+    <textarea name="xpPM" id="InputxpPM" ><%=JsonLLenarFormaM.xpPM%></textarea required>
+        
+    <label for="InputxpDM">Experiencia Docente:</label>
+    <textarea name="xpDM" id="InputxpDM"><%=JsonLLenarFormaM.xpDM%></textarea required>
+    
+    <label>¿Has asistido a los cursos propedéuticos de este Departamento?</label>
+
+    <div class="alinear-centro">
+        <label for="InputrsipropM">Si</label>
+        <input type="radio" name="propedeuticoM" value="si"  id="InputrsipropM" required>
+        <label for="InputrnopropM">No</label>
+        <input type="radio" name="propedeuticoM" value="no" id="InputrnopropM" required>
+    </div> 
+    <label for="InputaniospropM">¿En qué año(s)?</label>
+    <input type="text" name="aniospropM" id="InputaniospropM" placeholder="Año(s) Propedeuticos" value="<%=JsonLLenarFormaM.aniospropM%>">
+
+    <label for="InputmotivoM">Motivo por el cuál desea ingresar al Posgrado y a qué línea de investigación desea integrarse</label>
+    <textarea name="motivoM" id=InputmotivoM><%=JsonLLenarFormaM.motivoM%></textarea>
+        
+
+</fieldset>
+
+<fieldset>
+    <legend>ANEXO</legend>
+    <!--
+    <label for="fechaAplicacionM">Fecha</label>
+    <input type="date" id="fechaAplicacionaM">
+    -->
+    
+    <div class="grid-dos-columnas" id="archivosMaestria">
+        <label for="Inputarchivosubido1M" class="inputFileLabel">Click para anexar CV con Fotografía (PDF)</label>
+        <input type="file" style="display: none;" name="archivosubido1M" id="Inputarchivosubido1M" accept="application/pdf" required>                                    
+    </div>
+</fieldset>

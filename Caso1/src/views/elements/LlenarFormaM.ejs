@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Solicitud CICATA</title>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+        <!--
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/styles.css">
+        <script src="js/valdiacionesForma.js"></script>-->
+        <script src="../js/funciones.js"></script>
+        <script src="../js/valdiacionesForma.js"></script>
+        <link rel="stylesheet" href="../css/normalize.css">
+        <link rel='stylesheet' href='../css/styles.css' />  
+    </head>
+    <body>
+
+        <header class="site-header inicio">
+            <div class="contenedor">
+                <div class="barra">
+                    <a href="/">
+                        <p class="no-margin fw-600">IPN</span>
+                        </p>
+                    </a>
+                </div>
+            
+                <div class="texto-header">
+                    <!-- Contenedor -->
+                    <h1 class="fw-600 centrar-texto">Solicitud de Admisión al Departamento del Posgrado de Física Educativa
+                    </h1>
+                    <p>Proceso de Ingreso al Semestre A-2021</p>
+                </div>
+            </div>
+        </header>
+
+        <main class="contenedor seccion">
+            <!-- MENU -->
+            <!-- Tab links -->
+            <div class="tab">
+                <button class="tablinks" onclick="changeTab(event, 'tabVerMiSolicitud')">Llenar Solicitud</button>
+            </div>
+            
+            <!-- Tab content -->
+            <div id="tabLlenarSolicitud" class="tabcontent">
+            <!-- FORMULARIO PERSONAL -->
+            <div class="grid centrar-columnas forma">
+                <%- include('tipoForma') %> 
+            </div>   
+            </div>
+
+            <div id="tabVerMiSolicitud" class="tabcontent" style="display: block;">    
+                <div class="grid centrar-columnas forma">
+                    <div class="forma">
+                        <div class="grid centrar-columnas forma">                        
+                            
+                            <div class="contacto columnas-10 " action="" id="formaVistaiSolicitudM" style="display: block;">
+                            
+                                <form method="POST" class="contacto columnas-10 " action="/personal_data" onsubmit="validateForm(1)" id="formaMaster" enctype="multipart/form-data">
+
+                                    <nav>
+                                        <div class="nav nav-tabs tab" id="nav-tab" role="tablist">
+                                        <button value="3" onclick="HideTabTipoForma(this)"><a class="nav-item nav-link active" id="navLlenarFormaPersonalM-tab" data-toggle="tab" href="#navLlenarFormaPersonalM" role="tab" aria-controls="navLlenarFormaPersonalM" aria-selected="true">Datos Generales</a></button>
+                                        <button  value="4" onclick="HideTabTipoForma(this)"><a class="nav-item nav-link" id="navLlenarFormaAcademicoM-tab" data-toggle="tab" href="#navLlenarFormaAcademicoM" role="tab" aria-controls="navLlenarFormaAcademicoM" aria-selected="false">Datos Académicos</a></button>
+                                        </div>
+                                    </nav>
+                                
+                                    <div class="tab-content" id="nav-tabContent">
+                                        <div class="tab-pane fade show active tabcontent2" id="navLlenarFormaPersonalM" role="tabpanel" aria-labelledby="navLlenarFormaPersonalM-tab" style="display: block;">
+                                            <%- include ('LlenarpersonalM') %>
+                                        </div>
+                                        <div class="tab-pane fade tabcontent2" id="navLlenarFormaAcademicoM" role="tabpanel" aria-labelledby="navLlenarFormaAcademicoM" style="display: none;">
+                                            <%- include ('LlenaracademicoM')%>
+                                        </div>
+                                    </div>        
+                                    <div class="grid-dos-columnas">
+                                        <input type="button" value="Guardar"  onclick="validarFormaMaestria(this)" class="boton boton-amarillo">
+                                        <input type="button" value="Enviar"  onclick="validarFormaMaestria(this)" class="boton boton-verde">
+                                    </div>     
+                                    <legend>*datos obligatorios</legend>
+                                </form> 
+                            </div> 
+                        </div>
+                    </div> 
+                </div> 
+            </div>
+                
+        </main>
+    </body>
+</html>
+
+

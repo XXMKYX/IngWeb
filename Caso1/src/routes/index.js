@@ -76,12 +76,26 @@ router.get('/personal_data',(req,res)=>{
   res.render('personal_data');
 })
 
+//Se imprime o la solicitud de maestría o de doctorado
 router.get('/MiSolicitudM', (req, res) => {
   res.render('../views/elements/MiSolicitudM');
 });
 
-router.get('/BusquedaD', (req, res) => {
+router.get('/MiSolicitudD', (req, res) => {
   res.render('../views/elements/MiSolicitudD');
+});
+
+//Se imprime o la forma ya llenada parcialmente o la forma sin llenar
+router.get('/LlenarFormaM', (req, res) => {
+  res.render('../views/elements/LlenarFormaM');
+});
+
+router.get('/LlenarFormaD', (req, res) => {
+  res.render('../views/elements/LlenarFormaD');
+});
+
+router.get('/NuevaEntrada', (req, res) => {
+  res.render('../views/elements/NuevaEntrada');
 });
 
 
@@ -306,23 +320,86 @@ router.post('/Busqueda', (req, res) =>
   console.log(req.body);
 
   if(buscar=="BuscarM"){     
-        
-    BusquedaJS = fs.readFileSync('src/views/Master/'+CURP+'.json', 'utf8')
-    console.log(BusquedaJS);     
-    JsonBusqueda=JSON.parse(BusquedaJS);      
-    res.redirect('/MiSolicitudM');  
+    try {
+      BusquedaJS = fs.readFileSync('src/views/Master/MasterFinalizadas/'+CURP+'.json', 'utf8')
+      console.log(BusquedaJS);     
+      JsonBusqueda=JSON.parse(BusquedaJS);      
+      res.redirect('/MiSolicitudM');  
 
-  }else if(buscar=="BuscarD")
+    } catch (error) {
+      console.log("No existe ese directorio en la carpeta de finalizadas de Maestría");
+      try 
+      {
+          BusquedaJSD = fs.readFileSync('src/views/Doctor/DocFinalizadas/'+CURP+'.json', 'utf8')     
+          JsonBusquedaD=JSON.parse(BusquedaJSD);        
+          res.redirect('/MiSolicitudD'); 
+
+      } catch (error) {
+          console.log("No existe ese directorio en la carpeta de finalizadas de Doctorado");
+          alert("No se encontró ningún directorio");
+          res.redirect('/');
+      }
+    }        
+  }else 
   {     
-    BusquedaJSD = fs.readFileSync('src/views/Doctor/'+CURP+'.json', 'utf8')     
-    JsonBusquedaD=JSON.parse(BusquedaJSD);        
-    res.redirect('/BusquedaD');  
+    res.redirect('/');
 
   } 
-  else{
-    console.log("No encontré opción válida en misolicitud");
-    res.redirect('/');
-  }
 });
+
+router.post('/Llenar', (req, res) => 
+{   
+    
+  const {CURP,buscar} = req.body;  
+  console.log(req.body);
+
+  if(buscar=="BuscarM"){     
+    try 
+    {
+        BusquedaJS = fs.readFileSync('src/views/Master/MasterFinalizadas/'+CURP+'.json', 'utf8')
+        console.log(BusquedaJS);     
+        JsonBusqueda=JSON.parse(BusquedaJS);      
+        res.redirect('/'); //Ya existe una solicitud finalizada en maestría, se mandaa a raíz  
+
+    } catch (error) {
+      console.log("No existe ese directorio en la carpeta de finalizadas de Maestría");
+      try 
+      {
+          BusquedaJSD = fs.readFileSync('src/views/Doctor/DocFinalizadas/'+CURP+'.json', 'utf8')     
+          JsonBusquedaD=JSON.parse(BusquedaJSD);        
+          //res.redirect('/NuevaEntrada'); 
+          res.redirect('/'); //Ya existe una solicitud finalizada en doctorado, se mandaa a raíz  
+          
+      } catch (error) {
+          console.log("No existe ese directorio en la carpeta de finalizadas de Doctorado");
+          try 
+          {
+            LLenarFormaD = fs.readFileSync('src/views/Doctor/DocParciales/'+CURP+'.json', 'utf8')     
+            JsonLLenarFormaD=JSON.parse(LLenarFormaD);  
+            console.log('Se encuentra parcial de doctorado');         
+            res.redirect('LlenarFormaD'); 
+          } catch (error) {
+              console.log('No se encontró una forma parcial de doctorado');
+              try 
+              {
+                  LLenarFormaM = fs.readFileSync('src/views/Master/MasterParciales/'+CURP+'.json', 'utf8')     
+                  JsonLLenarFormaM=JSON.parse(LLenarFormaM); 
+                  console.log('Se encuentra parcial de maestría');      
+                  res.redirect('/LlenarFormaM'); 
+              } catch (error) {
+                  console.log('No se encontró una forma parcial de maestria')
+                  res.redirect('/NuevaEntrada'); 
+              }
+          }
+          
+      }
+    }        
+  }else 
+  {     
+    res.redirect('/');
+
+  } 
+});
+
 
   module.exports = router;
