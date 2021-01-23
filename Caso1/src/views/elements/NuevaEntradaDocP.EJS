@@ -1,0 +1,75 @@
+<fieldset>
+    <legend>DATOS PERSONALES</legend>
+    <div class="form-group col-md-2">        
+        <input type="text" id="newdateD" name="dateD" style="display: none;">
+
+        <script>
+            var f = new Date();
+            var inputDate = document.getElementById("dateD");
+            inputDate.value = (f.getDate() + "/" + (f.getMonth() +1) + "/" + f.getFullYear());
+        </script>        
+        
+    </div>
+    <label for="newnombreD">NOMBRE(S)*</label>
+    <!--<input type="text" id="nombre" placeholder="Nombre(s)">-->
+    <input name="nombreD" id="newInputNombreD" type="text" class="form-control" placeholder="Nombre(s)*" autofocus required>
+    <div class="grid-dos-columnas">
+        <label for="newInputAMaternoD">Apellido Paterno*</label>
+        <label for="newInputAPaternoD">Apellido Materno*</label>
+
+        <input type="text" id="newInputAMaternoD" name="apaternoD" placeholder="Apellido Paterno*" required>
+        <input type="text" id="newInputAPaternoD" name="amaternoD" placeholder="Apellido Materno*" required>
+
+        <label for="newInputFechaNacimientoD">FECHA DE NACIMIENTO*</label>
+        <label for="newInputLugarDeNacimientoD">LUGAR DE NACIMIENTO*</label> 
+        <input type="date" id="newInputFechaNacimientoD" name="fechaD" placeholder="Fecha*" required>
+        <input type="text" id="newInputLugarDeNacimientoD" name="lugarD" placeholder="Lugar*" required>
+
+        <label for="newInputNacionalidadD">NACIONALIDAD*</label>
+        <label for="newInputEstadoCivilD">ESTADO CIVIL*</label>
+        <input type="text" id="newInputNacionalidadD" name="nacionalidadD" placeholder="Nacionalidad*" required>
+        <input type="text" id="newInputEstadoCivilD" name="civilD" placeholder="Estado Civil*" required>
+
+        <label for="newInputCURPD">CURP*</label>
+        <label for="newInputDependenciasD">DEPENDENCIAS*</label>
+        <input type="text" id="newInputCURPD" name="curpD" oninput="validarInputD(this)" placeholder="CURP*" required>
+        <input type="number" id="newInputDependenciasD" name="dependenciasD" placeholder="No. de dependencias*" min="0" required>
+        <input type="text" id="newresultadoD" style="color: black;" disabled>
+    </div>
+</fieldset>
+<fieldset>
+    <legend>DATOS DE CONTACTO</legend>
+    <div class="grid-dos-columnas">
+        <label for="newInputTelefonoD">TELÉFONO CELULAR*</label>
+        <label for="newInputCorreoD">E-mail*</label>
+        <input type="tel" id="newInputTelefonoD" name="telefonoD" placeholder="Número*" required>
+        <input type="email" id="newInputCorreoD" name="emailD" placeholder="Tu correo electrónico*" required>
+
+        <label for="newInputSkypeD">CUENTA SKYPE</label>
+        <label for="newInputFBD">Cuenta de FB (Link)</label>
+        <input type="text" id="newInputSkypeD" name="skypeD" placeholder="Skype*" required>
+        <input type="text" id="newInputFBD" name="fbD" placeholder="Link a tu Facebook*" required>
+    </div>
+</fieldset>
+<fieldset>
+    <legend>DOMICILIO</legend>
+    <div class="domicilio-calle-num">
+        <!--<label for="newCalle">Calle</label>-->
+        <input type="text" id="newInputCalleD" name="CalleD" placeholder="Calle*" required>
+        <!--<label for="newNoExt">No. Ext</label>-->
+        <input type="text" id="newInputNoExtD" name="NoExtD" placeholder="NoExt*" required>
+        <!--<label for="newNoInt">No. Int</label>-->
+        <input type="text" id="newInputNoIntD" name="NoIntD" placeholder="NoInt" required>
+    </div>
+    <div class="grid-dos-columnas">
+        <!--<label for="newColonia">Colonia</label>-->
+        <input type="text" id="newInputColoniaD" name="ColoniaD" placeholder="Colonia*" required>
+        <!--<label for="newCiudad">Ciudad</label>-->
+        <input type="text" id="newInputCiudadD" name="CiudadD" placeholder="Ciudad*" required>
+        <!--<label for="newEstado">Estado</label>-->
+        <input type="text" id="newInputEstadoD" name="EstadoD" placeholder="Estado*" required>
+        <!--<label for="newCP">CP</label>-->
+        <input type="text" id="newInputCPD" name="CPD" placeholder="CP*" required>
+
+    </div>
+</fieldset>   
