@@ -1,0 +1,66 @@
+<fieldset>
+    <legend>Informacion General </legend>
+    <div class="" id="formaDoctorado1">
+        <div class="grid-dos-columnas">
+            <label for="InputInstitucionD">Institución de tus estudios de la maestria</label>
+            <label for="InputpinstitucionD">País de la institución</label>
+            <input type="text" name="InstitucionD" id="InputInstitucionD" placeholder="Institución de maestría" required value="<%=JsonLLenarFormaD.InstitucionD%>">
+            <input type="text" name="pinstitucionD" id="InputpinstitucionD"  placeholder="País" required value="<%=JsonLLenarFormaD.pinstitucionD%>">>
+        </div>
+    
+        
+        <div class="grid-dos-columnas">
+            <label for="InputInstitucionPosgradoD">Institución de tus estudios de posgrado</label>
+            <label for="InputpInstitucionPosgradoD">País de la institución</label>
+            <input type="text" name="InstitucionPosgradoD" id="InputInstitucionPosgradoD"  placeholder="Institución de posgrado"required value="<%=JsonLLenarFormaD.InstitucionPosgradoD%>">
+            <input type="text" name="pInstitucionPosgradoD" id="InputpInstitucionPosgradoD" placeholder="País" required value="<%=JsonLLenarFormaD.pInstitucionPosgradoD%>"> 
+        </div>
+
+        <label for="tituladoDoctorado">¿Estás titulado de tu ultimo grado de estudios?</label>
+
+        <div class="alinear-centro">
+            <label for="InputrsitituladoD">Sí</label>
+            <input type="radio" name="tituladoDoctoradoD" value="si" id="InputrsitituladoD" required >
+            <label for="InputrnotituladoD">No</label>
+            <input type="radio" name="tituladoDoctoradoD" value="no" id="InputrnotituladoD" required >
+            
+        
+        </div>
+    </div>
+
+    <label for="InputxpPD">Experiencia Profesional:</label>
+    <textarea name="xpPD" id="InputxpPD"></textarea required value="<%=JsonLLenarFormaD.xpPD%>">
+        
+    <label for="InputxpDD">Experiencia Docente:</label>
+    <textarea name="xpDD" id="InputxpDD"></textarea required value="<%=JsonLLenarFormaD.xpDD%>">
+    
+    <label>¿Has asistido a los cursos propedéuticos de este Departamento anteriormente?</label>
+
+    <div class="alinear-centro">
+        <label for="InputrsipropD">Si</label>
+        <input type="radio" name="propedeuticoD" value="si"  id="InputrsipropD" required value="<%=JsonLLenarFormaD.propedeuticoD%>">
+        <label for="InputrnopropD">No</label>
+        <input type="radio" name="propedeuticoD" value="no" id="InputrnopropD" required value="<%=JsonLLenarFormaD.propedeuticoD%>">
+    </div> 
+    <label for="InputaniospropD">¿En qué año(s)?</label>
+    <input type="text" name="aniospropD" id= "InputaniospropD"placeholder="Año(s) Propedeuticos" required value="<%=JsonLLenarFormaD.aniospropD%>">
+
+    <label for="InputmotivoD">Motivo por el cuál desea ingresar al Posgrado y a qué línea de investigación desea integrarse</label>
+    <textarea name="motivoD" id="InputmotivoD"></textarea required value="<%=JsonLLenarFormaD.motivoD%>">
+        
+
+</fieldset>
+
+<fieldset>
+    <legend>ANEXO</legend>
+    <!--
+    <label for="fechaAplicacionM">Fecha</label>
+    <input type="date" id="fechaAplicacionaM">
+    -->
+    <div class="grid-dos-columnas" id="archivosDoctorado">
+        <label for="Inputarchivosubido1D" class="inputFileLabel">Click para anexar CV con Fotografía (PDF)</label>
+        <label for="Inputarchivosubido2D" class="inputFileLabel">Muestra escrita de trabajo de investigación previo (capítulo de tesis, artículo de investigación, ponencia en extenso de congreso, etc.). (PDF)</label>
+        <input type="file" style="display: none;"  name="archivosubido1D" id="Inputarchivosubido1D" accept="application/pdf" required value="<%=JsonLLenarFormaD.archivosubido1D%>">                               
+        <input type="file" style="display: none;"  name="archivosubido2D" id="Inputarchivosubido2D" accept="application/pdf" required value="<%=JsonLLenarFormaD.archivosubido2D%>">
+    </div>
+</fieldset>
