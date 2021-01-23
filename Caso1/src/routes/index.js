@@ -113,8 +113,10 @@ router.post('/personal_data', multer({
   })
 }).single('archivosubido1M') ,(req, res) => {
 
-  const {tipoM,validacionM, dateM,nombreM, apaternoM, amaternoM, fechaM, lugarM, nacionalidadM, civilM, curpM, dependenciasM, telefonoM, emailM, skypeM, fbM, CalleM, NoExtM, NoIntM, ColoniaM, CiudadM, EstadoM, CPM, InstitucionM, pinstitucionM, tituladoMaestriaM,carreraM, xpPM, xpDM, propedeuticoM, aniospropM, motivoM,archivosubido1M} = req.body;
+  console.log(req.body);
+  const {tipoM,validacionM, dateM,nombreM, apaternoM, amaternoM, fechaM, lugarM, nacionalidadM, civilM, curpM, dependenciasM, telefonoM, emailM, skypeM, fbM, CalleM, NoExtM, NoIntM, ColoniaM, CiudadM, EstadoM, CPM, InstitucionM, pinstitucionM, tituladoMaestriaM,carreraM, xpPM, xpDM, propedeuticoM, aniospropM, motivoM,archivosubido1M, orden} = req.body;
 
+  console.log(orden);
   let newpreg = {
     tipoM: "Maestria",
     validacionM: "Pendiente",
@@ -153,12 +155,20 @@ router.post('/personal_data', multer({
   };
 
   const json_datos = JSON.stringify(newpreg);
-  fs.writeFile('src/views/Master/'+curpM+'.json', json_datos, 'utf-8',function (err) {
-    if (err) throw err;
-    console.log('Registro de maestría guardado en archivo');
-  });
-  res.redirect('/');
-  //res.send('Datos obtenidos');
+  if(orden == "Enviar"){
+    fs.writeFile('src/views/Master/MasterFinalizadas/'+curpM+'.json', json_datos, 'utf-8',function (err) {
+      if (err) throw err;
+      console.log('Registro de maestría guardado en archivo');
+    });
+    res.redirect('/');
+  }
+  else if((orden == "Guardar")){
+    fs.writeFile('src/views/Master/MasterParciales/'+curpM+'.json', json_datos, 'utf-8',function (err) {
+      if (err) throw err;
+      console.log('Registro de maestría guardado en archivo');
+    });
+    res.redirect('/');
+  }
 });
 
 //* Ruta inicial */
@@ -336,7 +346,7 @@ router.post('/Busqueda', (req, res) =>
 
       } catch (error) {
           console.log("No existe ese directorio en la carpeta de finalizadas de Doctorado");
-          alert("No se encontró ningún directorio");
+          res.aler("No se encontró tu solicitud, llena la forma.")
           res.redirect('/');
       }
     }        
@@ -395,7 +405,7 @@ router.post('/Llenar', (req, res) =>
       }
     }        
   }else 
-  {     
+  {         
     res.redirect('/');
 
   } 

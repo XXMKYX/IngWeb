@@ -88,7 +88,7 @@ function HideTabTipoForma(input){
     valor = input.value;
     var MaestriaDatosPM = document.getElementById('IDFormaCURP');
     var MaestriaDatosAM = document.getElementById('IDTipoFormulario'); 
-    var formaM = document.getElementById('formaMaestria');
+    //var formaM = document.getElementById('formaMaestria');
 
     var LlenarFormaPM = document.getElementById('navLlenarFormaPersonalM');
     var LlenarFormaAM = document.getElementById('navLlenarFormaAcademicoM'); 
@@ -96,10 +96,13 @@ function HideTabTipoForma(input){
     var LlenarFormaPD = document.getElementById('navLlenarFormaPersonalD');
     var LlenarFormaAD = document.getElementById('navLlenarFormaAcademicoD'); 
 
+    var NuevaFormaMasterP = document.getElementById('NuevaEntradaMasterP');
+    var NuevaFormaMasterA = document.getElementById('NuevaEntradaMasterA'); 
+
     if(valor == 1){
         MaestriaDatosPM.style.display = "block";        
         MaestriaDatosAM.style.display = "none";
-        formaM.style.display = "none";
+      //  formaM.style.display = "none";
     }else if(valor == 2){
         MaestriaDatosPM.style.display = "none";
         MaestriaDatosAM.style.display = "block";  
@@ -109,22 +112,32 @@ function HideTabTipoForma(input){
     else if(valor == 3){
         LlenarFormaPM.style.display = "block";        
         LlenarFormaAM.style.display = "none";
-        formaM.style.display = "none";
+        //formaM.style.display = "none";
     }
     else if(valor == 4){
         LlenarFormaAM.style.display = "block";        
         LlenarFormaPM.style.display = "none";
-        formaM.style.display = "none";
+        //formaM.style.display = "none";
     }
     else if(valor == 5){
         LlenarFormaPD.style.display = "block";        
         LlenarFormaAD.style.display = "none";
-        formaM.style.display = "none";
+        //formaM.style.display = "none";
     }
     else if(valor == 6){
         LlenarFormaAD.style.display = "block";        
         LlenarFormaPD.style.display = "none";
-        formaM.style.display = "none";
+    //    formaM.style.display = "none";
+    }
+    else if(valor == 7){
+        NuevaFormaMasterP.style.display = "block";        
+        NuevaFormaMasterA.style.display = "none";
+        //formaM.style.display = "none";
+    }
+    else if(valor == 8){
+        NuevaFormaMasterA.style.display = "block";        
+        NuevaFormaMasterP.style.display = "none";
+        //formaM.style.display = "none";
     }
 
 }
@@ -372,8 +385,8 @@ function validarFormaMaestria(input)
                                          }
                                         else
                                         {                                
-                                            document.getElementById("formaMaster").submit();
-                                            alert("Datos guardados con exito!");
+                                            document.getElementById("botonLlenarFormaMenviar").submit();
+                                            alert("Datos guardados con exito! (LlenarForma) ");
                                         }
                                     }
                                     
@@ -405,6 +418,183 @@ function validarFormaMaestria(input)
     
     
 }
+
+
+function validarNewFormaMaestria(input)
+{
+
+    var InputNombre = document.getElementById("newInputNombreM");
+    var InputAMaterno = document.getElementById("newInputAMaternoM");
+    var InputAPaterno = document.getElementById("newInputAPaternoM");
+    var InputFechaNacimiento = document.getElementById("newInputFechaNacimientoM");
+    var InputLugarDeNacimiento = document.getElementById("newInputLugarDeNacimientoM");
+    var InputNacionalidad = document.getElementById("newInputNacionalidadM");
+    var InputEstadoCivil = document.getElementById("newInputEstadoCivilM");
+    var InputCURP = document.getElementById("newInputCURPM");
+    var InputDependencias = document.getElementById("newInputDependenciasM");
+
+    /* Inputs de información de contacto */
+    var InputTelefono = document.getElementById("newInputTelefonoM");
+    var InputCorreo = document.getElementById("newInputCorreoM");
+    var InputSkype = document.getElementById("newInputSkypeM");
+    var InputFB = document.getElementById("newInputFBM");
+
+    /* Inputs de información de dirección */
+    var InputCalle = document.getElementById("newInputCalleM");
+    var InputNoExt = document.getElementById("newInputNoExtM");
+    var InputNoInt = document.getElementById("newInputNoIntM");
+    var InputColonia = document.getElementById("newInputColoniaM");
+    var InputCiudad = document.getElementById("newInputCiudadM");
+    var InputEstado = document.getElementById("newInputEstadoM");
+    var InputCP = document.getElementById("newInputCPM");
+    
+    /* Inputs de información académica */
+    var InputInstitucionM = document.getElementById("newInputInstitucionM");
+    var pInputinstitucionM = document.getElementById("pInputInstitucionM");
+    var InputrsitituladoM = document.getElementById("newInputrsitituladoM");
+    var InputnrotituladoM = document.getElementById("newInputnrotituladoM");
+    var InputcarreraM = document.getElementById("newInputcarreraM");
+    var InputxpPM = document.getElementById("newInputxpPM");
+    var InputxpDM = document.getElementById("newInputxpDM");
+    var InputrsipropM = document.getElementById("newInputrsipropM");
+    var InputrnopropM = document.getElementById("newInputrnopropM");
+    var InputaniospropM = document.getElementById("newInputaniospropM");
+    var InputmotivoM = document.getElementById("newInputmotivoM");
+    var Inputarchivosubido1M = document.getElementById("newInputarchivosubido1M");
+    let siTitulado=0;
+    let siProp=0;
+
+    /* Validación CURP */
+    var res = document.getElementById("newresultadoM");
+
+    alert(input.value);
+    /* Se valida completamente */
+    if(input.value == 'Enviar')
+    {
+        
+        if(InputNombre.value == '' || InputAMaterno.value == '' || InputAPaterno.value == '' || 
+        InputFechaNacimiento.value == ''|| InputLugarDeNacimiento.value == ''
+        || InputNacionalidad.value == '' || InputEstadoCivil.value == '' || InputCURP.value == '' || 
+        InputDependencias.value == '' || InputTelefono.value == '' || InputCorreo.value == '' || 
+        InputSkype.value == '' || InputFB.value == '' || InputCalle.value == '' || InputNoExt.value == ''
+        || InputColonia.value == '' || InputCiudad.value == '' || InputEstado.value == '' || InputCP.value == '') //Si el input no es válido
+        {
+            alert("Favor de llenar todos los campos obligatorios");
+        }
+        else{
+            if(InputNombre.value.length >= 100 || InputAMaterno.value.length >= 100 || InputAPaterno.value.length >= 100 ||
+                InputFechaNacimiento.value.length >= 100 || InputLugarDeNacimiento.value.length >= 100 || InputNacionalidad.value.length >= 100 ||
+                InputEstadoCivil.value.length >= 100 || InputCURP.value.length >= 100 || InputDependencias.value.length >= 100 ||
+                InputTelefono.value.length >= 100 || InputCorreo.value.length >= 100 || InputSkype.value.length >= 100 ||
+                InputFB.value.length >= 100 || InputCalle.value.length >= 100 || InputNoExt.value.length >= 100 ||
+                InputNoInt.value.length >= 100 || InputColonia.value.length >= 100 || InputCiudad.value.length >= 100 ||
+                InputEstado.value.length >= 100 || InputCP.value.length >= 100) //Si el input es muy largo
+            {
+                alert("Los campos no puede tener más de 100 caracteres");
+            }
+            else{
+                let aux = InputFechaNacimiento.value;
+                let dobs = aux.split("-");
+                let dob = new Date(dobs[0], dobs[1], dobs[2]);
+
+                var diff_ms = Date.now() - dob.getTime();
+                var age_dt = new Date(diff_ms); 
+                let edad = Math.abs(age_dt.getUTCFullYear() - 1970);
+
+                if(edad < 18){
+                    alert("El aspirante debe ser mayor de edad");
+                }
+                else{
+
+                    if(InputInstitucionM.value == '' || pInputinstitucionM.value == ''  || InputcarreraM.value == ''|| 
+                        InputxpPM.value == '' || InputxpDM.value == '' || 
+                        InputaniospropM.value == '' || InputmotivoM.value == ''|| 
+                        Inputarchivosubido1M.value == '') //Si el input no es válido
+                    {
+                        alert("Favor de llenar todos los campos obligatorios");
+                    }
+                    else
+                    {   
+                        
+                        //Si una de las dos está checked, sale true, el ! hace que pase a la siguiente validación
+                        if(!InputrsitituladoM.checked) 
+                        {
+                            if(!InputnrotituladoM.checked ) 
+                            {
+                                siTitulado =1;//alert("Favor de indicar si estás titualdo");
+                                
+                            }
+                            
+                        } 
+
+                        if(siTitulado==1)
+                        {
+                            alert("Favor de indicar si estás Titulado"); 
+                        }
+                        else
+                        {
+                            //Si una de las dos está checked, sale true, el ! hace que pase a la siguiente validación
+                            if(!InputrsipropM.checked ) 
+                            {
+                                if(!InputrnopropM.checked ) 
+                                {
+                                    siProp =1;//alert("Favor de indicar si estás titualdo");
+                                    
+                                }
+                                
+                            }
+                            if(siProp==1)
+                            {
+                                alert("Favor de indicar si ya hiciste Propedéutico.");   
+                            }
+                            else
+                            {
+                                const fi = Inputarchivosubido1M; 
+                                // Check if any file is selected. 
+                                if (fi.files.length > 0) 
+                                { 
+                                    for (let i = 0; i <= fi.files.length - 1; i++) 
+                                    {                   
+                                         const fsize = fi.files.item(i).size; 
+                                         const file = Math.round((fsize / 1024)); 
+                                         // The size of the file. 
+                                         if (file >= 1024)
+                                        { 
+                                            alert("Archivo muy grande, debe ser menor a 1mb"); 
+                                         }
+                                        else
+                                        {                                
+                                            document.getElementById("botonEnviarNewM").submit();
+                                            //alert("Datos guardados con exito!");
+                                        }
+                                    }
+                                    
+                                }
+                                else{
+                                    alert("Adjunta tu(s) archivo(s)");
+                                }
+                                    
+                                
+                            }
+                        }                                                                                                                   
+                    }
+                }
+            }
+        }
+    }
+    else{    
+        if(InputCURP.value == "" || res.value == "CURP, Formato: No válido"){
+            alert("Para guardar, favor de colocar un CURP válido");
+        }
+        else{
+            document.getElementById("botonGuardarNewM").submit();
+            //alert("Datos guardados con exito!");
+        }
+
+    }
+
+}
+
 
 function validarFormaDoctorado(input)
 {
@@ -457,7 +647,7 @@ function validarFormaDoctorado(input)
 
     /* Se valida completamente */
     if(input.value == 'Enviar')
-    {
+    {        
         if(InputNombreD.value == '' || InputAMaternoD.value == '' || InputAPaternoD.value == '' || 
         InputFechaNacimientoD.value == ''|| InputLugarDeNacimientoD.value == ''
         || InputNacionalidadD.value == '' || InputEstadoCivilD.value == '' || InputCURPD.value == '' || 
@@ -579,8 +769,8 @@ function validarFormaDoctorado(input)
                                                          }
                                                         else
                                                         {                                
-                                                            document.getElementById("formaDoc").submit();
-                                                            alert("Datos guardados con exito!");
+                                                            document.getElementById("formaDoc").submit();                                                            
+                                                            //alert("Datos guardados con exito!");
                                                         }
                                                     }
                                                     
@@ -607,8 +797,220 @@ function validarFormaDoctorado(input)
             alert("Para guardar, favor de colocar un CURP válido");
         }
         else{
-            document.getElementById("formaDoc").submit();
-            alert("Datos guardados con exito!");
+            //document.getElementById("formaDoc").submit();
+            //alert("Datos guardados con exito!");
+        }
+
+    }
+    
+    
+    
+    
+}
+
+function validarNewFormaDoctorado(input)
+{
+
+    var InputNombreD = document.getElementById("InputNombreD");
+    var InputAMaternoD = document.getElementById("InputAMaternoD");
+    var InputAPaternoD = document.getElementById("InputAPaternoD");
+    var InputFechaNacimientoD = document.getElementById("InputFechaNacimientoD");
+    var InputLugarDeNacimientoD = document.getElementById("InputLugarDeNacimientoD");
+    var InputNacionalidadD = document.getElementById("InputNacionalidadD");
+    var InputEstadoCivilD = document.getElementById("InputEstadoCivilD");
+    var InputCURPD = document.getElementById("InputCURPD");
+    var InputDependenciasD = document.getElementById("InputDependenciasD");
+
+    /* Inputs de información de contacto */
+    var InputTelefonoD = document.getElementById("InputTelefonoD");
+    var InputCorreoD = document.getElementById("InputCorreoD");
+    var InputSkypeD = document.getElementById("InputSkypeD");
+    var InputFBD = document.getElementById("InputFBD");
+
+    /* Inputs de información de dirección */
+    var InputCalleD = document.getElementById("InputCalleD");
+    var InputNoExtD = document.getElementById("InputNoExtD");
+    var InputNoIntD = document.getElementById("InputNoIntD");
+    var InputColoniaD = document.getElementById("InputColoniaD");
+    var InputCiudadD = document.getElementById("InputCiudadD");
+    var InputEstadoD = document.getElementById("InputEstadoD");
+    var InputCPD = document.getElementById("InputCPD");
+    
+    /* Inputs de información personal */
+    var InputInstitucionD = document.getElementById("InputInstitucionD");
+    var InputpinstitucionD = document.getElementById("InputpinstitucionD");
+    var InputInstitucionPosgradoD = document.getElementById("InputInstitucionPosgradoD");
+    var InputpInstitucionPosgradoD = document.getElementById("InputpInstitucionPosgradoD");
+    var InputrsitituladoD = document.getElementById("InputrsitituladoD");
+    var InputrnotituladoD = document.getElementById("InputrnotituladoD");
+    var InputxpPD = document.getElementById("InputxpPD");
+    var InputxpDD = document.getElementById("InputxpDD");
+    var InputrsipropD = document.getElementById("InputrsipropD");
+    var InputrnopropD = document.getElementById("InputrnopropD");
+    var InputaniospropD = document.getElementById("InputaniospropD");
+    var InputmotivoD = document.getElementById("InputmotivoD");
+    var Inputarchivosubido1D = document.getElementById("Inputarchivosubido1D");
+    var Inputarchivosubido2D = document.getElementById("Inputarchivosubido2D");
+    let siTituladoD=0;
+    let siPropD=0;
+
+    /* Validación CURP */
+    var res = document.getElementById("resultadoD");
+
+    /* Se valida completamente */
+    if(input.value == 'Enviar')
+    {        
+        if(InputNombreD.value == '' || InputAMaternoD.value == '' || InputAPaternoD.value == '' || 
+        InputFechaNacimientoD.value == ''|| InputLugarDeNacimientoD.value == ''
+        || InputNacionalidadD.value == '' || InputEstadoCivilD.value == '' || InputCURPD.value == '' || 
+        InputDependenciasD.value == '' || InputTelefonoD.value == '' || InputCorreoD.value == '' || 
+        InputSkypeD.value == '' || InputFBD.value == '' || InputCalleD.value == '' || InputNoExtD.value == ''
+        || InputColoniaD.value == '' || InputCiudadD.value == '' || InputEstadoD.value == '' || InputCPD.value == '') //Si el input no es válido
+        {
+            alert("Favor de llenar todos los campos obligatorios");
+        }
+        else{
+            if(InputNombreD.value.length >= 100 || InputAMaternoD.value.length >= 100 || InputAPaternoD.value.length >= 100 ||
+                InputFechaNacimientoD.value.length >= 100 || InputLugarDeNacimientoD.value.length >= 100 || InputNacionalidadD.value.length >= 100 ||
+                InputEstadoCivilD.value.length >= 100 || InputCURPD.value.length >= 100 || InputDependenciasD.value.length >= 100 ||
+                InputTelefonoD.value.length >= 100 || InputCorreoD.value.length >= 100 || InputSkypeD.value.length >= 100 ||
+                InputFBD.value.length >= 100 || InputCalleD.value.length >= 100 || InputNoExtD.value.length >= 100 ||
+                InputNoIntD.value.length >= 100 || InputColoniaD.value.length >= 100 || InputCiudadD.value.length >= 100 ||
+                InputEstadoD.value.length >= 100 || InputCPD.value.length >= 100) //Si el input es muy largo
+            {
+                alert("Los campos no puede tener más de 100 caracteres");
+            }
+            else{
+                let aux = InputFechaNacimientoD.value;
+                let dobs = aux.split("-");
+                let dob = new Date(dobs[0], dobs[1], dobs[2]);
+
+                var diff_ms = Date.now() - dob.getTime();
+                var age_dt = new Date(diff_ms); 
+                let edad = Math.abs(age_dt.getUTCFullYear() - 1970);
+                if(edad < 18){
+                    alert("El aspirante debe ser mayor de edad");
+                }
+                else{
+
+                    //Se hace submit de forma
+                    //document.getElementById("formaP").submit();
+                    if(InputInstitucionD.value == '' || InputpinstitucionD.value == ''|| InputInstitucionPosgradoD.value == ''
+                    || InputpInstitucionPosgradoD.value == ''  ||  
+                        InputxpPD.value == '' || InputxpDD.value == '' || 
+                        InputaniospropD.value == '' || InputmotivoD.value == ''|| 
+                        Inputarchivosubido1D.value == ''|| Inputarchivosubido2D.value == '' ) //Si el input no es válido
+                    {
+                        alert("Favor de llenar todos los campos obligatorios");
+                    }
+                    else
+                    {   
+                        
+                        //Si una de las dos está checked, sale true, el ! hace que pase a la siguiente validación
+                        if(!InputrsitituladoD.checked ) 
+                        {
+                            if(!InputrnotituladoD.checked ) 
+                            {
+                                siTituladoD =1;//alert("Favor de indicar si estás titualdo");
+                                
+                            }
+                            
+                        }
+                        if(siTituladoD==1)
+                        {
+                            alert("Favor de indicar si estás Titulado"); 
+                        }
+                            
+                        else
+                        {
+                            
+                        //Si una de las dos está checked, sale true, el ! hace que pase a la siguiente validación
+                            if(!InputrsipropD.checked ) 
+                            {
+                                if(!InputrnopropD.checked ) 
+                                {
+                                    siPropD =1;//alert("Favor de indicar si ya hiciste propedeutico");
+                                    
+                                }
+                                
+                            }
+                            if(siPropD==1)
+                            {
+                                alert("Favor de indicar si ya hiciste Propedéutico.");   
+                            }
+                            else
+                            {                            
+                                if(InputInstitucionD.value.length >= 100 || InputpinstitucionD.value.length >= 100 
+                                    ||InputInstitucionPosgradoD.value.length >= 100 ||InputpInstitucionPosgradoD.value.length >= 100 
+                                    ||InputxpPD.value.length >= 500 || InputxpDD.value.length >= 500 ||
+                                    InputaniospropD.value.length >= 100 ||
+                                    InputmotivoD.value.length >= 500  ) //Si el input es muy largo
+                                {
+                                    alert("Los campos no puede tener más de 100 caracteres");
+                                }
+                                else
+                                {                   
+                                    
+                                    const fi = Inputarchivosubido1D; 
+                                    // Check if any file is selected. 
+                                    if (fi.files.length > 0) 
+                                    { 
+                                        for (let i = 0; i <= fi.files.length - 1; i++) 
+                                        {                   
+                                             const fsize = fi.files.item(i).size; 
+                                             const file = Math.round((fsize / 1024)); 
+                                             // The size of the file. 
+                                             if (file >= 1024)
+                                            { 
+                                                alert("Archivo muy grande"); 
+                                             }
+                                            else
+                                            {                                
+                                                const fi2 = Inputarchivosubido2D; 
+                                                // Check if any file is selected. 
+                                                if (fi.files.length > 0) 
+                                                { 
+                                                    for (let i = 0; i <= fi.files.length - 1; i++) 
+                                                    {                   
+                                                         const fsize = fi.files.item(i).size; 
+                                                         const file = Math.round((fsize / 1024)); 
+                                                         // The size of the file. 
+                                                         if (file >= 1024)
+                                                        { 
+                                                            alert("Archivo muy grande"); 
+                                                         }
+                                                        else
+                                                        {                                
+                                                            document.getElementById("formaDoc").submit();                                                            
+                                                            //alert("Datos guardados con exito!");
+                                                        }
+                                                    }
+                                                    
+                                                }
+                                            }
+                                        }
+                                        
+                                    }                                    
+                                    
+                                }
+                            }
+                        }   
+                    
+                    }
+                }
+            }
+        }
+
+    
+
+    }
+    else{    
+        if(InputCURPD.value == "" || res.value == "CURP, Formato: No válido"){
+            alert("Para guardar, favor de colocar un CURP válido");
+        }
+        else{
+            //document.getElementById("formaDoc").submit();
+            //alert("Datos guardados con exito!");
         }
 
     }

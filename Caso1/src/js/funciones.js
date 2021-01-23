@@ -26,7 +26,7 @@ function curpValida(curp) {
 function validarInputM(input) {
     
     var curp = input.value.toUpperCase(),
-        resultado = document.getElementById("resultadoM");
+        resultado = document.getElementById("newresultadoM");
         valido = "No válido";
     if (curpValida(curp)) {
         valido = "Válido";
@@ -40,7 +40,7 @@ function validarInputM(input) {
 function validarInputD(input) {
     
     var curp = input.value.toUpperCase(),
-        resultado = document.getElementById("resultadoD");
+        resultado = document.getElementById("newresultadoD");
         valido = "No válido";
     if (curpValida(curp)) {
         valido = "Válido";
