@@ -1,0 +1,69 @@
+<fieldset>
+    <legend>DATOS PERSONALES</legend>
+
+    <div class="form-group col-md-2">        
+        <input type="text" id="dateM" name="dateM" style="display: none;">              
+    </div>
+
+    <label for="nombreM">NOMBRE(S)*</label>
+    <!--<input type="text" id="nombre" placeholder="Nombre(s)">-->
+    <input type="text" class="form-control" placeholder="Nombre(s)*" autofocus disabled value="<%=JsBus.nombreM%>">
+    <div class="grid-dos-columnas">
+        <label for="InputAMaternoM">Apellido Paterno*</label>
+        <label for="InputAPaternoM">Apellido Materno*</label>
+
+        <input type="text" placeholder="Apellido Paterno*" disabled value="<%=JsBus.apaternoM%>">
+        <input type="text" placeholder="Apellido Materno*" disabled value="<%=JsBus.apaternoM%>">
+
+        <label for="InputFechaNacimientoM">FECHA DE NACIMIENTO*</label>
+        <label for="InputLugarDeNacimientoM">LUGAR DE NACIMIENTO*</label> 
+        <input type="date" placeholder="Fecha*" disabled value="<%=JsBus.fechaM%>">
+        <input type="text" placeholder="Lugar*" disabled value="<%=JsBus.lugarM%>">
+
+        <label for="InputNacionalidadM">NACIONALIDAD*</label>
+        <label for="InputEstadoCivilM">ESTADO CIVIL*</label>
+        <input type="text" placeholder="Nacionalidad*" disabled value="<%=JsBus.nacionalidadM%>">
+        <input type="text" placeholder="Estado Civil*" disabled value="<%=JsBus.civilM%>">
+
+        <label for="InputCURPM">CURP*</label>
+        <label for="InputDependenciasM">DEPENDENCIAS*</label>
+        <input type="text" oninput="validarInputM(this)" placeholder="CURP*" disabled value="<%=JsBus.curpM%>" >
+        <input type="number" placeholder="No. de dependencias*" min="0" disabled value="<%=JsBus.dependenciasM%>">
+    </div>
+</fieldset>
+<fieldset>
+    <legend>DATOS DE CONTACTO</legend>
+    <div class="grid-dos-columnas">
+        <label for="InputTelefonoM">TELÉFONO CELULAR*</label>
+        <label for="InputCorreoM">E-mail*</label>
+        <input type="tel" placeholder="Número*" disabled value="<%=JsBus.telefonoM%>">
+        <input type="email" placeholder="Tu correo electrónico*" disabled value="<%=JsBus.emailM%>">
+
+        <label for="InputSkypeM">CUENTA SKYPE</label>
+        <label for="InputFBM">Cuenta de FB (Link)</label>
+        <input type="text" placeholder="Skype*" disabled value="<%=JsBus.skypeM%>">
+        <input type="text" placeholder="Link a tu Facebook*" disabled value="<%=JsBus.fbM%>">
+    </div>
+</fieldset>
+<fieldset>
+    <legend>DOMICILIO</legend>
+    <div class="domicilio-calle-num">
+        <!--<label for="Calle">Calle</label>-->
+        <input type="text" placeholder="Calle*" disabled value="<%=JsBus.CalleM%>">
+        <!--<label for="NoExt">No. Ext</label>-->
+        <input type="text" placeholder="NoExt*" disabled value="<%=JsBus.NoExtM%>">
+        <!--<label for="NoInt">No. Int</label>-->
+        <input type="text" placeholder="NoInt" disabled value="<%=JsBus.NoIntM%>">
+    </div>
+    <div class="grid-dos-columnas">
+        <!--<label for="Colonia">Colonia</label>-->
+        <input type="text" placeholder="Colonia*" disabled value="<%=JsBus.ColoniaM%>">
+        <!--<label for="Ciudad">Ciudad</label>-->
+        <input type="text" placeholder="Ciudad*" disabled value="<%=JsBus.CiudadM%>">
+        <!--<label for="Estado">Estado</label>-->
+        <input type="text" placeholder="Estado*" disabled value="<%=JsBus.EstadoM%>">
+        <!--<label for="CP">CP</label>-->
+        <input type="text" placeholder="CP*" disabled value="<%=JsBus.CPM%>">
+
+    </div>
+</fieldset>   

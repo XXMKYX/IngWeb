@@ -543,78 +543,11 @@ function validarFormaDoctorado(input)
     
 }
 
-       /*
 
-function validarFormaDoctorado(input)
-{
-    var res = document.getElementById("resultadoD");
-    var InputCURP = document.getElementById("InputCURPD");
-
-    if(input.value == "Guardar"){
-        if(InputCURP.value == "" || res.value == "CURP, Formato: No válido"){
-            alert("Para guardar, favor de colocar un CURP válido");
-        }
-        else{
-            document.getElementById("formaM").submit();
-            alert("Datos guardados con exito!");
-        }
-    }
-    else{
-        //Aquí van las validaciones completas 
-    }
-    */
-    /*
-    const fi = document.getElementById('archivosubido1D'); 
-    const f2 = document.getElementById('archivosubido2D'); 
-
-    if (fi.files.length > 0) 
-    { 
-        for (var i = 0; i <= fi.files.length - 1; i++) 
-        { 
-  
-            const fsize = fi.files.item(i).size; 
-            const file = Math.round((fsize / 1024)); 
-            // The size of the file. 
-            if (file >= 1024)
-            { 
-                alert("Archivo de CV muy grande"); 
-            }
-            else
-            {
-                if (f2.files.length > 0) 
-                { 
-                    for (var j = 0; j <= f2.files.length - 1; j++) 
-                    { 
-              
-                        const fsize2 = f2.files.item(j).size; 
-                        const file2 = Math.round((fsize2 / 1024)); 
-                        // The size of the file. 
-                        if (file2 >= 1024)
-                        { 
-                            alert("Archivo de muestra muy grande"); 
-                        }
-                        else
-                        {
-                            document.getElementById("formaD").submit();
-                        }
-                            
-                    }
-                } 
-                //alert("Datos guardados con exito!");
-            } 
-                /*
-                else if (file < 2048) { 
-                                    alert( 
-                                      "File too small, please select a file greater than 2mb"); 
-                                } else { 
-                                    document.getElementById('size').innerHTML = '<b>'
-                                    + file + '</b> KB'; 
-                                } 
-                
-        }
-    
-    }
-}*/
+function TestButton(input){
+    var test = document.getElementById("prevmisolicitudinputcurp");
+    alert(test.value)
+}
 
 
 

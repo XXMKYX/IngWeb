@@ -1,0 +1,34 @@
+<form method="POST" class="columnas-10 " action="/-" id="-" enctype="multipart/form-data" style="display: none;">
+    <div class="VistaMiSolicitud contenedor" id="prev-mi-solicitud">
+
+        <div class="div-prev-solicitud-curp">
+            <p>Escribe tu CURP e indica forma</p>
+            <input type="text" id=prev-mi-solicitud-input-curp placeholder="Ej. MDHS996637...">
+            <div class="grid-dos-columnas">
+                <input type="submit" value="BuscarM" class="boton boton-amarillo" onclick="buscarCURP(this)">
+                <input type="submit" value="BuscarD" class="boton boton-verde" onclick="buscarCURP(this)">
+            </div>
+            
+        </div>
+    </div>
+</form>
+
+<form method="POST" class="contacto columnas-10 " action="" id="formaVistaiSolicitudM" style="display: block;">
+
+    <nav>
+        <div class="nav nav-tabs tab" id="nav-tab" role="tablist">
+        <button value="1" onclick="HideTab(this)"><a class="nav-item nav-link active" id="nav-datos-tab" data-toggle="tab" href="#nav-datos" role="tab" aria-controls="nav-datos" aria-selected="true">Datos Generales</a></button>
+        <button  value="2" onclick="HideTab(this)"><a class="nav-item nav-link" id="nav-informacion-tab" data-toggle="tab" href="#nav-informacion" role="tab" aria-controls="nav-informacion" aria-selected="false">Datos Académicos</a></button>
+        </div>
+      </nav>
+
+    <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active tabcontent2" id="nav-datos-mi-solicitud-pm" role="tabpanel" aria-labelledby="nav-datos-tab" style="display: block;">
+            <%- include ('MiSolicitudPM') %>
+        </div>
+        <div class="tab-pane fade tabcontent2" id="nav-datos-mi-solicitud-am" role="tabpanel" aria-labelledby="nav-informacion-tab" style="display: none;">
+            <%- include ('MiSolicitudAM')%>
+        </div>
+    </div>            
+    <legend>*datos obligatorios</legend>
+</form> 

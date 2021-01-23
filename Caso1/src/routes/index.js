@@ -75,6 +75,16 @@ router.get('/', (req, res) => {
 router.get('/personal_data',(req,res)=>{
   res.render('personal_data');
 })
+
+router.get('/Busqueda', (req, res) => {
+  res.render('Busqueda');
+});
+
+router.get('/BusquedaD', (req, res) => {
+  res.render('BusquedaD');
+});
+
+
 //Obtiene datos formulario
 
 
@@ -288,5 +298,37 @@ router.post('/doc_data',(req,res)=>{
   //res.s
   //res.send('Datos obtenidos');
 })
+
+
+router.post('/Busqueda', (req, res) => 
+{   
+    
+  const {CURP,verSolicitud} = req.body;  
+
+  console.log("Verificando búsqueda para "+CURP+" "+verSolicitud);     
+  if(verSolicitud=="BuscarM"){     
+        
+    parcialM = fs.readFileSync('src/views/Maestria/'+CURP+'.json', 'utf8')
+    console.log(parcialM);     
+    JsBus=JSON.parse(parcialM);     
+    console.log(JsBus);     
+    console.log("Hay Maestro");     
+    res.redirect('/Busqueda');  
+
+  }else if(verSolicitud=="BuscarD")
+  {     
+    parcialD = fs.readFileSync('src/views/Doctorado/'+CURP+'.json', 'utf8')     
+    JsBusD=JSON.parse(parciald);     
+    console.log(JsBusD);     
+    console.log(parcialD);     
+    console.log("Hay Doctor");     
+    res.redirect('/BusquedaD');  
+
+  } 
+  else{
+    console.log("No encontré opción válida en misolicitud");
+    res.redirect('/');
+  }
+});
 
   module.exports = router;

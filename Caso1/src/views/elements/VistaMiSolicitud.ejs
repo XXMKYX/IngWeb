@@ -1,36 +1,14 @@
-<div class="VistaMiSolicitud contenedor" id="prev-mi-solicitud">
+<form method="POST" class="columnas-10 " action="/Busqueda" id="Busqueda" enctype="multipart/form-data">
+    <div class="VistaMiSolicitud contenedor" id="prev-mi-solicitud"></div>
 
-    <%if (maestria.length > 0) {%>
-    <% maestria.forEach(function(pre){ %>
-    <div class="MiSolicitud" id="vista/">
-        <ul class="ListaMiSolicitud">
-            <li class="entrada-solicitud">
-                <span>Datos personales</span> 
-            </li>
-            <li class="entrada-solicitud">
-                <span>Nombre</span> 
-                <p name="emailVista"> <%= pre.nombre %></p>
-            </li>
-            <li class="entrada-solicitud">
-                <span>Estado de la solicitud</span>
-                <p name="estadoSolicitud"> Pendiente</p>
-            </li> 
-            <li class="entrada-solicitud">
-                <input type="button" value="Visualizar" onclick = "(visualizar(this))" class="boton boton-verde">   
-            </li>
-         
-        </ul>        
-        
+        <div class=" VistaMiSolicitud div-prev-solicitud-curp">
+            <p>Escribe tu CURP e indica forma</p>
+            <input type="text" id="prevmisolicitudinputcurp" name="CURP" placeholder="Ej. MDHS996637...">
+            <div class="grid-dos-columnas">
+                <input type="submit" name="verSolicitud" value="BuscarM" onclick="TestButton(this)" class="boton boton-amarillo">
+                <input type="button" name="verSolicitud" value="BuscarD" class="boton boton-verde" >
+            </div>
+            
+        </div>
     </div>
-    <% }) %>
-
-    <%} else {%>
-        <div class="card card-body text-center">
-            <p>No se encontraron registros. <a href="/new-entry">Debes registrarte primero</a></p>
-          </div>
-          <%}%>   
-    
-</div>
-<div class="div-mi-solicitud" id="vista-mi-solicitud" style="display: none;">
-    <%- include('maestria') %>  
-</div>
+</form>

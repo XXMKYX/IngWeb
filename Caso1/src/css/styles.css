@@ -603,3 +603,13 @@ input[type="button"]{
 .table tbody:hover a{
     color: lightblue;
 }
+
+/* Styles mi solicitud */
+
+.div-prev-solicitud-curp p{
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.6rem;
+    color: wheat;
+    
+}
