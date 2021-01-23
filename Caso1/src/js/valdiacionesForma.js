@@ -58,11 +58,10 @@ var HideTabMiSolicitud = function(input) {
     var MaestriaDatosPM = document.getElementById('navdatosmisolicitudpm');
     var MaestriaDatosAM = document.getElementById('navdatosmisolicitudam');
 
-    var DoctoradoDatosPD = document.getElementById('nav-datosD');
-    var DoctoradoDatosAD = document.getElementById('nav-informacionD');
-   // var archivosMaestria = document.getElementById('archivosMaestria');
-    //var archivosDoctorado = document.getElementById('archivosDoctorado');
-    //var Forma = document.getElementById('formaM');
+    var DoctoradoDatosPD = document.getElementById('navdatosmisolicitudpd');
+    var DoctoradoDatosAD = document.getElementById('navdatosmisolicitudad');
+
+    
     var valor = input.value;
     
     //1 si es Maestría, 2 si es Doctorado

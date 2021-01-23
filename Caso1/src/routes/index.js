@@ -81,7 +81,7 @@ router.get('/MiSolicitudM', (req, res) => {
 });
 
 router.get('/BusquedaD', (req, res) => {
-  res.render('BusquedaD');
+  res.render('../views/elements/MiSolicitudD');
 });
 
 

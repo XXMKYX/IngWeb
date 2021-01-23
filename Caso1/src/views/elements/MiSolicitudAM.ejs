@@ -1,19 +1,15 @@
 <fieldset>
     <legend>DATOS ACADÉMICOS</legend>
-    <div class="grid-dos-columnas">
-        <label for="InputInstitucionM">Institución de tus estudios profesionales</label>
-        <label for="pInputinstitucionM">País la institución</label>
-        <input type="text" placeholder="Institución" disabled value="<%=JsonBusqueda.InstitucionM%>">
-        <input type="text" placeholder="País" disabled value="<%=JsonBusqueda.pinstitucionM%>">
-    </div>
-    <div class=""  id="formaMaestria1">
-        <label for="InputtitulacionM">¿Estás titulado?</label>
-        <div class="alinear-centro"  >            
-            <input type="text" placeholder="Titulado" disabled value="<%=JsonBusqueda.tituladoMaestriaM%>">            
-        </div>
-
+    <div class=""  id="">
         <div class="grid-dos-columnas">
+            <label for="InputInstitucionM">Institución de tus estudios profesionales</label>
+            <label for="pInputinstitucionM">País la institución</label>
+            <input type="text" placeholder="Institución" disabled value="<%=JsonBusqueda.InstitucionM%>">
+            <input type="text" placeholder="País" disabled value="<%=JsonBusqueda.pinstitucionM%>">
+
+            <label for="InputtitulacionM">¿Estás titulado?</label>         
             <label for="InputcarreraM">¿En qué carrera?</label>
+            <input type="text" placeholder="Titulado" disabled value="<%=JsonBusqueda.tituladoMaestriaM%>">            
             <input type="text" placeholder="Carrera" disabled value="<%=JsonBusqueda.carreraM%>">
         </div>                            
     </div>
@@ -36,12 +32,4 @@
     <label for="InputmotivoM">Motivo por el cuál desea ingresar al Posgrado y a qué línea de investigación desea integrarse</label>
     <textarea disabled><%=JsonBusqueda.motivoM%></textarea>
         
-    <label for="ComentarioM">Motivo por el cuál desea ingresar al Posgrado y a qué línea de investigación desea integrarse</label>
-    <textarea disabled><%=JsonBusqueda.comentarioM%></textarea>
-
-</fieldset>
-
-<fieldset>
-    <legend>ANEXO</legend>
-    
 </fieldset>

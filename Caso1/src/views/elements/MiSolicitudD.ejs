@@ -61,8 +61,8 @@
                         
                             <nav>
                                 <div class="nav nav-tabs tab" id="nav-tab" role="tablist">
-                                    <button value="1" onclick="HideTabMiSolicitud(this)"><a class="nav-item nav-link active" id="nav-datos-tab-vpm" data-toggle="tab" href="#navdatosmisolicitudpm" role="tab" aria-selected="true">Datos Generales</a></button>
-                                    <button  value="2" onclick="HideTabMiSolicitud(this)"><a class="nav-item nav-link" id="nav-informacion-tab-vam" data-toggle="tab" href="#navdatosmisolicitudam" role="tab" aria-selected="false">Datos Académicos</a></button>
+                                    <button value="3" onclick="HideTabMiSolicitud(this)"><a class="nav-item nav-link active" id="nav-datos-tab-vpd" data-toggle="tab" href="#navdatosmisolicitudpd" role="tab" aria-selected="true">Datos Generales</a></button>
+                                    <button  value="4" onclick="HideTabMiSolicitud(this)"><a class="nav-item nav-link" id="nav-informacion-tab-vad" data-toggle="tab" href="#navdatosmisolicitudad" role="tab" aria-selected="false">Datos Académicos</a></button>
                                 </div>
                             </nav>
                             <div class="grid-dos-columnas">
@@ -72,14 +72,14 @@
                                 <input type="text" placeholder="FechaSolicitudD*" disabled value="<%=JsonBusqueda.dateM%>">
                             </div>
                             <div class="tab-content" id="nav-tabContent">
-                                <div class="tab-pane fade show active tabcontent2" id="navdatosmisolicitudpm" role="tabpanel" aria-labelledby="nav-datos-tab-vpm" style="display: block;">
-                                    <%- include ('MiSolicitudPM') %>
+                                <div class="tab-pane fade show active tabcontent2" id="navdatosmisolicitudpd" role="tabpanel" aria-labelledby="nav-datos-tab-vpd" style="display: block;">
+                                    <%- include ('MiSolicitudPD') %>
                                 </div>
-                                <div class="tab-pane fade tabcontent2" id="navdatosmisolicitudam" role="tabpanel" aria-labelledby="nav-informacion-tab-vam" style="display: none;">
-                                    <%- include ('MiSolicitudAM')%>
+                                <div class="tab-pane fade tabcontent2" id="navdatosmisolicitudad" role="tabpanel" aria-labelledby="nav-informacion-tab-vad" style="display: none;">
+                                    <%- include ('MiSolicitudAD')%>
                                 </div>
                             </div>            
-                            <label for="ComentarioM">Comentarios del coordinador</label>
+                            <label for="ComentarioD">Comentarios del coordinador</label>
                             <textarea disabled><%=JsonBusqueda.comentarioM%></textarea>
                         </div> 
                     </div>
