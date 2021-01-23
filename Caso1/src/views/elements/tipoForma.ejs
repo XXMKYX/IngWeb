@@ -1,17 +1,10 @@
-
-<div class="alinear-centro">
-<!-- <label for="tipoForma"></label> -->
-<label for="tipoFormaM">Maestria</label>                        
-<input type="radio" id="tipoFormaM" name="tipoFormaradio" value="1" onclick="handler(this)" checked="checked"></option>
-<label for="tipoFormaD">Doctorado</label>
-<input type="radio" id="tipoFormaD" name="tipoFormaradio" value="2" onclick="handler(this)"></option>
-</div>   
-
-<!-- FORMULARIO MAESTRIA -->
-<div class="grid centrar-columnas forma" id="formaMaestria" style="display: block;">
-<%- include('maestria') %>
-</div>
-<!-- FORMULARIO DOCTORADO -->   
-<div class="grid centrar-columnas forma" id="formaDoctorado" style="display: none;">
-<%- include('doctorado') %>       
-</div> 
+<form method="POST" action="/LLenar" class="needs-validation" id="prev-mi-solicitud" style="display:block;" novalidate>
+    <div class="form-group col-md-3 contenedor columnas-10">
+      <label for="busqueda" style="text-align: center;">Inserte su CURP y seleccione tipo de forma</label>
+      <input type="text" style="text-transform: uppercase;" class="form-control" name="CURP" placeholder="ej. MAHJ280603MSPRRV09" pattern="^[A-Z][A,E,I,O,U,X][A-Z]{2}[0-9]{2}[0-1][0-9][0-3][0-9][M,H][A-Z]{2}[B-Z]{3}[0-9,A-Z][0-9]$"required>
+      <div class="grid-dos-columnas">
+          <button name="buscar" type="submit" id="buscar" value="BuscarM" class="boton boton-amarillo">Buscar Maestria</button>
+          <button name="buscar" type="submit" id="buscar" value="BuscarD" class="boton boton-verde">Buscar Doctorado</button>
+      </div>        
+      </div>
+  </form>
