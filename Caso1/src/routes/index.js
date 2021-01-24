@@ -422,5 +422,52 @@ router.post('/Llenar', (req, res) =>
   }
 });
 
+router.get('/ValidarD/:CURPD', (req, res) => {
+  InformacionD = datosD.filter(alumno => alumno.CURPD == req.params.CURPD);
+  console.log(InformacionD);
+  // saving data
+  res.redirect('/Validacion');
+});
+
+router.get('/ValidarM/:CURP', (req, res) => {
+  InformacionM = datosM.filter(alumno => alumno.CURP == req.params.CURP);
+  // saving data
+  res.redirect('/ValidacionM');
+});
+
+router.post('/Validacion', (req, res) => {
+
+  const {CURPD,ValidacionD,ComentarioD} = req.body;
+
+  let file = JSON.parse(fs.readFileSync('src/views/Doctor/DocFinalizadas/'+CURPD+'.json', 'utf8'));
+  
+  file.ValidacionD = ValidacionD;
+  file.ComentarioD = ComentarioD;
+
+  fs.writeFile('src/views/Doctor/DocFinalizadas/'+CURPD+'.json', JSON.stringify(file), function writeJSON(err) {
+    if (err) return console.log(err);
+    console.log(JSON.stringify(file));
+  });
+
+  res.redirect('/');
+});
+
+router.post('/ValidacionM', (req, res) => {
+
+  const {CURPV,ValidacionD,ComentarioD} = req.body;
+
+  let file = JSON.parse(fs.readFileSync('src/views/Master/MasterParciales/'+CURPV+'.json', 'utf8'));
+  
+  file.ValidacionD = ValidacionD;
+  file.Comentario = ComentarioD;
+
+  fs.writeFile('src/views/Maestria/MasterParciales/'+CURPV+'.json', JSON.stringify(file), function writeJSON(err) {
+    if (err) return console.log(err);
+    console.log(JSON.stringify(file));
+  });
+
+  res.redirect('/');
+});
+
 
   module.exports = router;
