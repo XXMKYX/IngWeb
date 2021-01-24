@@ -76,7 +76,7 @@
                                         <div class="grid-dos-columnas">
                                             <label for="EstadoSolicitudD">Estado de la solicitud</label>
                                             <label for="FechaSolicitudD">Fecha de la solicitud</label>
-                                            <input type="text" placeholder="EstadoSolicitudD*" name="validacionM" value="<%=JsonBusquedaM.validacionM%>">
+                                            <input type="text" placeholder="EstadoSolicitudD*" name="validacionEstadoM" value="<%=JsonBusquedaM.validacionM%>">
                                             <input type="text" placeholder="FechaSolicitudD*"  name="dateM" value="<%=JsonBusquedaM.dateM%>">
                                             
                                         </div>
@@ -85,11 +85,11 @@
                                         <div class="grid-dos-columnas">
                                             <select name="validacionM" id="opcionesValidacionM" >
                                                 <option value="Pendiente" selected>Pendiente</option>
-                                                <option value="Aceptar">Aceptar</option>
-                                                <option value="Rechazar">Rechazar</option>
-                                                <option value="Condicionar">Condicionar</option>
+                                                <option value="Aceptada">Aceptar</option>
+                                                <option value="Rechazada">Rechazar</option>
+                                                <option value="Condicionada">Condicionar</option>
                                             </select>
-                                            <button type="submit" value="Validar" id="botonMValidar" name="orden" style="padding: 1.6rem; margin: 0 0 2rem;" class="boton boton-amarillo"></button>                                        
+                                            <button type="submit" value="Validar" onclick="ValorSubmit(this)" id="botonMValidar" name="orden" style="padding: 1.6rem; margin: 0 0 2rem;" class="boton boton-amarillo">Validar</button>                                        
                                         </div> 
                                     </fieldset>                                                      
                                     <legend>*datos obligatorios</legend>

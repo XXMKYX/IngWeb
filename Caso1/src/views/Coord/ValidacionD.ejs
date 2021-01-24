@@ -60,14 +60,14 @@
                                     <button  value="14" onclick="HideTabTipoForma(this)"><a class="nav-item nav-link" id=" coordAcademicoD-tab" data-toggle="tab" href="# coordAcademicoD" role="tab" aria-controls=" coordAcademicoD" aria-selected="false">Datos Académicos</a></button>
                                     </div>
                                 </nav>                                                          
-                                <form method="POST" class="contacto columnas-10 " action="/master_data" onsubmit="validarFormaMaestria()" id="formaMasterCoord"  enctype="multipart/form-data">                                    
+                                <form method="POST" class="contacto columnas-10 " action="/master_data" onsubmit="validarFormaDoctorado()" id="formaMasterCoord"  enctype="multipart/form-data">                                    
                                     
 
                                     <div class="tab-content" id="nav-tabContent">
                                         <div class="tab-pane fade show active tabcontent2" id="coordPersonalD" role="tabpanel" aria-labelledby="coordPersonalD-tab" style="display: block;">
                                             <%- include ('SolicitudPD') %>
                                         </div>
-                                        <div class="tab-pane fade tabcontent2" id=" coordAcademicoD" role="tabpanel" aria-labelledby=" coordAcademicoD" style="display: none;">
+                                        <div class="tab-pane fade tabcontent2" id="coordAcademicoD" role="tabpanel" aria-labelledby=" coordAcademicoD" style="display: none;">
                                             <%- include ('SolicitudAD')%>
                                         </div>
                                     </div>                             
@@ -76,20 +76,20 @@
                                         <div class="grid-dos-columnas">
                                             <label for="EstadoSolicitudD">Estado de la solicitud</label>
                                             <label for="FechaSolicitudD">Fecha de la solicitud</label>
-                                            <input type="text" placeholder="EstadoSolicitudD*" name="validacionM" value="<%=JsonBusquedaM.validacionM%>">
-                                            <input type="text" placeholder="FechaSolicitudD*"  name="dateM" value="<%=JsonBusquedaM.dateM%>">
+                                            <input type="text" placeholder="EstadoSolicitudD*" name="estadovalD" value="<%=JsonBusquedaD.validacionD%>">
+                                            <input type="text" placeholder="FechaSolicitudD*"  name="dateDCoord" value="<%=JsonBusquedaD.dateD%>">
                                             
                                         </div>
-                                        <label for="CoordComentarioM">Comentarios del coordinador</label>
-                                        <textarea id="CoordComentarioM" name="comentarioM"><%=JsonBusquedaM.comentarioM%></textarea>
+                                        <label for="CoordComentarioD">Comentarios del coordinador</label>
+                                        <textarea id="CoordComentarioD" name="comentarioD"><%=JsonBusquedaD.comentarioD%></textarea>
                                         <div class="grid-dos-columnas">
-                                            <select name="validacionM" id="opcionesValidacionM" >
+                                            <select name="validacionD" id="opcionesValidacionD" >
                                                 <option value="Pendiente" selected>Pendiente</option>
                                                 <option value="Aceptada">Aceptar</option>
                                                 <option value="Rechazada">Rechazar</option>
                                                 <option value="Condicionada">Condicionar</option>
                                             </select>
-                                            <button type="submit" value="Validar" id="botonMValidar" name="orden" style="padding: 1.6rem; margin: 0 0 2rem;" class="boton boton-amarillo"></button>                                        
+                                            <button type="submit" value="Validar" onclick="ValorSubmit(this)" id="botonMValidar" name="orden" style="padding: 1.6rem; margin: 0 0 2rem;" class="boton boton-amarillo">Validar</button>                                        
                                         </div> 
                                     </fieldset>                                                      
                                     <legend>*datos obligatorios</legend>

@@ -1,3 +1,5 @@
+var VarValorSubmit = "";
+
 var handler = function(input) {
     var newformaMaestria = document.getElementById('nuevaformaMaestria');
     var newformaDoctorado = document.getElementById('nuevaformaDoctorado');
@@ -103,8 +105,8 @@ function HideTabTipoForma(input){
     var coordPersonalM = document.getElementById('coordPersonalM');
     var coordAcademicoM = document.getElementById('coordAcademicoM');
     
-    var coordPersonalP = document.getElementById('coordPersonalP');
-    var coordAcademicoP = document.getElementById('coordAcademicoP'); 
+    var coordPersonalP = document.getElementById('coordPersonalD');
+    var coordAcademicoP = document.getElementById('coordAcademicoD'); 
 
 
     console.log(valor);
@@ -325,7 +327,7 @@ function validarFormaMaestria(input)
     /* Validación CURP */
     var res = document.getElementById("resultadoM");
     /* Se valida completamente */
-    if(input.value == 'Enviar')
+    if(VarValorSubmit == 'Enviar')
     {
         
         if(InputNombre.value == '' || InputAMaterno.value == '' || InputAPaterno.value == '' || 
@@ -446,7 +448,7 @@ function validarFormaMaestria(input)
             }
         }
     }
-    else if(input.value == 'Guardar'){    
+    else if(VarValorSubmit == 'Guardar'){    
         if(InputCURP.value == "" || res.value == "CURP, Formato: No válido"){
             alert("Para guardar, favor de colocar un CURP válido");
             return false;
@@ -488,17 +490,14 @@ function validarFormaMaestria(input)
             return false;
         }
         else{
-            document.getElementById("formaMasterCoord").submit();
+            return true;
         }
     } 
 }
 
 
 function validarNewFormaMaestria(input)
-{
-
-    console.log(input.value);
-    
+{    
     var InputNombre = document.getElementById("newInputNombreM");
     var InputAMaterno = document.getElementById("newInputAMaternoM");
     var InputAPaterno = document.getElementById("newInputAPaternoM");
@@ -526,7 +525,7 @@ function validarNewFormaMaestria(input)
     
     /* Inputs de información académica */
     var InputInstitucionM = document.getElementById("newInputInstitucionM");
-    var pInputinstitucionM = document.getElementById("pInputInstitucionM");
+    var pInputinstitucionM = document.getElementById("newpInputInstitucionM");
     var InputrsitituladoM = document.getElementById("newInputrsitituladoM");
     var InputnrotituladoM = document.getElementById("newInputnrotituladoM");
     var InputcarreraM = document.getElementById("newInputcarreraM");
@@ -542,10 +541,8 @@ function validarNewFormaMaestria(input)
 
     /* Validación CURP */
     var res = document.getElementById("newresultadoM");
-
-
     /* Se valida completamente */
-    if(input.value == 'Enviar')
+    if(VarValorSubmit == 'Enviar')
     {
         
         if(InputNombre.value == '' || InputAMaterno.value == '' || InputAPaterno.value == '' || 
@@ -747,8 +744,7 @@ function validarFormaDoctorado(input)
     var InputrnopropD = document.getElementById("InputrnopropD");
     var InputaniospropD = document.getElementById("InputaniospropD");
     var InputmotivoD = document.getElementById("InputmotivoD");
-    var Inputarchivosubido1D = document.getElementById("Inputarchivosubido1D");
-    var Inputarchivosubido2D = document.getElementById("Inputarchivosubido2D");
+    var Inputarchivosubido1D = document.getElementById("Inputarchivosubido1D");;
     let siTituladoD=0;
     let siPropD=0;
 
@@ -756,7 +752,7 @@ function validarFormaDoctorado(input)
     var res = document.getElementById("resultadoD");
 
     /* Se valida completamente */
-    if(input.value == 'Enviar')
+    if(VarValorSubmit == 'Enviar')
     {        
         if(InputNombreD.value == '' || InputAMaternoD.value == '' || InputAPaternoD.value == '' || 
         InputFechaNacimientoD.value == ''|| InputLugarDeNacimientoD.value == ''
@@ -800,7 +796,7 @@ function validarFormaDoctorado(input)
                     || InputpInstitucionPosgradoD.value == ''  ||  
                         InputxpPD.value == '' || InputxpDD.value == '' || 
                         InputaniospropD.value == '' || InputmotivoD.value == ''|| 
-                        Inputarchivosubido1D.value == ''|| Inputarchivosubido2D.value == '' ) //Si el input no es válido
+                        Inputarchivosubido1D.value == '' ) //Si el input no es válido
                     {
                         alert("Favor de llenar todos los campos obligatorios");
                         return false;
@@ -872,28 +868,10 @@ function validarFormaDoctorado(input)
                                              }
                                             else
                                             {                                
-                                                const fi2 = Inputarchivosubido2D; 
-                                                // Check if any file is selected. 
-                                                if (fi.files.length > 0) 
-                                                { 
-                                                    for (let i = 0; i <= fi.files.length - 1; i++) 
-                                                    {                   
-                                                         const fsize = fi.files.item(i).size; 
-                                                         const file = Math.round((fsize / 1024)); 
-                                                         // The size of the file. 
-                                                         if (file >= 1024)
-                                                        { 
-                                                            alert("Archivo muy grande");
-                                                            return false;
-                                                         }
-                                                        else
-                                                        {                                                                                                                                                      
-                                                            alert("Datos finalizados con exito! (llena formaD)");
-                                                            return true;
-                                                        }
-                                                    }
-                                                    
-                                                }
+                                                                                                                                                                      
+                                                alert("Datos finalizados con exito! (llena formaD)");
+                                                return true;
+
                                             }
                                         }
                                         
@@ -911,12 +889,15 @@ function validarFormaDoctorado(input)
     
 
     }
-    else{    
+    else if(VarValorSubmit == 'Guardar')
+    {    
+        alert("test");
         if(InputCURPD.value == "" || res.value == "CURP, Formato: No válido"){
             alert("Para guardar, favor de colocar un CURP válido");
             return false;
         }
-        else{
+        else
+        {
             const fi = Inputarchivosubido1D; 
             // Check if any file is selected. 
             if (fi.files.length > 0) 
@@ -933,28 +914,9 @@ function validarFormaDoctorado(input)
                      }
                     else
                     {                                
-                        const fi2 = Inputarchivosubido2D; 
-                        // Check if any file is selected. 
-                        if (fi.files.length > 0) 
-                        { 
-                            for (let i = 0; i <= fi.files.length - 1; i++) 
-                            {                   
-                                 const fsize = fi.files.item(i).size; 
-                                 const file = Math.round((fsize / 1024)); 
-                                 // The size of the file. 
-                                 if (file >= 1024)
-                                { 
-                                    alert("Archivo muy grande");
-                                    return false;
-                                 }
-                                else
-                                {                                                                                                                                                      
-                                    alert("Datos guardados con exito! (llena formaD)");
-                                    return true;
-                                }
-                            }
-                            
-                        }
+                                                                                                                                                                     
+                        alert("Datos guardados con exito! (llena formaD)");
+                        return true;
                     }
                 }
                 
@@ -965,6 +927,18 @@ function validarFormaDoctorado(input)
             }
         }
 
+    }
+    else
+    {
+        //Va a actualizar
+        var selectCoord = document.getElementById("opcionesValidacionD").value;
+        var MensajeCoord = document.getElementById("CoordComentarioD").value;
+        if(selectCoord == 'Pendiente' || selectCoord == '' || MensajeCoord == '' || MensajeCoord == 'Sin comentarios'){
+            return false;
+        }
+        else{
+            return true;
+        }
     }
 
 }
@@ -1011,7 +985,6 @@ function validarNewFormaDoctorado(input)
     var InputaniospropD = document.getElementById("newInputaniospropD");
     var InputmotivoD = document.getElementById("newInputmotivoD");
     var Inputarchivosubido1D = document.getElementById("newInputarchivosubido1D");
-    var Inputarchivosubido2D = document.getElementById("newInputarchivosubido2D");
     let siTituladoD=0;
     let siPropD=0;
 
@@ -1064,7 +1037,7 @@ function validarNewFormaDoctorado(input)
                     || InputpInstitucionPosgradoD.value == ''  ||  
                         InputxpPD.value == '' || InputxpDD.value == '' || 
                         InputaniospropD.value == '' || InputmotivoD.value == ''|| 
-                        Inputarchivosubido1D.value == ''|| Inputarchivosubido2D.value == '' ) //Si el input no es válido
+                        Inputarchivosubido1D.value == '') //Si el input no es válido
                     {
                         alert("Favor de llenar todos los campos obligatorios");
                         return false;
@@ -1134,30 +1107,10 @@ function validarNewFormaDoctorado(input)
                                                 alert("Archivo 1 muy grande");
                                                 return false;
                                              }
-                                            else
-                                            {                                
-                                                const fi2 = Inputarchivosubido2D; 
-                                                // Check if any file is selected. 
-                                                if (fi.files.length > 0) 
-                                                { 
-                                                    for (let i = 0; i <= fi.files.length - 1; i++) 
-                                                    {                   
-                                                         const fsize = fi.files.item(i).size; 
-                                                         const file = Math.round((fsize / 1024)); 
-                                                         // The size of the file. 
-                                                         if (file >= 1024)
-                                                        { 
-                                                            alert("Archivo 2 muy grande");
-                                                            return false;
-                                                         }
-                                                        else{                                                        
-                                                            alert("Datos finalizados con exito! (nueva entrada D)");
-                                                            return true;
-                                                        }
-                                                    }
-                                                    
-                                                }
-                                            }
+                                            else{                                                        
+                                                alert("Datos finalizados con exito! (nueva entrada D)");
+                                                return true;
+                                            }                                            
                                         }
                                         
                                     }                                    
@@ -1193,28 +1146,10 @@ function validarNewFormaDoctorado(input)
                      }
                     else
                     {                                
-                        const fi2 = Inputarchivosubido2D; 
-                        // Check if any file is selected. 
-                        if (fi.files.length > 0) 
-                        { 
-                            for (let i = 0; i <= fi.files.length - 1; i++) 
-                            {                   
-                                 const fsize = fi.files.item(i).size; 
-                                 const file = Math.round((fsize / 1024)); 
-                                 // The size of the file. 
-                                 if (file >= 1024)
-                                { 
-                                    alert("Archivo 2 muy grande");
-                                    return false;
-                                 }
-                                else
-                                {                                
-                                    alert("Datos guardados con exito! (nueva entrada D)");
-                                    return true;
-                                }
-                            }
-                            
-                        }
+                      
+                        alert("Datos guardados con exito! (nueva entrada D)");
+                        return true;
+       
                     }
                 }
             }
@@ -1236,7 +1171,9 @@ function TestButton(input){
 }
 
 
-
+function ValorSubmit(input){
+    VarValorSubmit = input.value;
+}
         
            
 

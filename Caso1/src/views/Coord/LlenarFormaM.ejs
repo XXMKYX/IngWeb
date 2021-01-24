@@ -57,14 +57,16 @@
                             
                             <div class="contacto columnas-10 " action="" id="formaVistaiSolicitudM" style="display: block;">
                             
+                                <nav>
+                                    <div class="nav nav-tabs tab" id="nav-tab" role="tablist">
+                                    <button value="3" onclick="HideTabTipoForma(this)"><a class="nav-item nav-link active" id="navLlenarFormaPersonalM-tab" data-toggle="tab" href="#navLlenarFormaPersonalM" role="tab" aria-controls="navLlenarFormaPersonalM" aria-selected="true">Datos Generales</a></button>
+                                    <button  value="4" onclick="HideTabTipoForma(this)"><a class="nav-item nav-link" id="navLlenarFormaAcademicoM-tab" data-toggle="tab" href="#navLlenarFormaAcademicoM" role="tab" aria-controls="navLlenarFormaAcademicoM" aria-selected="false">Datos Académicos</a></button>
+                                    </div>
+                                </nav>
+                                
                                 <form method="POST" class="contacto columnas-10 " action="/personal_data" onsubmit="return validarFormaMaestria()" id="formaMaster" enctype="multipart/form-data">
 
-                                    <nav>
-                                        <div class="nav nav-tabs tab" id="nav-tab" role="tablist">
-                                        <button value="3" onclick="HideTabTipoForma(this)"><a class="nav-item nav-link active" id="navLlenarFormaPersonalM-tab" data-toggle="tab" href="#navLlenarFormaPersonalM" role="tab" aria-controls="navLlenarFormaPersonalM" aria-selected="true">Datos Generales</a></button>
-                                        <button  value="4" onclick="HideTabTipoForma(this)"><a class="nav-item nav-link" id="navLlenarFormaAcademicoM-tab" data-toggle="tab" href="#navLlenarFormaAcademicoM" role="tab" aria-controls="navLlenarFormaAcademicoM" aria-selected="false">Datos Académicos</a></button>
-                                        </div>
-                                    </nav>
+                                    
                                 
                                     <div class="tab-content" id="nav-tabContent">
                                         <div class="tab-pane fade show active tabcontent2" id="navLlenarFormaPersonalM" role="tabpanel" aria-labelledby="navLlenarFormaPersonalM-tab" style="display: block;">

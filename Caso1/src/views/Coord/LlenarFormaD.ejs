@@ -55,16 +55,16 @@
                     <div class="forma">
                         <div class="grid centrar-columnas forma">                        
                             
-                            <div class="contacto columnas-10 " action="" id="formaVistaiSolicitudM" style="display: block;">
+                            <nav>
+                                <div class="nav nav-tabs tab" id="nav-tab" role="tablist">
+                                <button value="5" onclick="HideTabTipoForma(this)"><a class="nav-item nav-link active" id="navLlenarFormaPersonalD-tab" data-toggle="tab" href="#navLlenarFormaPersonalD" role="tab" aria-controls="navLlenarFormaPersonalD" aria-selected="true">Datos Generales</a></button>
+                                <button  value="6" onclick="HideTabTipoForma(this)"><a class="nav-item nav-link" id="navLlenarFormaAcademicoD-tab" data-toggle="tab" href="#navLlenarFormaAcademicoD" role="tab" aria-controls="navLlenarFormaAcademicoD" aria-selected="false">Datos Académicos</a></button>
+                                </div>
+                            </nav>
                             
-                                <form method="POST" class="contacto columnas-10 " action="/master_data" onsubmit="return validarFormaDoctorado()" id="formaMaster" enctype="multipart/form-data">
+                            <div class="contacto columnas-10 " action="" id="formaVistaiSolicitudM" style="display: block;">                        
 
-                                    <nav>
-                                        <div class="nav nav-tabs tab" id="nav-tab" role="tablist">
-                                        <button value="5" onclick="HideTabTipoForma(this)"><a class="nav-item nav-link active" id="navLlenarFormaPersonalD-tab" data-toggle="tab" href="#navLlenarFormaPersonalD" role="tab" aria-controls="navLlenarFormaPersonalD" aria-selected="true">Datos Generales</a></button>
-                                        <button  value="6" onclick="HideTabTipoForma(this)"><a class="nav-item nav-link" id="navLlenarFormaAcademicoD-tab" data-toggle="tab" href="#navLlenarFormaAcademicoD" role="tab" aria-controls="navLlenarFormaAcademicoD" aria-selected="false">Datos Académicos</a></button>
-                                        </div>
-                                    </nav>
+                                <form method="POST" class="contacto columnas-10 " action="/master_data" onsubmit="return validarFormaDoctorado()" id="formaMaster" enctype="multipart/form-data">
                                 
                                     <div class="tab-content" id="nav-tabContent">
                                         <div class="tab-pane fade show active tabcontent2" id="navLlenarFormaPersonalD" role="tabpanel" aria-labelledby="navLlenarFormaPersonalD-tab" style="display: block;">

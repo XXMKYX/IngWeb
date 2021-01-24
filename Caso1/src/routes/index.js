@@ -211,7 +211,7 @@ router.post('/master_data', multer({
 }).single('archivosubido1D') ,(req, res) => {
   console.log(req.body);
 
-const { dateD, nombreD, apaternoD, amaternoD, fechaD, lugarD, nacionalidadD, civilD, curpD, dependenciasD, telefonoD, emailD, skypeD, fbD, CalleD, NoExtD, NoIntD, ColoniaD, CiudadD, EstadoD, CPD,InstitucionD, pinstitucionD,InstitucionPosgradoD,pInstitucionPosgradoD, tituladoDoctoradoD, xpPD, xpDD, propedeuticoD, aniospropD, motivoD, archivosubido1D, orden} = req.body;
+const { dateD, validacionD, nombreD, apaternoD, amaternoD, fechaD, lugarD, nacionalidadD, civilD, curpD, dependenciasD, telefonoD, emailD, skypeD, fbD, CalleD, NoExtD, NoIntD, ColoniaD, CiudadD, EstadoD, CPD,InstitucionD, pinstitucionD,InstitucionPosgradoD,pInstitucionPosgradoD, tituladoDoctoradoD, xpPD, xpDD, propedeuticoD, aniospropD, motivoD, archivosubido1D, comentarioD, orden} = req.body;
 
   let newmaster = {
     tipoD : "Doctorado",
@@ -270,6 +270,7 @@ const { dateD, nombreD, apaternoD, amaternoD, fechaD, lugarD, nacionalidadD, civ
     fs.writeFile('src/views/Doctor/DocFinalizadas/'+curpD+'.json', json_datos, 'utf-8',function (err) {
       if (err) throw err;
       console.log('Registro de doctorado validado en archivo');
+      res.redirect('/');
     });
   }
   
@@ -435,8 +436,8 @@ router.post('/Llenar', (req, res) =>
   }
 });
 
-router.get('/Validacion', (req, res) => {
-  res.render('Validacion',{InformacionD});
+router.get('/ValidacionD', (req, res) => {
+  res.render('Coord/ValidacionD',{InformacionD});
 });
 
 router.get('/ValidacionM', (req, res) => {
@@ -450,8 +451,17 @@ router.get('/RevisarSol', (req, res) => {
 
 router.get('/ValidarD/:curpD', (req, res) => {
   InformacionD = doctorado.filter(alumno => alumno.curpD == req.params.curpD);
-  // saving data
-  res.redirect('/Validacion');
+  try 
+  {
+      BusquedaJSD = fs.readFileSync('src/views/Doctor/DocFinalizadas/'+req.params.curpD+'.json', 'utf8')     
+      JsonBusquedaD=JSON.parse(BusquedaJSD); 
+      console.log("Se encuentra directorio");
+      res.redirect('/ValidacionD'); 
+      
+  } catch (error) {
+      console.log("No existe ese directorio en la carpeta de finalizadas de Doctorado");
+      res.redirect('/');
+  }
 });
 
 router.get('/ValidarM/:curpM', (req, res) => {
@@ -459,7 +469,8 @@ router.get('/ValidarM/:curpM', (req, res) => {
   try 
   {
       BusquedaJSM = fs.readFileSync('src/views/Master/MasterFinalizadas/'+req.params.curpM+'.json', 'utf8')     
-      JsonBusquedaM=JSON.parse(BusquedaJSM);        
+      JsonBusquedaM=JSON.parse(BusquedaJSM); 
+      console.log("Se encuentra directorio");
       res.redirect('/ValidacionM'); 
 
   } catch (error) {

@@ -1,11 +1,13 @@
+<nav>
+    <div class="nav nav-tabs tab" id="nav-tab" role="tablist">
+    <button value="7" onclick="HideTabTipoForma(this)"><a class="nav-item nav-link active" id="NuevaEntradaMasterP-tab" data-toggle="tab" href="#NuevaEntradaMasterP" role="tab" aria-controls="NuevaEntradaMasterP" aria-selected="true">Datos Generales</a></button>
+    <button  value="8" onclick="HideTabTipoForma(this)"><a class="nav-item nav-link" id="NuevaEntradaMasterA-tab" data-toggle="tab" href="#NuevaEntradaMasterA" role="tab" aria-controls="NuevaEntradaMasterA" aria-selected="false">Datos Académicos</a></button>
+    </div>
+</nav>
+
 <form method="POST" class="contacto columnas-10 " action="/personal_data"  id="newFormaMaster" onsubmit="return validarNewFormaMaestria()"  enctype="multipart/form-data">
 
-    <nav>
-        <div class="nav nav-tabs tab" id="nav-tab" role="tablist">
-        <button value="7" onclick="HideTabTipoForma(this)"><a class="nav-item nav-link active" id="NuevaEntradaMasterP-tab" data-toggle="tab" href="#NuevaEntradaMasterP" role="tab" aria-controls="NuevaEntradaMasterP" aria-selected="true">Datos Generales</a></button>
-        <button  value="8" onclick="HideTabTipoForma(this)"><a class="nav-item nav-link" id="NuevaEntradaMasterA-tab" data-toggle="tab" href="#NuevaEntradaMasterA" role="tab" aria-controls="NuevaEntradaMasterA" aria-selected="false">Datos Académicos</a></button>
-        </div>
-    </nav>
+    
 
     <div class="tab-content" id="nav-tabContent">
         <div class="tab-pane fade show active tabcontent2" id="NuevaEntradaMasterP" role="tabpanel" aria-labelledby="NuevaEntradaMasterP-tab" style="display: block;">
@@ -15,10 +17,11 @@
             <%- include ('NuevaEntradaMasterA')%>
         </div>
         <div class="grid-dos-columnas">
-            <button type="submit" value="Guardar" id="botonNewFormaMguardar" form="newFormaMaster" name="orden"  class="boton boton-amarillo">Guardar</button>  
-            <button type="submit" value="Enviar"  id="botonNewFormaMenviar" form="newFormaMaster"  name="orden"  class="boton boton-verde">Enviar</button>
+            <button type="submit" value="Guardar" onclick="ValorSubmit(this)" id="botonNewFormaMguardar" form="newFormaMaster" name="orden"  class="boton boton-amarillo">Guardar</button>  
+            <button type="submit" value="Enviar"  onclick="ValorSubmit(this)" id="botonNewFormaMenviar" form="newFormaMaster"  name="orden"  class="boton boton-verde">Enviar</button>
         </div>   
     </div>            
     <legend>*datos obligatorios</legend>
 </form> 
 
+<input type="text" id="valorsubmit" style="display: none;">

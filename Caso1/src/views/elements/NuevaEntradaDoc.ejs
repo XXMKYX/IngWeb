@@ -1,11 +1,13 @@
+<nav>
+    <div class="nav nav-tabs tab" id="nav-tab" role="tablist">
+    <button value="9" onclick="HideTabTipoForma(this)"><a class="nav-item nav-link active" id="NuevaEntradaDocP-tab" data-toggle="tab" href="#NuevaEntradaDocP" role="tab" aria-controls="NuevaEntradaDocP" aria-selected="true">Datos Generales</a></button>
+    <button  value="10" onclick="HideTabTipoForma(this)"><a class="nav-item nav-link" id="NuevaEntradaDocA-tab" data-toggle="tab" href="#NuevaEntradaDocA" role="tab" aria-controls="NuevaEntradaDocA" aria-selected="false">Datos Académicos</a></button>
+    </div>
+</nav>
+
 <form method="POST" class="contacto columnas-10 " action="/master_data"  id="newFormaDoctor" onsubmit="return validarNewFormaDoctorado()" enctype="multipart/form-data">
 
-    <nav>
-        <div class="nav nav-tabs tab" id="nav-tab" role="tablist">
-        <button value="9" onclick="HideTabTipoForma(this)"><a class="nav-item nav-link active" id="NuevaEntradaDocP-tab" data-toggle="tab" href="#NuevaEntradaDocP" role="tab" aria-controls="NuevaEntradaDocP" aria-selected="true">Datos Generales</a></button>
-        <button  value="10" onclick="HideTabTipoForma(this)"><a class="nav-item nav-link" id="NuevaEntradaDocA-tab" data-toggle="tab" href="#NuevaEntradaDocA" role="tab" aria-controls="NuevaEntradaDocA" aria-selected="false">Datos Académicos</a></button>
-        </div>
-    </nav>
+    
 
     <div class="tab-content" id="nav-tabContent">
         <div class="tab-pane fade show active tabcontent2" id="NuevaEntradaDocP" role="tabpanel" aria-labelledby="NuevaEntradaDocP-tab" style="display: block;">
@@ -15,8 +17,8 @@
             <%- include ('NuevaEntradaDocA')%>
         </div>
         <div class="grid-dos-columnas">
-            <button type="submit" value="Guardar" id="botonNewFormaDguardar" name="orden"  class="boton boton-amarillo">Guardar</button>  
-            <button type="submit" value="Enviar"  id="botonNewFormaDenviar" name="orden"  class="boton boton-verde">Enviar</button>
+            <button type="submit" value="Guardar" onclick="ValorSubmit(this)" id="botonNewFormaDguardar" name="orden"  class="boton boton-amarillo">Guardar</button>  
+            <button type="submit" value="Enviar"  onclick="ValorSubmit(this)" id="botonNewFormaDenviar" name="orden"  class="boton boton-verde">Enviar</button>
         </div>   
     </div>            
     <legend>*datos obligatorios</legend>
