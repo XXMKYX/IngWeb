@@ -8,7 +8,7 @@ var maestria = []; //Arreglo para guardar datos
 var doctorado = [];
 var doc = [];
 
-glob("src/views/Master/*.json",function(err,files){
+glob("src/views/Master/MasterFinalizadas/*.json",function(err,files){
   if(err) {
     console.log("No encuentro la carpeta", err);
   }
@@ -23,7 +23,7 @@ glob("src/views/Master/*.json",function(err,files){
   });
 });
 
-glob("src/views/Doctor/*.json",function(err,files){
+glob("src/views/Doctor/DocFinalizadas/*.json",function(err,files){
   if(err) {
     console.log("No encuentro la carpeta", err);
   }
@@ -158,7 +158,7 @@ router.post('/personal_data', multer({
   if(orden == "Enviar"){
     fs.writeFile('src/views/Master/MasterFinalizadas/'+curpM+'.json', json_datos, 'utf-8',function (err) {
       if (err) throw err;
-      console.log('Registro de maestría guardado en archivo');
+      console.log('Registro de maestría finalizado en archivo');
     });
     res.redirect('/');
   }
@@ -183,6 +183,7 @@ router.post('/index',(req,res)=>{
   console.log(req.body);
   res.send('Index obtenido');
 })
+
 //render formulario
 router.get('/master_data',(req,res)=>{
   res.render('master_data',{doctorado});
@@ -190,10 +191,20 @@ router.get('/master_data',(req,res)=>{
 //Obtiene datos formulario
 
 
-router.post('/master_data',(req,res)=>{
+
+router.post('/master_data', multer({
+  storage: multer.diskStorage({
+    destination:(req,file,cb) => {
+      cb(null,'src/views/Doctor/PDF/')
+    },
+    filename: (req,file,cb) => {
+      cb(null, req.body.curpD+"_CV.pdf")
+    }
+  })
+}).single('archivosubido1D') ,(req, res) => {
   console.log(req.body);
 
-const { dateD, nombreD, apaternoD, amaternoD, fechaD, lugarD, nacionalidadD, civilD, curpD, dependenciasD, telefonoD, emailD, skypeD, fbD, CalleD, NoExtD, NoIntD, ColoniaD, CiudadD, EstadoD, CPD,InstitucionD, pinstitucionD,InstitucionPosgradoD,pInstitucionPosgradoD, tituladoDoctoradoD, xpPD, xpDD, propedeuticoD, aniospropD, motivoD, archivosubido1D, archivosubido2D} = req.body;
+const { dateD, nombreD, apaternoD, amaternoD, fechaD, lugarD, nacionalidadD, civilD, curpD, dependenciasD, telefonoD, emailD, skypeD, fbD, CalleD, NoExtD, NoIntD, ColoniaD, CiudadD, EstadoD, CPD,InstitucionD, pinstitucionD,InstitucionPosgradoD,pInstitucionPosgradoD, tituladoDoctoradoD, xpPD, xpDD, propedeuticoD, aniospropD, motivoD, archivosubido1D, orden} = req.body;
 
   let newmaster = {
     tipoD : "Doctorado",
@@ -230,17 +241,26 @@ const { dateD, nombreD, apaternoD, amaternoD, fechaD, lugarD, nacionalidadD, civ
     aniospropD,
     motivoD,
     archivosubido1D,
-    archivosubido2D,
     comentarioD: "Sin comentarios"
   };
 
   const json_datos = JSON.stringify(newmaster);
-  fs.writeFile('src/views/Doctor/'+curpD+'.json', json_datos, 'utf-8',function (err) {
-    if (err) throw err;
-    console.log('Registro de doctorado guardado en archivo');
-  });
-  res.redirect('/');
-})
+  if(orden == "Enviar"){
+    fs.writeFile('src/views/Doctor/DocFinalizadas/'+curpD+'.json', json_datos, 'utf-8',function (err) {
+      if (err) throw err;
+      console.log('Registro de doctorado finalizado en archivo');
+    });
+    res.redirect('/');
+  }
+  else{
+    fs.writeFile('src/views/Doctor/DocParciales/'+curpD+'.json', json_datos, 'utf-8',function (err) {
+      if (err) throw err;
+      console.log('Registro de doctorado guardado en archivo');
+    });
+    res.redirect('/');
+  }
+  
+});
 
 
 
@@ -346,15 +366,10 @@ router.post('/Busqueda', (req, res) =>
 
       } catch (error) {
           console.log("No existe ese directorio en la carpeta de finalizadas de Doctorado");
-          res.aler("No se encontró tu solicitud, llena la forma.")
           res.redirect('/');
       }
     }        
-  }else 
-  {     
-    res.redirect('/');
-
-  } 
+  }
 });
 
 router.post('/Llenar', (req, res) => 
@@ -404,11 +419,7 @@ router.post('/Llenar', (req, res) =>
           
       }
     }        
-  }else 
-  {         
-    res.redirect('/');
-
-  } 
+  }
 });
 
 

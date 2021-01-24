@@ -5,35 +5,35 @@
 
         <script>
             var f = new Date();
-            var inputDate = document.getElementById("dateD");
+            var inputDate = document.getElementById("newdateD");
             inputDate.value = (f.getDate() + "/" + (f.getMonth() +1) + "/" + f.getFullYear());
         </script>        
         
     </div>
     <label for="newnombreD">NOMBRE(S)*</label>
     <!--<input type="text" id="nombre" placeholder="Nombre(s)">-->
-    <input name="nombreD" id="newInputNombreD" type="text" class="form-control" placeholder="Nombre(s)*" autofocus required>
+    <input name="nombreD" id="newInputNombreD" type="text" class="form-control" placeholder="Nombre(s)*">
     <div class="grid-dos-columnas">
         <label for="newInputAMaternoD">Apellido Paterno*</label>
         <label for="newInputAPaternoD">Apellido Materno*</label>
 
-        <input type="text" id="newInputAMaternoD" name="apaternoD" placeholder="Apellido Paterno*" required>
-        <input type="text" id="newInputAPaternoD" name="amaternoD" placeholder="Apellido Materno*" required>
+        <input type="text" id="newInputAMaternoD" name="apaternoD" placeholder="Apellido Paterno*"  >
+        <input type="text" id="newInputAPaternoD" name="amaternoD" placeholder="Apellido Materno*"  >
 
         <label for="newInputFechaNacimientoD">FECHA DE NACIMIENTO*</label>
         <label for="newInputLugarDeNacimientoD">LUGAR DE NACIMIENTO*</label> 
-        <input type="date" id="newInputFechaNacimientoD" name="fechaD" placeholder="Fecha*" required>
-        <input type="text" id="newInputLugarDeNacimientoD" name="lugarD" placeholder="Lugar*" required>
+        <input type="date" id="newInputFechaNacimientoD" name="fechaD" placeholder="Fecha*"  >
+        <input type="text" id="newInputLugarDeNacimientoD" name="lugarD" placeholder="Lugar*"  >
 
         <label for="newInputNacionalidadD">NACIONALIDAD*</label>
         <label for="newInputEstadoCivilD">ESTADO CIVIL*</label>
-        <input type="text" id="newInputNacionalidadD" name="nacionalidadD" placeholder="Nacionalidad*" required>
-        <input type="text" id="newInputEstadoCivilD" name="civilD" placeholder="Estado Civil*" required>
+        <input type="text" id="newInputNacionalidadD" name="nacionalidadD" placeholder="Nacionalidad*"  >
+        <input type="text" id="newInputEstadoCivilD" name="civilD" placeholder="Estado Civil*"  >
 
         <label for="newInputCURPD">CURP*</label>
         <label for="newInputDependenciasD">DEPENDENCIAS*</label>
-        <input type="text" id="newInputCURPD" name="curpD" oninput="validarInputD(this)" placeholder="CURP*" required>
-        <input type="number" id="newInputDependenciasD" name="dependenciasD" placeholder="No. de dependencias*" min="0" required>
+        <input type="text" id="newInputCURPD" name="curpD" oninput="validarInputD(this)" placeholder="CURP*"  required>
+        <input type="number" id="newInputDependenciasD" name="dependenciasD" placeholder="No. de dependencias*" min="0"  >
         <input type="text" id="newresultadoD" style="color: black;" disabled>
     </div>
 </fieldset>
@@ -42,34 +42,34 @@
     <div class="grid-dos-columnas">
         <label for="newInputTelefonoD">TELÉFONO CELULAR*</label>
         <label for="newInputCorreoD">E-mail*</label>
-        <input type="tel" id="newInputTelefonoD" name="telefonoD" placeholder="Número*" required>
-        <input type="email" id="newInputCorreoD" name="emailD" placeholder="Tu correo electrónico*" required>
+        <input type="tel" id="newInputTelefonoD" name="telefonoD" placeholder="Número*"  >
+        <input type="email" id="newInputCorreoD" name="emailD" placeholder="Tu correo electrónico*"  >
 
         <label for="newInputSkypeD">CUENTA SKYPE</label>
         <label for="newInputFBD">Cuenta de FB (Link)</label>
-        <input type="text" id="newInputSkypeD" name="skypeD" placeholder="Skype*" required>
-        <input type="text" id="newInputFBD" name="fbD" placeholder="Link a tu Facebook*" required>
+        <input type="text" id="newInputSkypeD" name="skypeD" placeholder="Skype*"  >
+        <input type="text" id="newInputFBD" name="fbD" placeholder="Link a tu Facebook*"  >
     </div>
 </fieldset>
 <fieldset>
     <legend>DOMICILIO</legend>
     <div class="domicilio-calle-num">
         <!--<label for="newCalle">Calle</label>-->
-        <input type="text" id="newInputCalleD" name="CalleD" placeholder="Calle*" required>
+        <input type="text" id="newInputCalleD" name="CalleD" placeholder="Calle*"  >
         <!--<label for="newNoExt">No. Ext</label>-->
-        <input type="text" id="newInputNoExtD" name="NoExtD" placeholder="NoExt*" required>
+        <input type="text" id="newInputNoExtD" name="NoExtD" placeholder="NoExt*"  >
         <!--<label for="newNoInt">No. Int</label>-->
-        <input type="text" id="newInputNoIntD" name="NoIntD" placeholder="NoInt" required>
+        <input type="text" id="newInputNoIntD" name="NoIntD" placeholder="NoInt"  >
     </div>
     <div class="grid-dos-columnas">
         <!--<label for="newColonia">Colonia</label>-->
-        <input type="text" id="newInputColoniaD" name="ColoniaD" placeholder="Colonia*" required>
+        <input type="text" id="newInputColoniaD" name="ColoniaD" placeholder="Colonia*"  >
         <!--<label for="newCiudad">Ciudad</label>-->
-        <input type="text" id="newInputCiudadD" name="CiudadD" placeholder="Ciudad*" required>
+        <input type="text" id="newInputCiudadD" name="CiudadD" placeholder="Ciudad*"  >
         <!--<label for="newEstado">Estado</label>-->
-        <input type="text" id="newInputEstadoD" name="EstadoD" placeholder="Estado*" required>
+        <input type="text" id="newInputEstadoD" name="EstadoD" placeholder="Estado*"  >
         <!--<label for="newCP">CP</label>-->
-        <input type="text" id="newInputCPD" name="CPD" placeholder="CP*" required>
+        <input type="text" id="newInputCPD" name="CPD" placeholder="CP*"  >
 
     </div>
 </fieldset>   

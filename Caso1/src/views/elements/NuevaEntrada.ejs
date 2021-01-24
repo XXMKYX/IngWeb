@@ -55,21 +55,22 @@
                     <div class="forma">
                         <div class="alinear-centro centrar-columnas contenedor grid-dos-columnas">
                             <label for="tipoFormaM">Maestria</label>                                                                    
-                            <input type="radio" id="tipoFormaM" name="tipoFormaradio" value="1" onclick="handler(this)" checked="checked"></option>
+                            <input type="radio" id="tipoFormaM" name="tipoFormaradio" value="3" onclick="handler(this)" checked="checked"></option>
                             <label for="tipoFormaD">Doctorado</label>
-                            <input type="radio" id="tipoFormaD" name="tipoFormaradio" value="2" onclick="handler(this)"></option>
+                            <input type="radio" id="tipoFormaD" name="tipoFormaradio" value="4" onclick="handler(this)"></option>
                         </div> 
                         <div class="grid centrar-columnas">                        
                             
                             <div class="contacto columnas-10 " action="" id="formaVistaiSolicitudM" style="display: block;">
                                   
-                                <div class="grid centrar-columnas forma" id="formaMaestria" style="display: block;">
+                                <div class="grid centrar-columnas forma" id="nuevaformaMaestria" style="display: block;">
                                     <%- include('NuevaEntradaMaster') %>
-                                    <!-- FORMULARIO DOCTORADO 'NuevaEntradaDoc-->   
-                                    <div class="grid centrar-columnas forma" id="formaDoctorado" style="display: none;">   
-                                        <!-- FORMULARIO MAESTRIA -->
-                                                                                                                                                    
-                                </div>  
+                                    <!-- FORMULARIO DOCTORADO 'NuevaEntradaDoc-->                                                                                                                                                                                    
+                                </div>
+                                <div class="grid centrar-columnas forma" id="nuevaformaDoctorado" style="display: none;">   
+                                    <!-- FORMULARIO MAESTRIA -->
+                                    <%- include('NuevaEntradaDoc') %>  
+                                </div>   
                             </div>
                                 
                                      

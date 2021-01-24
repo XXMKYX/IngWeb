@@ -1,24 +1,22 @@
 var handler = function(input) {
-    var vformaMaestria = document.getElementById('formaMaestria');
-    var vformaDoctorado = document.getElementById('formaDoctorado');
+    var newformaMaestria = document.getElementById('nuevaformaMaestria');
+    var newformaDoctorado = document.getElementById('nuevaformaDoctorado');
    // var archivosMaestria = document.getElementById('archivosMaestria');
     //var archivosDoctorado = document.getElementById('archivosDoctorado');
     //var Forma = document.getElementById('formaM');
     var valor = input.value;
     
+
     //1 si es Maestría, 2 si es Doctorado
-    if(valor == 1){
-        vformaMaestria.style.display = "block";        
-        //archivosMaestria.style.display = "block";
-        vformaDoctorado.style.display = "none";
-        //archivosDoctorado.style.display = "none";
-        //Forma.action = "../master_data";
-    }else if(valor == 2){
-        vformaMaestria.style.display = "none";
-        //archivosMaestria.style.display = "none";
-        vformaDoctorado.style.display = "block";        
-        //archivosDoctorado.style.display = "grid";
-        //Forma.action = "../doc_data";
+    if(valor == 3){
+
+        newformaMaestria.style.display = "block";        
+        newformaDoctorado.style.display = "none";
+
+    }else if(valor == 4){ 
+
+        newformaMaestria.style.display = "none";
+        newformaDoctorado.style.display = "block";     
     }
 };
 
@@ -99,6 +97,11 @@ function HideTabTipoForma(input){
     var NuevaFormaMasterP = document.getElementById('NuevaEntradaMasterP');
     var NuevaFormaMasterA = document.getElementById('NuevaEntradaMasterA'); 
 
+    var NuevaFormaDocP = document.getElementById('NuevaEntradaDocP');
+    var NuevaFormaDocA = document.getElementById('NuevaEntradaDocA'); 
+
+    console.log(valor);
+
     if(valor == 1){
         MaestriaDatosPM.style.display = "block";        
         MaestriaDatosAM.style.display = "none";
@@ -137,6 +140,15 @@ function HideTabTipoForma(input){
     else if(valor == 8){
         NuevaFormaMasterA.style.display = "block";        
         NuevaFormaMasterP.style.display = "none";
+        //formaM.style.display = "none";
+    }
+    else if(valor == 9){
+        NuevaFormaDocA.style.display = "none";
+        NuevaFormaDocP.style.display = "block";                
+    }
+    else if(valor == 10){
+        NuevaFormaDocP.style.display = "none";        
+        NuevaFormaDocA.style.display = "block";
         //formaM.style.display = "none";
     }
 
@@ -301,6 +313,7 @@ function validarFormaMaestria(input)
         || InputColonia.value == '' || InputCiudad.value == '' || InputEstado.value == '' || InputCP.value == '') //Si el input no es válido
         {
             alert("Favor de llenar todos los campos obligatorios");
+            return false;
         }
         else{
             if(InputNombre.value.length >= 100 || InputAMaterno.value.length >= 100 || InputAPaterno.value.length >= 100 ||
@@ -312,6 +325,7 @@ function validarFormaMaestria(input)
                 InputEstado.value.length >= 100 || InputCP.value.length >= 100) //Si el input es muy largo
             {
                 alert("Los campos no puede tener más de 100 caracteres");
+                return false;
             }
             else{
                 let aux = InputFechaNacimiento.value;
@@ -324,6 +338,7 @@ function validarFormaMaestria(input)
 
                 if(edad < 18){
                     alert("El aspirante debe ser mayor de edad");
+                    return false;
                 }
                 else{
 
@@ -333,6 +348,7 @@ function validarFormaMaestria(input)
                         Inputarchivosubido1M.value == '') //Si el input no es válido
                     {
                         alert("Favor de llenar todos los campos obligatorios");
+                        return false;
                     }
                     else
                     {   
@@ -351,6 +367,7 @@ function validarFormaMaestria(input)
                         if(siTitulado==1)
                         {
                             alert("Favor de indicar si estás Titulado"); 
+                            return false;
                         }
                         else
                         {
@@ -366,7 +383,8 @@ function validarFormaMaestria(input)
                             }
                             if(siProp==1)
                             {
-                                alert("Favor de indicar si ya hiciste Propedéutico.");   
+                                alert("Favor de indicar si ya hiciste Propedéutico.");
+                                return false;  
                             }
                             else
                             {
@@ -381,18 +399,20 @@ function validarFormaMaestria(input)
                                          // The size of the file. 
                                          if (file >= 1024)
                                         { 
-                                            alert("Archivo muy grande, debe ser menor a 1mb"); 
+                                            alert("Archivo muy grande, debe ser menor a 1mb");
+                                            return false;
                                          }
                                         else
-                                        {                                
-                                            document.getElementById("botonLlenarFormaMenviar").submit();
-                                            alert("Datos guardados con exito! (LlenarForma) ");
+                                        {                                                                            
+                                            alert("Datos finalizados con exito! (LlenarForma M) ");
+                                            return true;
                                         }
                                     }
                                     
                                 }
                                 else{
                                     alert("Adjunta tu(s) archivo(s)");
+                                    return false;
                                 }
                                     
                                 
@@ -406,23 +426,44 @@ function validarFormaMaestria(input)
     else{    
         if(InputCURP.value == "" || res.value == "CURP, Formato: No válido"){
             alert("Para guardar, favor de colocar un CURP válido");
+            return false;
         }
+        const fi = Inputarchivosubido1M; 
+        // Check if any file is selected. 
+        if (fi.files.length > 0) 
+        { 
+            for (let i = 0; i <= fi.files.length - 1; i++) 
+            {                   
+                 const fsize = fi.files.item(i).size; 
+                 const file = Math.round((fsize / 1024)); 
+                 // The size of the file. 
+                 if (file >= 1024)
+                { 
+                    alert("Archivo muy grande, debe ser menor a 1mb"); 
+                    return false;
+                 }
+                else
+                {                                                                    
+                    alert("Datos guardados con exito! (LlenarForma M) ");
+                    return true;
+                }
+            }
+            
+        }
         else{
-            document.getElementById("formaMaster").submit();
-            alert("Datos guardados con exito!");
+            alert("Datos guardados con exito! (LlenarForma M) ");
+            return true;
         }
 
-    }
-    
-    
-    
-    
+    } 
 }
 
 
 function validarNewFormaMaestria(input)
 {
 
+    console.log(input.value);
+    
     var InputNombre = document.getElementById("newInputNombreM");
     var InputAMaterno = document.getElementById("newInputAMaternoM");
     var InputAPaterno = document.getElementById("newInputAPaternoM");
@@ -467,7 +508,7 @@ function validarNewFormaMaestria(input)
     /* Validación CURP */
     var res = document.getElementById("newresultadoM");
 
-    alert(input.value);
+
     /* Se valida completamente */
     if(input.value == 'Enviar')
     {
@@ -480,6 +521,7 @@ function validarNewFormaMaestria(input)
         || InputColonia.value == '' || InputCiudad.value == '' || InputEstado.value == '' || InputCP.value == '') //Si el input no es válido
         {
             alert("Favor de llenar todos los campos obligatorios");
+            return false;
         }
         else{
             if(InputNombre.value.length >= 100 || InputAMaterno.value.length >= 100 || InputAPaterno.value.length >= 100 ||
@@ -491,6 +533,7 @@ function validarNewFormaMaestria(input)
                 InputEstado.value.length >= 100 || InputCP.value.length >= 100) //Si el input es muy largo
             {
                 alert("Los campos no puede tener más de 100 caracteres");
+                return false;
             }
             else{
                 let aux = InputFechaNacimiento.value;
@@ -503,6 +546,7 @@ function validarNewFormaMaestria(input)
 
                 if(edad < 18){
                     alert("El aspirante debe ser mayor de edad");
+                    return false;
                 }
                 else{
 
@@ -512,6 +556,7 @@ function validarNewFormaMaestria(input)
                         Inputarchivosubido1M.value == '') //Si el input no es válido
                     {
                         alert("Favor de llenar todos los campos obligatorios");
+                        return false;
                     }
                     else
                     {   
@@ -530,6 +575,7 @@ function validarNewFormaMaestria(input)
                         if(siTitulado==1)
                         {
                             alert("Favor de indicar si estás Titulado"); 
+                            return false;
                         }
                         else
                         {
@@ -545,7 +591,8 @@ function validarNewFormaMaestria(input)
                             }
                             if(siProp==1)
                             {
-                                alert("Favor de indicar si ya hiciste Propedéutico.");   
+                                alert("Favor de indicar si ya hiciste Propedéutico.");
+                                return false;  
                             }
                             else
                             {
@@ -560,18 +607,20 @@ function validarNewFormaMaestria(input)
                                          // The size of the file. 
                                          if (file >= 1024)
                                         { 
-                                            alert("Archivo muy grande, debe ser menor a 1mb"); 
+                                            alert("Archivo muy grande, debe ser menor a 1mb");
+                                            return false;
                                          }
                                         else
                                         {                                
-                                            document.getElementById("botonEnviarNewM").submit();
-                                            //alert("Datos guardados con exito!");
+                                            alert("Datos finalizados con exito! (nueva entrada M)");
+                                            return true;
                                         }
                                     }
                                     
                                 }
                                 else{
                                     alert("Adjunta tu(s) archivo(s)");
+                                    return false;
                                 }
                                     
                                 
@@ -585,10 +634,36 @@ function validarNewFormaMaestria(input)
     else{    
         if(InputCURP.value == "" || res.value == "CURP, Formato: No válido"){
             alert("Para guardar, favor de colocar un CURP válido");
+            return false;
         }
         else{
-            document.getElementById("botonGuardarNewM").submit();
-            //alert("Datos guardados con exito!");
+            const fi = Inputarchivosubido1M; 
+            // Check if any file is selected. 
+            if (fi.files.length > 0) 
+            { 
+                for (let i = 0; i <= fi.files.length - 1; i++) 
+                {                   
+                     const fsize = fi.files.item(i).size; 
+                     const file = Math.round((fsize / 1024)); 
+                     // The size of the file. 
+                     if (file >= 1024)
+                    { 
+                        alert("Archivo muy grande, debe ser menor a 1mb"); 
+                        return false;
+                     }
+                    else
+                    {                                                        
+                        alert("Datos guardados con exito! (nueva entrada M)");
+                        return true;
+                    }
+                }
+            }
+            else{
+                
+                alert("Datos guardados con exito! (nueva entrada M)");
+                return true;
+            }
+           
         }
 
     }
@@ -656,6 +731,7 @@ function validarFormaDoctorado(input)
         || InputColoniaD.value == '' || InputCiudadD.value == '' || InputEstadoD.value == '' || InputCPD.value == '') //Si el input no es válido
         {
             alert("Favor de llenar todos los campos obligatorios");
+            return false;
         }
         else{
             if(InputNombreD.value.length >= 100 || InputAMaternoD.value.length >= 100 || InputAPaternoD.value.length >= 100 ||
@@ -667,6 +743,7 @@ function validarFormaDoctorado(input)
                 InputEstadoD.value.length >= 100 || InputCPD.value.length >= 100) //Si el input es muy largo
             {
                 alert("Los campos no puede tener más de 100 caracteres");
+                return false;
             }
             else{
                 let aux = InputFechaNacimientoD.value;
@@ -678,6 +755,7 @@ function validarFormaDoctorado(input)
                 let edad = Math.abs(age_dt.getUTCFullYear() - 1970);
                 if(edad < 18){
                     alert("El aspirante debe ser mayor de edad");
+                    return false;
                 }
                 else{
 
@@ -690,6 +768,7 @@ function validarFormaDoctorado(input)
                         Inputarchivosubido1D.value == ''|| Inputarchivosubido2D.value == '' ) //Si el input no es válido
                     {
                         alert("Favor de llenar todos los campos obligatorios");
+                        return false;
                     }
                     else
                     {   
@@ -706,7 +785,8 @@ function validarFormaDoctorado(input)
                         }
                         if(siTituladoD==1)
                         {
-                            alert("Favor de indicar si estás Titulado"); 
+                            alert("Favor de indicar si estás Titulado");
+                            return false;
                         }
                             
                         else
@@ -724,7 +804,8 @@ function validarFormaDoctorado(input)
                             }
                             if(siPropD==1)
                             {
-                                alert("Favor de indicar si ya hiciste Propedéutico.");   
+                                alert("Favor de indicar si ya hiciste Propedéutico.");
+                                return false;  
                             }
                             else
                             {                            
@@ -735,6 +816,7 @@ function validarFormaDoctorado(input)
                                     InputmotivoD.value.length >= 500  ) //Si el input es muy largo
                                 {
                                     alert("Los campos no puede tener más de 100 caracteres");
+                                    return false;
                                 }
                                 else
                                 {                   
@@ -751,6 +833,7 @@ function validarFormaDoctorado(input)
                                              if (file >= 1024)
                                             { 
                                                 alert("Archivo muy grande"); 
+                                                return false;
                                              }
                                             else
                                             {                                
@@ -765,12 +848,13 @@ function validarFormaDoctorado(input)
                                                          // The size of the file. 
                                                          if (file >= 1024)
                                                         { 
-                                                            alert("Archivo muy grande"); 
+                                                            alert("Archivo muy grande");
+                                                            return false;
                                                          }
                                                         else
-                                                        {                                
-                                                            document.getElementById("formaDoc").submit();                                                            
-                                                            //alert("Datos guardados con exito!");
+                                                        {                                                                                                                                                      
+                                                            alert("Datos finalizados con exito! (llena formaD)");
+                                                            return true;
                                                         }
                                                     }
                                                     
@@ -795,17 +879,59 @@ function validarFormaDoctorado(input)
     else{    
         if(InputCURPD.value == "" || res.value == "CURP, Formato: No válido"){
             alert("Para guardar, favor de colocar un CURP válido");
+            return false;
         }
         else{
-            //document.getElementById("formaDoc").submit();
-            //alert("Datos guardados con exito!");
+            const fi = Inputarchivosubido1D; 
+            // Check if any file is selected. 
+            if (fi.files.length > 0) 
+            { 
+                for (let i = 0; i <= fi.files.length - 1; i++) 
+                {                   
+                     const fsize = fi.files.item(i).size; 
+                     const file = Math.round((fsize / 1024)); 
+                     // The size of the file. 
+                     if (file >= 1024)
+                    { 
+                        alert("Archivo muy grande"); 
+                        return false;
+                     }
+                    else
+                    {                                
+                        const fi2 = Inputarchivosubido2D; 
+                        // Check if any file is selected. 
+                        if (fi.files.length > 0) 
+                        { 
+                            for (let i = 0; i <= fi.files.length - 1; i++) 
+                            {                   
+                                 const fsize = fi.files.item(i).size; 
+                                 const file = Math.round((fsize / 1024)); 
+                                 // The size of the file. 
+                                 if (file >= 1024)
+                                { 
+                                    alert("Archivo muy grande");
+                                    return false;
+                                 }
+                                else
+                                {                                                                                                                                                      
+                                    alert("Datos guardados con exito! (llena formaD)");
+                                    return true;
+                                }
+                            }
+                            
+                        }
+                    }
+                }
+                
+            }
+            else{
+                alert("Datos guardados con exito! (llena formaD)");
+                return true;
+            }
         }
 
     }
-    
-    
-    
-    
+
 }
 
 function validarNewFormaDoctorado(input)
@@ -868,8 +994,10 @@ function validarNewFormaDoctorado(input)
         || InputColoniaD.value == '' || InputCiudadD.value == '' || InputEstadoD.value == '' || InputCPD.value == '') //Si el input no es válido
         {
             alert("Favor de llenar todos los campos obligatorios");
+            return false;
         }
-        else{
+        else
+        {
             if(InputNombreD.value.length >= 100 || InputAMaternoD.value.length >= 100 || InputAPaternoD.value.length >= 100 ||
                 InputFechaNacimientoD.value.length >= 100 || InputLugarDeNacimientoD.value.length >= 100 || InputNacionalidadD.value.length >= 100 ||
                 InputEstadoCivilD.value.length >= 100 || InputCURPD.value.length >= 100 || InputDependenciasD.value.length >= 100 ||
@@ -879,6 +1007,7 @@ function validarNewFormaDoctorado(input)
                 InputEstadoD.value.length >= 100 || InputCPD.value.length >= 100) //Si el input es muy largo
             {
                 alert("Los campos no puede tener más de 100 caracteres");
+                return false;
             }
             else{
                 let aux = InputFechaNacimientoD.value;
@@ -890,6 +1019,7 @@ function validarNewFormaDoctorado(input)
                 let edad = Math.abs(age_dt.getUTCFullYear() - 1970);
                 if(edad < 18){
                     alert("El aspirante debe ser mayor de edad");
+                    return false;
                 }
                 else{
 
@@ -902,6 +1032,7 @@ function validarNewFormaDoctorado(input)
                         Inputarchivosubido1D.value == ''|| Inputarchivosubido2D.value == '' ) //Si el input no es válido
                     {
                         alert("Favor de llenar todos los campos obligatorios");
+                        return false;
                     }
                     else
                     {   
@@ -918,7 +1049,8 @@ function validarNewFormaDoctorado(input)
                         }
                         if(siTituladoD==1)
                         {
-                            alert("Favor de indicar si estás Titulado"); 
+                            alert("Favor de indicar si estás Titulado");
+                            return false;
                         }
                             
                         else
@@ -936,7 +1068,8 @@ function validarNewFormaDoctorado(input)
                             }
                             if(siPropD==1)
                             {
-                                alert("Favor de indicar si ya hiciste Propedéutico.");   
+                                alert("Favor de indicar si ya hiciste Propedéutico."); 
+                                return false;
                             }
                             else
                             {                            
@@ -947,6 +1080,7 @@ function validarNewFormaDoctorado(input)
                                     InputmotivoD.value.length >= 500  ) //Si el input es muy largo
                                 {
                                     alert("Los campos no puede tener más de 100 caracteres");
+                                    return false;
                                 }
                                 else
                                 {                   
@@ -962,7 +1096,8 @@ function validarNewFormaDoctorado(input)
                                              // The size of the file. 
                                              if (file >= 1024)
                                             { 
-                                                alert("Archivo muy grande"); 
+                                                alert("Archivo 1 muy grande");
+                                                return false;
                                              }
                                             else
                                             {                                
@@ -977,12 +1112,12 @@ function validarNewFormaDoctorado(input)
                                                          // The size of the file. 
                                                          if (file >= 1024)
                                                         { 
-                                                            alert("Archivo muy grande"); 
+                                                            alert("Archivo 2 muy grande");
+                                                            return false;
                                                          }
-                                                        else
-                                                        {                                
-                                                            document.getElementById("formaDoc").submit();                                                            
-                                                            //alert("Datos guardados con exito!");
+                                                        else{                                                        
+                                                            alert("Datos finalizados con exito! (nueva entrada D)");
+                                                            return true;
                                                         }
                                                     }
                                                     
@@ -1000,24 +1135,63 @@ function validarNewFormaDoctorado(input)
                 }
             }
         }
-
-    
-
-    }
+    }    
     else{    
         if(InputCURPD.value == "" || res.value == "CURP, Formato: No válido"){
             alert("Para guardar, favor de colocar un CURP válido");
+            return false;
         }
         else{
-            //document.getElementById("formaDoc").submit();
-            //alert("Datos guardados con exito!");
+            const fi = Inputarchivosubido1D; 
+            // Check if any file is selected. 
+            if (fi.files.length > 0) 
+            { 
+                for (let i = 0; i <= fi.files.length - 1; i++) 
+                {                   
+                     const fsize = fi.files.item(i).size; 
+                     const file = Math.round((fsize / 1024)); 
+                     // The size of the file. 
+                     if (file >= 1024)
+                    { 
+                        alert("Archivo 1 muy grande");
+                        return false;
+                     }
+                    else
+                    {                                
+                        const fi2 = Inputarchivosubido2D; 
+                        // Check if any file is selected. 
+                        if (fi.files.length > 0) 
+                        { 
+                            for (let i = 0; i <= fi.files.length - 1; i++) 
+                            {                   
+                                 const fsize = fi.files.item(i).size; 
+                                 const file = Math.round((fsize / 1024)); 
+                                 // The size of the file. 
+                                 if (file >= 1024)
+                                { 
+                                    alert("Archivo 2 muy grande");
+                                    return false;
+                                 }
+                                else
+                                {                                
+                                    alert("Datos guardados con exito! (nueva entrada D)");
+                                    return true;
+                                }
+                            }
+                            
+                        }
+                    }
+                }
+            }
+            else{
+                alert("Datos guardados con exito! (nueva entrada D)");
+                return true;
+            }
+            
         }
 
     }
-    
-    
-    
-    
+
 }
 
 

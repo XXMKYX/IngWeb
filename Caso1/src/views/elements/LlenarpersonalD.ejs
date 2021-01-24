@@ -12,29 +12,29 @@
     </div>
     <label for="nombreD">NOMBRE(S)*</label>
     <!--<input type="text" id="nombre" placeholder="Nombre(s)">-->
-    <input name="nombreD" id="InputNombreD" type="text" class="form-control" placeholder="Nombre(s)*" autofocus required value="<%=JsonLLenarFormaD.nombreD%>">
+    <input name="nombreD" id="InputNombreD" type="text" class="form-control" placeholder="Nombre(s)*" autofocus    value="<%=JsonLLenarFormaD.nombreD%>">
     <div class="grid-dos-columnas">
         <label for="InputAMaternoD">Apellido Paterno*</label>
         <label for="InputAPaternoD">Apellido Materno*</label>
 
-        <input type="text" id="InputAMaternoD" name="apaternoD" placeholder="Apellido Paterno*" required value="<%=JsonLLenarFormaD.apaternoD%>">
-        <input type="text" id="InputAPaternoD" name="amaternoD" placeholder="Apellido Materno*" required value="<%=JsonLLenarFormaD.amaternoD%>">
+        <input type="text" id="InputAMaternoD" name="apaternoD" placeholder="Apellido Paterno*"    value="<%=JsonLLenarFormaD.apaternoD%>">
+        <input type="text" id="InputAPaternoD" name="amaternoD" placeholder="Apellido Materno*"    value="<%=JsonLLenarFormaD.amaternoD%>">
 
         <label for="InputFechaNacimientoD">FECHA DE NACIMIENTO*</label>
         <label for="InputLugarDeNacimientoD">LUGAR DE NACIMIENTO*</label> 
-        <input type="date" id="InputFechaNacimientoD" name="fechaD" placeholder="Fecha*" required value="<%=JsonLLenarFormaD.fechaD%>">
-        <input type="text" id="InputLugarDeNacimientoD" name="lugarD" placeholder="Lugar*" required value="<%=JsonLLenarFormaD.lugarD%>">
+        <input type="date" id="InputFechaNacimientoD" name="fechaD" placeholder="Fecha*"    value="<%=JsonLLenarFormaD.fechaD%>">
+        <input type="text" id="InputLugarDeNacimientoD" name="lugarD" placeholder="Lugar*"    value="<%=JsonLLenarFormaD.lugarD%>">
 
         <label for="InputNacionalidadD">NACIONALIDAD*</label>
         <label for="InputEstadoCivilD">ESTADO CIVIL*</label>
-        <input type="text" id="InputNacionalidadD" name="nacionalidadD" placeholder="Nacionalidad*" required value="<%=JsonLLenarFormaD.nacionalidadD%>">
-        <input type="text" id="InputEstadoCivilD" name="civilD" placeholder="Estado Civil*" required value="<%=JsonLLenarFormaD.civilD%>">
+        <input type="text" id="InputNacionalidadD" name="nacionalidadD" placeholder="Nacionalidad*"    value="<%=JsonLLenarFormaD.nacionalidadD%>">
+        <input type="text" id="InputEstadoCivilD" name="civilD" placeholder="Estado Civil*"    value="<%=JsonLLenarFormaD.civilD%>">
 
         <label for="InputCURPD">CURP*</label>
         <label for="InputDependenciasD">DEPENDENCIAS*</label>
-        <input type="text" id="InputCURPD" name="curpD" oninput="validarInputD(this)" placeholder="CURP*" required value="<%=JsonLLenarFormaD.curpD%>">
-        <input type="number" id="InputDependenciasD" name="dependenciasD" placeholder="No. de dependencias*" min="0"required value="<%=JsonLLenarFormaD.dependenciasD%>">
-        <input type="text" id="resultadoD" style="color: black;" disabled>
+        <input type="text" id="InputCURPD" name="curpD" oninput="LLenarValidarInputD(this)" placeholder="CURP*"    value="<%=JsonLLenarFormaD.curpD%>" required>
+        <input type="number" id="InputDependenciasD" name="dependenciasD" placeholder="No. de dependencias*" min="0"   value="<%=JsonLLenarFormaD.dependenciasD%>">
+        <input type="text" id="resultadoD" style="color: black;" disabled value="CURP, Formato: Válido">
     </div>
 </fieldset>
 <fieldset>
@@ -42,34 +42,34 @@
     <div class="grid-dos-columnas">
         <label for="InputTelefonoD">TELÉFONO CELULAR*</label>
         <label for="InputCorreoD">E-mail*</label>
-        <input type="tel" id="InputTelefonoD" name="telefonoD" placeholder="Número*" required value="<%=JsonLLenarFormaD.telefonoD%>">
-        <input type="email" id="InputCorreoD" name="emailD" placeholder="Tu correo electrónico*" required value="<%=JsonLLenarFormaD.emailD%>">
+        <input type="tel" id="InputTelefonoD" name="telefonoD" placeholder="Número*"    value="<%=JsonLLenarFormaD.telefonoD%>">
+        <input type="email" id="InputCorreoD" name="emailD" placeholder="Tu correo electrónico*"    value="<%=JsonLLenarFormaD.emailD%>">
 
         <label for="InputSkypeD">CUENTA SKYPE</label>
         <label for="InputFBD">Cuenta de FB (Link)</label>
-        <input type="text" id="InputSkypeD" name="skypeD" placeholder="Skype*" required value="<%=JsonLLenarFormaD.skypeD%>">
-        <input type="text" id="InputFBD" name="fbD" placeholder="Link a tu Facebook*" required value="<%=JsonLLenarFormaD.fbD%>">
+        <input type="text" id="InputSkypeD" name="skypeD" placeholder="Skype*"    value="<%=JsonLLenarFormaD.skypeD%>">
+        <input type="text" id="InputFBD" name="fbD" placeholder="Link a tu Facebook*"    value="<%=JsonLLenarFormaD.fbD%>">
     </div>
 </fieldset>
 <fieldset>
     <legend>DOMICILIO</legend>
     <div class="domicilio-calle-num">
         <!--<label for="Calle">Calle</label>-->
-        <input type="text" id="InputCalleD" name="CalleD" placeholder="Calle*" required value="<%=JsonLLenarFormaD.CalleD%>">
+        <input type="text" id="InputCalleD" name="CalleD" placeholder="Calle*"    value="<%=JsonLLenarFormaD.CalleD%>">
         <!--<label for="NoExt">No. Ext</label>-->
-        <input type="text" id="InputNoExtD" name="NoExtD" placeholder="NoExt*" required value="<%=JsonLLenarFormaD.NoExtD%>">
+        <input type="text" id="InputNoExtD" name="NoExtD" placeholder="NoExt*"    value="<%=JsonLLenarFormaD.NoExtD%>">
         <!--<label for="NoInt">No. Int</label>-->
-        <input type="text" id="InputNoIntD" name="NoIntD" placeholder="NoInt" required value="<%=JsonLLenarFormaD.NoIntD%>">
+        <input type="text" id="InputNoIntD" name="NoIntD" placeholder="NoInt"    value="<%=JsonLLenarFormaD.NoIntD%>">
     </div>
     <div class="grid-dos-columnas">
         <!--<label for="Colonia">Colonia</label>-->
-        <input type="text" id="InputColoniaD" name="ColoniaD" placeholder="Colonia*" required value="<%=JsonLLenarFormaD.ColoniaD%>">
+        <input type="text" id="InputColoniaD" name="ColoniaD" placeholder="Colonia*"    value="<%=JsonLLenarFormaD.ColoniaD%>">
         <!--<label for="Ciudad">Ciudad</label>-->
-        <input type="text" id="InputCiudadD" name="CiudadD" placeholder="Ciudad*" required value="<%=JsonLLenarFormaD.CiudadD%>">
+        <input type="text" id="InputCiudadD" name="CiudadD" placeholder="Ciudad*"    value="<%=JsonLLenarFormaD.CiudadD%>">
         <!--<label for="Estado">Estado</label>-->
-        <input type="text" id="InputEstadoD" name="EstadoD" placeholder="Estado*" required value="<%=JsonLLenarFormaD.EstadoD%>">
+        <input type="text" id="InputEstadoD" name="EstadoD" placeholder="Estado*"    value="<%=JsonLLenarFormaD.EstadoD%>">
         <!--<label for="CP">CP</label>-->
-        <input type="text" id="InputCPD" name="CPD" placeholder="CP*" required value="<%=JsonLLenarFormaD.CPD%>">
+        <input type="text" id="InputCPD" name="CPD" placeholder="CP*"    value="<%=JsonLLenarFormaD.CPD%>">
 
     </div>
 </fieldset>   

@@ -37,10 +37,41 @@ function validarInputM(input) {
     resultado.value = "CURP, Formato: " + valido;
 }
 
+function LlenarvalidarInputM(input) {
+    
+    var curp = input.value.toUpperCase(),
+        resultado = document.getElementById("resultadoM");
+        valido = "No válido";
+    if (curpValida(curp)) {
+        valido = "Válido";
+        //resultado.classList.add("ok");
+    } else {
+        //resultado.classList.remove("ok");
+    }
+    resultado.value = "CURP, Formato: " + valido;
+}
+
+
+//Validar CURP en new M
 function validarInputD(input) {
     
     var curp = input.value.toUpperCase(),
         resultado = document.getElementById("newresultadoD");
+        valido = "No válido";
+    if (curpValida(curp)) {
+        valido = "Válido";
+        //resultado.classList.add("ok");
+    } else {
+        //resultado.classList.remove("ok");
+    }
+    resultado.value = "CURP, Formato: " + valido;
+}
+
+//Validar CURP en llenar M
+function LlenarvalidarInputD(input) {
+    
+    var curp = input.value.toUpperCase(),
+        resultado = document.getElementById("resultadoD");
         valido = "No válido";
     if (curpValida(curp)) {
         valido = "Válido";

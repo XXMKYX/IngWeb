@@ -1,4 +1,4 @@
-<form method="POST" class="contacto columnas-10 " action="/personal_data"  id="newFormaMaster" enctype="multipart/form-data" novalidate>
+<form method="POST" class="contacto columnas-10 " action="/personal_data"  id="newFormaMaster" onsubmit="return validarNewFormaMaestria()"  enctype="multipart/form-data">
 
     <nav>
         <div class="nav nav-tabs tab" id="nav-tab" role="tablist">
@@ -15,8 +15,8 @@
             <%- include ('NuevaEntradaMasterA')%>
         </div>
         <div class="grid-dos-columnas">
-            <button type="submit" value="Guardar" id="botonNewFormaMguardar" name="orden" onclick="validarNewFormaMaestria(this)" class="boton boton-amarillo">Guardar</button>  
-            <button type="submit" value="Enviar"  id="botonNewFormaMenviar" name="orden" onclick="validarNewFormaMaestria(this)" class="boton boton-verde">Enviar</button>
+            <button type="submit" value="Guardar" id="botonNewFormaMguardar" form="newFormaMaster" name="orden"  class="boton boton-amarillo">Guardar</button>  
+            <button type="submit" value="Enviar"  id="botonNewFormaMenviar" form="newFormaMaster"  name="orden"  class="boton boton-verde">Enviar</button>
         </div>   
     </div>            
     <legend>*datos obligatorios</legend>
