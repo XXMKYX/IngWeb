@@ -114,12 +114,12 @@ router.post('/personal_data', multer({
 }).single('archivosubido1M') ,(req, res) => {
 
   console.log(req.body);
-  const {tipoM,validacionM, dateM,nombreM, apaternoM, amaternoM, fechaM, lugarM, nacionalidadM, civilM, curpM, dependenciasM, telefonoM, emailM, skypeM, fbM, CalleM, NoExtM, NoIntM, ColoniaM, CiudadM, EstadoM, CPM, InstitucionM, pinstitucionM, tituladoMaestriaM,carreraM, xpPM, xpDM, propedeuticoM, aniospropM, motivoM,archivosubido1M, orden} = req.body;
+  const {tipoM,validacionM, dateM,nombreM, apaternoM, amaternoM, fechaM, lugarM, nacionalidadM, civilM, curpM, dependenciasM, telefonoM, emailM, skypeM, fbM, CalleM, NoExtM, NoIntM, ColoniaM, CiudadM, EstadoM, CPM, InstitucionM, pinstitucionM, tituladoMaestriaM,carreraM, xpPM, xpDM, propedeuticoM, aniospropM, motivoM,archivosubido1M, comentarioM, orden} = req.body;
 
   console.log(orden);
   let newpreg = {
     tipoM: "Maestria",
-    validacionM: "Pendiente",
+    validacionM,
     dateM,
     nombreM,
     apaternoM,
@@ -151,7 +151,7 @@ router.post('/personal_data', multer({
     aniospropM,
     motivoM,
     archivosubido1M,
-    comentarioM: "Sin comentarios"
+    comentarioM
   };
 
   const json_datos = JSON.stringify(newpreg);
@@ -166,6 +166,13 @@ router.post('/personal_data', multer({
     fs.writeFile('src/views/Master/MasterParciales/'+curpM+'.json', json_datos, 'utf-8',function (err) {
       if (err) throw err;
       console.log('Registro de maestría guardado en archivo');
+    });
+    res.redirect('/');
+  }
+  else{
+    fs.writeFile('src/views/Master/MasterFinalizadas/'+curpM+'.json', json_datos, 'utf-8',function (err) {
+      if (err) throw err;
+      console.log('Registro de maestría validado en archivo');
     });
     res.redirect('/');
   }
@@ -208,7 +215,7 @@ const { dateD, nombreD, apaternoD, amaternoD, fechaD, lugarD, nacionalidadD, civ
 
   let newmaster = {
     tipoD : "Doctorado",
-    validacionD: "Pendiente",
+    validacionD,
     dateD,
     nombreD,
     apaternoD,
@@ -241,7 +248,7 @@ const { dateD, nombreD, apaternoD, amaternoD, fechaD, lugarD, nacionalidadD, civ
     aniospropD,
     motivoD,
     archivosubido1D,
-    comentarioD: "Sin comentarios"
+    comentarioD
   };
 
   const json_datos = JSON.stringify(newmaster);
@@ -252,12 +259,18 @@ const { dateD, nombreD, apaternoD, amaternoD, fechaD, lugarD, nacionalidadD, civ
     });
     res.redirect('/');
   }
-  else{
+  else if(orden == "Guardar"){
     fs.writeFile('src/views/Doctor/DocParciales/'+curpD+'.json', json_datos, 'utf-8',function (err) {
       if (err) throw err;
       console.log('Registro de doctorado guardado en archivo');
     });
     res.redirect('/');
+  }
+  else{
+    fs.writeFile('src/views/Doctor/DocFinalizadas/'+curpD+'.json', json_datos, 'utf-8',function (err) {
+      if (err) throw err;
+      console.log('Registro de doctorado validado en archivo');
+    });
   }
   
 });
@@ -422,52 +435,39 @@ router.post('/Llenar', (req, res) =>
   }
 });
 
-router.get('/ValidarD/:CURPD', (req, res) => {
-  InformacionD = datosD.filter(alumno => alumno.CURPD == req.params.CURPD);
-  console.log(InformacionD);
+router.get('/Validacion', (req, res) => {
+  res.render('Validacion',{InformacionD});
+});
+
+router.get('/ValidacionM', (req, res) => {
+  res.render('Coord/ValidacionM',{InformacionM});
+});
+
+router.get('/RevisarSol', (req, res) => {
+  res.render('RevisarSol');
+});
+
+
+router.get('/ValidarD/:curpD', (req, res) => {
+  InformacionD = doctorado.filter(alumno => alumno.curpD == req.params.curpD);
   // saving data
   res.redirect('/Validacion');
 });
 
-router.get('/ValidarM/:CURP', (req, res) => {
-  InformacionM = datosM.filter(alumno => alumno.CURP == req.params.CURP);
+router.get('/ValidarM/:curpM', (req, res) => {
+  InformacionM = maestria.filter(alumno => alumno.curpM == req.params.curpM);
+  try 
+  {
+      BusquedaJSM = fs.readFileSync('src/views/Master/MasterFinalizadas/'+req.params.curpM+'.json', 'utf8')     
+      JsonBusquedaM=JSON.parse(BusquedaJSM);        
+      res.redirect('/ValidacionM'); 
+
+  } catch (error) {
+      console.log("No existe ese directorio en la carpeta de finalizadas de Doctorado");
+      res.redirect('/');
+  }
   // saving data
-  res.redirect('/ValidacionM');
-});
-
-router.post('/Validacion', (req, res) => {
-
-  const {CURPD,ValidacionD,ComentarioD} = req.body;
-
-  let file = JSON.parse(fs.readFileSync('src/views/Doctor/DocFinalizadas/'+CURPD+'.json', 'utf8'));
   
-  file.ValidacionD = ValidacionD;
-  file.ComentarioD = ComentarioD;
-
-  fs.writeFile('src/views/Doctor/DocFinalizadas/'+CURPD+'.json', JSON.stringify(file), function writeJSON(err) {
-    if (err) return console.log(err);
-    console.log(JSON.stringify(file));
-  });
-
-  res.redirect('/');
 });
-
-router.post('/ValidacionM', (req, res) => {
-
-  const {CURPV,ValidacionD,ComentarioD} = req.body;
-
-  let file = JSON.parse(fs.readFileSync('src/views/Master/MasterParciales/'+CURPV+'.json', 'utf8'));
-  
-  file.ValidacionD = ValidacionD;
-  file.Comentario = ComentarioD;
-
-  fs.writeFile('src/views/Maestria/MasterParciales/'+CURPV+'.json', JSON.stringify(file), function writeJSON(err) {
-    if (err) return console.log(err);
-    console.log(JSON.stringify(file));
-  });
-
-  res.redirect('/');
-});
-
 
   module.exports = router;

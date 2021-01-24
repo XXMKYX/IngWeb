@@ -100,6 +100,13 @@ function HideTabTipoForma(input){
     var NuevaFormaDocP = document.getElementById('NuevaEntradaDocP');
     var NuevaFormaDocA = document.getElementById('NuevaEntradaDocA'); 
 
+    var coordPersonalM = document.getElementById('coordPersonalM');
+    var coordAcademicoM = document.getElementById('coordAcademicoM');
+    
+    var coordPersonalP = document.getElementById('coordPersonalP');
+    var coordAcademicoP = document.getElementById('coordAcademicoP'); 
+
+
     console.log(valor);
 
     if(valor == 1){
@@ -151,7 +158,24 @@ function HideTabTipoForma(input){
         NuevaFormaDocA.style.display = "block";
         //formaM.style.display = "none";
     }
-
+    else if(valor == 11){
+        coordAcademicoM.style.display = "none";
+        coordPersonalM.style.display = "block";                
+    }
+    else if(valor == 12){
+        coordPersonalM.style.display = "none";        
+        coordAcademicoM.style.display = "block";
+        //formaM.style.display = "none";
+    }
+    else if(valor == 13){
+        coordAcademicoP.style.display = "none";
+        coordPersonalP.style.display = "block";                
+    }
+    else if(valor == 14){
+        coordPersonalP.style.display = "none";        
+        coordAcademicoP.style.display = "block";
+        //formaM.style.display = "none";
+    }
 }
 
 function changeTab(evt, Tabame) {
@@ -300,7 +324,6 @@ function validarFormaMaestria(input)
 
     /* Validación CURP */
     var res = document.getElementById("resultadoM");
-
     /* Se valida completamente */
     if(input.value == 'Enviar')
     {
@@ -423,7 +446,7 @@ function validarFormaMaestria(input)
             }
         }
     }
-    else{    
+    else if(input.value == 'Guardar'){    
         if(InputCURP.value == "" || res.value == "CURP, Formato: No válido"){
             alert("Para guardar, favor de colocar un CURP válido");
             return false;
@@ -455,6 +478,18 @@ function validarFormaMaestria(input)
             return true;
         }
 
+    }
+    else
+    {
+        //Va a actualizar
+        var selectCoord = document.getElementById("opcionesValidacionM").value;
+        var MensajeCoord = document.getElementById("CoordComentarioM").value;
+        if(selectCoord == 'Pendiente' || selectCoord == '' || CoordComentarioM == '' || CoordComentarioM == 'Sin comentarios'){
+            return false;
+        }
+        else{
+            document.getElementById("formaMasterCoord").submit();
+        }
     } 
 }
 

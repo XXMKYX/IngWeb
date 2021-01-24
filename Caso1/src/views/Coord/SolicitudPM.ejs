@@ -1,0 +1,65 @@
+<fieldset>
+    <legend>DATOS PERSONALES</legend>
+    <label for="nombreM">NOMBRE(S)*</label>
+    <!--<input type="text" id="nombre" placeholder="Nombre(s)">-->
+    <input name="nombreM" id="InputNombreM" type="text" class="form-control" placeholder="Nombre(s)*" autofocus    value="<%=JsonBusquedaM.nombreM%>"  >
+    <div class="grid-dos-columnas">
+        <label for="InputAMaternoM">Apellido Paterno*</label>
+        <label for="InputAPaternoM">Apellido Materno*</label>
+
+        <input type="text" id="InputAMaternoM" name="apaternoM" placeholder="Apellido Paterno*"    value="<%=JsonBusquedaM.apaternoM%>"  >
+        <input type="text" id="InputAPaternoM" name="amaternoM" placeholder="Apellido Materno*"    value="<%=JsonBusquedaM.amaternoM%>"  >
+
+        <label for="InputFechaNacimientoM">FECHA DE NACIMIENTO*</label>
+        <label for="InputLugarDeNacimientoM">LUGAR DE NACIMIENTO*</label> 
+        <input type="date" id="InputFechaNacimientoM" name="fechaM" placeholder="Fecha*"    value="<%=JsonBusquedaM.fechaM%>"  >
+        <input type="text" id="InputLugarDeNacimientoM" name="lugarM" placeholder="Lugar*"    value="<%=JsonBusquedaM.lugarM%>"  >
+
+        <label for="InputNacionalidadM">NACIONALIDAD*</label>
+        <label for="InputEstadoCivilM">ESTADO CIVIL*</label>
+        <input type="text" id="InputNacionalidadM" name="nacionalidadM" placeholder="Nacionalidad*"    value="<%=JsonBusquedaM.nacionalidadM%>"  >
+        <input type="text" id="InputEstadoCivilM" name="civilM" placeholder="Estado Civil*"    value="<%=JsonBusquedaM.civilM%>"  >
+
+        <label for="InputCURPM">CURP*</label>
+        <label for="InputDependenciasM">DEPENDENCIAS*</label>
+        <input type="text" id="InputCURPM" name="curpM" oninput="LlenarvalidarInputM(this)" placeholder="CURP*"    value="<%=JsonBusquedaM.curpM%>" required  >
+        <input type="number" id="InputDependenciasM" name="dependenciasM" placeholder="No. de dependencias*" min="0"    value="<%=JsonBusquedaM.dependenciasM%>"  >
+        <input type="text" id="resultadoM" style="color: black;"   value="CURP, Formato: Válido">
+    </div>
+</fieldset>
+<fieldset>
+    <legend>DATOS DE CONTACTO</legend>
+    <div class="grid-dos-columnas">
+        <label for="InputTelefonoM">TELÉFONO CELULAR*</label>
+        <label for="InputCorreoM">E-mail*</label>
+        <input type="tel" id="InputTelefonoM" name="telefonoM" placeholder="Número*"    value="<%=JsonBusquedaM.telefonoM%>"  >
+        <input type="email" id="InputCorreoM" name="emailM" placeholder="Tu correo electrónico*"    value="<%=JsonBusquedaM.emailM%>"  >
+
+        <label for="InputSkypeM">CUENTA SKYPE</label>
+        <label for="InputFBM">Cuenta de FB (Link)</label>
+        <input type="text" id="InputSkypeM" name="skypeM" placeholder="Skype*"    value="<%=JsonBusquedaM.skypeM%>"  >
+        <input type="text" id="InputFBM" name="fbM" placeholder="Link a tu Facebook*"    value="<%=JsonBusquedaM.fbM%>"  >
+    </div>
+</fieldset>
+<fieldset>
+    <legend>DOMICILIO</legend>
+    <div class="domicilio-calle-num">
+        <!--<label for="Calle">Calle</label>-->
+        <input type="text" id="InputCalleM" name="CalleM" placeholder="Calle*"    value="<%=JsonBusquedaM.CalleM%>"  >
+        <!--<label for="NoExt">No. Ext</label>-->
+        <input type="text" id="InputNoExtM" name="NoExtM" placeholder="NoExt*"    value="<%=JsonBusquedaM.NoExtM%>"  >
+        <!--<label for="NoInt">No. Int</label>-->
+        <input type="text" id="InputNoIntM" name="NoIntM" placeholder="NoInt"    value="<%=JsonBusquedaM.NoIntM%>"  >
+    </div>
+    <div class="grid-dos-columnas">
+        <!--<label for="Colonia">Colonia</label>-->
+        <input type="text" id="InputColoniaM" name="ColoniaM" placeholder="Colonia*"    value="<%=JsonBusquedaM.ColoniaM%>"  >
+        <!--<label for="Ciudad">Ciudad</label>-->
+        <input type="text" id="InputCiudadM" name="CiudadM" placeholder="Ciudad*"    value="<%=JsonBusquedaM.CiudadM%>"  >
+        <!--<label for="Estado">Estado</label>-->
+        <input type="text" id="InputEstadoM" name="EstadoM" placeholder="Estado*"    value="<%=JsonBusquedaM.EstadoM%>"  >
+        <!--<label for="CP">CP</label>-->
+        <input type="text" id="InputCPM" name="CPM" placeholder="CP*"    value="<%=JsonBusquedaM.CPM%>"  >
+
+    </div>
+</fieldset>   
